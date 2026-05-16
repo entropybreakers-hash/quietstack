@@ -3,187 +3,277 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QuietStack — AI DFY rendszerek vállalkozásoknak</title>
-  <meta name="description" content="QuietStack: kulcsrakész, AI-alapú DFY (Done For You) automatizációs rendszerek magyar vállalkozásoknak. Te a növekedésre koncentrálsz, a rendszert mi építjük." />
-  <meta name="theme-color" content="#0f1720" />
 
-  <meta property="og:title" content="QuietStack — AI DFY rendszerek" />
-  <meta property="og:description" content="Kulcsrakész, AI-alapú automatizációs rendszerek magyar vállalkozásoknak." />
+  <title>QuietStack — AI rendszer építés magyar coachoknak | Kevesebb admin, több coaching</title>
+  <meta name="description" content="AI-alapú ügyfélkezelő rendszerek magyar coachoknak, tanároknak és digitális termék-szolgáltatóknak. Heti 10+ óra felszabadítás. Ingyenes konzultáció." />
+  <meta name="theme-color" content="#FAFAF7" />
+
+  <meta property="og:title" content="QuietStack — AI rendszer építés magyar coachoknak" />
+  <meta property="og:description" content="A rendszer kiszolgál Téged — nem fordítva." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="hu_HU" />
   <meta property="og:url" content="https://quietstack.entropybreakers.com" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1720'/%3E%3Crect x='7' y='8' width='18' height='4' rx='2' fill='%235eead4'/%3E%3Crect x='7' y='14' width='18' height='4' rx='2' fill='%235eead4' opacity='0.7'/%3E%3Crect x='7' y='20' width='18' height='4' rx='2' fill='%235eead4' opacity='0.4'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231A1A1A'/%3E%3Crect x='7' y='8' width='18' height='4' rx='2' fill='%23C9A876'/%3E%3Crect x='7' y='14' width='18' height='4' rx='2' fill='%23C9A876' opacity='0.7'/%3E%3Crect x='7' y='20' width='18' height='4' rx='2' fill='%23C9A876' opacity='0.45'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #0f1720;
-      --bg-soft: #16212e;
-      --card: #1b2836;
-      --border: #2a3a4d;
-      --text: #e6edf3;
-      --muted: #9fb0c0;
-      --accent: #5eead4;
-      --accent-strong: #2dd4bf;
+      --bg: #FAFAF7;
+      --surface: #FFFFFF;
+      --text: #1A1A1A;
+      --muted: #5d5d57;
+      --accent: #C9A876;
+      --accent-deep: #ab8c5b;
+      --border: #e7e4db;
+      --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--sans);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+    .narrow { max-width: 760px; margin: 0 auto; }
 
-    /* Nav */
-    header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(15, 23, 32, 0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; }
-    .logo-mark {
-      display: grid; gap: 3px;
-    }
-    .logo-mark span {
-      display: block; width: 22px; height: 5px; border-radius: 3px; background: var(--accent);
-    }
-    .logo-mark span:nth-child(2) { opacity: 0.7; }
-    .logo-mark span:nth-child(3) { opacity: 0.4; }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a { color: var(--muted); font-size: 0.95rem; transition: color 0.15s; }
-    .nav-links a:hover { color: var(--text); }
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* Buttons */
     .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #06231f;
-      font-weight: 600;
-      padding: 11px 22px;
-      border-radius: 10px;
-      transition: transform 0.12s, background 0.15s;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--text); color: var(--bg);
+      font-family: var(--sans); font-weight: 600; font-size: 1rem;
+      padding: 15px 30px; border-radius: 4px;
+      transition: background 0.18s, transform 0.12s;
     }
-    .btn:hover { background: var(--accent-strong); transform: translateY(-1px); }
+    .btn:hover { background: #000; transform: translateY(-2px); }
+    .btn-accent { background: var(--accent); color: #2a2208; }
+    .btn-accent:hover { background: var(--accent-deep); color: #fff; }
     .btn-ghost {
       background: transparent; color: var(--text);
       border: 1px solid var(--border);
     }
-    .btn-ghost:hover { background: var(--bg-soft); }
-    .nav .btn { padding: 9px 18px; }
-    @media (max-width: 720px) { .nav-links a:not(.btn) { display: none; } }
+    .btn-ghost:hover { background: #fff; border-color: var(--accent); transform: translateY(-2px); }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 60;
+      background: rgba(250, 250, 247, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 74px; }
+    .logo { display: flex; align-items: center; gap: 11px; font-family: var(--serif); font-weight: 700; font-size: 1.3rem; }
+    .logo-mark { display: grid; gap: 3.5px; }
+    .logo-mark span { display: block; width: 24px; height: 5px; border-radius: 2px; background: var(--accent); }
+    .logo-mark span:nth-child(2) { opacity: 0.7; }
+    .logo-mark span:nth-child(3) { opacity: 0.45; }
+    .nav-links { display: flex; gap: 30px; align-items: center; }
+    .nav-links a:not(.btn) { color: var(--muted); font-size: 0.96rem; font-weight: 500; transition: color 0.15s; }
+    .nav-links a:not(.btn):hover { color: var(--text); }
+    .nav .btn { padding: 11px 22px; font-size: 0.95rem; }
+    @media (max-width: 860px) { .nav-links a:not(.btn) { display: none; } }
 
     /* Hero */
-    .hero { padding: 96px 0 80px; text-align: center; }
-    .pill {
-      display: inline-block;
-      font-size: 0.82rem;
-      color: var(--accent);
-      background: rgba(94, 234, 212, 0.1);
-      border: 1px solid rgba(94, 234, 212, 0.25);
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 24px;
+    .hero { padding: 92px 0 80px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .eyebrow {
+      display: inline-block; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep);
+      margin-bottom: 22px;
     }
-    .hero h1 {
-      font-size: clamp(2.1rem, 5vw, 3.4rem);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
+    .hero h1 { font-size: clamp(2.3rem, 5.2vw, 3.6rem); margin-bottom: 24px; }
+    .hero h1 .line1 { color: var(--accent-deep); display: block; }
+    .hero h1 .line2 { display: block; }
+    .hero p.lead { font-size: 1.17rem; color: var(--muted); margin-bottom: 32px; max-width: 540px; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .scroll-hint { margin-top: 26px; font-size: 0.95rem; color: var(--muted); font-style: italic; }
+
+    /* Photo placeholders */
+    .photo {
+      position: relative; border-radius: 8px; overflow: hidden;
+      background: linear-gradient(150deg, #efe9dd, #e3d8c2 60%, #d8c8a8);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      color: #8a7a55; font-size: 0.92rem; padding: 28px;
     }
-    .hero h1 .grad {
-      background: linear-gradient(120deg, var(--accent), #7dd3fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero p.lead {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 620px;
-      margin: 0 auto 34px;
-    }
-    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .photo.hero-photo { aspect-ratio: 4 / 5; }
+    .photo .ph-note { max-width: 220px; }
+    .photo .ph-ico { font-size: 1.7rem; display: block; margin-bottom: 8px; }
 
     /* Sections */
-    section { padding: 72px 0; }
-    .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
-    .section-head h2 {
-      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-    .section-head p { color: var(--muted); }
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    /* Grid cards */
-    .grid { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); }
-    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-      transition: border-color 0.15s, transform 0.15s;
-    }
-    .card:hover { border-color: var(--accent-strong); transform: translateY(-3px); }
-    .card .ico {
-      width: 44px; height: 44px;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(94, 234, 212, 0.12);
-      border-radius: 11px;
-      margin-bottom: 16px;
-      font-size: 1.3rem;
-    }
-    .card h3 { font-size: 1.15rem; margin-bottom: 8px; }
-    .card p { color: var(--muted); font-size: 0.96rem; }
-
-    /* Steps */
-    .steps { display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); counter-reset: step; }
-    @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
-    .step { position: relative; padding-left: 0; }
-    .step .num {
-      width: 38px; height: 38px;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--accent);
-      color: #06231f;
-      font-weight: 700;
-      border-radius: 10px;
+    section { padding: 84px 0; }
+    .section-tag {
+      display: block; text-align: center; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep);
       margin-bottom: 14px;
     }
-    .step h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .section-title { text-align: center; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 18px; }
+    .section-sub { text-align: center; color: var(--muted); max-width: 620px; margin: 0 auto 52px; }
+
+    /* Pain story */
+    .pain { background: var(--text); color: #f3f1ea; }
+    .pain .section-tag { color: var(--accent); }
+    .pain .section-title { color: #fff; }
+    .pain-story { max-width: 620px; margin: 0 auto; }
+    .pain-story p { margin-bottom: 18px; color: #cdcabf; font-size: 1.08rem; }
+    .pain-story p.em { color: #fff; font-family: var(--serif); font-size: 1.35rem; line-height: 1.45; }
+    .pain-story p.last { color: var(--accent); font-family: var(--serif); font-size: 1.35rem; }
+
+    /* Cards grid */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 880px) { .grid-3 { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 34px 30px;
+    }
+    .card .card-ico { font-size: 1.9rem; display: block; margin-bottom: 14px; }
+    .card h3 { font-size: 1.18rem; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 0.99rem; }
+
+    /* Steps */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    @media (max-width: 880px) { .steps { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .steps { grid-template-columns: 1fr; } }
+    .step {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 30px 26px;
+    }
+    .step .step-num {
+      font-family: var(--serif); font-size: 2.4rem; font-weight: 700;
+      color: var(--accent); line-height: 1; margin-bottom: 12px;
+    }
+    .step h3 { font-size: 1.08rem; margin-bottom: 6px; }
+    .step .step-meta { font-size: 0.82rem; font-weight: 600; color: var(--accent-deep); margin-bottom: 8px; }
     .step p { color: var(--muted); font-size: 0.95rem; }
 
-    /* CTA band */
-    .cta-band {
-      background: linear-gradient(135deg, var(--bg-soft), #102a2a);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 56px 32px;
-      text-align: center;
+    /* Pricing */
+    .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+    @media (max-width: 940px) { .pricing { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; } }
+    .plan {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 36px 30px; position: relative;
+      display: flex; flex-direction: column; height: 100%;
     }
-    .cta-band h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 12px; }
-    .cta-band p { color: var(--muted); max-width: 520px; margin: 0 auto 28px; }
+    .plan.featured {
+      border: 2px solid var(--accent);
+      box-shadow: 0 18px 48px -22px rgba(171, 140, 91, 0.55);
+    }
+    .plan-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: #2a2208;
+      font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 999px; white-space: nowrap;
+    }
+    .plan .tier { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 6px; }
+    .plan h3 { font-size: 1.5rem; margin-bottom: 14px; }
+    .plan .price { font-family: var(--serif); font-size: 2.5rem; font-weight: 700; line-height: 1; }
+    .plan .price small { font-size: 0.9rem; font-family: var(--sans); font-weight: 400; color: var(--muted); display: block; margin-top: 6px; }
+    .plan .time { font-size: 0.9rem; color: var(--muted); margin: 14px 0 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+    .plan .who { font-size: 0.97rem; color: var(--muted); margin-bottom: 20px; }
+    .plan .feat-label { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); margin-bottom: 12px; }
+    .plan ul { list-style: none; margin-bottom: 22px; }
+    .plan ul li { position: relative; padding-left: 26px; margin-bottom: 11px; font-size: 0.96rem; color: var(--muted); }
+    .plan ul li::before {
+      content: ""; position: absolute; left: 0; top: 9px;
+      width: 14px; height: 8px; border-left: 2px solid var(--accent-deep);
+      border-bottom: 2px solid var(--accent-deep); transform: rotate(-45deg);
+    }
+    .plan .maint { font-size: 0.88rem; color: var(--muted); margin-bottom: 20px; padding: 12px 14px; background: var(--bg); border-radius: 6px; }
+    .plan .btn { width: 100%; justify-content: center; margin-top: auto; }
+    .pricing-note { text-align: center; color: var(--muted); font-size: 0.92rem; margin-top: 30px; }
+
+    /* Calculator */
+    .calc { background: #f1ece1; }
+    .calc-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 44px; max-width: 720px; margin: 0 auto;
+    }
+    .calc-box p { color: var(--muted); margin-bottom: 16px; }
+    .calc-rows { margin: 24px 0; }
+    .calc-row {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+    }
+    .calc-row:last-child { border-bottom: none; }
+    .calc-row .lbl { font-size: 0.98rem; }
+    .calc-row .val { font-family: var(--serif); font-weight: 700; color: var(--accent-deep); white-space: nowrap; }
+    .calc-row .val.big { font-size: 1.25rem; }
+    .calc-closing { font-family: var(--serif); font-size: 1.15rem; color: var(--text); margin-top: 8px; }
+
+    /* Founding / proof */
+    .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 820px) { .proof-grid { grid-template-columns: 1fr; } }
+    .proof-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 38px 34px;
+    }
+    .proof-card.dark { background: var(--text); color: #f3f1ea; border-color: var(--text); }
+    .proof-card h3 { font-size: 1.4rem; margin-bottom: 14px; }
+    .proof-card.dark h3 { color: #fff; }
+    .proof-card p { color: var(--muted); margin-bottom: 14px; font-size: 1rem; }
+    .proof-card.dark p { color: #cdcabf; }
+    .proof-card .btn { margin-top: 8px; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: center; }
+    @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; gap: 34px; } }
+    .about-grid .photo { aspect-ratio: 1 / 1; }
+    .about-text h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 18px; }
+    .about-text p { color: var(--muted); margin-bottom: 15px; }
+    .about-text p.punch { font-family: var(--serif); font-size: 1.2rem; color: var(--text); }
+
+    /* FAQ */
+    .faq { max-width: 760px; margin: 0 auto; }
+    details {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; margin-bottom: 12px; overflow: hidden;
+    }
+    details[open] { border-color: var(--accent); }
+    summary {
+      cursor: pointer; list-style: none; padding: 22px 26px;
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+"; font-family: var(--sans); font-size: 1.5rem; font-weight: 400;
+      color: var(--accent-deep); transition: transform 0.2s;
+    }
+    details[open] summary::after { content: "\2212"; }
+    details .answer { padding: 0 26px 24px; color: var(--muted); }
+
+    /* Final CTA */
+    .final { background: var(--text); color: #f3f1ea; text-align: center; }
+    .final h2 { color: #fff; font-size: clamp(2rem, 4.6vw, 3rem); margin-bottom: 22px; }
+    .final p { color: #cdcabf; max-width: 560px; margin: 0 auto 14px; font-size: 1.08rem; }
+    .final p.small { font-size: 0.97rem; color: #a8a597; margin-bottom: 32px; }
+    .final .btn { font-size: 1.05rem; padding: 17px 38px; }
 
     /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .foot a:hover { color: var(--text); }
+    footer { background: #15140f; color: #a8a597; padding: 56px 0 40px; }
+    .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 34px; }
+    .footer-brand { display: flex; align-items: center; gap: 11px; font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: #fff; margin-bottom: 12px; }
+    .footer-col p { font-size: 0.93rem; max-width: 320px; }
+    .footer-col a { color: #cdcabf; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.92rem; }
+    .footer-bottom { border-top: 1px solid #2c2a22; padding-top: 22px; font-size: 0.86rem; }
   </style>
 </head>
 <body>
@@ -191,151 +281,483 @@
   <header>
     <div class="wrap nav">
       <a href="#" class="logo">
-        <span class="logo-mark"><span></span><span></span><span></span></span>
+        <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
         QuietStack
       </a>
       <nav class="nav-links">
-        <a href="#szolgaltatas">Szolgáltatás</a>
+        <a href="#kiknek">Kiknek szól</a>
         <a href="#folyamat">Hogyan működik</a>
-        <a href="#kinek">Kinek ajánljuk</a>
-        <a href="#kapcsolat" class="btn">Ingyenes konzultáció</a>
+        <a href="#csomagok">Csomagok</a>
+        <a href="#gyik">GYIK</a>
+        <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Ingyenes konzultáció</a>
       </nav>
     </div>
   </header>
 
   <main>
+
+    <!-- HERO -->
     <section class="hero">
-      <div class="wrap">
-        <span class="pill">AI DFY rendszerek &middot; magyar vállalkozásoknak</span>
-        <h1>Kulcsrakész <span class="grad">AI rendszerek</span>,<br />amelyek helyetted dolgoznak.</h1>
-        <p class="lead">
-          A QuietStack megtervezi, felépíti és beüzemeli az AI-alapú automatizációidat —
-          neked csak a növekedésre kell figyelned. Done For You, magyarul, az első perctől.
-        </p>
-        <div class="hero-cta">
-          <a href="#kapcsolat" class="btn">Kérek egy ingyenes konzultációt</a>
-          <a href="#szolgaltatas" class="btn btn-ghost">Mit kapok pontosan?</a>
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">AI rendszer építés &middot; magyar coachoknak</span>
+          <h1>
+            <span class="line1">Visszakaptam az időmet.</span>
+            <span class="line2">Most a coachingot csinálom — nem az admint.</span>
+          </h1>
+          <p class="lead">
+            AI-rendszereket építek magyar coachoknak, online tanároknak és digitális
+            termék-szolgáltatóknak — hogy te is azt csináld, amiért elindítottad a vállalkozásod.
+          </p>
+          <div class="hero-cta">
+            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Ingyenes 20 perces konzultáció →</a>
+          </div>
+          <p class="scroll-hint">Görgess lejjebb — megmutatom, hogyan működik.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="szolgaltatas">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Szolgáltatás</div>
-          <h2>Mit jelent a Done For You?</h2>
-          <p>Nem kurzust adunk el, és nem szoftvert kell magadnak összerakni. A teljes rendszert mi építjük fel — átadásra kész állapotban.</p>
-        </div>
-        <div class="grid">
-          <div class="card">
-            <div class="ico">&#129302;</div>
-            <h3>AI ügyfélkezelés</h3>
-            <p>Automata megkeresés-kezelés, ajánlatadás és utánkövetés, ami a leadek 100%-ával foglalkozik — éjjel-nappal.</p>
-          </div>
-          <div class="card">
-            <div class="ico">&#9881;</div>
-            <h3>Folyamat-automatizáció</h3>
-            <p>Ismétlődő adminisztráció, riportok és belső munkafolyamatok kiváltása, hogy a csapat az értékes munkára koncentráljon.</p>
-          </div>
-          <div class="card">
-            <div class="ico">&#128202;</div>
-            <h3>Tartalom &amp; marketing motor</h3>
-            <p>AI-vezérelt tartalomgyártás és kampány-rendszer, amely folyamatosan táplálja az értékesítési csatornádat.</p>
-          </div>
-          <div class="card">
-            <div class="ico">&#128274;</div>
-            <h3>Saját adat, saját kontroll</h3>
-            <p>A rendszer a te eszközeiden, a te adataiddal fut. Nincs függőség, nincs feketedoboz — minden átlátható.</p>
-          </div>
-          <div class="card">
-            <div class="ico">&#128640;</div>
-            <h3>Gyors bevezetés</h3>
-            <p>Az első működő automatizáció jellemzően 2–3 hét alatt élesedik, nem hónapokban mérjük.</p>
-          </div>
-          <div class="card">
-            <div class="ico">&#129309;</div>
-            <h3>Magyar nyelvű támogatás</h3>
-            <p>Érthető kommunikáció, magyar dokumentáció és valódi ember, akit fel tudsz hívni, ha kérdésed van.</p>
+        <div class="reveal">
+          <div class="photo hero-photo">
+            <span class="ph-note">
+              <span class="ph-ico">📷</span>
+              Bettina fotója ide kerül — természetes, munka közben, laptopnál. Hiteles, prémium energia.
+            </span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="folyamat" style="background: var(--bg-soft);">
+    <!-- PAIN POINT -->
+    <section class="pain" id="pain">
       <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Folyamat</div>
-          <h2>Három lépés az élő rendszerig</h2>
-          <p>Átlátható, kiszámítható folyamat — a beszélgetéstől a működő automatizációig.</p>
+        <span class="section-tag reveal">A te sztorid</span>
+        <h2 class="section-title reveal">Te is ezen mész át?</h2>
+        <div class="pain-story reveal">
+          <p>Coach voltam.</p>
+          <p>Növekedni akartam — több diákot, több órát, több bevételt.</p>
+          <p>
+            De tudtam: a növekedés több adminisztrációval jár. Több email. Több
+            időpont-egyeztetés. Több számla. Több ügyfél-onboarding. Több marketing.
+          </p>
+          <p class="em">Hiába jött volna több pénz — nem lettem volna szabadabb.</p>
+          <p>
+            Ez a paradoxon a legtöbb magyar coachot megfojtja:
+            „több ügyfél" = több munka, kevesebb idő, kevesebb élet.
+          </p>
+          <p>Aztán megépítettem magamnak a saját AI-rendszerem.</p>
+          <p>Most több diákom van ÉS több időm. A rendszer kiszolgál engem — nem fordítva.</p>
+          <p class="last">Ezt szeretném megépíteni Neked is.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- KIKNEK SZÓL -->
+    <section id="kiknek">
+      <div class="wrap">
+        <span class="section-tag reveal">Kiknek szól</span>
+        <h2 class="section-title reveal">Neked való, ha…</h2>
+        <p class="section-sub reveal">Három tipikus helyzet — valószínűleg magadra ismersz az egyikben.</p>
+        <div class="grid-3">
+          <div class="card reveal">
+            <span class="card-ico" aria-hidden="true">🎓</span>
+            <h3>Online coach vagy tanár</h3>
+            <p>
+              Egyéni ügyfelekkel dolgozol. Heti 10+ órát viszel adminra (email, ütemezés,
+              házi feladat, számlázás). Tudod: a rendszered rosszul működik. De nem tudod,
+              hol kezdjed.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-ico" aria-hidden="true">💪</span>
+            <h3>Fitness, health vagy wellness coach</h3>
+            <p>
+              Online programokat vezetsz. Edzésterveket, étrendet, heti check-int kérnek
+              tőled. Túl sokat dolgozol — minden új ügyfél extra terhet jelent, nem szabadságot.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-ico" aria-hidden="true">📦</span>
+            <h3>Digitális termék / kurzus szolgáltató</h3>
+            <p>
+              Ebookot, kurzust, sablon-csomagot árulsz. A marketing, support, fizetés-követés
+              szétfeszít. Az AI-eszközöket hallottad, de nem tudod, hogyan rakd össze őket
+              egy működő rendszerré.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOGYAN MŰKÖDIK -->
+    <section id="folyamat" style="background:#f1ece1;">
+      <div class="wrap">
+        <span class="section-tag reveal">A folyamat</span>
+        <h2 class="section-title reveal">Hogyan dolgozunk együtt</h2>
+        <p class="section-sub reveal">Négy átlátható lépés a beszélgetéstől a működő rendszerig.</p>
         <div class="steps">
-          <div class="step">
-            <div class="num">1</div>
-            <h3>Felmérés</h3>
-            <p>Ingyenes konzultáción átnézzük a folyamataidat, és megmutatjuk, hol nyersz a legtöbbet az AI-jal.</p>
+          <div class="step reveal">
+            <div class="step-num">1</div>
+            <div class="step-meta">20 perc</div>
+            <h3>Ingyenes konzultáció</h3>
+            <p>
+              Egy 20 perces beszélgetés. NEM eladás. Diagnosztizáljuk, hol veszíted a legtöbb
+              időt, és melyik csomag a Te vállalkozásodnak való. Vagy megmondom, ha NEM vagyok
+              jó választás Neked.
+            </p>
           </div>
-          <div class="step">
-            <div class="num">2</div>
-            <h3>Felépítés</h3>
-            <p>Felépítjük és teszteljük a rendszert a te eszközeidre szabva. Te csak visszajelzel — a munkát mi végezzük.</p>
+          <div class="step reveal">
+            <div class="step-num">2</div>
+            <div class="step-meta">1 hét</div>
+            <h3>Rendszer-tervezés</h3>
+            <p>
+              A Te szakmádra és a Te ügyfeleidre tervezem a rendszert. Felmérem, mi maradhat
+              manuális (amit szeretsz csinálni), és mit automatizálunk (amit utálsz).
+            </p>
           </div>
-          <div class="step">
-            <div class="num">3</div>
-            <h3>Átadás &amp; támogatás</h3>
-            <p>Beüzemeljük, betanítjuk a csapatot, és a folyamatos finomhangolásban is melletted maradunk.</p>
+          <div class="step reveal">
+            <div class="step-num">3</div>
+            <div class="step-meta">1–3 hét</div>
+            <h3>Építés</h3>
+            <p>
+              Megépítem a rendszert. AI, no-code eszközök, integráció a meglévő tools-aiddal
+              (Google, Számlázz.hu, Stripe, Calendly stb.). Te közben folytatod a coachingot.
+            </p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="kinek">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Kinek ajánljuk</div>
-          <h2>Neked való a QuietStack, ha…</h2>
-        </div>
-        <div class="grid">
-          <div class="card">
-            <div class="ico">&#9203;</div>
-            <h3>Kevés az időd</h3>
-            <p>Túl sok ismétlődő feladat viszi el a napodat, és nincs kapacitásod magad bajlódni az AI-eszközökkel.</p>
-          </div>
-          <div class="card">
-            <div class="ico">&#128184;</div>
-            <h3>Növekednél felvétel nélkül</h3>
-            <p>Több ügyfelet szolgálnál ki ugyanazzal a csapattal, plusz fix bérköltség nélkül.</p>
-          </div>
-          <div class="card">
-            <div class="ico">&#127919;</div>
-            <h3>Eredményt akarsz, nem elméletet</h3>
-            <p>Nem kurzust keresel, hanem egy működő rendszert, amit holnap már használhatsz.</p>
+          <div class="step reveal">
+            <div class="step-num">4</div>
+            <div class="step-meta">Átadás</div>
+            <h3>Betanítás + átadás</h3>
+            <p>
+              1–3 órás közös beüzemelés. Megmutatom, hogyan működik. Az első hónapban
+              folyamatos support — minden kérdésre válaszolok.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="kapcsolat">
+    <!-- CSOMAGOK -->
+    <section id="csomagok">
       <div class="wrap">
-        <div class="cta-band">
-          <h2>Beszéljünk a vállalkozásodról</h2>
-          <p>30 perces, ingyenes és kötelezettségmentes konzultáció. Megmutatjuk, pontosan hol tudna az AI dolgozni helyetted.</p>
-          <a href="mailto:hello@entropybreakers.com?subject=QuietStack%20konzult%C3%A1ci%C3%B3" class="btn">Időpontot kérek</a>
+        <span class="section-tag reveal">Csomagok</span>
+        <h2 class="section-title reveal">Három csomag — válaszd, ami illik</h2>
+        <p class="section-sub reveal">
+          Mindegyik egyszeri díj. Mindegyikhez tartozik egy havi karbantartási opció
+          (nem kötelező). KATA / Kleinunternehmerin számlával.
+        </p>
+        <div class="pricing">
+
+          <!-- STARTER -->
+          <div class="plan reveal">
+            <div class="tier">Starter</div>
+            <h3>Az alaprendszer</h3>
+            <div class="price">180 000 Ft<small>egyszeri, ÁFA-mentes</small></div>
+            <div class="time">Időigény: 1 hét munkám</div>
+            <p class="who">
+              Kezdő vagy 1–2 éve futó coach / tanár, aki most akar kilépni a kaoszból.
+              Az alaprendszer, ami felszabadít heti 3–5 órát.
+            </p>
+            <div class="feat-label">Mit tartalmaz</div>
+            <ul>
+              <li>Egyszerű, professzionális landing page (bemutatkozás + 1 fő ajánlat + kapcsolat)</li>
+              <li>Naptár-foglaló rendszer (Calendly) automatikus emlékeztetőkkel</li>
+              <li>5 alap email-sablon automatizálva: welcome, időpont-megerősítés, 24 órás emlékeztető, köszönöm, re-engagement</li>
+              <li>Ügyfél-onboarding kérdőív (válaszok automatikusan táblázatba)</li>
+              <li>1 db AI-asszisztens a leggyakoribb kérdésekre</li>
+              <li>1 órás betanítás</li>
+              <li>2 hét support az átadás után</li>
+            </ul>
+            <div class="maint">Karbantartás (opcionális): <strong>12 000 Ft / hó</strong></div>
+            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-ghost" target="_blank" rel="noopener">Kérek Starter konzultációt →</a>
+          </div>
+
+          <!-- ENGINE -->
+          <div class="plan featured reveal">
+            <div class="plan-badge">Legnépszerűbb</div>
+            <div class="tier">Engine</div>
+            <h3>A teljes ügyfélkezelő motor</h3>
+            <div class="price">390 000 Ft<small>egyszeri, ÁFA-mentes</small></div>
+            <div class="time">Időigény: 2–3 hét munkám</div>
+            <p class="who">
+              Aktív coach / tanár 5–15 ügyféllel, aki szeretne 25–30-ra skálázni anélkül,
+              hogy belerokkanjon. Heti 10+ óra felszabadítás.
+            </p>
+            <div class="feat-label">Minden a Starterből, plusz</div>
+            <ul>
+              <li>Teljes ügyfél-onboarding workflow: űrlap → szerződés → fizetés → első session foglalás, minden automatikus</li>
+              <li>AI-asszisztált email-válaszok a Te hangodra kalibrálva</li>
+              <li>Számlázási integráció (Számlázz.hu / Billingo + automatikus fizetés-követés)</li>
+              <li>Ügyfél-haladás dashboard (Notion vagy Google Sheets alapú)</li>
+              <li>Heti automatikus check-in email az ügyfeleknek</li>
+              <li>Tartalom-naptár sablon AI-tartalom-ötletekkel (Instagram / TikTok)</li>
+              <li>2 órás betanítás (2 alkalommal)</li>
+              <li>1 hónap teljes support</li>
+            </ul>
+            <div class="maint">Karbantartás (opcionális): <strong>25 000 Ft / hó</strong></div>
+            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Kérek Engine konzultációt →</a>
+          </div>
+
+          <!-- PREMIUM -->
+          <div class="plan reveal">
+            <div class="tier">Premium</div>
+            <h3>Skálázható rendszer + mentoring</h3>
+            <div class="price">690 000 Ft<small>egyszeri, ÁFA-mentes</small></div>
+            <div class="time">Időigény: 3–4 hét munkám</div>
+            <p class="who">
+              Skálázni akaró coach / tanár (15+ ügyfél), vagy aki online programokat is
+              indítana. Teljes prémium rendszer + 3 hónap mentoring tőlem.
+            </p>
+            <div class="feat-label">Minden az Engine-ből, plusz</div>
+            <ul>
+              <li>Egyéni mobil-friendly ügyfél-portál (saját logón, saját brand-en)</li>
+              <li>AI-alapú edzésterv / étrend / tananyag generátor</li>
+              <li>Csoportos program-menedzsment (online challenge-ek, kurzusok)</li>
+              <li>Affiliate / referral tracking rendszer</li>
+              <li>Heti 1 órás mentoring 3 hónapig — hogyan használd hatékonyabban, hogyan skálázz</li>
+              <li>24 órás support response 6 hónapig</li>
+              <li>Priority lifetime — minden új feature ingyen</li>
+            </ul>
+            <div class="maint">Karbantartás (opcionális): <strong>40 000 Ft / hó</strong></div>
+            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-ghost" target="_blank" rel="noopener">Kérek Premium konzultációt →</a>
+          </div>
+
+        </div>
+        <p class="pricing-note reveal">Nem tudod, melyik a Tied? Az ingyenes konzultáción együtt eldöntjük.</p>
+      </div>
+    </section>
+
+    <!-- KALKULÁTOR -->
+    <section class="calc">
+      <div class="wrap">
+        <span class="section-tag reveal">Megtérülés</span>
+        <h2 class="section-title reveal">Mennyit ér Neked egy heti 10 óra?</h2>
+        <div class="calc-box reveal">
+          <p>Számoljuk ki együtt.</p>
+          <p>
+            Ha az óradíjad 15 000 Ft (egy átlagos magyar coach óradíja), és heti 10 órát
+            visszanyersz adminról a coachingra:
+          </p>
+          <div class="calc-rows">
+            <div class="calc-row">
+              <span class="lbl">10 óra × 15 000 Ft</span>
+              <span class="val">150 000 Ft / hét</span>
+            </div>
+            <div class="calc-row">
+              <span class="lbl">Havi potenciális plusz bevétel</span>
+              <span class="val big">≈ 600 000 Ft</span>
+            </div>
+            <div class="calc-row">
+              <span class="lbl">A Starter csomag (180 000 Ft) megtérül</span>
+              <span class="val">2–3 nap alatt</span>
+            </div>
+            <div class="calc-row">
+              <span class="lbl">Az Engine csomag (390 000 Ft) megtérül</span>
+              <span class="val">kevesebb mint 1 hét alatt</span>
+            </div>
+            <div class="calc-row">
+              <span class="lbl">A Premium csomag (690 000 Ft) megtérül</span>
+              <span class="val">1 hét és pár nap alatt</span>
+            </div>
+          </div>
+          <p class="calc-closing">
+            És ez csak a „visszakapott idő" érték. A valódi nyereség: a stressz-mentesség,
+            a több energia, és hogy újra szereted a vállalkozásod.
+          </p>
         </div>
       </div>
     </section>
+
+    <!-- FOUNDING / PROOF -->
+    <section id="founding">
+      <div class="wrap">
+        <span class="section-tag reveal">Most indul</span>
+        <h2 class="section-title reveal">Founding member-eket fogadok</h2>
+        <p class="section-sub reveal">Egy új szolgáltatás — és egy élő példa arra, hogy működik.</p>
+        <div class="proof-grid">
+          <div class="proof-card reveal">
+            <h3>Founding member-eket fogadok 2026 nyarán</h3>
+            <p>Ez egy új szolgáltatás — most indult.</p>
+            <p>
+              Az első 5 ügyfélnek alacsonyabb áron dolgozom, cserébe részletes
+              ügyfél-történetet írunk, amit a következő ügyfelek látnak majd.
+            </p>
+            <p>Ha érdekel egy founding member hely, beszéljünk az ingyenes konzultáción.</p>
+            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Foglalj konzultációt →</a>
+          </div>
+          <div class="proof-card dark reveal">
+            <h3>A saját rendszerem, ami működik</h3>
+            <p>Mielőtt másoknak építem, megépítettem magamnak.</p>
+            <p>
+              A Get Client Ready az én saját AI-platformom, amit DACH executive ügyfeleknek
+              építettem. 6 hetes coaching program, ami diagnosztizál, gyakoroltat, és
+              személyre szabott playbook-ot ad a végén.
+            </p>
+            <p>
+              3 hét alatt építettem fel. Most az indító cohort-tal dolgozom rajta. Ha
+              kíváncsi vagy, hogy néz ki egy saját, jól működő rendszer — itt egy élő példa.
+            </p>
+            <a href="https://getclientready.entropybreakers.com" class="btn btn-accent" target="_blank" rel="noopener">Nézd meg a Get Client Ready-t →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RÓLAM -->
+    <section id="rolam" style="background:#f1ece1;">
+      <div class="wrap about-grid">
+        <div class="reveal">
+          <div class="photo">
+            <span class="ph-note">
+              <span class="ph-ico">📷</span>
+              Bettina portréfotója ide kerül — természetes, Tirol háttérrel.
+            </span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <span class="section-tag" style="text-align:left;">Rólam</span>
+          <h2>Ki vagyok?</h2>
+          <p>Bettina vagyok. Magyar. Tirolban élek.</p>
+          <p>
+            6 éve coachként dolgozom — angoltanárként magyar diákjaimnak, később DACH
+            executive-eknek.
+          </p>
+          <p>
+            A saját utam ugyanaz volt, mint a Tied: növekedni akartam, de tudtam, hogy az
+            több adminisztrációt jelent. Több stresszt. Kevesebb életet.
+          </p>
+          <p>
+            Megtanultam AI-jal rendszereket építeni — előbb magamnak, aztán a saját coaching
+            cégemnek. Most ezt a tudást a magyar coach és online szolgáltató közösséggel
+            osztom meg.
+          </p>
+          <p class="punch">Nem programozó vagyok. Tanár vagyok. És pont ezért értelek meg.</p>
+          <p style="margin-top:24px;">
+            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Foglalj konzultációt →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GYIK -->
+    <section id="gyik">
+      <div class="wrap">
+        <span class="section-tag reveal">GYIK</span>
+        <h2 class="section-title reveal">Gyakori kérdések</h2>
+        <p class="section-sub reveal">Amit a legtöbben megkérdeznek, mielőtt belevágnánk.</p>
+        <div class="faq">
+          <details class="reveal">
+            <summary>Mi van, ha nem értek a tech-hez?</summary>
+            <div class="answer">
+              Az a célom. Te nem akarsz tech-szakember lenni — te coach akarsz lenni. Én
+              építem a rendszert, te csak használod. A betanítás során minden gombnak
+              megmutatom, mit csinál. Ha bármi kérdés van, írsz, és válaszolok.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Milyen eszközöket használsz?</summary>
+            <div class="answer">
+              ChatGPT / Claude, Make.com (automatizáció), Calendly, Notion vagy Google
+              Sheets, Stripe, Számlázz.hu vagy Billingo, és niche-specifikus eszközök.
+              A meglévő rendszereidre építünk — NEM cserélünk le mindent.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Mennyi időbe telik nekem ez?</summary>
+            <div class="answer">
+              Az építés során semennyibe — én csinálom. 1–2 hosszabb beszélgetés a
+              tervezéshez (kb. 2 óra összesen), és 1–3 órás betanítás. A többit én viszem.
+              Az átadás után a heti karbantartás kb. 30–60 perc a Te oldaladról.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Mi van, ha mégsem működik nekem?</summary>
+            <div class="answer">
+              30 napos elégedettségi garancia. Ha az átadástól számított 30 napon belül
+              kiderül, hogy a rendszer NEM passzol Hozzád, visszafizetem a teljes díjat.
+              (Ez ritkán fordul elő — pont azért kezdjük ingyenes konzultációval, hogy
+              MINDKETTEN biztosak legyünk a fit-ben.)
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Külföldön is dolgozol?</summary>
+            <div class="answer">
+              Igen. Tirolban élek (Ausztria), de online dolgozom az egész magyar nyelvű
+              piaccal — és később a DACH régióval is.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Milyen számlát kapok?</summary>
+            <div class="answer">
+              Osztrák Kleinunternehmerin (§6 UStG, ÁFA-mentes) számlát adok. KATA-s vagy
+              KIVA-s vállalkozóként befogadod a számlát mint külföldi szolgáltatás.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Mi a különbség Köztetek és egy „AI Akadémia" típusú kurzus között?</summary>
+            <div class="answer">
+              Az AI Akadémia tanít — Te tanulsz tőlük, és Te építesz. Ha van időd és kedved
+              magad megépíteni, az is jó út. Én megépítem helyetted. Te közben coacholsz.
+              2–4 hét múlva van egy működő rendszered, anélkül, hogy Neked tech-szakemberré
+              kellett volna válnod.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final" id="kapcsolat">
+      <div class="wrap narrow">
+        <h2>Beszéljünk.</h2>
+        <p>20 perc. Ingyenes. NEM eladás.</p>
+        <p>
+          Diagnosztizáljuk, hol veszíted a legtöbb időt, és eldöntjük együtt, hogy melyik
+          csomag — ha bármelyik — passzol Hozzád.
+        </p>
+        <p class="small">Ha nem passzol egyik se, tovább küldelek máshoz. Ez része az ajánlatnak.</p>
+        <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Foglalj konzultációt most →</a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <div class="wrap foot">
-      <div>&copy; <span id="year"></span> QuietStack &middot; Entropy Breakers</div>
-      <div>
-        <a href="mailto:hello@entropybreakers.com">hello@entropybreakers.com</a>
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+            QuietStack
+          </div>
+          <p>A QuietStack az Entropy Breakers e.U. (Tirol, Ausztria) által nyújtott szolgáltatás.</p>
+        </div>
+        <div class="footer-col">
+          <p>
+            Email: <a href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a><br />
+            Telefon: <a href="tel:+436606258973">+43 660 625 8973</a><br />
+            Helyszín: Tirol, Ausztria
+          </p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#" aria-disabled="true">Impressum</a>
+        <a href="#" aria-disabled="true">Adatvédelem</a>
+        <a href="#" aria-disabled="true">ÁSZF</a>
+        <a href="https://getclientready.entropybreakers.com" target="_blank" rel="noopener">Get Client Ready (English)</a>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> Entropy Breakers e.U.
       </div>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
   </script>
 </body>
 </html>
