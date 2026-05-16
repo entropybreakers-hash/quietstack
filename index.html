@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuietStack — AI DFY rendszerek vállalkozásoknak</title>
+  <meta name="description" content="QuietStack: kulcsrakész, AI-alapú DFY (Done For You) automatizációs rendszerek magyar vállalkozásoknak. Te a növekedésre koncentrálsz, a rendszert mi építjük." />
+  <meta name="theme-color" content="#0f1720" />
+
+  <meta property="og:title" content="QuietStack — AI DFY rendszerek" />
+  <meta property="og:description" content="Kulcsrakész, AI-alapú automatizációs rendszerek magyar vállalkozásoknak." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="hu_HU" />
+  <meta property="og:url" content="https://quietstack.entropybreakers.com" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1720'/%3E%3Crect x='7' y='8' width='18' height='4' rx='2' fill='%235eead4'/%3E%3Crect x='7' y='14' width='18' height='4' rx='2' fill='%235eead4' opacity='0.7'/%3E%3Crect x='7' y='20' width='18' height='4' rx='2' fill='%235eead4' opacity='0.4'/%3E%3C/svg%3E" />
+
+  <style>
+    :root {
+      --bg: #0f1720;
+      --bg-soft: #16212e;
+      --card: #1b2836;
+      --border: #2a3a4d;
+      --text: #e6edf3;
+      --muted: #9fb0c0;
+      --accent: #5eead4;
+      --accent-strong: #2dd4bf;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(15, 23, 32, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; }
+    .logo-mark {
+      display: grid; gap: 3px;
+    }
+    .logo-mark span {
+      display: block; width: 22px; height: 5px; border-radius: 3px; background: var(--accent);
+    }
+    .logo-mark span:nth-child(2) { opacity: 0.7; }
+    .logo-mark span:nth-child(3) { opacity: 0.4; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--muted); font-size: 0.95rem; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #06231f;
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: 10px;
+      transition: transform 0.12s, background 0.15s;
+    }
+    .btn:hover { background: var(--accent-strong); transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { background: var(--bg-soft); }
+    .nav .btn { padding: 9px 18px; }
+    @media (max-width: 720px) { .nav-links a:not(.btn) { display: none; } }
+
+    /* Hero */
+    .hero { padding: 96px 0 80px; text-align: center; }
+    .pill {
+      display: inline-block;
+      font-size: 0.82rem;
+      color: var(--accent);
+      background: rgba(94, 234, 212, 0.1);
+      border: 1px solid rgba(94, 234, 212, 0.25);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--accent), #7dd3fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p.lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 34px;
+    }
+    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* Sections */
+    section { padding: 72px 0; }
+    .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+    .section-head h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .section-head p { color: var(--muted); }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    /* Grid cards */
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .card:hover { border-color: var(--accent-strong); transform: translateY(-3px); }
+    .card .ico {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(94, 234, 212, 0.12);
+      border-radius: 11px;
+      margin-bottom: 16px;
+      font-size: 1.3rem;
+    }
+    .card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 0.96rem; }
+
+    /* Steps */
+    .steps { display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); counter-reset: step; }
+    @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+    .step { position: relative; padding-left: 0; }
+    .step .num {
+      width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent);
+      color: #06231f;
+      font-weight: 700;
+      border-radius: 10px;
+      margin-bottom: 14px;
+    }
+    .step h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .step p { color: var(--muted); font-size: 0.95rem; }
+
+    /* CTA band */
+    .cta-band {
+      background: linear-gradient(135deg, var(--bg-soft), #102a2a);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 56px 32px;
+      text-align: center;
+    }
+    .cta-band h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 12px; }
+    .cta-band p { color: var(--muted); max-width: 520px; margin: 0 auto 28px; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .foot a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a href="#" class="logo">
+        <span class="logo-mark"><span></span><span></span><span></span></span>
+        QuietStack
+      </a>
+      <nav class="nav-links">
+        <a href="#szolgaltatas">Szolgáltatás</a>
+        <a href="#folyamat">Hogyan működik</a>
+        <a href="#kinek">Kinek ajánljuk</a>
+        <a href="#kapcsolat" class="btn">Ingyenes konzultáció</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="pill">AI DFY rendszerek &middot; magyar vállalkozásoknak</span>
+        <h1>Kulcsrakész <span class="grad">AI rendszerek</span>,<br />amelyek helyetted dolgoznak.</h1>
+        <p class="lead">
+          A QuietStack megtervezi, felépíti és beüzemeli az AI-alapú automatizációidat —
+          neked csak a növekedésre kell figyelned. Done For You, magyarul, az első perctől.
+        </p>
+        <div class="hero-cta">
+          <a href="#kapcsolat" class="btn">Kérek egy ingyenes konzultációt</a>
+          <a href="#szolgaltatas" class="btn btn-ghost">Mit kapok pontosan?</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="szolgaltatas">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Szolgáltatás</div>
+          <h2>Mit jelent a Done For You?</h2>
+          <p>Nem kurzust adunk el, és nem szoftvert kell magadnak összerakni. A teljes rendszert mi építjük fel — átadásra kész állapotban.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="ico">&#129302;</div>
+            <h3>AI ügyfélkezelés</h3>
+            <p>Automata megkeresés-kezelés, ajánlatadás és utánkövetés, ami a leadek 100%-ával foglalkozik — éjjel-nappal.</p>
+          </div>
+          <div class="card">
+            <div class="ico">&#9881;</div>
+            <h3>Folyamat-automatizáció</h3>
+            <p>Ismétlődő adminisztráció, riportok és belső munkafolyamatok kiváltása, hogy a csapat az értékes munkára koncentráljon.</p>
+          </div>
+          <div class="card">
+            <div class="ico">&#128202;</div>
+            <h3>Tartalom &amp; marketing motor</h3>
+            <p>AI-vezérelt tartalomgyártás és kampány-rendszer, amely folyamatosan táplálja az értékesítési csatornádat.</p>
+          </div>
+          <div class="card">
+            <div class="ico">&#128274;</div>
+            <h3>Saját adat, saját kontroll</h3>
+            <p>A rendszer a te eszközeiden, a te adataiddal fut. Nincs függőség, nincs feketedoboz — minden átlátható.</p>
+          </div>
+          <div class="card">
+            <div class="ico">&#128640;</div>
+            <h3>Gyors bevezetés</h3>
+            <p>Az első működő automatizáció jellemzően 2–3 hét alatt élesedik, nem hónapokban mérjük.</p>
+          </div>
+          <div class="card">
+            <div class="ico">&#129309;</div>
+            <h3>Magyar nyelvű támogatás</h3>
+            <p>Érthető kommunikáció, magyar dokumentáció és valódi ember, akit fel tudsz hívni, ha kérdésed van.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="folyamat" style="background: var(--bg-soft);">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Folyamat</div>
+          <h2>Három lépés az élő rendszerig</h2>
+          <p>Átlátható, kiszámítható folyamat — a beszélgetéstől a működő automatizációig.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>Felmérés</h3>
+            <p>Ingyenes konzultáción átnézzük a folyamataidat, és megmutatjuk, hol nyersz a legtöbbet az AI-jal.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3>Felépítés</h3>
+            <p>Felépítjük és teszteljük a rendszert a te eszközeidre szabva. Te csak visszajelzel — a munkát mi végezzük.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3>Átadás &amp; támogatás</h3>
+            <p>Beüzemeljük, betanítjuk a csapatot, és a folyamatos finomhangolásban is melletted maradunk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kinek">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Kinek ajánljuk</div>
+          <h2>Neked való a QuietStack, ha…</h2>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="ico">&#9203;</div>
+            <h3>Kevés az időd</h3>
+            <p>Túl sok ismétlődő feladat viszi el a napodat, és nincs kapacitásod magad bajlódni az AI-eszközökkel.</p>
+          </div>
+          <div class="card">
+            <div class="ico">&#128184;</div>
+            <h3>Növekednél felvétel nélkül</h3>
+            <p>Több ügyfelet szolgálnál ki ugyanazzal a csapattal, plusz fix bérköltség nélkül.</p>
+          </div>
+          <div class="card">
+            <div class="ico">&#127919;</div>
+            <h3>Eredményt akarsz, nem elméletet</h3>
+            <p>Nem kurzust keresel, hanem egy működő rendszert, amit holnap már használhatsz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kapcsolat">
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Beszéljünk a vállalkozásodról</h2>
+          <p>30 perces, ingyenes és kötelezettségmentes konzultáció. Megmutatjuk, pontosan hol tudna az AI dolgozni helyetted.</p>
+          <a href="mailto:hello@entropybreakers.com?subject=QuietStack%20konzult%C3%A1ci%C3%B3" class="btn">Időpontot kérek</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>&copy; <span id="year"></span> QuietStack &middot; Entropy Breakers</div>
+      <div>
+        <a href="mailto:hello@entropybreakers.com">hello@entropybreakers.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
