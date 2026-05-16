@@ -230,6 +230,25 @@
     .pain-story p.em { color: #fff; font-family: var(--serif); font-size: 1.5rem; line-height: 1.4; margin: 22px 0; }
     .pain-story p.last { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; margin-top: 22px; }
 
+    /* Probléma / megoldás */
+    .ps-list { display: flex; flex-direction: column; gap: 16px; max-width: 940px; margin: 0 auto; }
+    .ps-row { display: grid; grid-template-columns: 1fr 58px 1fr; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .ps-cell { padding: 24px 26px; }
+    .ps-solution { background: linear-gradient(135deg, #f3e9d4, #ece0c2); }
+    .ps-label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+    .ps-label.p { color: #9a9388; }
+    .ps-label.s { color: var(--accent-deep); }
+    .ps-cell p { font-size: 0.99rem; }
+    .ps-problem p { color: var(--muted); }
+    .ps-solution p { color: var(--text); }
+    .ps-arrow { display: flex; align-items: center; justify-content: center; background: var(--surface); }
+    .ps-arrow svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    @media (max-width: 680px) {
+      .ps-row { grid-template-columns: 1fr; }
+      .ps-arrow { height: 46px; }
+      .ps-arrow svg { transform: rotate(90deg); }
+    }
+
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     @media (max-width: 880px) { .grid-3 { grid-template-columns: 1fr; } }
     .card {
@@ -527,6 +546,71 @@
                 ÉS több időm. A rendszer engem szolgál ki — nem fordítva.
               </p>
               <p class="last">Ezt szeretném megépíteni Neked is.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="megoldas" class="band">
+      <div class="wrap">
+        <span class="section-tag reveal">Probléma és megoldás</span>
+        <h2 class="section-title reveal">Ismerős a napi küzdelem?</h2>
+        <p class="section-sub reveal">Ezekkel birkózik a legtöbb coach nap mint nap — és pontosan így veszi le a válladról a QuietStack.</p>
+        <div class="ps-list">
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Naponta órákat töltesz e-mailek megválaszolásával és időpont-egyeztetéssel.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>Egy AI-asszisztens és automata foglalórendszer kezeli a megkereséseket — éjjel-nappal, helyetted.</p>
+            </div>
+          </div>
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Minden új ügyfél beléptetése külön kézi munka: szerződés, fizetés, első időpont.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>Egyetlen automatikus folyamat vezet végig mindent — az érdeklődéstől az első alkalomig.</p>
+            </div>
+          </div>
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Elúsznak a számlák, és utánajárás kell, hogy mindenki befizetett-e.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>Számlázás-integráció automatikus fizetéskövetéssel — a pénzügy magától halad.</p>
+            </div>
+          </div>
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Marketingre sosem jut idő, így az érdeklődők lassan elfogynak.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>AI-tartalommotor, amely folyamatosan ötletet és vázlatot ad — a csatornád nem ürül ki.</p>
+            </div>
+          </div>
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Minden új ügyfél több stresszt hoz, nem több szabadságot.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>A rendszer átveszi az ismétlődő munkát, így úgy skálázol, hogy közben marad időd élni.</p>
             </div>
           </div>
         </div>
@@ -942,7 +1026,7 @@
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.querySelectorAll(".grid-3, .steps, .pricing, .proof-grid, .faq").forEach(function (group) {
+    document.querySelectorAll(".grid-3, .steps, .pricing, .proof-grid, .faq, .ps-list").forEach(function (group) {
       var i = 0;
       group.querySelectorAll(":scope > .reveal").forEach(function (el) {
         el.style.transitionDelay = (i++ * 80) + "ms";
