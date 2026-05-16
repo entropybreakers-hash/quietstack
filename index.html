@@ -52,17 +52,23 @@
     .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 100;
+      background: linear-gradient(90deg, var(--accent), var(--accent-deep));
+      transition: width 0.1s linear;
+    }
+
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--text); color: var(--bg);
       font-family: var(--sans); font-weight: 600; font-size: 1rem;
       padding: 15px 30px; border-radius: 4px;
-      transition: background 0.18s, transform 0.12s;
+      transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
     }
     .btn:hover { background: #000; transform: translateY(-2px); }
-    .btn-accent { background: var(--accent); color: #2a2208; }
-    .btn-accent:hover { background: var(--accent-deep); color: #fff; }
-    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-accent { background: var(--accent); color: #2a2208; box-shadow: 0 10px 26px -14px rgba(120,95,50,0.7); }
+    .btn-accent:hover { background: var(--accent-deep); color: #fff; box-shadow: 0 14px 32px -12px rgba(120,95,50,0.8); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); box-shadow: none; }
     .btn-ghost:hover { background: #fff; border-color: var(--accent); transform: translateY(-2px); }
 
     header {
@@ -83,21 +89,33 @@
     .nav .btn { padding: 11px 22px; font-size: 0.95rem; }
     @media (max-width: 860px) { .nav-links a:not(.btn) { display: none; } }
 
-    .hero { padding: 92px 0 80px; }
+    .hero { padding: 92px 0 80px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; z-index: 0; pointer-events: none;
+      width: 540px; height: 540px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,118,0.30), transparent 70%);
+      top: -190px; right: -130px; filter: blur(16px);
+    }
+    .hero .wrap { position: relative; z-index: 1; }
     .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
-    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } }
     .eyebrow {
       display: inline-block; font-size: 0.8rem; font-weight: 600;
       letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep);
       margin-bottom: 22px;
     }
     .hero h1 { font-size: clamp(2.3rem, 5.2vw, 3.6rem); margin-bottom: 24px; }
-    .hero h1 .line1 { color: var(--accent-deep); display: block; }
+    .hero h1 .line1 {
+      display: block;
+      background: linear-gradient(100deg, #9c7d4f, #d8b87f);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
     .hero h1 .line2 { display: block; }
     .hero p.lead { font-size: 1.17rem; color: var(--muted); margin-bottom: 32px; max-width: 540px; }
     .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
     .scroll-hint { margin-top: 26px; font-size: 0.95rem; color: var(--muted); font-style: italic; }
 
+    .hero-visual { position: relative; }
     .photo {
       position: relative; border-radius: 8px; overflow: hidden;
       background: linear-gradient(150deg, #efe9dd, #e3d8c2 60%, #d8c8a8);
@@ -108,6 +126,27 @@
     .photo.hero-photo { aspect-ratio: 4 / 5; }
     .photo .ph-note { max-width: 220px; }
     .photo .ph-ico { font-size: 1.7rem; display: block; margin-bottom: 8px; }
+
+    .hero-stat {
+      position: absolute; left: 18px; bottom: 18px;
+      display: flex; align-items: center; gap: 13px;
+      background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(8px);
+      border: 1px solid var(--border); border-radius: 13px;
+      padding: 14px 18px;
+      box-shadow: 0 18px 44px -20px rgba(60, 45, 20, 0.55);
+      animation: floaty 5.5s ease-in-out infinite;
+    }
+    .hero-stat .hs-ico {
+      width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;
+      background: var(--accent); color: #2a2208;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 700;
+    }
+    .hero-stat .hs-text { display: flex; flex-direction: column; line-height: 1.25; }
+    .hero-stat .hs-num { font-family: var(--serif); font-weight: 700; font-size: 1.12rem; }
+    .hero-stat .hs-label { font-size: 0.8rem; color: var(--muted); }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    @media (prefers-reduced-motion: reduce) { .hero-stat { animation: none; } }
 
     section { padding: 84px 0; }
     .band { background: var(--band); }
@@ -129,7 +168,15 @@
 
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     @media (max-width: 880px) { .grid-3 { grid-template-columns: 1fr; } }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 34px 30px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 34px 30px;
+      transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    }
+    .card:hover {
+      transform: translateY(-4px); border-color: var(--accent);
+      box-shadow: 0 24px 46px -30px rgba(120, 95, 50, 0.5);
+    }
     .card .card-ico { font-size: 1.9rem; display: block; margin-bottom: 14px; }
     .card h3 { font-size: 1.18rem; margin-bottom: 10px; }
     .card p { color: var(--muted); font-size: 0.99rem; }
@@ -137,7 +184,12 @@
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
     @media (max-width: 880px) { .steps { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 540px) { .steps { grid-template-columns: 1fr; } }
-    .step { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 30px 26px; }
+    .step {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 30px 26px;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .step:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -30px rgba(120, 95, 50, 0.45); }
     .step .step-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 12px; }
     .step h3 { font-size: 1.08rem; margin-bottom: 6px; }
     .step .step-meta { font-size: 0.82rem; font-weight: 600; color: var(--accent-deep); margin-bottom: 8px; }
@@ -149,8 +201,11 @@
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 10px; padding: 36px 30px; position: relative;
       display: flex; flex-direction: column; height: 100%;
+      transition: transform 0.18s, box-shadow 0.18s;
     }
+    .plan:hover { transform: translateY(-4px); box-shadow: 0 26px 52px -32px rgba(120, 95, 50, 0.5); }
     .plan.featured { border: 2px solid var(--accent); box-shadow: 0 18px 48px -22px rgba(171, 140, 91, 0.55); }
+    .plan.featured:hover { box-shadow: 0 30px 60px -26px rgba(171, 140, 91, 0.7); }
     .plan-badge {
       position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
       background: var(--accent); color: #2a2208;
@@ -176,21 +231,57 @@
     .pricing-note { text-align: center; color: var(--muted); font-size: 0.92rem; margin-top: 30px; }
 
     .calc-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 44px; max-width: 720px; margin: 0 auto; }
-    .calc-box p { color: var(--muted); margin-bottom: 16px; }
-    .calc-rows { margin: 24px 0; }
+    .calc-intro { color: var(--muted); margin-bottom: 28px; }
+    .calc-controls { display: grid; gap: 24px; margin-bottom: 30px; }
+    .calc-field label {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-weight: 600; font-size: 0.95rem; margin-bottom: 13px;
+    }
+    .calc-field output { font-family: var(--serif); font-size: 1.18rem; color: var(--accent-deep); font-weight: 700; }
+    input[type="range"] {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 6px; border-radius: 999px;
+      background: var(--border); outline: none; cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--accent); border: 4px solid #fff;
+      box-shadow: 0 2px 10px rgba(120, 95, 50, 0.5); cursor: pointer;
+      transition: transform 0.12s;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.14); }
+    input[type="range"]::-moz-range-thumb {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--accent); border: 4px solid #fff;
+      box-shadow: 0 2px 10px rgba(120, 95, 50, 0.5); cursor: pointer;
+    }
+    .calc-results { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+    @media (max-width: 520px) { .calc-results { grid-template-columns: 1fr; } }
+    .calc-result { padding: 20px 22px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); }
+    .calc-result.highlight { background: linear-gradient(135deg, #f3e9d4, #e8d8b4); border-color: var(--accent); }
+    .cr-label { display: block; font-size: 0.84rem; color: var(--muted); margin-bottom: 7px; }
+    .calc-result.highlight .cr-label { color: #6f5a2e; }
+    .cr-value { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; color: var(--text); line-height: 1; }
+    .calc-payback-label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 8px; }
+    .calc-rows { margin-bottom: 22px; }
     .calc-row {
       display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-      padding: 14px 0; border-bottom: 1px solid var(--border);
+      padding: 13px 0; border-bottom: 1px solid var(--border);
     }
     .calc-row:last-child { border-bottom: none; }
-    .calc-row .lbl { font-size: 0.98rem; }
+    .calc-row .lbl { font-size: 0.97rem; }
     .calc-row .val { font-family: var(--serif); font-weight: 700; color: var(--accent-deep); white-space: nowrap; }
-    .calc-row .val.big { font-size: 1.25rem; }
-    .calc-closing { font-family: var(--serif); font-size: 1.15rem; color: var(--text); margin-top: 8px; }
+    .calc-closing { font-family: var(--serif); font-size: 1.15rem; color: var(--text); }
 
     .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     @media (max-width: 820px) { .proof-grid { grid-template-columns: 1fr; } }
-    .proof-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 38px 34px; }
+    .proof-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 38px 34px;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .proof-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -30px rgba(120, 95, 50, 0.5); }
     .proof-card.dark { background: var(--text); color: #f3f1ea; border-color: var(--text); }
     .proof-card h3 { font-size: 1.4rem; margin-bottom: 14px; }
     .proof-card.dark h3 { color: #fff; }
@@ -218,7 +309,14 @@
     details[open] summary::after { content: "\2212"; }
     details .answer { padding: 0 26px 24px; color: var(--muted); }
 
-    .final { background: var(--text); color: #f3f1ea; text-align: center; }
+    .final { background: var(--text); color: #f3f1ea; text-align: center; position: relative; overflow: hidden; }
+    .final::before {
+      content: ""; position: absolute; pointer-events: none;
+      width: 600px; height: 380px; border-radius: 50%; filter: blur(30px);
+      background: radial-gradient(circle, rgba(201,168,118,0.22), transparent 70%);
+      top: -140px; left: 50%; transform: translateX(-50%);
+    }
+    .final .wrap { position: relative; z-index: 1; }
     .final h2 { color: #fff; font-size: clamp(2rem, 4.6vw, 3rem); margin-bottom: 22px; }
     .final p { color: #cdcabf; max-width: 560px; margin: 0 auto 14px; font-size: 1.08rem; }
     .final p.small { font-size: 0.97rem; color: #a8a597; margin-bottom: 32px; }
@@ -235,6 +333,8 @@
   </style>
 </head>
 <body>
+
+  <div class="scroll-progress" id="progress" aria-hidden="true"></div>
 
   <header>
     <div class="wrap nav">
@@ -271,11 +371,18 @@
           </div>
           <p class="scroll-hint">Görgess lejjebb — megmutatom, hogyan működik.</p>
         </div>
-        <div class="reveal">
+        <div class="reveal hero-visual">
           <div class="photo hero-photo">
             <span class="ph-note">
               <span class="ph-ico">📷</span>
               Bettina fotója ide kerül — természetes, munka közben, laptopnál. Hiteles, prémium energia.
+            </span>
+          </div>
+          <div class="hero-stat">
+            <span class="hs-ico" aria-hidden="true">↑</span>
+            <span class="hs-text">
+              <span class="hs-num">10+ óra</span>
+              <span class="hs-label">hetente felszabadítva</span>
             </span>
           </div>
         </div>
@@ -480,33 +587,42 @@
     <section class="band">
       <div class="wrap">
         <span class="section-tag reveal">Megtérülés</span>
-        <h2 class="section-title reveal">Mennyit ér Neked heti 10 óra?</h2>
-        <div class="calc-box reveal">
-          <p>Számoljuk ki együtt.</p>
-          <p>
-            Ha az óradíjad 15 000 Ft (egy átlagos magyar coach óradíja), és heti 10 órát
-            nyersz vissza az adminisztrációtól a coachingra:
-          </p>
+        <h2 class="section-title reveal">Számoljuk ki, mennyit ér Neked az időd</h2>
+        <div class="calc-box reveal" id="calcBox">
+          <p class="calc-intro">Húzd a csúszkákat, és nézd meg élőben, mit jelent ez a Te számaiddal.</p>
+          <div class="calc-controls">
+            <div class="calc-field">
+              <label for="rate">Az óradíjad <output id="rateOut">15 000 Ft</output></label>
+              <input type="range" id="rate" min="5000" max="40000" step="1000" value="15000" />
+            </div>
+            <div class="calc-field">
+              <label for="hours">Hetente visszanyert idő <output id="hoursOut">10 óra</output></label>
+              <input type="range" id="hours" min="3" max="20" step="1" value="10" />
+            </div>
+          </div>
+          <div class="calc-results">
+            <div class="calc-result">
+              <span class="cr-label">Heti érték</span>
+              <span class="cr-value" id="weekly">150 000 Ft</span>
+            </div>
+            <div class="calc-result highlight">
+              <span class="cr-label">Havi többletbevétel</span>
+              <span class="cr-value" id="monthly">649 500 Ft</span>
+            </div>
+          </div>
+          <div class="calc-payback-label">Ennyi idő alatt fizeti vissza magát</div>
           <div class="calc-rows">
             <div class="calc-row">
-              <span class="lbl">10 óra × 15 000 Ft</span>
-              <span class="val">150 000 Ft / hét</span>
+              <span class="lbl">Starter csomag — 180 000 Ft</span>
+              <span class="val" id="pbStarter">≈ 1,2 hét</span>
             </div>
             <div class="calc-row">
-              <span class="lbl">Havi lehetséges többletbevétel</span>
-              <span class="val big">≈ 600 000 Ft</span>
+              <span class="lbl">Engine csomag — 390 000 Ft</span>
+              <span class="val" id="pbEngine">≈ 2,6 hét</span>
             </div>
             <div class="calc-row">
-              <span class="lbl">A Starter csomag (180 000 Ft) megtérül</span>
-              <span class="val">2–3 nap alatt</span>
-            </div>
-            <div class="calc-row">
-              <span class="lbl">Az Engine csomag (390 000 Ft) megtérül</span>
-              <span class="val">kevesebb mint 1 hét alatt</span>
-            </div>
-            <div class="calc-row">
-              <span class="lbl">A Premium csomag (690 000 Ft) megtérül</span>
-              <span class="val">bő 1 hét alatt</span>
+              <span class="lbl">Premium csomag — 690 000 Ft</span>
+              <span class="val" id="pbPremium">≈ 4,6 hét</span>
             </div>
           </div>
           <p class="calc-closing">
@@ -704,12 +820,77 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
       });
     }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+
+    var progress = document.getElementById("progress");
+    window.addEventListener("scroll", function () {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+    }, { passive: true });
+
+    var rate = document.getElementById("rate");
+    var hours = document.getElementById("hours");
+    var rateOut = document.getElementById("rateOut");
+    var hoursOut = document.getElementById("hoursOut");
+    var weeklyEl = document.getElementById("weekly");
+    var monthlyEl = document.getElementById("monthly");
+    var pbStarter = document.getElementById("pbStarter");
+    var pbEngine = document.getElementById("pbEngine");
+    var pbPremium = document.getElementById("pbPremium");
+
+    function huf(n) { return Math.round(n).toLocaleString("hu-HU") + " Ft"; }
+    function fill(el) {
+      var p = (el.value - el.min) / (el.max - el.min) * 100;
+      el.style.background = "linear-gradient(90deg, var(--accent) " + p + "%, var(--border) " + p + "%)";
+    }
+    function payback(price, weekly) {
+      var w = price / weekly;
+      return "≈ " + w.toLocaleString("hu-HU", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + " hét";
+    }
+    function update() {
+      var r = +rate.value, h = +hours.value;
+      var weekly = r * h;
+      rateOut.textContent = huf(r);
+      hoursOut.textContent = h + " óra";
+      weeklyEl.textContent = huf(weekly);
+      monthlyEl.textContent = huf(weekly * 4.33);
+      pbStarter.textContent = payback(180000, weekly);
+      pbEngine.textContent = payback(390000, weekly);
+      pbPremium.textContent = payback(690000, weekly);
+      fill(rate); fill(hours);
+    }
+    rate.addEventListener("input", update);
+    hours.addEventListener("input", update);
+    update();
+
+    function countUp(el, target) {
+      var start = performance.now(), dur = 900;
+      function frame(now) {
+        var t = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = huf(target * eased);
+        if (t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+    var calcIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var weekly = +rate.value * +hours.value;
+          countUp(weeklyEl, weekly);
+          countUp(monthlyEl, weekly * 4.33);
+          calcIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    calcIO.observe(document.getElementById("calcBox"));
   </script>
 </body>
 </html>
