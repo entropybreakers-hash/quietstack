@@ -89,7 +89,7 @@
     @media (max-width: 860px) { .nav-links a:not(.btn) { display: none; } }
 
     /* Photo slot: graceful placeholder until image is added */
-    .photo-slot { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 1 / 1; }
+    .photo-slot { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 5; }
     .photo-slot::before {
       content: attr(data-ph); position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center; text-align: center;
@@ -377,7 +377,7 @@
     .proof-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
     .proof-links .btn { margin-top: 0; }
 
-    .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: center; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
     @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; gap: 34px; } }
     .about-text h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 18px; }
     .about-text p { color: var(--muted); margin-bottom: 15px; }
@@ -877,8 +877,8 @@
     <section id="rolam" class="band">
       <div class="wrap about-grid">
         <div class="reveal">
-          <div class="photo-slot" data-ph="Bettina portréfotója ide kerül. Fájl: assets/bettina-rolam-3.jpg">
-            <img src="assets/bettina-rolam-3.jpg" alt="Bettina, a QuietStack alapítója" onerror="this.remove()" />
+          <div class="photo-slot" data-ph="Bettina portréfotója ide kerül. Fájl: assets/bettina-rolam-4.jpg">
+            <img src="assets/bettina-rolam-4.jpg" alt="Bettina, a QuietStack alapítója" onerror="this.remove()" />
           </div>
         </div>
         <div class="about-text reveal">
