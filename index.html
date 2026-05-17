@@ -195,23 +195,16 @@
     .hp-foot-num { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; color: var(--accent); }
     .hp-foot-label { font-size: 0.84rem; color: #8a8678; }
 
-    .hero-badge {
-      position: absolute; left: -16px; bottom: -18px;
-      display: flex; align-items: center; gap: 11px;
-      background: #fff; border: 1px solid var(--border); border-radius: 13px;
-      padding: 11px 17px 11px 12px;
-      box-shadow: 0 20px 44px -20px rgba(60,45,20,0.5);
-      animation: floaty 5.5s ease-in-out infinite;
-    }
-    .hb-avatar {
-      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0; overflow: hidden; position: relative;
+    .hero-by { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+    .hero-by-photo {
+      width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0; overflow: hidden;
       background: linear-gradient(150deg, #e3d8c2, #cdb98f);
+      border: 2px solid var(--surface); box-shadow: 0 4px 14px -5px rgba(60,45,20,0.45);
     }
-    .hb-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hb-text { display: flex; flex-direction: column; line-height: 1.25; }
-    .hb-name { font-family: var(--serif); font-weight: 700; font-size: 1rem; }
-    .hb-role { font-size: 0.78rem; color: var(--muted); }
-    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    .hero-by-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-by-text { display: flex; flex-direction: column; line-height: 1.3; }
+    .hero-by-text strong { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--text); }
+    .hero-by-text span { font-size: 0.82rem; color: var(--muted); }
 
     @media (max-width: 640px) {
       .hero { padding: 44px 0 58px; }
@@ -583,7 +576,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
-      .hero::before, .hero::after, .hero-badge, .hp-live-dot,
+      .hero::before, .hero::after, .hp-live-dot,
       .pain::before, .final::before,
       .pain::after, .flows::after, .final::after,
       .steps.is-drawn::after { animation: none !important; }
@@ -626,6 +619,13 @@
             AI-rendszereket építek coachoknak, online tanároknak és digitális termékek
             eladóinak, hogy te is azzal foglalkozz, amiért elindítottad a vállalkozásod.
           </p>
+          <div class="hero-by">
+            <span class="hero-by-photo"><img src="assets/bettina-avatar.jpg" alt="Baranyi Bettina" onerror="this.remove()" /></span>
+            <span class="hero-by-text">
+              <strong>Baranyi Bettina</strong>
+              <span>QuietStack alapító</span>
+            </span>
+          </div>
           <div class="hero-cta">
             <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Ingyenes 20 perces konzultáció →</a>
           </div>
@@ -669,15 +669,6 @@
               <span class="hp-foot-num" id="hpHours">0</span>
               <span class="hp-foot-label">óra megspórolva ezen a héten</span>
             </div>
-          </div>
-          <div class="hero-badge">
-            <span class="hb-avatar" aria-hidden="true">
-              <img src="assets/bettina-avatar.jpg" alt="" onerror="this.remove()" />
-            </span>
-            <span class="hb-text">
-              <span class="hb-name">Bettina</span>
-              <span class="hb-role">QuietStack · alapító</span>
-            </span>
           </div>
         </div>
       </div>
