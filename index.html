@@ -220,7 +220,7 @@
     .pain .section-tag { color: var(--accent); }
     .pain-layout { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 60px; align-items: center; margin-top: 8px; }
     @media (max-width: 840px) { .pain-layout { grid-template-columns: 1fr; gap: 40px; } }
-    .pain-photo .photo-slot { aspect-ratio: 4 / 5; border: 1px solid rgba(255,255,255,0.09); box-shadow: 0 40px 80px -40px rgba(0,0,0,0.9); }
+    .pain-photo img { width: 100%; height: auto; display: block; }
     .pain-headline {
       font-family: var(--serif); font-size: clamp(1.9rem, 3.4vw, 2.7rem); font-weight: 700;
       color: #fff; line-height: 1.25; margin-bottom: 28px;
@@ -524,9 +524,7 @@
         <h2 class="section-title reveal" style="color:#fff;">Te is ezen mész át?</h2>
         <div class="pain-layout">
           <div class="pain-photo reveal">
-            <div class="photo-slot dark" data-ph="Bettina fotója ide kerül. Fájl: assets/bettina-pain.jpg">
-              <img src="assets/bettina-pain.jpg" alt="Bettina, a QuietStack alapítója" onerror="this.remove()" />
-            </div>
+            <img src="assets/bettina-pain.webp" alt="Bettina, a QuietStack alapítója" />
           </div>
           <div class="reveal">
             <p class="pain-headline">A növekedés mindig ugyanazt ígérte: több munka, kevesebb élet.</p>
