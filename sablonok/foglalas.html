@@ -266,29 +266,47 @@
   }
 
   /* ANIMATIONS */
+  /* Calm, Apple-style easing: a slow, settled glide with no overshoot. */
   .reveal-up {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transform: translateY(26px);
+    filter: blur(6px);
+    transition:
+      opacity 1.15s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 1.25s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 1.15s cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: opacity, transform, filter;
   }
   .reveal-up.is-in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateX(0);
+    filter: blur(0);
   }
-  .hero .reveal-up:nth-child(1) { transition-delay: 0.08s; }
-  .hero .reveal-up:nth-child(2) { transition-delay: 0.20s; }
-  .hero .reveal-up:nth-child(3) { transition-delay: 0.34s; }
-  .hero .reveal-up:nth-child(4) { transition-delay: 0.46s; }
-  .hero .reveal-up:nth-child(5) { transition-delay: 0.56s; }
-  .expect .point.reveal-up:nth-child(1) { transition-delay: 0.04s; }
-  .expect .point.reveal-up:nth-child(2) { transition-delay: 0.14s; }
-  .expect .point.reveal-up:nth-child(3) { transition-delay: 0.24s; }
+
+  /* Hero: refined staggered entrance, each line gliding up softly. */
+  .hero .reveal-up { transform: translateY(30px); }
+  .hero .reveal-up:nth-child(1) { transition-delay: 0.10s; }
+  .hero .reveal-up:nth-child(2) { transition-delay: 0.24s; }
+  .hero .reveal-up:nth-child(3) { transition-delay: 0.40s; }
+  .hero .reveal-up:nth-child(4) { transition-delay: 0.56s; }
+  .hero .reveal-up:nth-child(5) { transition-delay: 0.70s; }
+
+  /* Expect: the heading rises, the points slide in gently from the side. */
+  .expect-head.reveal-up { transform: translateY(24px); }
+  .expect .point.reveal-up { transform: translateX(-30px); }
+  .expect .point.reveal-up:nth-child(1) { transition-delay: 0.06s; }
+  .expect .point.reveal-up:nth-child(2) { transition-delay: 0.20s; }
+  .expect .point.reveal-up:nth-child(3) { transition-delay: 0.34s; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .reveal-up {
+    .reveal-up,
+    .hero .reveal-up,
+    .expect-head.reveal-up,
+    .expect .point.reveal-up {
       opacity: 1;
       transform: none;
+      filter: none;
       transition: none;
     }
     .btn { transition: background 0.2s ease; }
@@ -326,7 +344,7 @@
     <!-- WHAT TO EXPECT -->
     <section class="expect">
       <div class="wrap">
-        <div class="expect-head">
+        <div class="expect-head reveal-up">
           <h2>Mire számíts a híváson</h2>
         </div>
         <div class="points">
@@ -376,30 +394,50 @@
 
   <script>
     (function () {
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var items = document.querySelectorAll('.reveal-up');
+      function showAll() {
+        for (var i = 0; i < items.length; i++) { items[i].classList.add('is-in'); }
+      }
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Safe fallback: reduced motion or no observer support reveals everything instantly.
       if (reduce || !('IntersectionObserver' in window)) {
-        items.forEach(function (el) { el.classList.add('is-in'); });
+        showAll();
         return;
       }
-      // Gentle hero entrance on load.
-      requestAnimationFrame(function () {
-        document.querySelectorAll('.hero .reveal-up').forEach(function (el) {
-          el.classList.add('is-in');
+
+      // Last-resort safety net: never leave content stuck invisible.
+      var safety = window.setTimeout(showAll, 4500);
+
+      try {
+        // Refined staggered hero entrance on load.
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            var heroItems = document.querySelectorAll('.hero .reveal-up');
+            for (var i = 0; i < heroItems.length; i++) {
+              heroItems[i].classList.add('is-in');
+            }
+          });
         });
-      });
-      // Soft reveal of the section as it scrolls into view.
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-in');
-            observer.unobserve(entry.target);
-          }
+
+        // Smooth, staggered scroll reveal for the section below.
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-in');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+        document.querySelectorAll('.expect .reveal-up').forEach(function (el) {
+          observer.observe(el);
         });
-      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll('.expect .reveal-up').forEach(function (el) {
-        observer.observe(el);
-      });
+      } catch (e) {
+        // If anything goes wrong, reveal everything rather than hiding content.
+        window.clearTimeout(safety);
+        showAll();
+      }
     })();
   </script>
 

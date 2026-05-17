@@ -21,6 +21,7 @@
     --shadow: 0 20px 50px rgba(15, 64, 56, 0.12);
     --shadow-sm: 0 8px 24px rgba(15, 64, 56, 0.08);
     --radius: 16px;
+    --qs-ease: cubic-bezier(0.16, 0.84, 0.44, 1);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -722,36 +723,56 @@
   }
   .qs-badge:hover .qs-arrow { transform: translateX(2px); }
 
-  /* ---------- ANIMATIONS ---------- */
-  @keyframes qs-hero-in {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .hero-anim {
+  /* ---------- SCROLL ANIMATIONS ---------- */
+  /*
+   * Apple.com-style directional reveals. Elements carry an "anim" class plus a
+   * direction modifier. They start slightly offset and transparent, then glide
+   * to their natural position once an IntersectionObserver adds .in.
+   * Slow, premium cubic-bezier easing, never bouncy.
+   * Fallback: if JS is absent or fails, the .no-js rule below keeps everything
+   * fully visible, so nothing is ever stuck at opacity:0.
+   */
+  .anim {
     opacity: 0;
-    animation: qs-hero-in 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-  }
-  .hero-anim.d1 { animation-delay: 0.08s; }
-  .hero-anim.d2 { animation-delay: 0.18s; }
-  .hero-anim.d3 { animation-delay: 0.28s; }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
-                transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: opacity 1.1s var(--qs-ease),
+                transform 1.1s var(--qs-ease);
     will-change: opacity, transform;
   }
-  .reveal.is-visible {
+  .anim.up    { transform: translateY(40px); }
+  .anim.left  { transform: translateX(-58px); }
+  .anim.right { transform: translateX(58px); }
+  .anim.scale { transform: translateY(30px) scale(0.955); }
+
+  .anim.in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0) translateY(0) scale(1);
   }
-  .reveal.s1 { transition-delay: 0.06s; }
-  .reveal.s2 { transition-delay: 0.12s; }
-  .reveal.s3 { transition-delay: 0.18s; }
-  .reveal.s4 { transition-delay: 0.24s; }
-  .reveal.s5 { transition-delay: 0.30s; }
-  .reveal.s6 { transition-delay: 0.36s; }
+
+  /* Stagger steps for grouped elements (features, benefits, hero lines) */
+  .anim.s1 { transition-delay: 0.08s; }
+  .anim.s2 { transition-delay: 0.16s; }
+  .anim.s3 { transition-delay: 0.24s; }
+  .anim.s4 { transition-delay: 0.32s; }
+  .anim.s5 { transition-delay: 0.40s; }
+  .anim.s6 { transition-delay: 0.48s; }
+
+  /* Hero-specific: a touch slower and softer for the on-load entrance,
+     so the mockup and info panel glide in with extra weight. */
+  .product .anim {
+    transition-duration: 1.25s;
+  }
+  .product .mockup.anim,
+  .product .info.anim {
+    transition-duration: 1.35s;
+  }
+
+  /* Safety net: never let content stay invisible if JS fails to run.
+     The .no-js class is on <body> until JS confirms it can animate. */
+  .no-js .anim {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 
   .feat, .ben, .peek-row, .qs-badge, .btn, .seller-chip {
     transition: transform 0.22s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -766,12 +787,12 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .hero-anim,
-    .reveal {
+    .anim {
       opacity: 1 !important;
       transform: none !important;
       animation: none !important;
       transition: none !important;
+      transition-delay: 0s !important;
     }
     .feat:hover, .ben:hover, .peek-row:hover,
     .btn-primary:hover, .qs-badge:hover {
@@ -804,7 +825,7 @@
   }
 </style>
 </head>
-<body>
+<body class="no-js">
 
 <!-- TOP BAR -->
 <div class="shop">
@@ -823,7 +844,7 @@
 
     <!-- VISUAL -->
     <div class="gallery">
-      <div class="mockup hero-anim">
+      <div class="mockup anim left">
         <div class="mock-float top">
           <span class="pill">90</span>
           <span>kesz sablon</span>
@@ -848,7 +869,7 @@
           <span>platform</span>
         </div>
       </div>
-      <div class="thumbs">
+      <div class="thumbs anim up s2">
         <div class="thumb">
           <span class="tl a"></span><span class="tl"></span><span class="tl s"></span>
           <div class="tg"><span></span><span></span></div>
@@ -865,17 +886,17 @@
     </div>
 
     <!-- INFO -->
-    <div class="info">
-      <div class="crumb hero-anim d1">Eszkozok / Marketing / <span class="here">Lendulet</span></div>
-      <span class="eyebrow hero-anim d1"><span class="dot"></span>Digitalis marketing csomag</span>
-      <h1 class="hero-anim d1">Lendulet digitalis marketing csomag</h1>
-      <p class="value hero-anim d2">Kesz eszkoztar vallalkozoknak es alkotoknak: tartalomnaptar, poszt es hirdetes sablonok, kampanytervezok egy helyen.</p>
-      <div class="rating hero-anim d2">
+    <div class="info anim right">
+      <div class="crumb anim up s1">Eszkozok / Marketing / <span class="here">Lendulet</span></div>
+      <span class="eyebrow anim up s2"><span class="dot"></span>Digitalis marketing csomag</span>
+      <h1 class="anim up s3">Lendulet digitalis marketing csomag</h1>
+      <p class="value anim up s4">Kesz eszkoztar vallalkozoknak es alkotoknak: tartalomnaptar, poszt es hirdetes sablonok, kampanytervezok egy helyen.</p>
+      <div class="rating anim up s5">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <span>4,9 / 5, 168 visszajelzes alapjan</span>
       </div>
 
-      <div class="buybox hero-anim d3">
+      <div class="buybox anim up s6">
         <div class="price-row">
           <span class="price">14 900 Ft</span>
           <span class="price-old">24 900 Ft</span>
@@ -904,47 +925,47 @@
 <!-- MI VAN BENNE -->
 <section class="strip">
   <div class="shop block" id="tartalom">
-    <div class="block-head reveal">
+    <div class="block-head anim up">
       <h2>Mi van benne</h2>
       <span class="meta">90+ kesz marketing sablon</span>
     </div>
     <div class="features">
-      <div class="feat reveal s1">
+      <div class="feat anim up s1">
         <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
         </div>
         <h3>Tartalomnaptar</h3>
         <p>Heti es havi kampanynaptar posztokhoz, hirlevelekhez es videokhoz, kesz statusz cimkekkel.</p>
       </div>
-      <div class="feat reveal s2">
+      <div class="feat anim up s2">
         <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <h3>Posztsablonok</h3>
         <p>60 kesz vazlat Instagramra, Facebookra es LinkedInre, csak a sajat szovegedet kell beirni.</p>
       </div>
-      <div class="feat reveal s3">
+      <div class="feat anim up s3">
         <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
         </div>
         <h3>Hirdetesi szovegek</h3>
         <p>Bevalt cimsorok es leirasok Meta es Google hirdetesekhez, tobb cel szerint rendezve.</p>
       </div>
-      <div class="feat reveal s4">
+      <div class="feat anim up s4">
         <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
         </div>
         <h3>Hirlevel sablonok</h3>
         <p>Kesz email szerkezetek udvozlohoz, ajanlathoz es havi hirlevelhez, magyar nyelven.</p>
       </div>
-      <div class="feat reveal s5">
+      <div class="feat anim up s5">
         <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
         </div>
         <h3>Kampanytervezo</h3>
         <p>Egyszeru lapok celkituzeshez, koltsegvetes tervezeshez es az eredmenyek kovetesehez.</p>
       </div>
-      <div class="feat reveal s6">
+      <div class="feat anim up s6">
         <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
@@ -958,27 +979,27 @@
 <!-- MIERT ERI MEG -->
 <section class="strip benefits">
   <div class="shop block" id="elonyok">
-    <div class="block-head reveal">
+    <div class="block-head anim up">
       <h2>Miert eri meg</h2>
       <span class="meta">Valodi kampanyokban tesztelve</span>
     </div>
     <div class="benefit-row">
-      <div class="ben reveal s1">
+      <div class="ben anim up s1">
         <div class="num">1</div>
         <h3>Heti orakat sporolsz</h3>
         <p>A kesz sablonokkal nem ulress elott ulsz, csak kitoltesz es kuldesz.</p>
       </div>
-      <div class="ben reveal s2">
+      <div class="ben anim up s2">
         <div class="num">2</div>
         <h3>Sosem fogysz ki az otletbol</h3>
         <p>90+ poszt es kampany sablon ad temat minden hetre, minden platformra.</p>
       </div>
-      <div class="ben reveal s3">
+      <div class="ben anim up s3">
         <div class="num">3</div>
         <h3>Profi, kovetkezetes hang</h3>
         <p>Az egyseges sablonok rendezett, megbizhato markat mutatnak a kozonsegednek.</p>
       </div>
-      <div class="ben reveal s4">
+      <div class="ben anim up s4">
         <div class="num">4</div>
         <h3>Mereted eredmenyeket</h3>
         <p>A kampanytervezovel latod, mi mukodik, es hova erdemes tobbet tenni.</p>
@@ -990,14 +1011,14 @@
 <!-- BEPILLANTAS -->
 <section class="strip">
   <div class="shop block" id="bepillantas">
-    <div class="block-head reveal">
+    <div class="block-head anim up">
       <h2>Bepillantas</h2>
       <span class="meta">Igy nez ki a havi kampanynaptar</span>
     </div>
-    <div class="peek-frame reveal">
+    <div class="peek-frame anim scale">
       <div class="peek-bar"><span></span><span></span><span></span></div>
       <div class="peek-screen">
-        <div class="peek-row">
+        <div class="peek-row anim up s1">
           <div class="peek-dot a"></div>
           <div class="peek-txt">
             <div class="t1">Tavaszi akcio hirlevel</div>
@@ -1005,7 +1026,7 @@
           </div>
           <span class="peek-state done">Kesz</span>
         </div>
-        <div class="peek-row">
+        <div class="peek-row anim up s2">
           <div class="peek-dot b"></div>
           <div class="peek-txt">
             <div class="t1">Meta hirdetes uj termekre</div>
@@ -1013,7 +1034,7 @@
           </div>
           <span class="peek-state prog">Folyamatban</span>
         </div>
-        <div class="peek-row">
+        <div class="peek-row anim up s3">
           <div class="peek-dot c"></div>
           <div class="peek-txt">
             <div class="t1">Instagram poszt sorozat</div>
@@ -1021,7 +1042,7 @@
           </div>
           <span class="peek-state prog">Folyamatban</span>
         </div>
-        <div class="peek-row">
+        <div class="peek-row anim up s4">
           <div class="peek-dot d"></div>
           <div class="peek-txt">
             <div class="t1">LinkedIn szakmai poszt</div>
@@ -1031,14 +1052,14 @@
         </div>
       </div>
     </div>
-    <p class="peek-cap reveal">Szinkodolt platformok, statuszok es szuresek, mobilon is hasznalhato nezetben.</p>
+    <p class="peek-cap anim up">Szinkodolt platformok, statuszok es szuresek, mobilon is hasznalhato nezetben.</p>
   </div>
 </section>
 
 <!-- TESTIMONIAL -->
 <section class="strip">
   <div class="shop block">
-    <div class="quote-card reveal">
+    <div class="quote-card anim scale">
       <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
       <blockquote>Mar az elso honapban ereztem a kulonbseget. Eddig minden poszthoz nulla rol kezdtem, most viszont csak kivalasztom a sablont es kitoltom. A hirdeteseink atkattintasi aranya is felment, mert vegre van rendszer mogotte.</blockquote>
       <div class="quote-author">
@@ -1055,12 +1076,12 @@
 <!-- FINAL BUY BLOCK -->
 <section class="strip final">
   <div class="shop block" id="vasarlas">
-    <div class="final-card reveal">
-      <div class="final-text">
+    <div class="final-card anim scale">
+      <div class="final-text anim left s1">
         <h2>Hozz lenduletet a marketingedbe meg ma</h2>
         <p>Letoltod a csomagot, megnyitod a sablonokat, es mar tervezed is a kovetkezo kampanyt. Egyszeri vasarlas, azonnali hozzaferes.</p>
       </div>
-      <div class="final-buy">
+      <div class="final-buy anim right s2">
         <div class="price-row">
           <span class="price">14 900 Ft</span>
           <span class="price-old">24 900 Ft</span>
@@ -1111,12 +1132,15 @@
 
 <script>
 (function () {
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var doc = document;
+  var body = doc.body;
+  var reduce = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Sticky buy bar: hide while the final buy block is on screen */
-  var buybar = document.querySelector('.buybar');
-  var finalBlock = document.getElementById('vasarlas');
-  if (buybar && finalBlock) {
+  var buybar = doc.querySelector('.buybar');
+  var finalBlock = doc.getElementById('vasarlas');
+  if (buybar && finalBlock && 'IntersectionObserver' in window) {
     var hideObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         buybar.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
@@ -1134,21 +1158,62 @@
     hideObserver.observe(finalBlock);
   }
 
-  /* Scroll reveal animations */
-  var reveals = document.querySelectorAll('.reveal');
-  if (reduce || !('IntersectionObserver' in window)) {
-    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+  /*
+   * Scroll reveal animations.
+   * The .no-js class on <body> keeps every .anim element fully visible by
+   * default. We only remove it once we are certain JS can drive the reveals,
+   * so a JS failure before this point can never leave content invisible.
+   */
+  var animEls = doc.querySelectorAll('.anim');
+
+  /* Reduced motion or no observer support: keep everything visible, stop. */
+  if (reduce || !('IntersectionObserver' in window) || !animEls.length) {
+    /* .no-js stays in place -> all .anim elements remain fully shown. */
     return;
   }
+
+  /* Safe to animate: drop .no-js so the .anim start states (offset +
+   * transparent) take effect, then reveal elements as they scroll in. */
+  body.classList.remove('no-js');
+
   var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+        entry.target.classList.add('in');
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-  reveals.forEach(function (el) { revealObserver.observe(el); });
+  }, { threshold: 0.14, rootMargin: '0px 0px -9% 0px' });
+
+  /* Hero elements (above the fold) get a tasteful staggered entrance on
+   * load; everything else reveals on scroll via the observer. */
+  var heroEls = doc.querySelectorAll('.product .anim');
+  var heroSet = [];
+  heroEls.forEach(function (el) { heroSet.push(el); });
+
+  animEls.forEach(function (el) {
+    if (heroSet.indexOf(el) === -1) {
+      revealObserver.observe(el);
+    }
+  });
+
+  function playHero() {
+    heroSet.forEach(function (el) { el.classList.add('in'); });
+  }
+  /* Two frames so the start state is painted before the transition runs. */
+  requestAnimationFrame(function () {
+    requestAnimationFrame(playHero);
+  });
+
+  /* Last-resort safety net: if anything is still hidden after a few
+   * seconds (e.g. an element that never scrolls into view), reveal it. */
+  window.setTimeout(function () {
+    animEls.forEach(function (el) {
+      if (!el.classList.contains('in')) {
+        el.classList.add('in');
+      }
+    });
+  }, 4500);
 })();
 </script>
 

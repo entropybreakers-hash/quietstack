@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -510,30 +510,95 @@
   .qs-badge svg{width:13px;height:13px;stroke:var(--accent);}
   .qs-badge:hover svg{stroke:#fff;}
 
-  /* SCROLL REVEAL ANIMATIONS */
-  .reveal{
-    opacity:0;transform:translateY(28px);
-    transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);
-    will-change:opacity,transform;
+  /* SCROLL REVEAL ANIMATIONS - Apple-style directional glide */
+  :root{
+    --ease-glide:cubic-bezier(.22,.61,.36,1);
+    --ease-soft:cubic-bezier(.16,.84,.44,1);
+    --reveal-dur:1.15s;
   }
-  .reveal.in{opacity:1;transform:translateY(0);}
-  .reveal.d1{transition-delay:.08s;}
-  .reveal.d2{transition-delay:.16s;}
-  .reveal.d3{transition-delay:.24s;}
-  .reveal.d4{transition-delay:.32s;}
-  .reveal.d5{transition-delay:.40s;}
+  /* base reveal: gentle fade and rise */
+  .reveal{
+    opacity:0;
+    transform:translate3d(0,46px,0);
+    filter:blur(8px);
+    transition:
+      opacity var(--reveal-dur) var(--ease-glide),
+      transform var(--reveal-dur) var(--ease-glide),
+      filter var(--reveal-dur) var(--ease-glide);
+    will-change:opacity,transform,filter;
+  }
+  .reveal.in{
+    opacity:1;
+    transform:translate3d(0,0,0);
+    filter:blur(0);
+  }
+  /* directional variants */
+  .reveal.from-left{transform:translate3d(-72px,0,0);}
+  .reveal.from-right{transform:translate3d(72px,0,0);}
+  .reveal.from-up{transform:translate3d(0,58px,0);}
+  .reveal.zoom{transform:translate3d(0,38px,0) scale(.955);}
+  .reveal.from-left.in,
+  .reveal.from-right.in,
+  .reveal.from-up.in,
+  .reveal.zoom.in{transform:translate3d(0,0,0) scale(1);}
+  /* headline refinement: shorter offset, lighter blur, longer glide */
+  .reveal.head{
+    transform:translate3d(0,34px,0);filter:blur(5px);
+    transition-duration:1.25s;transition-timing-function:var(--ease-soft);
+  }
+  .reveal.head.in{transform:translate3d(0,0,0);}
+
+  /* staggered children: items inside a .reveal-group glide one after another */
+  .reveal-group > *{
+    opacity:0;
+    transform:translate3d(0,52px,0);
+    filter:blur(8px);
+    transition:
+      opacity var(--reveal-dur) var(--ease-glide),
+      transform var(--reveal-dur) var(--ease-glide),
+      filter var(--reveal-dur) var(--ease-glide);
+    will-change:opacity,transform,filter;
+  }
+  /* directional stagger groups */
+  .reveal-group.from-left > *{transform:translate3d(-60px,0,0);}
+  .reveal-group.from-right > *{transform:translate3d(60px,0,0);}
+  .reveal-group.in > *{
+    opacity:1;
+    transform:translate3d(0,0,0);
+    filter:blur(0);
+  }
+  .reveal-group.in > *:nth-child(1){transition-delay:.06s;}
+  .reveal-group.in > *:nth-child(2){transition-delay:.15s;}
+  .reveal-group.in > *:nth-child(3){transition-delay:.24s;}
+  .reveal-group.in > *:nth-child(4){transition-delay:.33s;}
+  .reveal-group.in > *:nth-child(5){transition-delay:.42s;}
+  .reveal-group.in > *:nth-child(6){transition-delay:.51s;}
+  .reveal-group.in > *:nth-child(7){transition-delay:.60s;}
+  .reveal-group.in > *:nth-child(8){transition-delay:.69s;}
+
+  /* legacy delay helpers kept for compatibility */
+  .reveal.d1{transition-delay:.10s;}
+  .reveal.d2{transition-delay:.20s;}
+  .reveal.d3{transition-delay:.30s;}
+  .reveal.d4{transition-delay:.40s;}
+  .reveal.d5{transition-delay:.50s;}
 
   /* HERO ENTRANCE ON LOAD */
   @keyframes heroRise{
-    from{opacity:0;transform:translateY(24px);}
-    to{opacity:1;transform:translateY(0);}
+    from{opacity:0;transform:translate3d(0,40px,0);filter:blur(9px);}
+    to{opacity:1;transform:translate3d(0,0,0);filter:blur(0);}
   }
-  .hero-anim{opacity:0;animation:heroRise .85s cubic-bezier(.22,.61,.36,1) forwards;}
-  .hero-anim.a1{animation-delay:.05s;}
-  .hero-anim.a2{animation-delay:.16s;}
-  .hero-anim.a3{animation-delay:.27s;}
-  .hero-anim.a4{animation-delay:.38s;}
-  .hero-anim.a5{animation-delay:.5s;}
+  @keyframes heroGlideRight{
+    from{opacity:0;transform:translate3d(54px,18px,0);filter:blur(9px);}
+    to{opacity:1;transform:translate3d(0,0,0);filter:blur(0);}
+  }
+  .hero-anim{opacity:0;animation:heroRise 1.25s cubic-bezier(.22,.61,.36,1) both;}
+  .hero-anim.glide-right{animation-name:heroGlideRight;}
+  .hero-anim.a1{animation-delay:.12s;}
+  .hero-anim.a2{animation-delay:.26s;}
+  .hero-anim.a3{animation-delay:.42s;}
+  .hero-anim.a4{animation-delay:.58s;}
+  .hero-anim.a5{animation-delay:.74s;}
 
   /* REFINED HOVER TRANSITIONS */
   .aud-col{transition:transform .25s ease,border-color .25s ease;}
@@ -554,10 +619,24 @@
   .nav .brand .mark,.qs-badge svg{transition:transform .25s ease;}
   .nav .brand:hover .mark{transform:rotate(-8deg) scale(1.05);}
 
+  /* JS-disabled safety fallback: if scripts never run, show everything */
+  .no-js .reveal,
+  .no-js .reveal-group > *,
+  .no-js .hero-anim{
+    opacity:1 !important;transform:none !important;
+    filter:none !important;animation:none !important;
+  }
+
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
-    .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
-    .hero-anim{opacity:1 !important;animation:none !important;}
+    .reveal,
+    .reveal-group > *,
+    .reveal-group.from-left > *,
+    .reveal-group.from-right > *{
+      opacity:1 !important;transform:none !important;
+      filter:none !important;transition:none !important;
+    }
+    .hero-anim{opacity:1 !important;animation:none !important;filter:none !important;}
     .btn:hover,.aud-col:hover,.rev:hover,.plan:hover,.num-card:hover,
     .ben-card:hover,.curr-meta .chip:hover,.enrol-card:hover,.qs-badge:hover,
     .nav .brand:hover .mark,.ben-card:hover .ic{transform:none !important;}
@@ -650,7 +729,7 @@
       </div>
     </div>
 
-    <div class="enrol-card hero-anim a3">
+    <div class="enrol-card hero-anim glide-right a3">
       <span class="ec-ribbon">Korai jelentkezés</span>
       <div class="ec-top">
         <span class="lbl">Magabiztos angol 6 hét alatt</span>
@@ -676,7 +755,7 @@
 
 <!-- TRUST STRIP -->
 <div class="strip">
-  <div class="wrap strip-inner">
+  <div class="wrap strip-inner reveal-group">
     <span class="item"><b>A1</b> szinttől <b>B2</b> szintig</span>
     <span class="item"><b>100%</b> online, bárhonnan</span>
     <span class="item"><b>1 200+</b> elvégezte a kurzust</span>
@@ -688,13 +767,13 @@
 <!-- KINEK SZOL -->
 <section class="audience" id="kinek">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal head">
       <span class="eyebrow">Kinek szól</span>
       <h2>Ismerős a helyzet? Akkor jó helyen jársz.</h2>
       <p>Ez a kurzus nem mindenkinek való. Az alábbi két oszlop segít eldönteni, hogy neked szól-e a program.</p>
     </div>
     <div class="aud-grid">
-      <div class="aud-col no reveal">
+      <div class="aud-col no reveal from-left">
         <h3>Valószínűleg ismerős</h3>
         <p class="sub">Ezeket hallom a legtöbb jelentkezőtől.</p>
         <ul>
@@ -705,7 +784,7 @@
           <li><span class="ix">x</span> Sok appot kipróbáltál, de nincs valódi, mérhető fejlődés.</li>
         </ul>
       </div>
-      <div class="aud-col yes reveal d1">
+      <div class="aud-col yes reveal from-right">
         <h3>Ha végigcsinálod, ezt kapod</h3>
         <p class="sub">Erre tervezte a kurzust Hargitai Réka.</p>
         <ul>
@@ -723,38 +802,38 @@
 <!-- MIT KAPSZ / BENEFITS -->
 <section class="benefits">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal head">
       <span class="eyebrow">Mit kapsz</span>
       <h2>Minden a kézben, hogy hat hét alatt megszólalj</h2>
       <p>Nem csak videókat kapsz, hanem egy teljes rendszert: gyakorlatot, közeget és visszajelzést.</p>
     </div>
-    <div class="ben-grid">
-      <div class="ben-card reveal">
+    <div class="ben-grid reveal-group">
+      <div class="ben-card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7 16 12 23 17z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
         <h3>Rövid videóleckék</h3>
         <p>Tömör, gyakorlatias leckék, amelyeket akár ebédszünetben is végig tudsz nézni. Nincs üresjárat.</p>
       </div>
-      <div class="ben-card reveal d1">
+      <div class="ben-card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Élő beszédműhely</h3>
         <p>Heti egy interaktív alkalom kis csoportban, ahol kizárólag a kimondott angolon van a hangsúly.</p>
       </div>
-      <div class="ben-card reveal d2">
+      <div class="ben-card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
         <h3>Letölthető munkafüzetek</h3>
         <p>Minden héthez gyakorlófeladatok, szólisták és sablonok, amelyeket azonnal a gyakorlatban használsz.</p>
       </div>
-      <div class="ben-card reveal">
+      <div class="ben-card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>Személyes visszajelzés</h3>
         <p>Konkrét, építő visszajelzést kapsz a beszédedre, hogy pontosan tudd, min érdemes finomítani.</p>
       </div>
-      <div class="ben-card reveal d1">
+      <div class="ben-card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 7v5l3 3"/></svg></div>
         <h3>Korlátlan visszanézés</h3>
         <p>Minden videó és élő alkalom felvétele végleg elérhető marad, így soha nem maradsz le semmiről.</p>
       </div>
-      <div class="ben-card reveal d2">
+      <div class="ben-card">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 9l7 .5-5.5 4.5L18 21l-6-3.7L6 21l1.5-7L2 9.5 9 9z"/></svg></div>
         <h3>Zárt tanulóközösség</h3>
         <p>Támogató közeg tanulótársakkal, ahol bátran gyakorolhatsz, kérdezhetsz és motiváltan haladsz.</p>
@@ -765,7 +844,7 @@
 
 <!-- MID CTA -->
 <section class="midcta" style="padding:46px 0;">
-  <div class="wrap">
+  <div class="wrap reveal-group">
     <div>
       <h3>A következő csoportban már csak 24 hely van.</h3>
       <p>Indulás: 2026. június 8. A korai ár az indulásig érvényes.</p>
@@ -777,20 +856,20 @@
 <!-- CURRICULUM ACCORDION -->
 <section class="curriculum" id="felepites">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal head">
       <span class="eyebrow">A kurzus felépítése</span>
       <h2>Hat hét, hat tiszta lépés</h2>
       <p>Minden hét egy önálló témára épül, és az előzőre alapoz. Nyisd ki a modulokat, és nézd meg pontosan, mit gyakorolsz.</p>
     </div>
-    <div class="curr-meta reveal">
+    <div class="curr-meta reveal-group">
       <span class="chip"><b>6</b> modul</span>
       <span class="chip"><b>32</b> videólecke</span>
       <span class="chip"><b>6</b> élő műhely</span>
       <span class="chip"><b>600+</b> kifejezés</span>
       <span class="chip">Heti <b>3, 4 óra</b> ráfordítás</span>
     </div>
-    <div class="acc">
-      <details class="mod reveal" open>
+    <div class="acc reveal-group">
+      <details class="mod" open>
         <summary>
           <span class="wk"><b>01</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Bevezetés</span><h3>Alapok és gátlások feloldása</h3></span>
@@ -807,7 +886,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod reveal">
+      <details class="mod">
         <summary>
           <span class="wk"><b>02</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Gyakorlat</span><h3>Hétköznapi beszélgetések</h3></span>
@@ -824,7 +903,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod reveal">
+      <details class="mod">
         <summary>
           <span class="wk"><b>03</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Szókincs</span><h3>Szókincs témakörönként</h3></span>
@@ -841,7 +920,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod reveal">
+      <details class="mod">
         <summary>
           <span class="wk"><b>04</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Nyelvtan</span><h3>Nyelvtan a gyakorlatban</h3></span>
@@ -858,7 +937,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod reveal">
+      <details class="mod">
         <summary>
           <span class="wk"><b>05</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Hallgatás</span><h3>Hallás utáni megértés</h3></span>
@@ -875,7 +954,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod reveal">
+      <details class="mod">
         <summary>
           <span class="wk"><b>06</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Lezárás</span><h3>Szabad beszélgetés és lezárás</h3></span>
@@ -899,14 +978,14 @@
 <!-- INSTRUCTOR -->
 <section class="instructor" id="oktato">
   <div class="wrap inst-grid">
-    <div class="inst-photo reveal">
+    <div class="inst-photo reveal from-left">
       <div class="glyph">HR</div>
       <div class="cap">
         <b>Hargitai Réka</b>
         <span>angoltanár, kurzusvezető</span>
       </div>
     </div>
-    <div class="inst-body reveal d1">
+    <div class="inst-body reveal from-right">
       <span class="eyebrow">Az oktatóról</span>
       <h2>Velem nem a szabályok, hanem a beszéd a fókusz</h2>
       <p>Tizenkét éve tanítok angolt, ebből az utóbbi hat évben kizárólag online. Korábban magam is küzdöttem a megszólalástól való félelemmel, ezért minden tananyagomat úgy építettem fel, hogy a gyakorlat és a bátorság kerüljön a középpontba.</p>
@@ -928,11 +1007,11 @@
       <span class="eyebrow">Számokban</span>
       <h2>Amit a résztvevők eredményei mutatnak</h2>
     </div>
-    <div class="num-grid">
-      <div class="num-card reveal"><b>1 200<span class="u">+</span></b><span>elvégzett kurzus</span></div>
-      <div class="num-card reveal d1"><b>92<span class="u">%</span></b><span>be is fejezte a programot</span></div>
-      <div class="num-card reveal d2"><b>4,9<span class="u">/5</span></b><span>átlagos értékelés</span></div>
-      <div class="num-card reveal d3"><b>6<span class="u"> hét</span></b><span>az első érezhető fejlődésig</span></div>
+    <div class="num-grid reveal-group">
+      <div class="num-card"><b>1 200<span class="u">+</span></b><span>elvégzett kurzus</span></div>
+      <div class="num-card"><b>92<span class="u">%</span></b><span>be is fejezte a programot</span></div>
+      <div class="num-card"><b>4,9<span class="u">/5</span></b><span>átlagos értékelés</span></div>
+      <div class="num-card"><b>6<span class="u"> hét</span></b><span>az első érezhető fejlődésig</span></div>
     </div>
   </div>
 </section>
@@ -945,18 +1024,18 @@
       <h2>Akik már megszólaltak</h2>
       <p>Néhány őszinte visszajelzés a korábbi csoportok résztvevőitől.</p>
     </div>
-    <div class="rev-grid">
-      <div class="rev reveal">
+    <div class="rev-grid reveal-group">
+      <div class="rev">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <p>Tizenöt éve tanulok angolul, de megszólalni sosem mertem. Hat hét alatt eljutottam oda, hogy egy külföldi ügyféllel végig angolul beszéltem, és nem akadtam el.</p>
         <div class="who"><span class="av">NA</span><div><b>Nagy Anikó</b><span>marketinges</span></div></div>
       </div>
-      <div class="rev reveal d1">
+      <div class="rev">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <p>Az élő műhelyek miatt nem lehetett kibújni a beszéd alól, és pont erre volt szükségem. Réka végig türelmes és bátorító volt, sosem éreztem kínosan magam.</p>
         <div class="who"><span class="av">TB</span><div><b>Tóth Balázs</b><span>fejlesztő</span></div></div>
       </div>
-      <div class="rev reveal d2">
+      <div class="rev">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <p>A heti ritmus reális volt a munkám mellett is. A munkafüzetek konkrétak, a felvételeket pedig vissza tudtam nézni, amikor kimaradtam egy alkalomról.</p>
         <div class="who"><span class="av">SZK</span><div><b>Szabó Krisztina</b><span>HR vezető</span></div></div>
@@ -974,7 +1053,7 @@
       <p>Mindkét csomag teljes hozzáférést ad a hathetes tananyaghoz. A különbség a személyes támogatás mélységében van.</p>
     </div>
     <div class="price-grid">
-      <div class="plan reveal">
+      <div class="plan reveal from-left">
         <h3>Önálló</h3>
         <p class="pdesc">Ha szereted a saját ritmusodban haladni.</p>
         <div class="amount"><b>39 900 Ft</b> <del>49 900 Ft</del></div>
@@ -987,7 +1066,7 @@
         </ul>
         <a class="btn btn-ghost btn-lg" href="#jelentkezes">Ezt választom</a>
       </div>
-      <div class="plan featured reveal d1">
+      <div class="plan featured reveal from-right d1">
         <span class="tag">Legnépszerűbb választás</span>
         <h3>Mentorált</h3>
         <p class="pdesc">Ha a leggyorsabb fejlődést szeretnéd.</p>
@@ -1002,7 +1081,7 @@
         <a class="btn btn-accent btn-lg" href="#jelentkezes">Ezt választom</a>
       </div>
     </div>
-    <p class="price-guar">
+    <p class="price-guar reveal">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       14 napos pénzvisszafizetési garancia. Kockázat nélkül kipróbálhatod.
     </p>
@@ -1017,7 +1096,7 @@
       <h2>Mielőtt jelentkezel</h2>
       <p>Összegyűjtöttük a leggyakoribb kérdéseket. Ha valami mégsem szerepel közöttük, írj nekünk bátran.</p>
     </div>
-    <div class="faq-list reveal">
+    <div class="faq-list reveal-group">
       <details open>
         <summary>Kezdő szinten is el tudom végezni a kurzust? <span class="plus">+</span></summary>
         <div class="ans">Igen. A program A1 szinttől B2 szintig minden tanulónak ad fejlődési lehetőséget, mert a feladatok rétegzettek. A jelentkezés után egy rövid szintfelmérőt kapsz, hogy a megfelelő ütemben tudj haladni.</div>
@@ -1063,7 +1142,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
+    <div class="foot-grid reveal-group">
       <div>
         <div class="brand"><span class="mark">S</span> SpeakUp angolműhely</div>
         <p class="fdesc">Gyakorlatorientált online angol kurzusok, amelyek valódi beszélgetésre tanítanak. Magabiztos angol, lépésről lépésre.</p>
@@ -1117,12 +1196,23 @@
 
 <script>
   (function(){
+    var doc=document.documentElement;
+    /* JS is running: drop the no-js safety class so animated states apply */
+    doc.classList.remove('no-js');
+
+    var items=document.querySelectorAll('.reveal, .reveal-group');
     var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var items=document.querySelectorAll('.reveal');
-    if(reduce||!('IntersectionObserver' in window)){
+
+    function revealAll(){
       for(var i=0;i<items.length;i++){items[i].classList.add('in');}
+    }
+
+    /* Reduced motion or no IntersectionObserver: show everything instantly */
+    if(reduce||!('IntersectionObserver' in window)){
+      revealAll();
       return;
     }
+
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(entry.isIntersecting){
@@ -1130,8 +1220,34 @@
           io.unobserve(entry.target);
         }
       });
-    },{root:null,rootMargin:'0px 0px -10% 0px',threshold:0.12});
+    },{root:null,rootMargin:'0px 0px -12% 0px',threshold:0.12});
+
     for(var j=0;j<items.length;j++){io.observe(items[j]);}
+
+    /* Safety net: nothing should ever stay permanently invisible.
+       Anything still hidden a few seconds after load (e.g. tall pages,
+       elements that never scroll into view) is revealed. */
+    window.addEventListener('load',function(){
+      setTimeout(function(){
+        for(var k=0;k<items.length;k++){
+          var el=items[k];
+          if(el.classList.contains('in'))continue;
+          var r=el.getBoundingClientRect();
+          var vh=window.innerHeight||doc.clientHeight;
+          if(r.top<vh){el.classList.add('in');}
+        }
+      },2600);
+    });
+
+    /* Final guard: if the load event fired before this ran, still sweep once. */
+    setTimeout(function(){
+      for(var m=0;m<items.length;m++){
+        var e=items[m];
+        if(e.classList.contains('in'))continue;
+        var rect=e.getBoundingClientRect();
+        if(rect.top<((window.innerHeight||doc.clientHeight))){e.classList.add('in');}
+      }
+    },5000);
   })();
 </script>
 
