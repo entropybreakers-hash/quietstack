@@ -951,12 +951,12 @@
         <p>Tizenöt éve tanulok angolul, de megszólalni sosem mertem. Hat hét alatt eljutottam oda, hogy egy külföldi ügyféllel végig angolul beszéltem, és nem akadtam el.</p>
         <div class="who"><span class="av">NA</span><div><b>Nagy Anikó</b><span>marketinges</span></div></div>
       </div>
-      <div class="rev">
+      <div class="rev reveal d1">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <p>Az élő műhelyek miatt nem lehetett kibújni a beszéd alól, és pont erre volt szükségem. Réka végig türelmes és bátorító volt, sosem éreztem kínosan magam.</p>
         <div class="who"><span class="av">TB</span><div><b>Tóth Balázs</b><span>fejlesztő</span></div></div>
       </div>
-      <div class="rev">
+      <div class="rev reveal d2">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <p>A heti ritmus reális volt a munkám mellett is. A munkafüzetek konkrétak, a felvételeket pedig vissza tudtam nézni, amikor kimaradtam egy alkalomról.</p>
         <div class="who"><span class="av">SZK</span><div><b>Szabó Krisztina</b><span>HR vezető</span></div></div>
@@ -968,13 +968,13 @@
 <!-- PRICING -->
 <section class="pricing" id="arak">
   <div class="wrap">
-    <div class="section-head center">
+    <div class="section-head center reveal">
       <span class="eyebrow">Árak</span>
       <h2>Válaszd a hozzád illő csomagot</h2>
       <p>Mindkét csomag teljes hozzáférést ad a hathetes tananyaghoz. A különbség a személyes támogatás mélységében van.</p>
     </div>
     <div class="price-grid">
-      <div class="plan">
+      <div class="plan reveal">
         <h3>Önálló</h3>
         <p class="pdesc">Ha szereted a saját ritmusodban haladni.</p>
         <div class="amount"><b>39 900 Ft</b> <del>49 900 Ft</del></div>
@@ -987,7 +987,7 @@
         </ul>
         <a class="btn btn-ghost btn-lg" href="#jelentkezes">Ezt választom</a>
       </div>
-      <div class="plan featured">
+      <div class="plan featured reveal d1">
         <span class="tag">Legnépszerűbb választás</span>
         <h3>Mentorált</h3>
         <p class="pdesc">Ha a leggyorsabb fejlődést szeretnéd.</p>
@@ -1012,12 +1012,12 @@
 <!-- FAQ -->
 <section class="faq">
   <div class="wrap">
-    <div class="section-head center">
+    <div class="section-head center reveal">
       <span class="eyebrow">Gyakori kérdések</span>
       <h2>Mielőtt jelentkezel</h2>
       <p>Összegyűjtöttük a leggyakoribb kérdéseket. Ha valami mégsem szerepel közöttük, írj nekünk bátran.</p>
     </div>
-    <div class="faq-list">
+    <div class="faq-list reveal">
       <details open>
         <summary>Kezdő szinten is el tudom végezni a kurzust? <span class="plus">+</span></summary>
         <div class="ans">Igen. A program A1 szinttől B2 szintig minden tanulónak ad fejlődési lehetőséget, mert a feladatok rétegzettek. A jelentkezés után egy rövid szintfelmérőt kapsz, hogy a megfelelő ütemben tudj haladni.</div>
@@ -1048,7 +1048,7 @@
 
 <!-- FINAL CTA -->
 <section class="final" id="jelentkezes">
-  <div class="wrap inner">
+  <div class="wrap inner reveal">
     <span class="countpill">Korlátozott létszám: 24 hely</span>
     <h2>Hat hét múlva már magabiztosan szólalsz meg</h2>
     <p>A következő csoport 2026. június 8-án indul, és mindössze 24 helyet tudunk biztosítani, hogy mindenki személyes figyelmet kapjon. Foglald le a helyed most, a korai áron.</p>
@@ -1112,6 +1112,26 @@
     window.addEventListener('scroll',update,{passive:true});
     window.addEventListener('resize',update);
     update();
+  })();
+</script>
+
+<script>
+  (function(){
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items=document.querySelectorAll('.reveal');
+    if(reduce||!('IntersectionObserver' in window)){
+      for(var i=0;i<items.length;i++){items[i].classList.add('in');}
+      return;
+    }
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    },{root:null,rootMargin:'0px 0px -10% 0px',threshold:0.12});
+    for(var j=0;j<items.length;j++){io.observe(items[j]);}
   })();
 </script>
 
