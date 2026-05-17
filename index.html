@@ -226,6 +226,14 @@
     }
     .section-title { text-align: center; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 18px; }
     .section-sub { text-align: center; color: var(--muted); max-width: 620px; margin: 0 auto 52px; }
+    .tool-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 680px; margin: 0 auto; }
+    .tool-chip {
+      font-family: var(--mono); font-size: 0.85rem; font-weight: 500; color: var(--text);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+      padding: 10px 18px; box-shadow: 0 2px 8px -5px rgba(60,45,20,0.3);
+      transition: transform 0.16s, border-color 0.16s, box-shadow 0.16s;
+    }
+    .tool-chip:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 12px 26px -16px rgba(120,95,50,0.55); }
 
     /* Pain section */
     .pain { background: var(--text); color: #f3f1ea; position: relative; overflow: hidden; padding: 104px 0; }
@@ -895,6 +903,25 @@
               folyamatos támogatás, minden kérdésedre válaszolok.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="eszkozok">
+      <div class="wrap">
+        <span class="section-tag reveal">Eszközök</span>
+        <h2 class="section-title reveal">Bevált eszközökre építek</h2>
+        <p class="section-sub reveal">A rendszered megbízható, iparágilag elterjedt eszközökre épül, amiket sokan ismernek és használnak. Semmi egzotikus, semmi átláthatatlan.</p>
+        <div class="tool-chips reveal">
+          <span class="tool-chip">Claude Code</span>
+          <span class="tool-chip">Supabase</span>
+          <span class="tool-chip">GitHub</span>
+          <span class="tool-chip">Vercel</span>
+          <span class="tool-chip">Make.com</span>
+          <span class="tool-chip">Calendly</span>
+          <span class="tool-chip">Airtable</span>
+          <span class="tool-chip">Stripe</span>
+          <span class="tool-chip">Magyar számlázók</span>
         </div>
       </div>
     </section>
