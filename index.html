@@ -576,6 +576,38 @@
     .final p { color: #cdcabf; max-width: 560px; margin: 0 auto 14px; font-size: 1.08rem; }
     .final p.small { font-size: 0.97rem; color: #a8a597; margin-bottom: 32px; }
     .final .btn { font-size: 1.05rem; padding: 17px 38px; }
+    .lead-form { max-width: 520px; margin: 8px auto 0; text-align: left; }
+    .lf-row { margin-bottom: 15px; }
+    .lf-row label { display: block; font-family: var(--mono); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.03em; color: #cdcabf; margin-bottom: 7px; }
+    .lf-row input, .lf-row select, .lf-row textarea {
+      width: 100%; font-family: var(--sans); font-size: 1rem; color: #f3f1ea;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,118,0.3);
+      border-radius: 9px; padding: 13px 15px;
+    }
+    .lf-row textarea { resize: vertical; min-height: 80px; }
+    .lf-row input::placeholder, .lf-row textarea::placeholder { color: #7d7a6f; }
+    .lf-row input:focus, .lf-row select:focus, .lf-row textarea:focus {
+      outline: none; border-color: var(--accent); background: rgba(255,255,255,0.09);
+    }
+    .lf-row select {
+      appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 38px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a876' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 15px center;
+    }
+    .lf-row select option { color: #1a1a1a; }
+    .lf-consent { display: flex; gap: 10px; align-items: flex-start; margin: 2px 0 20px; }
+    .lf-consent input { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--accent); cursor: pointer; }
+    .lf-consent label { font-size: 0.85rem; color: #b3b0a4; line-height: 1.5; }
+    .lf-consent a { color: var(--accent); }
+    .lead-form .btn { width: 100%; justify-content: center; }
+    .lf-note { font-size: 0.82rem; color: #8a8678; text-align: center; margin-top: 14px; }
+    .lf-success {
+      display: none; max-width: 520px; margin: 20px auto 0; padding: 32px 26px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,118,0.3); border-radius: 12px;
+    }
+    .lf-success.show { display: block; }
+    .lf-success h3 { color: #fff; font-size: 1.3rem; margin-bottom: 10px; }
+    .lf-success p { color: #cdcabf; margin: 0; max-width: none; }
 
     footer { background: #15140f; color: #a8a597; padding: 56px 0 40px; }
     .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 34px; }
@@ -612,7 +644,7 @@
         <a href="#folyamat">Hogyan működik</a>
         <a href="#csomagok">Csomagok</a>
         <a href="#gyik">GYIK</a>
-        <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Ingyenes konzultáció</a>
+        <a href="#kapcsolat" class="btn btn-accent">Ingyenes konzultáció</a>
       </nav>
     </div>
   </header>
@@ -639,7 +671,7 @@
             </span>
           </div>
           <div class="hero-cta">
-            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Ingyenes 20 perces konzultáció →</a>
+            <a href="#kapcsolat" class="btn btn-accent">Ingyenes 20 perces konzultáció →</a>
           </div>
           <p class="scroll-hint">Görgess lejjebb, és megmutatom, hogyan működik.</p>
         </div>
@@ -856,7 +888,7 @@
             Nem programozó vagyok, hanem mentor. És pont ezért értem meg, min mész át.
           </p>
           <p style="margin-top:24px;">
-            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Foglalj konzultációt →</a>
+            <a href="#kapcsolat" class="btn btn-accent">Foglalj konzultációt →</a>
           </p>
         </div>
       </div>
@@ -1199,7 +1231,7 @@
         </div>
         <div class="showcase-cta reveal">
           <p>Ilyen oldalt szeretnél, a saját arculatoddal és szövegeddel?</p>
-          <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Beszéljük át egy ingyenes konzultáción →</a>
+          <a href="#kapcsolat" class="btn btn-accent">Beszéljük át egy ingyenes konzultáción →</a>
         </div>
       </div>
     </section>
@@ -1234,7 +1266,7 @@
               <li>2 hét támogatás az átadás után</li>
             </ul>
             <div class="maint">Karbantartás (nem kötelező): <strong>12 000 Ft / hó</strong></div>
-            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-ghost" target="_blank" rel="noopener">Kérek Starter konzultációt →</a>
+            <a href="#kapcsolat" class="btn btn-ghost">Kérek Starter konzultációt →</a>
           </div>
 
           <div class="plan featured reveal">
@@ -1259,7 +1291,7 @@
               <li>1 hónap teljes támogatás</li>
             </ul>
             <div class="maint">Karbantartás (nem kötelező): <strong>25 000 Ft / hó</strong></div>
-            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Kérek Engine konzultációt →</a>
+            <a href="#kapcsolat" class="btn btn-accent">Kérek Engine konzultációt →</a>
           </div>
 
           <div class="plan reveal">
@@ -1283,7 +1315,7 @@
               <li>Örökös elsőbbség: minden új funkció ingyen</li>
             </ul>
             <div class="maint">Karbantartás (nem kötelező): <strong>40 000 Ft / hó</strong></div>
-            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-ghost" target="_blank" rel="noopener">Kérek Premium konzultációt →</a>
+            <a href="#kapcsolat" class="btn btn-ghost">Kérek Premium konzultációt →</a>
           </div>
 
         </div>
@@ -1354,7 +1386,7 @@
               ügyféltörténetet írunk, amelyet a későbbi ügyfelek is látnak majd.
             </p>
             <p>Ha érdekel egy alapító hely, beszéljünk az ingyenes konzultáción.</p>
-            <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Foglalj konzultációt →</a>
+            <a href="#kapcsolat" class="btn btn-accent">Foglalj konzultációt →</a>
           </div>
           <div class="proof-card dark reveal">
             <h3>A saját rendszereim, amik működnek</h3>
@@ -1450,13 +1482,50 @@
     <section class="final" id="kapcsolat">
       <div class="wrap narrow">
         <h2>Beszéljünk.</h2>
-        <p>20 perc. Ingyenes. Nem értékesítés.</p>
+        <p>Töltsd ki pár másodperc alatt, és egy munkanapon belül jelentkezem. Nem értékesítés.</p>
         <p>
           Megnézzük, hol veszíted el a legtöbb időt, és együtt eldöntjük, hogy melyik
           csomag (ha bármelyik) passzol Hozzád.
         </p>
         <p class="small">Ha egyik sem passzol, ajánlok valaki mást. Ez is része az ajánlatomnak.</p>
-        <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Foglalj konzultációt most →</a>
+        <form class="lead-form" id="leadForm">
+          <div class="lf-row">
+            <label for="lf-nev">Neved</label>
+            <input type="text" id="lf-nev" name="nev" required autocomplete="name" placeholder="Például Kovács Anna" />
+          </div>
+          <div class="lf-row">
+            <label for="lf-email">E-mail-címed</label>
+            <input type="email" id="lf-email" name="email" required autocomplete="email" placeholder="anna@pelda.hu" />
+          </div>
+          <div class="lf-row">
+            <label for="lf-telefon">Telefonszámod</label>
+            <input type="tel" id="lf-telefon" name="telefon" required autocomplete="tel" placeholder="+36 30 123 4567" />
+          </div>
+          <div class="lf-row">
+            <label for="lf-terulet">Mivel foglalkozol?</label>
+            <select id="lf-terulet" name="terulet" required>
+              <option value="" disabled selected>Válassz...</option>
+              <option>Coach</option>
+              <option>Online tanár</option>
+              <option>Digitális termék</option>
+              <option>Egyéb</option>
+            </select>
+          </div>
+          <div class="lf-row">
+            <label for="lf-idorablo">Mi most a legnagyobb időrablód? (nem kötelező)</label>
+            <textarea id="lf-idorablo" name="idorablo" rows="3" placeholder="Pár szó is elég."></textarea>
+          </div>
+          <div class="lf-consent">
+            <input type="checkbox" id="lf-hozzajarulas" name="hozzajarulas" required />
+            <label for="lf-hozzajarulas">Hozzájárulok, hogy a QuietStack a megadott adataimat a megkeresésem megválaszolása céljából kezelje. Részletek az <a href="adatvedelem.html" target="_blank" rel="noopener">Adatkezelési tájékoztatóban</a>.</label>
+          </div>
+          <button type="submit" class="btn btn-accent">Elküldöm →</button>
+          <p class="lf-note">Egy munkanapon belül válaszolok, e-mailben.</p>
+        </form>
+        <div class="lf-success" id="leadSuccess">
+          <h3>Köszönöm, megkaptam!</h3>
+          <p>Hamarosan, legkésőbb egy munkanapon belül jelentkezem e-mailben.</p>
+        </div>
       </div>
     </section>
 
@@ -1623,6 +1692,34 @@
       fit();
       window.addEventListener("load", fit);
       window.addEventListener("resize", fit);
+    })();
+
+    (function () {
+      var WEBHOOK = "";
+      var form = document.getElementById("leadForm");
+      if (!form) return;
+      var btn = form.querySelector("button[type=submit]");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!WEBHOOK) {
+          alert("Az űrlap hamarosan élesedik. Addig kérlek írj a baranyibettina@entropybreakers.com címre, és jelentkezem.");
+          return;
+        }
+        var orig = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = "Küldés...";
+        fetch(WEBHOOK, { method: "POST", mode: "no-cors", body: new FormData(form) })
+          .then(function () {
+            form.style.display = "none";
+            document.getElementById("leadSuccess").classList.add("show");
+            document.getElementById("leadSuccess").scrollIntoView({ behavior: "smooth", block: "center" });
+          })
+          .catch(function () {
+            btn.disabled = false;
+            btn.textContent = orig;
+            alert("Hiba történt a küldéskor. Kérlek próbáld újra, vagy írj a baranyibettina@entropybreakers.com címre.");
+          });
+      });
     })();
   </script>
   <!-- Cloudflare Web Analytics -->
