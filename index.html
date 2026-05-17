@@ -357,6 +357,7 @@
     .fp-foot { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; color: var(--accent); font-weight: 600; }
     .fp-name { font-family: var(--serif); color: #fff; font-size: 1.2rem; font-weight: 600; }
     .fp-tag { display: block; font-size: 0.84rem; color: var(--accent); margin-top: 2px; }
+    .fp-prev { font-size: 0.8rem; color: #8a8678; margin: 12px 0 4px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .fp-flow { position: relative; }
     .fp-line { position: absolute; left: 17px; top: 18px; bottom: 18px; width: 2px; background: rgba(255,255,255,0.08); border-radius: 2px; }
     .fp-line-fill { width: 100%; height: 0; background: linear-gradient(var(--accent), var(--accent-deep)); border-radius: 2px; box-shadow: 0 0 10px rgba(201,168,118,0.6); transition: height 1.5s ease 0.3s; }
@@ -376,6 +377,7 @@
     .fp-node:nth-child(3) .fp-ico, .fp-node:nth-child(3) .fp-ico svg, .fp-node:nth-child(3) .fp-label { transition-delay: 0.35s; }
     .fp-node:nth-child(4) .fp-ico, .fp-node:nth-child(4) .fp-ico svg, .fp-node:nth-child(4) .fp-label { transition-delay: 0.7s; }
     .fp-node:nth-child(5) .fp-ico, .fp-node:nth-child(5) .fp-ico svg, .fp-node:nth-child(5) .fp-label { transition-delay: 1.05s; }
+    .fp-node:nth-child(6) .fp-ico, .fp-node:nth-child(6) .fp-ico svg, .fp-node:nth-child(6) .fp-label { transition-delay: 1.4s; }
 
     .calc-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 44px; max-width: 720px; margin: 0 auto; }
     .calc-intro { color: var(--muted); margin-bottom: 28px; }
@@ -800,9 +802,9 @@
 
     <section class="flows">
       <div class="wrap">
-        <span class="section-tag reveal">Élő rendszer</span>
-        <h2 class="section-title reveal">Nézd, ahogy fut a rendszered</h2>
-        <p class="section-sub reveal">Minden lépés automatikusan, a háttérben fut le. Csomagonként ennyi munkát vesz le rólad a rendszer.</p>
+        <span class="section-tag reveal">Amit megkapsz</span>
+        <h2 class="section-title reveal">Mit építek be Neked?</h2>
+        <p class="section-sub reveal">Mindent a saját fiókjaidba építek fel, és átadom. A rendszer a tiéd marad. Csomagonként ezt kapod kézhez.</p>
         <div class="flow-panels">
 
           <div class="flow-panel reveal">
@@ -816,20 +818,24 @@
             <div class="fp-flow">
               <div class="fp-line"><div class="fp-line-fill"></div></div>
               <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
-                <span class="fp-label">Új érdeklődő foglal egy időpontot</span>
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></span>
+                <span class="fp-label">Profi bemutatkozó (landing) oldal</span>
               </div>
               <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg></span>
-                <span class="fp-label">A rendszer emlékeztetőt küld</span>
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+                <span class="fp-label">Időpontfoglaló automatikus emlékeztetőkkel</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h6"/></svg></span>
+                <span class="fp-label">Onboarding kérdőív, adatbázisba rendezve</span>
               </div>
               <div class="fp-node">
                 <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-                <span class="fp-label">Üdvözlő e-mail indul magától</span>
+                <span class="fp-label">5 automatikus e-mail-sablon</span>
               </div>
               <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
-                <span class="fp-label">Te csak megjelensz az órán</span>
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 5.4L19.5 10l-5.4 1.6L12 17l-2.1-5.4L4.5 10l5.4-1.6z"/></svg></span>
+                <span class="fp-label">AI-asszisztens a gyakori kérdésekre</span>
               </div>
             </div>
             <div class="fp-foot">heti 3–5 óra felszabadítva</div>
@@ -843,23 +849,28 @@
               </div>
               <span class="fp-tag">A teljes ügyfélkezelő motor</span>
             </div>
+            <p class="fp-prev">Minden a Starterből, és:</p>
             <div class="fp-flow">
               <div class="fp-line"><div class="fp-line-fill"></div></div>
               <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 5.4L19.5 10l-5.4 1.6L12 17l-2.1-5.4L4.5 10l5.4-1.6z"/></svg></span>
-                <span class="fp-label">Az AI fogadja és besorolja az érdeklődőt</span>
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5M9 12h6M9 16h6"/></svg></span>
+                <span class="fp-label">Teljes ügyfélfogadás: űrlap, szerződés, fizetés</span>
               </div>
               <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
-                <span class="fp-label">Szerződés és fizetés lefut automatikusan</span>
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+                <span class="fp-label">AI-asszisztált e-mail-válaszok a stílusodban</span>
               </div>
               <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
-                <span class="fp-label">Az időpont bekerül a naptárba</span>
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
+                <span class="fp-label">Számlázás-integráció fizetéskövetéssel</span>
               </div>
               <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5M9 13h6M9 17h6"/></svg></span>
-                <span class="fp-label">A számla magától elkészül</span>
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span>
+                <span class="fp-label">Ügyfél-haladást követő felület</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M14 6l4 4"/></svg></span>
+                <span class="fp-label">Tartalomnaptár AI-ötletekkel</span>
               </div>
             </div>
             <div class="fp-foot">heti 10+ óra felszabadítva</div>
@@ -873,23 +884,24 @@
               </div>
               <span class="fp-tag">Skálázható rendszer</span>
             </div>
+            <p class="fp-prev">Minden az Engine-ből, és:</p>
             <div class="fp-flow">
               <div class="fp-line"><div class="fp-line-fill"></div></div>
               <div class="fp-node">
                 <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
-                <span class="fp-label">Az ügyfél belép a saját portáljára</span>
+                <span class="fp-label">Egyéni, mobilbarát ügyfélportál</span>
               </div>
               <div class="fp-node">
                 <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 5.4L19.5 10l-5.4 1.6L12 17l-2.1-5.4L4.5 10l5.4-1.6z"/></svg></span>
-                <span class="fp-label">Az AI személyre szabott anyagot állít elő</span>
+                <span class="fp-label">AI-generátor: edzésterv, étrend, tananyag</span>
               </div>
               <div class="fp-node">
                 <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3.2 2.5-5.3 5.5-5.3s5.5 2.1 5.5 5.3"/><path d="M15.6 5.3a3.2 3.2 0 0 1 0 9.2M16 14.8c2.6.3 4.5 2.3 4.5 5.2"/></svg></span>
-                <span class="fp-label">A csoportos program magától fut</span>
+                <span class="fp-label">Csoportos programkezelés: kihívások, kurzusok</span>
               </div>
               <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.4"/></svg></span>
-                <span class="fp-label">Te a stratégiára koncentrálsz</span>
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="M8.4 10.8l7.2-3.6M8.4 13.2l7.2 3.6"/></svg></span>
+                <span class="fp-label">Ajánlói program követőrendszerrel</span>
               </div>
             </div>
             <div class="fp-foot">skálázható kapacitás</div>
