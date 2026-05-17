@@ -388,7 +388,9 @@
       scrollbar-width: none; -ms-overflow-style: none;
     }
     .showcase-track::-webkit-scrollbar { display: none; }
-    .showcase-card { flex: 0 0 340px; max-width: 84vw; scroll-snap-align: center; }
+    .showcase-card { flex: 0 0 340px; max-width: 84vw; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; transition: transform 0.18s; }
+    .showcase-card:hover { transform: translateY(-5px); }
+    .sc-go { display: inline-block; margin-top: 9px; font-size: 0.9rem; font-weight: 600; color: var(--accent-deep); }
     .sc-frame {
       background: #fff; border: 1px solid var(--border); border-radius: 11px; overflow: hidden;
       box-shadow: 0 20px 44px -26px rgba(60,45,20,0.5);
@@ -966,12 +968,12 @@
     <section id="showcase" class="band">
       <div class="wrap">
         <span class="section-tag reveal">Sablonok</span>
-        <h2 class="section-title reveal">Ilyeneket építek Neked</h2>
-        <p class="section-sub reveal">Néhány oldal- és rendszertípus, amit fel tudok építeni a vállalkozásodhoz. Ezek sablonok: a kész munka mindig a Te arculatodra és a Te szövegeddel készül.</p>
+        <h2 class="section-title reveal">Így nézhet ki a Te oldalad</h2>
+        <p class="section-sub reveal">Kattints bármelyikre, és nézd meg élőben. Ezek sablonok: a Te oldalad a saját arculatoddal és szövegeddel készül el.</p>
         <div class="showcase-wrap reveal">
           <div class="showcase-track">
 
-            <div class="showcase-card">
+            <a class="showcase-card" href="sablonok/coach.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
                 <div class="sc-screen" style="--sc:#C9A876">
@@ -986,10 +988,11 @@
               <div class="sc-cap">
                 <h3>Coach bemutatkozó oldal</h3>
                 <p>Személyes márka egy fő ajánlattal és időpontfoglalással.</p>
+                <span class="sc-go">Megnézem élőben →</span>
               </div>
-            </div>
+            </a>
 
-            <div class="showcase-card">
+            <a class="showcase-card" href="sablonok/kurzus.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
                 <div class="sc-screen" style="--sc:#8a9a7b">
@@ -1004,10 +1007,11 @@
               <div class="sc-cap">
                 <h3>Online kurzus oldal</h3>
                 <p>Kurzus vagy program eladó oldala, modulokra bontva.</p>
+                <span class="sc-go">Megnézem élőben →</span>
               </div>
-            </div>
+            </a>
 
-            <div class="showcase-card">
+            <a class="showcase-card" href="sablonok/termek.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
                 <div class="sc-screen split" style="--sc:#7e93a8">
@@ -1024,10 +1028,11 @@
               <div class="sc-cap">
                 <h3>Digitális termék oldal</h3>
                 <p>E-book, sablon vagy letölthető termék landing oldala.</p>
+                <span class="sc-go">Megnézem élőben →</span>
               </div>
-            </div>
+            </a>
 
-            <div class="showcase-card">
+            <a class="showcase-card" href="sablonok/foglalas.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
                 <div class="sc-screen center" style="--sc:#c08763">
@@ -1040,10 +1045,11 @@
               <div class="sc-cap">
                 <h3>Konzultáció-foglaló oldal</h3>
                 <p>Időpontfoglalásra kihegyezett, letisztult oldal.</p>
+                <span class="sc-go">Megnézem élőben →</span>
               </div>
-            </div>
+            </a>
 
-            <div class="showcase-card">
+            <a class="showcase-card" href="sablonok/wellness.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
                 <div class="sc-screen" style="--sc:#4f5358">
@@ -1057,8 +1063,9 @@
               <div class="sc-cap">
                 <h3>Wellness és fitness oldal</h3>
                 <p>Edzői oldal programokkal és átalakulás-galériával.</p>
+                <span class="sc-go">Megnézem élőben →</span>
               </div>
-            </div>
+            </a>
 
           </div>
         </div>

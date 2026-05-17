@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foglalj egy ingyenes hívást | Komlósi Réka coaching</title>
+<meta name="description" content="Foglalj egy ingyenes 30 perces hívást Komlósi Rékával, és nézzük meg együtt, hol akadtál el. Nyugodt, tét nélküli beszélgetés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfbf9;
+    --surface: #ffffff;
+    --ink: #2b332e;
+    --ink-soft: #5c665f;
+    --ink-faint: #8a938c;
+    --accent: #7c9b86;
+    --accent-deep: #5f8069;
+    --accent-soft: #eaf0eb;
+    --line: #e7e8e3;
+    --radius: 18px;
+    --shadow: 0 18px 50px -28px rgba(45, 60, 50, 0.35);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(251, 251, 249, 0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.18rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(140deg, var(--accent) 0%, var(--accent-deep) 100%);
+    flex-shrink: 0;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .btn-primary {
+    background: var(--accent-deep);
+    color: #fff;
+    padding: 13px 26px;
+    box-shadow: 0 12px 26px -14px rgba(95, 128, 105, 0.9);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    background: #547259;
+  }
+  .btn-nav {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  .btn-lg {
+    font-size: 1.04rem;
+    padding: 16px 34px;
+  }
+  .btn-ghost {
+    background: var(--surface);
+    color: var(--accent-deep);
+    padding: 13px 26px;
+    border: 1px solid var(--line);
+  }
+  .btn-ghost:hover { transform: translateY(-2px); }
+
+  /* HERO */
+  .hero {
+    padding: 86px 0 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 620px;
+    height: 620px;
+    background: radial-gradient(circle, rgba(124, 155, 134, 0.22) 0%, rgba(124, 155, 134, 0) 68%);
+    z-index: -1;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    background: var(--accent-soft);
+    padding: 7px 16px;
+    border-radius: 999px;
+    margin-bottom: 26px;
+  }
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-deep);
+  }
+  .hero h1 {
+    font-size: clamp(2.15rem, 6vw, 3.5rem);
+    max-width: 16ch;
+    margin: 0 auto 22px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-deep);
+  }
+  .hero p.lead {
+    font-size: 1.12rem;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    margin: 0 auto 36px;
+  }
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-note {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--ink-faint);
+  }
+
+  /* SECTION GENERIC */
+  section { padding: 64px 0; }
+  .section-head {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  .section-head h2 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    margin-bottom: 12px;
+  }
+  .section-head p {
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 auto;
+  }
+
+  /* EXPECT */
+  .expect { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+  }
+  .card-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  .card p {
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 44px;
+    align-items: center;
+  }
+  .portrait {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius);
+    background:
+      radial-gradient(circle at 30% 25%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 45%),
+      linear-gradient(150deg, #cdddd0 0%, #9db8a4 55%, #7c9b86 100%);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .portrait::after {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    right: -50px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+  }
+  .portrait::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.32);
+  }
+  .about-text h2 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    margin-bottom: 16px;
+  }
+  .about-text p {
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .about-sign {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-top: 6px;
+  }
+  .about-sign span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+  }
+
+  /* FAQ */
+  .faq { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .faq-list {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  details {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--bg);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  .chev {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--accent-deep);
+    transition: transform 0.2s ease;
+  }
+  details[open] .chev { transform: rotate(180deg); }
+  details p {
+    padding: 0 22px 20px;
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+  }
+
+  /* FINAL CTA */
+  .final {
+    text-align: center;
+  }
+  .final-box {
+    background: linear-gradient(155deg, #5f8069 0%, #4d6a57 100%);
+    border-radius: 26px;
+    padding: 58px 32px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-box::before {
+    content: "";
+    position: absolute;
+    top: -90px;
+    left: -60px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .final-box::after {
+    content: "";
+    position: absolute;
+    bottom: -110px;
+    right: -70px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+  }
+  .final-box h2 {
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    margin-bottom: 14px;
+    color: #fff;
+  }
+  .final-box p {
+    color: rgba(255, 255, 255, 0.86);
+    max-width: 44ch;
+    margin: 0 auto 30px;
+  }
+  .final-box .btn-primary {
+    background: #fff;
+    color: var(--accent-deep);
+    box-shadow: 0 16px 34px -16px rgba(0,0,0,0.5);
+  }
+  .final-box .btn-primary:hover { background: #f3f5f1; }
+  .final-note {
+    margin-top: 18px;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 44px 0 64px;
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 0.9rem;
+  }
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 14px 0 18px;
+  }
+  .footer-links a {
+    text-decoration: none;
+    color: var(--ink-soft);
+  }
+  .footer-links a:hover { color: var(--accent-deep); }
+
+  /* BADGE */
+  .qs-badge {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 90;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(43, 51, 46, 0.92);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 9px 14px;
+    border-radius: 999px;
+    box-shadow: 0 10px 26px -12px rgba(0,0,0,0.55);
+    transition: transform 0.15s ease, opacity 0.2s ease;
+    opacity: 0.85;
+  }
+  .qs-badge:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+  .qs-badge svg { width: 13px; height: 13px; }
+
+  @media (max-width: 760px) {
+    .cards { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 30px; }
+    .portrait { max-width: 320px; margin: 0 auto; width: 100%; }
+    .hero { padding: 60px 0 52px; }
+    section { padding: 52px 0; }
+    .final-box { padding: 46px 24px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Komlósi Réka
+      </a>
+      <a href="#foglalas" class="btn btn-primary btn-nav">Időpontfoglalás</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Ingyenes ismerkedő hívás</span>
+        <h1>Beszéljünk arról, <em>hol akadtál el</em>, és merre tovább.</h1>
+        <p class="lead">Egy nyugodt, tét nélküli beszélgetés, ahol közösen tisztázzuk a céljaidat, és megnézzük, miben tudok a leginkább a segítségedre lenni.</p>
+        <div class="hero-cta">
+          <a href="#foglalas" class="btn btn-primary btn-lg">Foglalj egy ingyenes 30 perces hívást</a>
+          <a href="#hivas" class="btn btn-ghost">Mire számíthatsz</a>
+        </div>
+        <p class="hero-note">Nincs kötelezettség, nincs értékesítés. Csak egy őszinte beszélgetés.</p>
+      </div>
+    </section>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="expect" id="hivas">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Mire számíts a híváson</h2>
+          <p>Harminc fókuszált perc, előre kiszámítható menettel. Így nem ér meglepetés.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="card-num" aria-hidden="true">1</div>
+            <h3>Megértjük a helyzeted</h3>
+            <p>Elmondod, hol tartasz most, és mi az, ami nem úgy halad, ahogy szeretnéd. Én kérdezek, te beszélsz.</p>
+          </div>
+          <div class="card">
+            <div class="card-num" aria-hidden="true">2</div>
+            <h3>Kijelöljük az irányt</h3>
+            <p>Együtt megfogalmazzuk, mi lenne a kézzelfogható következő lépés, függetlenül attól, dolgozunk-e majd együtt.</p>
+          </div>
+          <div class="card">
+            <div class="card-num" aria-hidden="true">3</div>
+            <h3>Te döntesz, nyugodtan</h3>
+            <p>Ha úgy érzed, passzolunk, elmondom, hogyan tudok segíteni. Ha nem, akkor is hasznos kérdésekkel mész tovább.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="rolam">
+      <div class="wrap">
+        <div class="about-grid">
+          <div class="portrait" role="img" aria-label="Komlósi Réka coach portréja"></div>
+          <div class="about-text">
+            <h2>Rólam</h2>
+            <p>Komlósi Réka vagyok, life és karrier coach. Több mint nyolc éve dolgozom olyan emberekkel, akik fordulóponthoz értek: váltani szeretnének, vagy egyszerűen újra szeretnék kapcsolódni ahhoz, ami fontos nekik.</p>
+            <p>Hiszek a lassú, tiszta kérdésekben és a nyomásmentes haladásban. Nálam nincs sablonos recept, csak figyelem, struktúra és olyan tempó, ami neked is fenntartható.</p>
+            <div class="about-sign">
+              Komlósi Réka
+              <span>ICF akkreditált coach</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="gyik">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Gyakori kérdések</h2>
+          <p>Amit a legtöbben megkérdeznek, mielőtt időpontot foglalnak.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>
+              Tényleg ingyenes a hívás?
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Igen, teljesen. Az ismerkedő hívás célja, hogy mindketten lássuk, van-e értelme a közös munkának. Semmilyen díj vagy kötelezettség nem kapcsolódik hozzá.</p>
+          </details>
+          <details>
+            <summary>
+              Hogyan zajlik a hívás?
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Online, videóhívásban, körülbelül harminc percben. A foglalás után e-mailben kapsz egy visszaigazolást a csatlakozási linkkel együtt.</p>
+          </details>
+          <details>
+            <summary>
+              Készülnöm kell rá valamivel?
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Nem szükséges. Elég, ha van egy nyugodt fél órád és egy kérdés vagy téma, ami foglalkoztat. A többit menet közben kibontjuk.</p>
+          </details>
+          <details>
+            <summary>
+              Mi történik a hívás után?
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p>Ha úgy érezzük, jó lenne együtt dolgozni, elküldöm a részleteket és a lehetséges csomagokat. Ha nem, semmi gond: a hívás akkor is a tiéd marad.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final" id="foglalas">
+      <div class="wrap">
+        <div class="final-box">
+          <h2>Foglald le a hívásod még ma</h2>
+          <p>Heti néhány ismerkedő időpontot tartok fenn. Válassz egy neked megfelelő sávot, a többit megbeszéljük.</p>
+          <a href="#foglalas" class="btn btn-primary btn-lg">Ingyenes 30 perces hívás foglalása</a>
+          <p class="final-note">Visszaigazolás e-mailben, percek alatt.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Komlósi Réka coaching
+      </div>
+      <div class="footer-links">
+        <a href="#hivas">A hívásról</a>
+        <a href="#rolam">Rólam</a>
+        <a href="#gyik">Gyakori kérdések</a>
+        <a href="#foglalas">Foglalás</a>
+      </div>
+      <p>&copy; 2026 Komlósi Réka. Minden jog fenntartva.</p>
+    </div>
+  </footer>
+
+  <!-- QUIETSTACK BADGE -->
+  <a class="qs-badge" href="https://quietstack.entropybreakers.com" target="_blank" rel="noopener">
+    QuietStack sablon
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+  </a>
+
+</body>
+</html>
