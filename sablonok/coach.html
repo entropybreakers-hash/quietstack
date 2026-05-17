@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halász Anna | Élet- és üzleti coach</title>
+<meta name="description" content="Halász Anna élet- és üzleti coach. Tiszta gondolatok, magabiztos döntések, kiegyensúlyozott élet. Foglalj egy ingyenes ismerkedő beszélgetést.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7f1e7;
+    --ivory:#fbf7ef;
+    --clay:#c4623f;
+    --clay-dark:#a64f30;
+    --clay-soft:#e5a98c;
+    --ink:#3a342e;
+    --ink-soft:#6b6258;
+    --line:#e6dccb;
+    --card:#ffffff;
+    --shadow:0 18px 45px -22px rgba(58,52,46,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.18;color:var(--ink);}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px;}
+  section{padding:88px 0;}
+  .eyebrow{
+    display:inline-block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+    font-weight:600;color:var(--clay);margin-bottom:16px;
+  }
+  .section-head{max-width:620px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.7rem);}
+  .section-head p{margin-top:14px;color:var(--ink-soft);}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-weight:600;font-size:.96rem;padding:14px 26px;border-radius:999px;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    cursor:pointer;border:none;
+  }
+  .btn-primary{background:var(--clay);color:#fff;box-shadow:0 12px 26px -12px rgba(196,98,63,.8);}
+  .btn-primary:hover{background:var(--clay-dark);transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--clay);color:var(--clay);}
+
+  /* Nav */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,241,231,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;max-width:1120px;margin:0 auto;}
+  .brand{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;letter-spacing:.01em;}
+  .brand span{color:var(--clay);}
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a.link{font-size:.93rem;font-weight:500;color:var(--ink-soft);transition:color .15s;}
+  .nav-links a.link:hover{color:var(--clay);}
+  .nav-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink);}
+
+  /* Hero */
+  .hero{padding:84px 0 96px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .hero h1{font-size:clamp(2.4rem,5.4vw,3.7rem);}
+  .hero p.lead{margin-top:22px;font-size:1.12rem;color:var(--ink-soft);max-width:480px;}
+  .hero-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;}
+  .hero-meta{margin-top:34px;display:flex;gap:30px;flex-wrap:wrap;}
+  .hero-meta div{font-size:.86rem;color:var(--ink-soft);}
+  .hero-meta strong{display:block;font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--ink);font-weight:600;}
+  .hero-visual{position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;box-shadow:var(--shadow);}
+  .hero-visual .portrait{
+    position:absolute;inset:0;
+    background:linear-gradient(160deg,#e5a98c 0%,#c4623f 55%,#8f4326 100%);
+  }
+  .hero-visual .portrait::before{
+    content:"";position:absolute;width:230px;height:230px;border-radius:50%;
+    background:rgba(251,247,239,.22);top:-60px;right:-50px;
+  }
+  .hero-visual .portrait::after{
+    content:"";position:absolute;width:160px;height:160px;border-radius:50%;
+    background:rgba(58,52,46,.16);bottom:40px;left:-40px;
+  }
+  .hero-visual .initials{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-size:5rem;color:rgba(251,247,239,.92);font-weight:700;
+  }
+  .hero-badge{
+    position:absolute;left:-26px;bottom:36px;background:var(--card);
+    padding:16px 20px;border-radius:16px;box-shadow:var(--shadow);
+    display:flex;align-items:center;gap:12px;max-width:240px;
+  }
+  .hero-badge .dot{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--clay-soft),var(--clay));flex:none;}
+  .hero-badge p{font-size:.82rem;color:var(--ink-soft);line-height:1.45;}
+  .hero-badge strong{color:var(--ink);font-size:.9rem;}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center;}
+  .about-visual{
+    aspect-ratio:1/1;border-radius:24px;
+    background:linear-gradient(150deg,#f1e3cf,#e7c9aa);
+    box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .about-visual::before{
+    content:"";position:absolute;width:62%;height:62%;border-radius:50%;
+    background:linear-gradient(150deg,var(--clay-soft),var(--clay));
+    left:50%;top:54%;transform:translate(-50%,-50%);
+  }
+  .about-visual span{
+    position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);
+    font-family:'Playfair Display',serif;color:var(--ivory);font-size:3.4rem;font-weight:700;
+  }
+  .about-text h2{font-size:clamp(1.9rem,4vw,2.7rem);}
+  .about-text p{margin-top:18px;color:var(--ink-soft);}
+  .about-quote{
+    margin-top:26px;padding:18px 24px;border-left:3px solid var(--clay);
+    background:var(--ivory);border-radius:0 12px 12px 0;
+    font-family:'Playfair Display',serif;font-size:1.12rem;color:var(--ink);font-style:italic;
+  }
+
+  /* Approach */
+  .approach{background:var(--ivory);}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:30px 26px;transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+  .card .num{
+    font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;
+    width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--clay-soft),var(--clay));color:#fff;margin-bottom:18px;
+  }
+  .card h3{font-size:1.22rem;}
+  .card p{margin-top:10px;font-size:.93rem;color:var(--ink-soft);}
+
+  /* Testimonials */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .quote{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 26px;
+    display:flex;flex-direction:column;
+  }
+  .quote .mark{font-family:'Playfair Display',serif;font-size:3rem;color:var(--clay-soft);line-height:.6;height:26px;}
+  .quote p{margin-top:6px;font-size:.97rem;color:var(--ink);flex:1;}
+  .quote .who{margin-top:20px;display:flex;align-items:center;gap:13px;}
+  .quote .av{
+    width:46px;height:46px;border-radius:50%;flex:none;
+    background:linear-gradient(140deg,var(--clay-soft),var(--clay));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:'Playfair Display',serif;font-weight:700;
+  }
+  .quote .who strong{display:block;font-size:.93rem;}
+  .quote .who span{font-size:.82rem;color:var(--ink-soft);}
+
+  /* Packages */
+  .packages{background:var(--ivory);}
+  .pkgs{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .pkg{
+    background:var(--card);border:1px solid var(--line);border-radius:20px;padding:36px 32px;
+    display:flex;flex-direction:column;position:relative;
+  }
+  .pkg.featured{border-color:var(--clay);box-shadow:var(--shadow);}
+  .pkg .tag{
+    position:absolute;top:24px;right:28px;font-size:.72rem;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;color:var(--clay);
+  }
+  .pkg h3{font-size:1.5rem;}
+  .pkg .price{margin-top:8px;font-family:'Playfair Display',serif;font-size:2rem;color:var(--clay);font-weight:700;}
+  .pkg .price small{font-size:.85rem;color:var(--ink-soft);font-family:'Inter',sans-serif;font-weight:400;}
+  .pkg .desc{margin-top:6px;color:var(--ink-soft);font-size:.93rem;}
+  .pkg ul{list-style:none;margin:22px 0 26px;display:flex;flex-direction:column;gap:11px;}
+  .pkg li{position:relative;padding-left:26px;font-size:.93rem;color:var(--ink);}
+  .pkg li::before{
+    content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;
+    background:var(--clay-soft);
+    box-shadow:inset 0 0 0 3px var(--card);
+  }
+  .pkg .btn{margin-top:auto;justify-content:center;}
+
+  /* Final CTA */
+  .final{
+    background:linear-gradient(155deg,#c4623f 0%,#a64f30 60%,#7e3c22 100%);
+    color:#fff;border-radius:28px;text-align:center;padding:72px 32px;
+    position:relative;overflow:hidden;
+  }
+  .final::before{
+    content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+    background:rgba(251,247,239,.1);top:-110px;left:-80px;
+  }
+  .final::after{
+    content:"";position:absolute;width:240px;height:240px;border-radius:50%;
+    background:rgba(58,52,46,.14);bottom:-110px;right:-60px;
+  }
+  .final h2{color:#fff;font-size:clamp(2rem,4.4vw,3rem);position:relative;}
+  .final p{margin:16px auto 30px;max-width:520px;color:rgba(251,247,239,.9);position:relative;}
+  .final .btn{position:relative;background:var(--ivory);color:var(--clay-dark);}
+  .final .btn:hover{background:#fff;}
+  .final-section{padding-bottom:96px;}
+
+  /* Footer */
+  footer{background:var(--ink);color:#cfc6ba;padding:54px 0 30px;}
+  .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+  .foot-brand{max-width:300px;}
+  .foot-brand .brand{color:#fff;}
+  .foot-brand .brand span{color:var(--clay-soft);}
+  .foot-brand p{margin-top:12px;font-size:.88rem;color:#a89e92;}
+  .foot-col h4{font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:14px;}
+  .foot-col a,.foot-col p{display:block;font-size:.9rem;color:#b3a99d;margin-bottom:9px;transition:color .15s;}
+  .foot-col a:hover{color:var(--clay-soft);}
+  .foot-bottom{
+    margin-top:40px;padding-top:22px;border-top:1px solid #4a443c;
+    font-size:.82rem;color:#8d8378;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  }
+
+  /* Demo badge */
+  .demo-badge{
+    position:fixed;right:18px;bottom:18px;z-index:100;
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--ink);color:#fbf7ef;
+    font-size:.8rem;font-weight:600;padding:9px 15px;border-radius:999px;
+    box-shadow:0 10px 24px -10px rgba(0,0,0,.55);
+    border:1px solid rgba(251,247,239,.15);
+    transition:transform .18s ease, background .18s ease;
+  }
+  .demo-badge:hover{background:var(--clay);transform:translateY(-2px);}
+  .demo-badge .arrow{font-size:.95rem;line-height:1;}
+
+  @media(max-width:880px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:40px;}
+    .hero-visual{max-width:380px;margin:0 auto;}
+    .about-visual{max-width:340px;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .quotes{grid-template-columns:1fr;}
+    .pkgs{grid-template-columns:1fr;}
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--cream);border-bottom:1px solid var(--line);
+      flex-direction:column;align-items:stretch;gap:0;padding:10px 22px 20px;
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a.link{padding:11px 0;border-bottom:1px solid var(--line);}
+    .nav-links .btn{margin-top:12px;justify-content:center;}
+    .nav-toggle{display:block;}
+  }
+  @media(max-width:520px){
+    section{padding:62px 0;}
+    .cards{grid-template-columns:1fr;}
+    .hero-meta{gap:22px;}
+    .final{padding:54px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">Halász <span>Anna</span></a>
+    <div class="nav-links" id="navLinks">
+      <a class="link" href="#rolam">Rólam</a>
+      <a class="link" href="#segitseg">Hogyan segítek</a>
+      <a class="link" href="#velemenyek">Vélemények</a>
+      <a class="link" href="#csomagok">Csomagok</a>
+      <a class="btn btn-primary" href="#kapcsolat">Foglalj egy beszélgetést</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü">&#9776;</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Élet- és üzleti coach</span>
+        <h1>Tiszta gondolatok, magabiztos döntések, kiegyensúlyozott élet.</h1>
+        <p class="lead">Segítek abban, hogy újra magadra találj a hétköznapok zajában, és bátran lépj a következő szintre, akár a karriereddel, akár a magánéleteddel kapcsolatban.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#kapcsolat">Foglalj egy beszélgetést</a>
+          <a class="btn btn-ghost" href="#segitseg">Hogyan dolgozom</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>12 év</strong>coaching tapasztalat</div>
+          <div><strong>300+</strong>kísért ügyfél</div>
+          <div><strong>4,9</strong>átlagos értékelés</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="portrait"></div>
+        <div class="initials">HA</div>
+        <div class="hero-badge">
+          <div class="dot"></div>
+          <p><strong>Ingyenes első alkalom</strong><br>Ismerkedő beszélgetés, kötöttségek nélkül.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ROLAM -->
+<section id="rolam">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-visual"><span>HA</span></div>
+      <div class="about-text">
+        <span class="eyebrow">Rólam</span>
+        <h2>Halász Anna vagyok, és a változásban hiszek.</h2>
+        <p>Több mint egy évtizede kísérek embereket olyan időszakokban, amikor valami már nem működik, de még nem tiszta, mi a következő lépés. Korábban vezetőként dolgoztam, így jól ismerem a teljesítménynyomás, a kiégés és a döntési bizonytalanság érzését is.</p>
+        <p>Munkámban ötvözöm a strukturált, célorientált coaching módszereket az emberi, ítélkezésmentes jelenléttel. Nem kész válaszokat adok, hanem olyan biztonságos teret teremtek, ahol te magad találod meg a sajátjaidat.</p>
+        <div class="about-quote">"A coaching nem arról szól, hogy valaki más legyél. Arról szól, hogy bátran az lehess, aki valójában vagy."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOGYAN SEGITEK -->
+<section id="segitseg" class="approach">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Hogyan segítek</span>
+      <h2>Egy módszer, amely a tisztánlátásból indul</h2>
+      <p>A közös munka négy lépésre épül, hogy ne csak jobban érezd magad, hanem valódi, tartós változást is elérj.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Tisztánlátás</h3>
+        <p>Először feltérképezzük, hol tartasz most, és mi az, ami valójában fontos neked. A jó kérdések megelőzik a jó döntéseket.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Irány és célok</h3>
+        <p>Megfogalmazzuk a számodra hiteles célokat, és lebontjuk őket olyan lépésekre, amelyek a hétköznapokban is megvalósíthatók.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Akadályok feloldása</h3>
+        <p>Megnézzük, milyen belső hiedelmek és minták tartanak vissza, és új, támogató gondolkodásmódot építünk helyettük.</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <h3>Tartós lendület</h3>
+        <p>Olyan szokásokat és önreflexiós eszközöket alakítunk ki, amelyekkel a közös munka után is magabiztosan haladsz tovább.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VELEMENYEK -->
+<section id="velemenyek">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Vélemények</span>
+      <h2>Amit az ügyfeleim mondanak</h2>
+      <p>Néhány gondolat azoktól, akikkel együtt dolgozhattam egy fontos időszakukban.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <div class="mark">&ldquo;</div>
+        <p>Anna segítségével végre kimondtam, amit évek óta éreztem: váltanom kell. Három hónap alatt nemcsak döntöttem, hanem el is indultam egy új úton, magabiztosan.</p>
+        <div class="who">
+          <div class="av">KE</div>
+          <div><strong>Kovács Eszter</strong><span>marketing vezető</span></div>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="mark">&ldquo;</div>
+        <p>Vállalkozóként folyamatosan túlterhelt voltam. A közös munka után tisztábban látom a prioritásaimat, és először érzem azt, hogy nem a naptáram irányít engem.</p>
+        <div class="who">
+          <div class="av">NT</div>
+          <div><strong>Nagy Tamás</strong><span>cégtulajdonos</span></div>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="mark">&ldquo;</div>
+        <p>Sokféle önfejlesztő dolgot kipróbáltam már, de itt éreztem először, hogy tényleg meghallgatnak. Anna jelenléte nyugalmat ad, a kérdései pedig mozgásba hoznak.</p>
+        <div class="who">
+          <div class="av">SZR</div>
+          <div><strong>Szabó Réka</strong><span>HR szakértő</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSOMAGOK -->
+<section id="csomagok" class="packages">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Hogyan dolgozunk együtt</span>
+      <h2>Válaszd ki a hozzád illő utat</h2>
+      <p>Minden együttműködés egy ingyenes ismerkedő beszélgetéssel kezdődik, hogy biztosan jó döntést hozz.</p>
+    </div>
+    <div class="pkgs">
+      <div class="pkg">
+        <h3>Fókusz alkalom</h3>
+        <div class="price">19 000 Ft <small>/ 90 perc</small></div>
+        <p class="desc">Egyetlen, mélyre menő beszélgetés egy konkrét kérdés vagy döntés tisztázására.</p>
+        <ul>
+          <li>90 perces egyéni coaching ülés</li>
+          <li>Egy aktuális téma vagy döntés feldolgozása</li>
+          <li>Konkrét, hazavihető következő lépések</li>
+          <li>Online vagy személyes találkozó</li>
+        </ul>
+        <a class="btn btn-ghost" href="#kapcsolat">Időpontot kérek</a>
+      </div>
+      <div class="pkg featured">
+        <span class="tag">Legnépszerűbb</span>
+        <h3>Átalakító folyamat</h3>
+        <div class="price">149 000 Ft <small>/ 6 alkalom</small></div>
+        <p class="desc">Mélyebb, kísért folyamat azoknak, akik valódi, tartós változást szeretnének.</p>
+        <ul>
+          <li>6 alkalmas, személyre szabott coaching folyamat</li>
+          <li>Részletes kezdő helyzetfeltárás és célkitűzés</li>
+          <li>Alkalmak közötti gyakorlatok és visszajelzés</li>
+          <li>E-mailes támogatás a folyamat teljes ideje alatt</li>
+          <li>Záró összegzés és továbblépési terv</li>
+        </ul>
+        <a class="btn btn-primary" href="#kapcsolat">Foglalj egy beszélgetést</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="kapcsolat" class="final-section">
+  <div class="wrap">
+    <div class="final">
+      <h2>Készen állsz a következő lépésre?</h2>
+      <p>Foglalj egy ingyenes, 30 perces ismerkedő beszélgetést. Átbeszéljük, hol tartasz most, és kiderül, hogy a közös munka neked való utat jelent-e.</p>
+      <a class="btn" href="#kapcsolat">Foglalj egy beszélgetést</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="brand">Halász <span>Anna</span></a>
+        <p>Élet- és üzleti coach. Segítek abban, hogy tiszta fejjel, magabiztosan hozd meg az életed legfontosabb döntéseit.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Oldalak</h4>
+        <a href="#rolam">Rólam</a>
+        <a href="#segitseg">Hogyan segítek</a>
+        <a href="#velemenyek">Vélemények</a>
+        <a href="#csomagok">Csomagok</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kapcsolat</h4>
+        <p>hello@halaszanna.hu</p>
+        <p>+36 30 123 4567</p>
+        <p>Budapest, valamint online</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>2026 Halász Anna. Minden jog fenntartva.</span>
+      <span>Ez egy bemutató sablon oldal.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- DEMO BADGE -->
+<a class="demo-badge" href="https://quietstack.entropybreakers.com" target="_blank" rel="noopener">
+  QuietStack sablon <span class="arrow">&rarr;</span>
+</a>
+
+<script>
+  var t=document.getElementById('navToggle');
+  var l=document.getElementById('navLinks');
+  t.addEventListener('click',function(){l.classList.toggle('open');});
+  l.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){l.classList.remove('open');});
+  });
+</script>
+</body>
+</html>
