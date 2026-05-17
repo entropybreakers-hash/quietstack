@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Magabiztos angol 6 hét alatt | Online kurzus</title>
-<meta name="description" content="Magabiztos angol 6 hét alatt: gyakorlatorientált online kurzus, amely valódi beszélgetésre tanít. Jelentkezz a következő csoportba.">
+<title>Magabiztos angol 6 hét alatt | Hargitai Réka angoltanár online kurzusa</title>
+<meta name="description" content="Magabiztos angol 6 hét alatt Hargitai Réka angoltanárral: gyakorlatorientált online kurzus, amely valódi beszélgetésre tanít. Jelentkezz a következő csoportba.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -510,6 +510,63 @@
   .qs-badge svg{width:13px;height:13px;stroke:var(--accent);}
   .qs-badge:hover svg{stroke:#fff;}
 
+  /* SCROLL REVEAL ANIMATIONS */
+  .reveal{
+    opacity:0;transform:translateY(28px);
+    transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);
+    will-change:opacity,transform;
+  }
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .reveal.d1{transition-delay:.08s;}
+  .reveal.d2{transition-delay:.16s;}
+  .reveal.d3{transition-delay:.24s;}
+  .reveal.d4{transition-delay:.32s;}
+  .reveal.d5{transition-delay:.40s;}
+
+  /* HERO ENTRANCE ON LOAD */
+  @keyframes heroRise{
+    from{opacity:0;transform:translateY(24px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .hero-anim{opacity:0;animation:heroRise .85s cubic-bezier(.22,.61,.36,1) forwards;}
+  .hero-anim.a1{animation-delay:.05s;}
+  .hero-anim.a2{animation-delay:.16s;}
+  .hero-anim.a3{animation-delay:.27s;}
+  .hero-anim.a4{animation-delay:.38s;}
+  .hero-anim.a5{animation-delay:.5s;}
+
+  /* REFINED HOVER TRANSITIONS */
+  .aud-col{transition:transform .25s ease,border-color .25s ease;}
+  .aud-col:hover{transform:translateY(-4px);border-color:var(--line-strong);}
+  .rev{transition:transform .25s ease,border-color .25s ease;}
+  .rev:hover{transform:translateY(-4px);border-color:var(--line-strong);}
+  .plan{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;}
+  .plan:hover{transform:translateY(-5px);}
+  .num-card{transition:transform .25s ease,border-color .25s ease;}
+  .num-card:hover{transform:translateY(-4px);border-color:var(--line-strong);}
+  .curr-meta .chip{transition:transform .2s ease,border-color .2s ease;}
+  .curr-meta .chip:hover{transform:translateY(-2px);border-color:var(--line-strong);}
+  .enrol-card{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease;}
+  .enrol-card:hover{transform:translateY(-5px);}
+  .strip-inner .item{transition:color .2s ease;}
+  .ben-card .ic,.aud-col .ix,.ec-tick{transition:transform .25s ease;}
+  .ben-card:hover .ic{transform:scale(1.08) rotate(-3deg);}
+  .nav .brand .mark,.qs-badge svg{transition:transform .25s ease;}
+  .nav .brand:hover .mark{transform:rotate(-8deg) scale(1.05);}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
+    .hero-anim{opacity:1 !important;animation:none !important;}
+    .btn:hover,.aud-col:hover,.rev:hover,.plan:hover,.num-card:hover,
+    .ben-card:hover,.curr-meta .chip:hover,.enrol-card:hover,.qs-badge:hover,
+    .nav .brand:hover .mark,.ben-card:hover .ic{transform:none !important;}
+    *,*::before,*::after{
+      animation-duration:.001ms !important;animation-iteration-count:1 !important;
+      transition-duration:.001ms !important;
+    }
+  }
+
   /* RESPONSIVE */
   @media (max-width:920px){
     .hero-grid{grid-template-columns:1fr;gap:44px;}
@@ -544,10 +601,10 @@
 <!-- STICKY ENROL BAR -->
 <div class="enrolbar" id="enrolbar">
   <div class="wrap enrolbar-inner">
-    <span class="eb-mark">A</span>
+    <span class="eb-mark">S</span>
     <span class="eb-info">
       <b>Magabiztos angol 6 hét alatt</b>
-      <span>Következő csoport: 2026. június 8.</span>
+      <span>Hargitai Rékával &middot; Következő csoport: 2026. június 8.</span>
     </span>
     <span class="eb-price">
       <del>49 900 Ft</del>
@@ -563,13 +620,13 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="brand">
-      <span class="mark">A</span>
-      Angolműhely
+      <span class="mark">S</span>
+      SpeakUp angolműhely
     </a>
     <nav class="nav-links">
       <a class="link" href="#kinek">Kinek szól</a>
       <a class="link" href="#felepites">Felépítés</a>
-      <a class="link" href="#oktato">Oktató</a>
+      <a class="link" href="#oktato">A tanár</a>
       <a class="link" href="#arak">Árak</a>
       <a class="btn btn-accent" href="#jelentkezes">Jelentkezem</a>
     </nav>
@@ -580,20 +637,20 @@
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="pill"><span class="dot"></span> Következő csoport indul: 2026. június 8.</span>
-      <h1>Hat hét alatt <span class="hl">magabiztosan</span> megszólalsz angolul.</h1>
-      <p class="lead">Vége a nyelvtani szabályok magolásának. Ezen a gyakorlatorientált online kurzuson hétről hétre felépítjük a kimondott angolt, hogy végre bátran és gördülékenyen beszélj. Nem holnap, hanem hat hét múlva.</p>
-      <div class="hero-cta">
+      <span class="pill hero-anim a1"><span class="dot"></span> Következő csoport indul: 2026. június 8.</span>
+      <h1 class="hero-anim a2">Hat hét alatt <span class="hl">magabiztosan</span> megszólalsz angolul.</h1>
+      <p class="lead hero-anim a3">Vége a nyelvtani szabályok magolásának. Hargitai Réka angoltanár gyakorlatorientált online kurzusán hétről hétre felépítjük a kimondott angolt, hogy végre bátran és gördülékenyen beszélj. Nem holnap, hanem hat hét múlva.</p>
+      <div class="hero-cta hero-anim a4">
         <a class="btn btn-accent btn-lg" href="#jelentkezes">Jelentkezem a kurzusra</a>
         <a class="btn btn-ghost btn-lg" href="#felepites">Megnézem a tananyagot</a>
       </div>
-      <div class="hero-rated">
+      <div class="hero-rated hero-anim a5">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span><b>4,9 / 5</b> átlagos értékelés, 1 200+ résztvevő visszajelzése alapján</span>
+        <span><b>4,9 / 5</b> átlagos értékelés, 1 200+ tanítvány visszajelzése alapján</span>
       </div>
     </div>
 
-    <div class="enrol-card">
+    <div class="enrol-card hero-anim a3">
       <span class="ec-ribbon">Korai jelentkezés</span>
       <div class="ec-top">
         <span class="lbl">Magabiztos angol 6 hét alatt</span>
@@ -631,15 +688,15 @@
 <!-- KINEK SZOL -->
 <section class="audience" id="kinek">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Kinek szól</span>
       <h2>Ismerős a helyzet? Akkor jó helyen jársz.</h2>
       <p>Ez a kurzus nem mindenkinek való. Az alábbi két oszlop segít eldönteni, hogy neked szól-e a program.</p>
     </div>
     <div class="aud-grid">
-      <div class="aud-col no">
+      <div class="aud-col no reveal">
         <h3>Valószínűleg ismerős</h3>
-        <p class="sub">Ezeket halljuk a legtöbb jelentkezőtől.</p>
+        <p class="sub">Ezeket hallom a legtöbb jelentkezőtől.</p>
         <ul>
           <li><span class="ix">x</span> Évek óta tanulsz, de megszólalni mégsem mersz.</li>
           <li><span class="ix">x</span> A fejedben összeáll a mondat, kimondva mégis elakad.</li>
@@ -648,9 +705,9 @@
           <li><span class="ix">x</span> Sok appot kipróbáltál, de nincs valódi, mérhető fejlődés.</li>
         </ul>
       </div>
-      <div class="aud-col yes">
+      <div class="aud-col yes reveal d1">
         <h3>Ha végigcsinálod, ezt kapod</h3>
-        <p class="sub">Erre tervezte a kurzust Kovács Eszter.</p>
+        <p class="sub">Erre tervezte a kurzust Hargitai Réka.</p>
         <ul>
           <li><span class="ix">+</span> Gondolkodás nélkül megszólalsz a hétköznapi helyzetekben.</li>
           <li><span class="ix">+</span> Természetes ritmusban beszélsz, akadozás nélkül.</li>
@@ -666,38 +723,38 @@
 <!-- MIT KAPSZ / BENEFITS -->
 <section class="benefits">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Mit kapsz</span>
       <h2>Minden a kézben, hogy hat hét alatt megszólalj</h2>
       <p>Nem csak videókat kapsz, hanem egy teljes rendszert: gyakorlatot, közeget és visszajelzést.</p>
     </div>
     <div class="ben-grid">
-      <div class="ben-card">
+      <div class="ben-card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7 16 12 23 17z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
         <h3>Rövid videóleckék</h3>
         <p>Tömör, gyakorlatias leckék, amelyeket akár ebédszünetben is végig tudsz nézni. Nincs üresjárat.</p>
       </div>
-      <div class="ben-card">
+      <div class="ben-card reveal d1">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Élő beszédműhely</h3>
         <p>Heti egy interaktív alkalom kis csoportban, ahol kizárólag a kimondott angolon van a hangsúly.</p>
       </div>
-      <div class="ben-card">
+      <div class="ben-card reveal d2">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
         <h3>Letölthető munkafüzetek</h3>
         <p>Minden héthez gyakorlófeladatok, szólisták és sablonok, amelyeket azonnal a gyakorlatban használsz.</p>
       </div>
-      <div class="ben-card">
+      <div class="ben-card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>Személyes visszajelzés</h3>
         <p>Konkrét, építő visszajelzést kapsz a beszédedre, hogy pontosan tudd, min érdemes finomítani.</p>
       </div>
-      <div class="ben-card">
+      <div class="ben-card reveal d1">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 7v5l3 3"/></svg></div>
         <h3>Korlátlan visszanézés</h3>
         <p>Minden videó és élő alkalom felvétele végleg elérhető marad, így soha nem maradsz le semmiről.</p>
       </div>
-      <div class="ben-card">
+      <div class="ben-card reveal d2">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 9l7 .5-5.5 4.5L18 21l-6-3.7L6 21l1.5-7L2 9.5 9 9z"/></svg></div>
         <h3>Zárt tanulóközösség</h3>
         <p>Támogató közeg tanulótársakkal, ahol bátran gyakorolhatsz, kérdezhetsz és motiváltan haladsz.</p>
@@ -720,12 +777,12 @@
 <!-- CURRICULUM ACCORDION -->
 <section class="curriculum" id="felepites">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">A kurzus felépítése</span>
       <h2>Hat hét, hat tiszta lépés</h2>
-      <p>Minden hét egy önálló témára épül, és az előzőre alapoz. Nyisd ki a moduljokat, és nézd meg pontosan, mit gyakorolsz.</p>
+      <p>Minden hét egy önálló témára épül, és az előzőre alapoz. Nyisd ki a modulokat, és nézd meg pontosan, mit gyakorolsz.</p>
     </div>
-    <div class="curr-meta">
+    <div class="curr-meta reveal">
       <span class="chip"><b>6</b> modul</span>
       <span class="chip"><b>32</b> videólecke</span>
       <span class="chip"><b>6</b> élő műhely</span>
@@ -733,7 +790,7 @@
       <span class="chip">Heti <b>3, 4 óra</b> ráfordítás</span>
     </div>
     <div class="acc">
-      <details class="mod" open>
+      <details class="mod reveal" open>
         <summary>
           <span class="wk"><b>01</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Bevezetés</span><h3>Alapok és gátlások feloldása</h3></span>
@@ -750,7 +807,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod">
+      <details class="mod reveal">
         <summary>
           <span class="wk"><b>02</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Gyakorlat</span><h3>Hétköznapi beszélgetések</h3></span>
@@ -767,7 +824,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod">
+      <details class="mod reveal">
         <summary>
           <span class="wk"><b>03</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Szókincs</span><h3>Szókincs témakörönként</h3></span>
@@ -784,7 +841,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod">
+      <details class="mod reveal">
         <summary>
           <span class="wk"><b>04</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Nyelvtan</span><h3>Nyelvtan a gyakorlatban</h3></span>
@@ -801,7 +858,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod">
+      <details class="mod reveal">
         <summary>
           <span class="wk"><b>05</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Hallgatás</span><h3>Hallás utáni megértés</h3></span>
@@ -818,7 +875,7 @@
           </ul>
         </div>
       </details>
-      <details class="mod">
+      <details class="mod reveal">
         <summary>
           <span class="wk"><b>06</b><span>hét</span></span>
           <span class="mtitle"><span class="tag">Lezárás</span><h3>Szabad beszélgetés és lezárás</h3></span>
@@ -842,14 +899,14 @@
 <!-- INSTRUCTOR -->
 <section class="instructor" id="oktato">
   <div class="wrap inst-grid">
-    <div class="inst-photo">
-      <div class="glyph">KE</div>
+    <div class="inst-photo reveal">
+      <div class="glyph">HR</div>
       <div class="cap">
-        <b>Kovács Eszter</b>
-        <span>nyelvtanár, kurzusvezető</span>
+        <b>Hargitai Réka</b>
+        <span>angoltanár, kurzusvezető</span>
       </div>
     </div>
-    <div class="inst-body">
+    <div class="inst-body reveal d1">
       <span class="eyebrow">Az oktatóról</span>
       <h2>Velem nem a szabályok, hanem a beszéd a fókusz</h2>
       <p>Tizenkét éve tanítok angolt, ebből az utóbbi hat évben kizárólag online. Korábban magam is küzdöttem a megszólalástól való félelemmel, ezért minden tananyagomat úgy építettem fel, hogy a gyakorlat és a bátorság kerüljön a középpontba.</p>
@@ -867,15 +924,15 @@
 <!-- SZAMOK / STATS -->
 <section class="numbers">
   <div class="wrap">
-    <div class="section-head center">
+    <div class="section-head center reveal">
       <span class="eyebrow">Számokban</span>
       <h2>Amit a résztvevők eredményei mutatnak</h2>
     </div>
     <div class="num-grid">
-      <div class="num-card"><b>1 200<span class="u">+</span></b><span>elvégzett kurzus</span></div>
-      <div class="num-card"><b>92<span class="u">%</span></b><span>be is fejezte a programot</span></div>
-      <div class="num-card"><b>4,9<span class="u">/5</span></b><span>átlagos értékelés</span></div>
-      <div class="num-card"><b>6<span class="u"> hét</span></b><span>az első érezhető fejlődésig</span></div>
+      <div class="num-card reveal"><b>1 200<span class="u">+</span></b><span>elvégzett kurzus</span></div>
+      <div class="num-card reveal d1"><b>92<span class="u">%</span></b><span>be is fejezte a programot</span></div>
+      <div class="num-card reveal d2"><b>4,9<span class="u">/5</span></b><span>átlagos értékelés</span></div>
+      <div class="num-card reveal d3"><b>6<span class="u"> hét</span></b><span>az első érezhető fejlődésig</span></div>
     </div>
   </div>
 </section>
@@ -883,20 +940,20 @@
 <!-- TESTIMONIALS -->
 <section class="reviews">
   <div class="wrap">
-    <div class="section-head center">
+    <div class="section-head center reveal">
       <span class="eyebrow">Visszajelzések</span>
       <h2>Akik már megszólaltak</h2>
       <p>Néhány őszinte visszajelzés a korábbi csoportok résztvevőitől.</p>
     </div>
     <div class="rev-grid">
-      <div class="rev">
+      <div class="rev reveal">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <p>Tizenöt éve tanulok angolul, de megszólalni sosem mertem. Hat hét alatt eljutottam oda, hogy egy külföldi ügyféllel végig angolul beszéltem, és nem akadtam el.</p>
         <div class="who"><span class="av">NA</span><div><b>Nagy Anikó</b><span>marketinges</span></div></div>
       </div>
       <div class="rev">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <p>Az élő műhelyek miatt nem lehetett kibújni a beszéd alól, és pont erre volt szükségem. Eszter végig türelmes és bátorító volt, sosem éreztem kínosan magam.</p>
+        <p>Az élő műhelyek miatt nem lehetett kibújni a beszéd alól, és pont erre volt szükségem. Réka végig türelmes és bátorító volt, sosem éreztem kínosan magam.</p>
         <div class="who"><span class="av">TB</span><div><b>Tóth Balázs</b><span>fejlesztő</span></div></div>
       </div>
       <div class="rev">
@@ -1008,7 +1065,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="brand"><span class="mark">A</span> Angolműhely</div>
+        <div class="brand"><span class="mark">S</span> SpeakUp angolműhely</div>
         <p class="fdesc">Gyakorlatorientált online angol kurzusok, amelyek valódi beszélgetésre tanítanak. Magabiztos angol, lépésről lépésre.</p>
       </div>
       <div>
@@ -1024,14 +1081,14 @@
         <h4>Kapcsolat</h4>
         <ul>
           <li><a href="#oktato">Az oktatóról</a></li>
-          <li><a href="mailto:info@angolmuhely.example">info@angolmuhely.example</a></li>
+          <li><a href="mailto:info@speakupangol.example">info@speakupangol.example</a></li>
           <li><a href="#top">Adatkezelési tájékoztató</a></li>
           <li><a href="#top">Általános szerződési feltételek</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>2026 Angolműhely. Minden jog fenntartva.</span>
+      <span>2026 SpeakUp angolműhely. Minden jog fenntartva.</span>
       <span>Ez egy bemutató célú sablonoldal.</span>
     </div>
   </div>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiszta Fokusz Notion sabloncsomag | Kata Online</title>
-<meta name="description" content="Tiszta Fokusz: kesz Notion sabloncsomag coachoknak es digitalis alkotoknak. Tartalomtervezes, ugyfelkovetes es heti tervezes egy helyen. 7 900 Ft, azonnali hozzaferes.">
+<title>Lendulet digitalis marketing csomag | Berki Marketing</title>
+<meta name="description" content="Lendulet: kesz digitalis marketing csomag vallalkozoknak es alkotoknak. Tartalomnaptar, poszt es hirdetes sablonok, social media eszkoztar egy helyen. 14 900 Ft, azonnali hozzaferes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -722,6 +722,63 @@
   }
   .qs-badge:hover .qs-arrow { transform: translateX(2px); }
 
+  /* ---------- ANIMATIONS ---------- */
+  @keyframes qs-hero-in {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-anim {
+    opacity: 0;
+    animation: qs-hero-in 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+  .hero-anim.d1 { animation-delay: 0.08s; }
+  .hero-anim.d2 { animation-delay: 0.18s; }
+  .hero-anim.d3 { animation-delay: 0.28s; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal.s1 { transition-delay: 0.06s; }
+  .reveal.s2 { transition-delay: 0.12s; }
+  .reveal.s3 { transition-delay: 0.18s; }
+  .reveal.s4 { transition-delay: 0.24s; }
+  .reveal.s5 { transition-delay: 0.30s; }
+  .reveal.s6 { transition-delay: 0.36s; }
+
+  .feat, .ben, .peek-row, .qs-badge, .btn, .seller-chip {
+    transition: transform 0.22s cubic-bezier(0.22, 0.61, 0.36, 1),
+                box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  }
+  .ben:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-sm);
+  }
+  .peek-row:hover { transform: translateX(3px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero-anim,
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+      transition: none !important;
+    }
+    .feat:hover, .ben:hover, .peek-row:hover,
+    .btn-primary:hover, .qs-badge:hover {
+      transform: none;
+    }
+  }
+
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 860px) {
     .product { grid-template-columns: 1fr; gap: 30px; padding-top: 14px; }
@@ -753,10 +810,10 @@
 <div class="shop">
   <div class="topbar">
     <a href="#" class="brand">
-      <span class="brand-mark">K</span>
-      <span>Kata Online</span>
+      <span class="brand-mark">B</span>
+      <span>Berki Marketing</span>
     </a>
-    <span class="seller">Notion sablonok digitalis alkotoknak</span>
+    <span class="seller">Marketing eszkozok vallalkozoknak</span>
   </div>
 </div>
 
@@ -766,29 +823,29 @@
 
     <!-- VISUAL -->
     <div class="gallery">
-      <div class="mockup">
+      <div class="mockup hero-anim">
         <div class="mock-float top">
-          <span class="pill">7</span>
-          <span>napos beallitas</span>
+          <span class="pill">90</span>
+          <span>kesz sablon</span>
         </div>
         <div class="mock-card">
-          <span class="mock-tab">Heti attekintes</span>
-          <div class="mock-h">Tiszta Fokusz iranyitopult</div>
+          <span class="mock-tab">Havi attekintes</span>
+          <div class="mock-h">Lendulet kampanynaptar</div>
           <div class="mock-line w80"></div>
           <div class="mock-line accent"></div>
           <div class="mock-line w55"></div>
           <div class="mock-checkrow">
             <span class="box">+</span>
-            Tartalomnaptar a kovetkezo honapra
+            Posztsablonok a kovetkezo honapra
           </div>
           <div class="mock-checkrow">
             <span class="box">+</span>
-            Ugyfel pipeline egy nezetben
+            Hirdetesi szovegek egy helyen
           </div>
         </div>
         <div class="mock-float bottom">
-          <span class="pill">12</span>
-          <span>kesz oldal</span>
+          <span class="pill">4</span>
+          <span>platform</span>
         </div>
       </div>
       <div class="thumbs">
@@ -809,19 +866,19 @@
 
     <!-- INFO -->
     <div class="info">
-      <div class="crumb">Sablonok / Produktivitas / <span class="here">Tiszta Fokusz</span></div>
-      <span class="eyebrow"><span class="dot"></span>Notion sabloncsomag</span>
-      <h1>Tiszta Fokusz Notion sabloncsomag</h1>
-      <p class="value">Kesz rendszer coachoknak es digitalis alkotoknak: tartalom, ugyfelek es heti tervezes egy atlathato helyen.</p>
-      <div class="rating">
+      <div class="crumb hero-anim d1">Eszkozok / Marketing / <span class="here">Lendulet</span></div>
+      <span class="eyebrow hero-anim d1"><span class="dot"></span>Digitalis marketing csomag</span>
+      <h1 class="hero-anim d1">Lendulet digitalis marketing csomag</h1>
+      <p class="value hero-anim d2">Kesz eszkoztar vallalkozoknak es alkotoknak: tartalomnaptar, poszt es hirdetes sablonok, kampanytervezok egy helyen.</p>
+      <div class="rating hero-anim d2">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span>4,9 / 5, 124 visszajelzes alapjan</span>
+        <span>4,9 / 5, 168 visszajelzes alapjan</span>
       </div>
 
-      <div class="buybox">
+      <div class="buybox hero-anim d3">
         <div class="price-row">
-          <span class="price">7 900 Ft</span>
-          <span class="price-old">12 900 Ft</span>
+          <span class="price">14 900 Ft</span>
+          <span class="price-old">24 900 Ft</span>
           <span class="price-tag">Bevezeto ar</span>
         </div>
         <div class="price-sub">Egyszeri vasarlas, nincs elofizetes.</div>
@@ -832,10 +889,10 @@
           <li><span class="check">+</span>14 napos penzvisszafizetesi garancia</li>
         </ul>
         <div class="seller-chip">
-          <span class="seller-av">KO</span>
+          <span class="seller-av">BM</span>
           <div>
-            <div class="sc-name">Kata Online</div>
-            <div class="sc-role">2018 ota keszit rendszereket alkotoknak</div>
+            <div class="sc-name">Berki Marketing</div>
+            <div class="sc-role">2017 ota segit vallalkozasokat online noni</div>
           </div>
         </div>
       </div>
