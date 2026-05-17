@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foglalj egy ingyenes hívást | Komlósi Réka coaching</title>
-<meta name="description" content="Foglalj egy ingyenes 30 perces hívást Komlósi Rékával. Nyugodt, tét nélküli beszélgetés arról, hol akadtál el, és merre tovább.">
+<title>Foglalj egy ingyenes hívást | Halász Dóra hormonális coach</title>
+<meta name="description" content="Foglalj egy ingyenes 30 perces hívást Halász Dórával, női hormonális támogató coachal. Nyugodt beszélgetés a ciklusodról, az energiádról és a hormonális egyensúlyodról.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -264,6 +264,38 @@
     .expect-head { margin-bottom: 36px; }
     .point { gap: 18px; }
   }
+
+  /* ANIMATIONS */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .reveal-up.is-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hero .reveal-up:nth-child(1) { transition-delay: 0.08s; }
+  .hero .reveal-up:nth-child(2) { transition-delay: 0.20s; }
+  .hero .reveal-up:nth-child(3) { transition-delay: 0.34s; }
+  .hero .reveal-up:nth-child(4) { transition-delay: 0.46s; }
+  .hero .reveal-up:nth-child(5) { transition-delay: 0.56s; }
+  .expect .point.reveal-up:nth-child(1) { transition-delay: 0.04s; }
+  .expect .point.reveal-up:nth-child(2) { transition-delay: 0.14s; }
+  .expect .point.reveal-up:nth-child(3) { transition-delay: 0.24s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal-up {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .btn { transition: background 0.2s ease; }
+    .btn:hover { transform: none; }
+    .qs-badge { transition: opacity 0.2s ease; }
+    .qs-badge:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -273,7 +305,7 @@
     <div class="wordmark-inner">
       <a href="#top" class="brand">
         <span class="brand-mark" aria-hidden="true"></span>
-        Komlósi Réka
+        Halász Dóra
       </a>
     </div>
   </div>
@@ -283,11 +315,11 @@
     <!-- HERO -->
     <section class="hero">
       <div class="wrap">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Ingyenes ismerkedő hívás</span>
-        <h1>Beszéljünk arról, <em>hol akadtál el</em>.</h1>
-        <p class="lead">Egy nyugodt, tét nélküli beszélgetés, ahol közösen tisztázzuk, merre tovább, és miben tudok a segítségedre lenni.</p>
-        <a href="#" class="btn">Foglalj egy ingyenes 30 perces hívást</a>
-        <p class="hero-note">Nincs kötelezettség, nincs értékesítés. Csak egy őszinte beszélgetés.</p>
+        <span class="eyebrow reveal-up"><span class="dot" aria-hidden="true"></span> Ingyenes ismerkedő hívás</span>
+        <h1 class="reveal-up">Találd meg újra a <em>hormonális egyensúlyod</em>.</h1>
+        <p class="lead reveal-up">Egy nyugodt, tét nélküli beszélgetés a ciklusodról, az energiádról és a közérzetedről, ahol közösen tisztázzuk, hol billent ki az egyensúly, és mi az első lépés vissza.</p>
+        <a href="#" class="btn reveal-up">Foglalj egy ingyenes 30 perces hívást</a>
+        <p class="hero-note reveal-up">Nincs kötelezettség, nincs értékesítés. Csak egy őszinte, megértő beszélgetés.</p>
       </div>
     </section>
 
@@ -298,25 +330,25 @@
           <h2>Mire számíts a híváson</h2>
         </div>
         <div class="points">
-          <div class="point">
+          <div class="point reveal-up">
             <span class="point-num" aria-hidden="true">1</span>
             <div>
-              <h3>Megértjük a helyzeted</h3>
-              <p>Elmondod, hol tartasz most, és mi az, ami nem úgy halad, ahogy szeretnéd.</p>
+              <h3>Meghallgatom, hol tartasz</h3>
+              <p>Elmondod, mit tapasztalsz a ciklusoddal, az alvásoddal, az energiáddal vagy a hangulatoddal, és én ítélkezés nélkül figyelek.</p>
             </div>
           </div>
-          <div class="point">
+          <div class="point reveal-up">
             <span class="point-num" aria-hidden="true">2</span>
             <div>
-              <h3>Kijelöljük az irányt</h3>
-              <p>Együtt megfogalmazzuk a következő kézzelfogható lépést, függetlenül attól, dolgozunk-e majd együtt.</p>
+              <h3>Átlátjuk a hormonális képet</h3>
+              <p>Együtt rendszerbe foglaljuk a jeleket, hogy lásd, mi függ össze mivel, legyen szó stresszről, ciklusról vagy a perimenopauza időszakáról.</p>
             </div>
           </div>
-          <div class="point">
+          <div class="point reveal-up">
             <span class="point-num" aria-hidden="true">3</span>
             <div>
               <h3>Te döntesz, nyugodtan</h3>
-              <p>Semmilyen nyomás. Ha passzolunk, elmondom, hogyan segíthetek. Ha nem, akkor is hasznos kérdésekkel mész tovább.</p>
+              <p>Semmilyen nyomás. Megfogalmazunk egy kézzelfogható első lépést, és ha úgy érzed, dolgozhatunk együtt tovább. Ha nem, akkor is tisztább képpel mész haza.</p>
             </div>
           </div>
         </div>
@@ -330,9 +362,9 @@
     <div class="wrap">
       <a href="#top" class="brand">
         <span class="brand-mark" aria-hidden="true"></span>
-        Komlósi Réka coaching
+        Halász Dóra hormonális coaching
       </a>
-      <p>&copy; 2026 Komlósi Réka. Minden jog fenntartva.</p>
+      <p>&copy; 2026 Halász Dóra. Női hormonális támogató coach. Minden jog fenntartva.</p>
     </div>
   </footer>
 
@@ -341,6 +373,35 @@
     QuietStack sablon
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
   </a>
+
+  <script>
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var items = document.querySelectorAll('.reveal-up');
+      if (reduce || !('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('is-in'); });
+        return;
+      }
+      // Gentle hero entrance on load.
+      requestAnimationFrame(function () {
+        document.querySelectorAll('.hero .reveal-up').forEach(function (el) {
+          el.classList.add('is-in');
+        });
+      });
+      // Soft reveal of the section as it scrolls into view.
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.expect .reveal-up').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
 
 </body>
 </html>

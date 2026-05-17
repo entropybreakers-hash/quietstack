@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Halász Anna | Élet- és üzleti coach</title>
-<meta name="description" content="Halász Anna élet- és üzleti coach. Tiszta gondolatok, magabiztos döntések, kiegyensúlyozott élet. Foglalj egy ingyenes ismerkedő beszélgetést.">
+<title>Várnai Eszter | Spirituális coach</title>
+<meta name="description" content="Várnai Eszter spirituális coach. Belső egyensúly, önismeret, mindfulness és tiszta életcél. Foglalj egy ingyenes ismerkedő beszélgetést.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -86,8 +86,8 @@
   }
   .hero-top span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);}
   .hero-grid{
-    display:grid;grid-template-columns:1.32fr .68fr;
-    gap:0;align-items:start;
+    display:grid;grid-template-columns:1.32fr .72fr;
+    gap:48px;align-items:start;
   }
   .hero-text{padding-top:34px;position:relative;z-index:5;}
   .hero-text .kicker{display:block;margin-bottom:26px;}
@@ -101,10 +101,15 @@
     padding-left:2px;
   }
   .hero-actions{margin-top:34px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;}
-  /* portrait block, overlapping */
+  /* right-side composition: portrait with a cleanly offset floating tag */
+  .hero-aside{
+    margin-top:6px;position:relative;
+    /* reserve room so the floating tag is never clipped */
+    padding-bottom:74px;padding-left:34px;
+  }
   .hero-portrait{
-    position:relative;margin-top:6px;margin-left:-46px;
-    aspect-ratio:3/4.4;
+    position:relative;
+    aspect-ratio:3/4;
     border:1px solid var(--ink);
     background:
       linear-gradient(160deg,#e8c3a6 0%,#c4623f 52%,#7c3c22 100%);
@@ -119,22 +124,33 @@
     position:absolute;inset:14px;border:1px solid rgba(255,250,241,.45);
   }
   .hero-portrait .pname{
-    position:absolute;left:22px;bottom:22px;right:22px;
+    position:absolute;left:26px;top:26px;right:26px;
     font-family:'Fraunces',serif;color:var(--paper);
   }
-  .hero-portrait .pname b{display:block;font-size:2.5rem;font-weight:500;line-height:1;}
+  .hero-portrait .pname b{display:block;font-size:2.1rem;font-weight:500;line-height:1.04;}
   .hero-portrait .pname i{
-    font-style:normal;font-family:'Inter',sans-serif;font-size:.7rem;
+    font-style:normal;font-family:'Inter',sans-serif;font-size:.66rem;
     letter-spacing:.22em;text-transform:uppercase;display:block;margin-top:9px;
     color:rgba(255,250,241,.82);
   }
+  /* floating tag card: sits over the lower-left corner, fully visible */
   .hero-tag{
-    position:absolute;left:-46px;bottom:-28px;z-index:8;
+    position:absolute;left:0;bottom:0;z-index:8;
+    width:min(78%,250px);
     background:var(--paper);border:1px solid var(--ink);
-    padding:16px 22px;max-width:228px;
+    padding:18px 22px;
+    box-shadow:0 18px 36px -20px rgba(55,49,43,.55);
   }
-  .hero-tag b{font-family:'Fraunces',serif;font-size:1.05rem;display:block;}
-  .hero-tag span{font-size:.82rem;color:var(--ink-soft);}
+  .hero-tag .ht-eyebrow{
+    font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.22em;
+    text-transform:uppercase;font-weight:600;color:var(--clay);
+    display:block;margin-bottom:7px;
+  }
+  .hero-tag b{
+    font-family:'Fraunces',serif;font-size:1.08rem;display:block;margin-bottom:4px;
+    font-weight:500;
+  }
+  .hero-tag span{font-size:.83rem;color:var(--ink-soft);line-height:1.5;display:block;}
   /* stats strip */
   .hero-stats{
     display:flex;gap:0;border-top:1px solid var(--ink);
@@ -384,17 +400,15 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:980px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-portrait{
-      margin-left:0;margin-top:40px;max-width:380px;
-      aspect-ratio:4/4.6;
-    }
-    .hero-tag{left:auto;right:0;bottom:-22px;}
+    .hero-grid{grid-template-columns:1fr;gap:0;}
+    .hero-aside{margin-top:46px;max-width:420px;}
+    .hero-portrait{aspect-ratio:4/4.4;}
     .about-grid{grid-template-columns:1fr;gap:54px;}
     .about-figure{padding-right:0;max-width:420px;}
     .about-num{right:0;top:-44px;font-size:5rem;}
     .pkg-grid{grid-template-columns:1fr;}
-    .pkg.alt{transform:none;}
+    .pkg.alt,.pkg.alt.reveal,.pkg.alt.reveal.is-in,
+    .pkg.alt.reveal.is-in:hover{transform:none;}
     .booking-inner{grid-template-columns:1fr;}
     .booking-left{padding:64px 0;border-right:none;border-bottom:1px solid var(--line);}
     .booking-right{padding:54px 0;}
@@ -421,10 +435,89 @@
     .hero-stats div{flex:1 1 44%;border-right:none;border-bottom:1px solid var(--line);}
     .foot-top{grid-template-columns:1fr;gap:34px;}
   }
+  @media(max-width:560px){
+    /* on small screens the tag stacks cleanly under the portrait */
+    .hero-aside{padding-left:0;padding-bottom:0;}
+    .hero-tag{
+      position:static;width:100%;
+      border-top:none;box-shadow:none;
+    }
+  }
   @media(max-width:480px){
     .hero{padding-bottom:80px;}
-    .hero-tag{position:static;margin-top:30px;max-width:none;}
-    .hero-portrait{margin-bottom:0;}
+    .hero-aside{max-width:none;}
+  }
+
+  /* ---------- MOTION ---------- */
+  .reveal{
+    opacity:0;transform:translateY(26px);
+    transition:opacity .8s cubic-bezier(.22,.61,.36,1),
+               transform .8s cubic-bezier(.22,.61,.36,1);
+    will-change:opacity,transform;
+  }
+  .reveal.is-in{opacity:1;transform:translateY(0);}
+  .reveal.d1{transition-delay:.08s;}
+  .reveal.d2{transition-delay:.16s;}
+  .reveal.d3{transition-delay:.24s;}
+  .reveal.d4{transition-delay:.32s;}
+  /* packages keep their editorial offset through the reveal */
+  .pkg.reveal{transform:translateY(26px);}
+  .pkg.reveal.is-in{transform:translateY(0);}
+  .pkg.alt.reveal{transform:translateY(26px);}
+  .pkg.alt.reveal.is-in{transform:translateY(-26px);}
+
+  @keyframes heroFade{
+    from{opacity:0;transform:translateY(30px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @keyframes heroFadeAside{
+    from{opacity:0;transform:translateY(40px) scale(.985);}
+    to{opacity:1;transform:translateY(0) scale(1);}
+  }
+  .hero-anim{opacity:0;animation:heroFade .9s cubic-bezier(.22,.61,.36,1) forwards;}
+  .hero-anim.a1{animation-delay:.05s;}
+  .hero-anim.a2{animation-delay:.18s;}
+  .hero-anim.a3{animation-delay:.31s;}
+  .hero-anim.a4{animation-delay:.44s;}
+  .hero-aside{
+    opacity:0;
+    animation:heroFadeAside 1s cubic-bezier(.22,.61,.36,1) .34s forwards;
+  }
+
+  .pkg{transition:transform .3s ease, box-shadow .3s ease;}
+  .pkg.reveal.is-in:hover{transform:translateY(-6px);
+    box-shadow:0 26px 50px -28px rgba(55,49,43,.5);}
+  .pkg.alt.reveal.is-in:hover{transform:translateY(-32px);
+    box-shadow:0 26px 50px -28px rgba(55,49,43,.5);}
+  .voice{transition:opacity .25s ease;}
+  .voice:hover{opacity:.92;}
+  .bitem{transition:transform .25s ease;}
+  .bitem:hover{transform:translateX(4px);}
+  .hero-stats div{transition:background .25s ease;}
+  .hero-stats div:hover{background:var(--ivory);}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal,.reveal.d1,.reveal.d2,.reveal.d3,.reveal.d4,
+    .reveal.is-in{
+      opacity:1;transform:none;transition:none;
+    }
+    .pkg.reveal,.pkg.reveal.is-in,
+    .pkg.reveal.is-in:hover{transform:none;transition:none;}
+    .pkg.alt.reveal,.pkg.alt.reveal.is-in,
+    .pkg.alt.reveal.is-in:hover{
+      transform:translateY(-26px);transition:none;
+    }
+    .hero-anim,.hero-aside{opacity:1;animation:none;}
+    .btn,.btn-solid:hover,.btn-line:hover,.demo-badge:hover,
+    .voice,.voice:hover,.bitem,.bitem:hover,
+    .hero-stats div,.hero-stats div:hover{
+      transition:none;transform:none;
+    }
+  }
+  @media(prefers-reduced-motion:reduce) and (max-width:980px){
+    .pkg.alt.reveal,.pkg.alt.reveal.is-in,
+    .pkg.alt.reveal.is-in:hover{transform:none;}
   }
 </style>
 </head>
@@ -439,7 +532,7 @@
       <a href="#velemenyek">Vélemények</a>
       <a href="#csomagok">Csomagok</a>
     </div>
-    <a href="#" class="wordmark">Halász <em>Anna</em></a>
+    <a href="#" class="wordmark">Várnai <em>Eszter</em></a>
     <div class="nav-right">
       <a href="#kapcsolat">Foglalj időpontot</a>
     </div>
@@ -449,40 +542,43 @@
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <div class="hero-top">
-      <span>Élet- és üzleti coaching</span>
+    <div class="hero-top hero-anim a1">
+      <span>Spirituális coaching</span>
       <span>Budapest, valamint online</span>
     </div>
     <div class="hero-grid">
       <div class="hero-text">
-        <span class="kicker">Coaching tisztánlátásért</span>
-        <h1>
-          Tiszta fej.
-          <span class="ln2">Bátor döntés.</span>
+        <span class="kicker hero-anim a1">Út a belső egyensúlyhoz</span>
+        <h1 class="hero-anim a2">
+          Csendesedj el.
+          <span class="ln2">Találj haza.</span>
         </h1>
-        <p class="hero-sub">Segítek abban, hogy újra magadra találj a hétköznapok zajában, és magabiztosan lépj a következő szintre a karriereddel és a magánéleteddel.</p>
-        <div class="hero-actions">
+        <p class="hero-sub hero-anim a3">Segítek abban, hogy a hétköznapok zaja mögött újra meghalld a saját hangodat, megéld a jelenlétet, és tiszta szívvel lépj az életcélod felé.</p>
+        <div class="hero-actions hero-anim a4">
           <a class="btn btn-solid" href="#kapcsolat">Foglalj egy beszélgetést <span class="ar">&rarr;</span></a>
           <a class="btn btn-line" href="#segitseg">A módszerről</a>
         </div>
       </div>
-      <div class="hero-portrait">
-        <div class="frame"></div>
-        <div class="pname">
-          <b>Halász<br>Anna</b>
-          <i>coach, mentor</i>
+      <div class="hero-aside">
+        <div class="hero-portrait">
+          <div class="frame"></div>
+          <div class="pname">
+            <b>Várnai<br>Eszter</b>
+            <i>spirituális coach</i>
+          </div>
         </div>
         <div class="hero-tag">
+          <span class="ht-eyebrow">Foglalás</span>
           <b>Ingyenes első alkalom</b>
-          <span>Ismerkedő beszélgetés, kötöttségek nélkül.</span>
+          <span>Csendes ismerkedő beszélgetés, kötöttségek nélkül.</span>
         </div>
       </div>
     </div>
     <div class="hero-stats">
-      <div><b>12 év</b><span>coaching tapasztalat</span></div>
-      <div><b>300+</b><span>kísért ügyfél</span></div>
-      <div><b>4,9</b><span>átlagos értékelés</span></div>
-      <div><b>92%</b><span>folytatja a munkát</span></div>
+      <div class="reveal"><b>12 év</b><span>kísérő jelenlét</span></div>
+      <div class="reveal d1"><b>300+</b><span>kísért ügyfél</span></div>
+      <div class="reveal d2"><b>4,9</b><span>átlagos értékelés</span></div>
+      <div class="reveal d3"><b>92%</b><span>folytatja az utat</span></div>
     </div>
   </div>
 </header>
@@ -491,21 +587,21 @@
 <section id="rolam" class="about">
   <div class="wrap">
     <div class="about-grid">
-      <div class="about-figure">
+      <div class="about-figure reveal">
         <div class="about-num">01</div>
-        <div class="about-portrait"><span class="mono">HA</span></div>
-        <p class="about-cap">Halász Anna, akkreditált coach</p>
+        <div class="about-portrait"><span class="mono">VE</span></div>
+        <p class="about-cap">Várnai Eszter, spirituális coach</p>
       </div>
       <div class="about-text">
-        <span class="kicker">Rólam</span>
-        <h2>A változásban hiszek, és abban, hogy bátran önmagad lehetsz.</h2>
-        <div class="body">
-          <p>Több mint egy évtizede kísérek embereket olyan időszakokban, amikor valami már nem működik, de még nem tiszta, mi a következő lépés. Korábban vezetőként dolgoztam, így jól ismerem a teljesítménynyomás, a kiégés és a döntési bizonytalanság érzését is.</p>
-          <p>Munkámban ötvözöm a strukturált, célorientált coaching módszereket az emberi, ítélkezésmentes jelenléttel. Nem kész válaszokat adok, hanem olyan biztonságos teret teremtek, ahol te magad találod meg a sajátjaidat.</p>
+        <span class="kicker reveal">Rólam</span>
+        <h2 class="reveal d1">Hiszem, hogy a válaszaid már benned élnek, csak a csend hiányzik hozzájuk.</h2>
+        <div class="body reveal d2">
+          <p>Több mint egy évtizede kísérek embereket olyan időszakokban, amikor kívülről minden rendben van, belül mégis valami nyugtalanul keresi a helyét. Korábban magam is a folyamatos teljesítés és a kapkodás ritmusában éltem, így jól ismerem a kiüresedés és a belső széttöredezettség érzését.</p>
+          <p>Munkámban a mindfulness, a meditatív jelenlét és az önismereti coaching eszközeit ötvözöm. Nem kész igazságokat adok, hanem csendes, ítélkezésmentes teret teremtek, ahol fokozatosan visszatalálsz a saját ritmusodhoz és életcélodhoz.</p>
         </div>
-        <blockquote class="pullquote">
-          A coaching nem arról szól, hogy valaki más legyél. Arról szól, hogy bátran az lehess, aki valójában vagy.
-          <span class="src">Halász Anna</span>
+        <blockquote class="pullquote reveal d3">
+          A belső béke nem egy távoli cél, amelyet el kell érni. Egy hely, ahová bármikor hazatérhetsz.
+          <span class="src">Várnai Eszter</span>
         </blockquote>
       </div>
     </div>
@@ -517,46 +613,46 @@
   <div class="wrap">
     <div class="approach-head">
       <div>
-        <span class="kicker">Hogyan segítek</span>
-        <h2>Egy módszer, amely a tisztánlátásból indul.</h2>
+        <span class="kicker reveal">A közös munka</span>
+        <h2 class="reveal d1">Egy út, amely a megérkezéssel kezdődik.</h2>
       </div>
-      <p>A közös munka négy lépésre épül, hogy ne csak jobban érezd magad, hanem valódi, tartós változást is elérj. Minden út egyedi, de a váz közös.</p>
+      <p class="reveal d2">A közös munka négy szakaszra épül, hogy ne csak átmeneti nyugalmat élj át, hanem tartós belső egyensúlyt találj. Minden út egyedi, de a ritmus közös.</p>
     </div>
 
-    <div class="step">
+    <div class="step reveal">
       <div class="snum">01</div>
       <div class="stext">
-        <h3><span class="lead-word">Az első lépés</span>Tisztánlátás</h3>
+        <h3><span class="lead-word">Az első szakasz</span>Megérkezés és csend</h3>
       </div>
       <div class="sbody">
-        <p>Először feltérképezzük, hol tartasz most, és mi az, ami valójában fontos neked. A jó kérdések mindig megelőzik a jó döntéseket.</p>
+        <p>Először lelassulunk, és megnézzük, hol tartasz most. A csendben tisztábban hallhatóvá válik, mi az, ami valójában fontos a számodra.</p>
       </div>
     </div>
-    <div class="step">
+    <div class="step reveal">
       <div class="snum">02</div>
       <div class="stext">
-        <h3><span class="lead-word">Irányt veszünk</span>Célok és fókusz</h3>
+        <h3><span class="lead-word">Befelé fordulunk</span>Önismeret és jelenlét</h3>
       </div>
       <div class="sbody">
-        <p>Megfogalmazzuk a számodra hiteles célokat, és lebontjuk őket olyan lépésekre, amelyek a hétköznapokban is megvalósíthatók.</p>
+        <p>Mindfulness gyakorlatokkal és kísérő kérdésekkel feltárjuk a belső mintáidat, és megtanulsz figyelmesen jelen lenni a saját életedben.</p>
       </div>
     </div>
-    <div class="step">
+    <div class="step reveal">
       <div class="snum">03</div>
       <div class="stext">
-        <h3><span class="lead-word">Felszabadulás</span>Akadályok feloldása</h3>
+        <h3><span class="lead-word">Felszabadulás</span>Elengedés és feloldás</h3>
       </div>
       <div class="sbody">
-        <p>Megnézzük, milyen belső hiedelmek és minták tartanak vissza, és új, támogató gondolkodásmódot építünk a helyükre.</p>
+        <p>Gyengéden megnézzük, milyen régi hiedelmek és fojtott feszültségek tartanak vissza, és teret adunk annak, hogy elengedhesd őket.</p>
       </div>
     </div>
-    <div class="step">
+    <div class="step reveal">
       <div class="snum">04</div>
       <div class="stext">
-        <h3><span class="lead-word">Tartós eredmény</span>Lendület és önállóság</h3>
+        <h3><span class="lead-word">Tartós egyensúly</span>Életcél és energia</h3>
       </div>
       <div class="sbody">
-        <p>Olyan szokásokat és önreflexiós eszközöket alakítunk ki, amelyekkel a közös munka után is magabiztosan haladsz tovább.</p>
+        <p>Olyan mindennapi gyakorlatokat és belső iránytűt alakítunk ki, amelyekkel a közös munka után is megőrződik a tisztaságod és az energiád.</p>
       </div>
     </div>
   </div>
@@ -566,37 +662,37 @@
 <section id="velemenyek" class="voices">
   <div class="wrap">
     <div class="voices-head">
-      <div>
+      <div class="reveal">
         <span class="kicker">Vélemények</span>
         <h2>Amit az ügyfeleim mondanak.</h2>
       </div>
-      <span class="count">Három hang, három út</span>
+      <span class="count reveal d1">Három hang, három út</span>
     </div>
 
-    <div class="voice">
+    <div class="voice reveal">
       <div class="vmark">&ldquo;</div>
-      <p class="vquote">Anna segítségével végre kimondtam, amit évek óta éreztem: váltanom kell. Három hónap alatt nemcsak döntöttem, hanem el is indultam egy új úton, magabiztosan.</p>
+      <p class="vquote">Eszterrel végre megtanultam megállni. A csendes jelenlét, amit a közös munkában tanultam, ott maradt velem a hétköznapokban is, és újra hallom a saját hangomat.</p>
       <div class="vwho">
         <span class="vname">Kovács Eszter</span>
-        <span class="vrole">marketing vezető</span>
+        <span class="vrole">tanár</span>
         <div class="vchip">KE</div>
       </div>
     </div>
-    <div class="voice">
+    <div class="voice reveal">
       <div class="vmark">&ldquo;</div>
-      <p class="vquote">Vállalkozóként folyamatosan túlterhelt voltam. A közös munka után tisztábban látom a prioritásaimat, és először érzem, hogy nem a naptáram irányít engem.</p>
+      <p class="vquote">Évek óta nyugtalan voltam, pedig kívülről minden rendben volt. A folyamat segített elengedni, amit túl régóta cipeltem, és most tisztábban érzem, merre tartok.</p>
       <div class="vwho">
         <span class="vname">Nagy Tamás</span>
-        <span class="vrole">cégtulajdonos</span>
+        <span class="vrole">vállalkozó</span>
         <div class="vchip">NT</div>
       </div>
     </div>
-    <div class="voice">
+    <div class="voice reveal">
       <div class="vmark">&ldquo;</div>
-      <p class="vquote">Sokféle önfejlesztő dolgot kipróbáltam már, de itt éreztem először, hogy tényleg meghallgatnak. Anna jelenléte nyugalmat ad, a kérdései pedig mozgásba hoznak.</p>
+      <p class="vquote">Sokféle önismereti utat kipróbáltam már, de itt éreztem először, hogy tényleg meghallgatnak. Eszter jelenléte nyugalmat ad, a kérdései pedig befelé fordítanak.</p>
       <div class="vwho">
         <span class="vname">Szabó Réka</span>
-        <span class="vrole">HR szakértő</span>
+        <span class="vrole">gyógytornász</span>
         <div class="vchip">SZ</div>
       </div>
     </div>
@@ -607,14 +703,14 @@
 <section id="csomagok" class="packages">
   <div class="wrap">
     <div class="pkg-head">
-      <div>
+      <div class="reveal">
         <span class="kicker">Csomagok</span>
         <h2>Válaszd ki a hozzád illő utat.</h2>
       </div>
-      <p>Minden együttműködés egy ingyenes ismerkedő beszélgetéssel kezdődik, hogy biztosan jó döntést hozz, mielőtt belevágunk.</p>
+      <p class="reveal d1">Minden együttműködés egy ingyenes ismerkedő beszélgetéssel kezdődik, hogy biztosan jó döntést hozz, mielőtt belevágunk.</p>
     </div>
     <div class="pkg-grid">
-      <div class="pkg">
+      <div class="pkg reveal">
         <span class="pkg-no">Csomag, 01</span>
         <h3>Fókusz alkalom</h3>
         <div class="price">19 000 Ft <small>/ 90 perc</small></div>
@@ -627,7 +723,7 @@
         </ul>
         <a class="btn btn-line" href="#kapcsolat">Időpontot kérek</a>
       </div>
-      <div class="pkg alt">
+      <div class="pkg alt reveal d1">
         <span class="pkg-no">Csomag, 02, legnépszerűbb</span>
         <h3>Átalakító folyamat</h3>
         <div class="price">149 000 Ft <small>/ 6 alkalom</small></div>
@@ -649,13 +745,13 @@
 <section id="kapcsolat" class="booking">
   <div class="wrap">
     <div class="booking-inner">
-      <div class="booking-left">
+      <div class="booking-left reveal">
         <span class="kicker">Foglalás</span>
         <h2>Készen állsz a <em>következő</em> lépésre?</h2>
         <p>Foglalj egy ingyenes, 30 perces ismerkedő beszélgetést. Átbeszéljük, hol tartasz most, és kiderül, hogy a közös munka a neked való utat jelenti-e.</p>
         <a class="btn btn-solid" href="#kapcsolat">Időpontot foglalok <span class="ar">&rarr;</span></a>
       </div>
-      <div class="booking-right">
+      <div class="booking-right reveal d1">
         <div class="bitem">
           <b>Ingyenes és kötetlen</b>
           <span>Az első beszélgetés semmire sem kötelez.</span>
@@ -666,7 +762,7 @@
         </div>
         <div class="bitem">
           <b>24 órán belül válaszolok</b>
-          <span>Írj a hello@halaszanna.hu címre.</span>
+          <span>Írj a hello@varnaieszter.hu címre.</span>
         </div>
       </div>
     </div>
@@ -678,8 +774,8 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <div class="foot-mark">Halász <em>Anna</em></div>
-        <p>Élet- és üzleti coach. Segítek abban, hogy tiszta fejjel, magabiztosan hozd meg az életed legfontosabb döntéseit.</p>
+        <div class="foot-mark">Várnai <em>Eszter</em></div>
+        <p>Spirituális coach. Segítek abban, hogy visszatalálj a belső csendedhez, megéld a jelenlétet, és tiszta szívvel kövesd az életcélodat.</p>
       </div>
       <div class="foot-col">
         <h4>Oldal</h4>
@@ -690,13 +786,13 @@
       </div>
       <div class="foot-col">
         <h4>Kapcsolat</h4>
-        <p>hello@halaszanna.hu</p>
+        <p>hello@varnaieszter.hu</p>
         <p>+36 30 123 4567</p>
         <p>Budapest, valamint online</p>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>2026 Halász Anna. Minden jog fenntartva.</span>
+      <span>2026 Várnai Eszter. Minden jog fenntartva.</span>
       <span>Ez egy bemutató sablon oldal.</span>
     </div>
   </div>
@@ -706,6 +802,28 @@
 <a class="demo-badge" href="https://quietstack.entropybreakers.com" target="_blank" rel="noopener">
   QuietStack sablon <span class="arrow">&rarr;</span>
 </a>
+
+<!-- SCROLL REVEAL -->
+<script>
+(function(){
+  var reduce = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    for(var i=0;i<items.length;i++){ items[i].classList.add('is-in'); }
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  },{ threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+  for(var j=0;j<items.length;j++){ io.observe(items[j]); }
+})();
+</script>
 
 </body>
 </html>
