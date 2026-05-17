@@ -397,26 +397,16 @@
     }
     .sc-bar { display: flex; gap: 5px; padding: 9px 12px; background: #ece9e1; }
     .sc-bar i { width: 8px; height: 8px; border-radius: 50%; background: #cabfa6; }
-    .sc-screen { height: 212px; padding: 16px; display: flex; flex-direction: column; gap: 9px; background: #fff; }
-    .sc-screen.center { align-items: center; text-align: center; }
-    .sc-screen.split { flex-direction: row; gap: 14px; }
-    .sc-col { display: flex; flex-direction: column; gap: 9px; flex: 1; }
-    .m-hero { height: 58px; border-radius: 7px; background: var(--sc); flex-shrink: 0; }
-    .m-h { height: 10px; width: 68%; border-radius: 3px; background: #d6d1c3; }
-    .sc-screen.center .m-h { width: 78%; }
-    .m-t { height: 6px; border-radius: 3px; background: #e7e3d9; }
-    .m-t.s { width: 50%; }
-    .sc-screen.center .m-t.s { width: 60%; }
-    .m-btn { height: 17px; width: 88px; border-radius: 4px; background: var(--sc); margin-top: 2px; }
-    .m-grid { display: flex; gap: 8px; }
-    .m-grid i { flex: 1; height: 46px; border-radius: 6px; background: #efece3; }
-    .m-mod { height: 27px; border-radius: 6px; background: #f1eee6; display: flex; align-items: center; gap: 8px; padding: 0 9px; }
-    .m-mod i { width: 15px; height: 15px; border-radius: 4px; background: var(--sc); flex-shrink: 0; }
-    .m-mod span { height: 6px; border-radius: 3px; background: #ddd8c9; flex: 1; }
-    .m-sq { width: 92px; border-radius: 8px; background: var(--sc); flex-shrink: 0; }
-    .m-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; width: 100%; margin: 2px 0; }
-    .m-cal i { aspect-ratio: 1; border-radius: 3px; background: #efece3; }
-    .m-cal i.on { background: var(--sc); }
+    .sc-shot { position: relative; overflow: hidden; height: 212px; background: #fff; }
+    .sc-shot iframe {
+      position: absolute; top: 0; left: 0; width: 1180px; height: 740px; border: 0;
+      transform: scale(0.2864); transform-origin: top left; pointer-events: none;
+    }
+    .sc-shot::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      box-shadow: inset 0 -34px 26px -28px rgba(0,0,0,0.16);
+    }
+    .showcase-card:hover .sc-frame { box-shadow: 0 26px 52px -24px rgba(60,45,20,0.6); }
     .sc-cap { padding: 16px 4px 0; }
     .sc-cap h3 { font-size: 1.08rem; margin-bottom: 5px; }
     .sc-cap p { font-size: 0.92rem; color: var(--muted); }
@@ -976,13 +966,8 @@
             <a class="showcase-card" href="sablonok/coach.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-screen" style="--sc:#C9A876">
-                  <div class="m-hero"></div>
-                  <div class="m-h"></div>
-                  <div class="m-t"></div>
-                  <div class="m-t s"></div>
-                  <div class="m-btn"></div>
-                  <div class="m-grid"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/coach.html" title="Coach sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
                 </div>
               </div>
               <div class="sc-cap">
@@ -995,13 +980,8 @@
             <a class="showcase-card" href="sablonok/kurzus.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-screen" style="--sc:#8a9a7b">
-                  <div class="m-h"></div>
-                  <div class="m-t"></div>
-                  <div class="m-mod"><i></i><span></span></div>
-                  <div class="m-mod"><i></i><span></span></div>
-                  <div class="m-mod"><i></i><span></span></div>
-                  <div class="m-btn"></div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/kurzus.html" title="Online kurzus sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
                 </div>
               </div>
               <div class="sc-cap">
@@ -1014,15 +994,8 @@
             <a class="showcase-card" href="sablonok/termek.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-screen split" style="--sc:#7e93a8">
-                  <div class="m-sq"></div>
-                  <div class="sc-col">
-                    <div class="m-h"></div>
-                    <div class="m-t"></div>
-                    <div class="m-t"></div>
-                    <div class="m-t s"></div>
-                    <div class="m-btn"></div>
-                  </div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/termek.html" title="Digitális termék sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
                 </div>
               </div>
               <div class="sc-cap">
@@ -1035,11 +1008,8 @@
             <a class="showcase-card" href="sablonok/foglalas.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-screen center" style="--sc:#c08763">
-                  <div class="m-h"></div>
-                  <div class="m-t s"></div>
-                  <div class="m-cal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
-                  <div class="m-btn"></div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/foglalas.html" title="Konzultáció-foglaló sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
                 </div>
               </div>
               <div class="sc-cap">
@@ -1052,12 +1022,8 @@
             <a class="showcase-card" href="sablonok/wellness.html" target="_blank" rel="noopener">
               <div class="sc-frame">
                 <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-screen" style="--sc:#4f5358">
-                  <div class="m-hero"></div>
-                  <div class="m-h"></div>
-                  <div class="m-t s"></div>
-                  <div class="m-grid"><i></i><i></i><i></i></div>
-                  <div class="m-btn"></div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/wellness.html" title="Wellness és fitness sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
                 </div>
               </div>
               <div class="sc-cap">
@@ -1475,6 +1441,24 @@
       var next = document.querySelector(".sc-next");
       if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step, behavior: "smooth" }); });
       if (next) next.addEventListener("click", function () { track.scrollBy({ left: step, behavior: "smooth" }); });
+    })();
+
+    (function () {
+      var DESIGN_W = 1180, DESIGN_H = 740;
+      var shots = document.querySelectorAll(".sc-shot");
+      if (!shots.length) return;
+      function fit() {
+        shots.forEach(function (box) {
+          var frame = box.querySelector("iframe");
+          if (!frame) return;
+          var s = box.clientWidth / DESIGN_W;
+          frame.style.transform = "scale(" + s + ")";
+          box.style.height = Math.round(DESIGN_H * s) + "px";
+        });
+      }
+      fit();
+      window.addEventListener("load", fit);
+      window.addEventListener("resize", fit);
     })();
   </script>
 </body>
