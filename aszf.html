@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ÁSZF — QuietStack</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231A1A1A'/%3E%3Crect x='7' y='8' width='18' height='4' rx='2' fill='%23C9A876'/%3E%3Crect x='7' y='14' width='18' height='4' rx='2' fill='%23C9A876' opacity='0.7'/%3E%3Crect x='7' y='20' width='18' height='4' rx='2' fill='%23C9A876' opacity='0.45'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FAFAF7; --surface: #FFFFFF; --text: #1A1A1A; --muted: #5d5d57;
+      --accent: #C9A876; --accent-deep: #ab8c5b; --border: #e7e4db;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--sans); font-size: 17px; line-height: 1.7; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent-deep); }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+    header { border-bottom: 1px solid var(--border); background: rgba(250,250,247,0.92); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: flex; align-items: center; gap: 11px; font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+    .logo-mark { display: grid; gap: 3.5px; }
+    .logo-mark span { display: block; width: 22px; height: 4.5px; border-radius: 2px; background: var(--accent); }
+    .logo-mark span:nth-child(2) { opacity: 0.7; }
+    .logo-mark span:nth-child(3) { opacity: 0.45; }
+    .nav .back { font-size: 0.95rem; font-weight: 500; }
+    main { padding: 60px 0 80px; }
+    h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.7rem); margin-bottom: 10px; }
+    .updated { color: var(--muted); font-size: 0.92rem; margin-bottom: 32px; }
+    h2 { font-family: var(--serif); font-size: 1.3rem; margin: 36px 0 12px; }
+    p, li { color: #333; margin-bottom: 12px; }
+    ul { padding-left: 22px; }
+    .note {
+      background: #f3e9d4; border: 1px solid var(--accent);
+      border-radius: 8px; padding: 18px 22px; margin-bottom: 36px; font-size: 0.96rem;
+    }
+    .note strong { color: #6f5a2e; }
+    .todo { background: #f6e0c4; border-radius: 4px; padding: 1px 7px; font-weight: 600; color: #8a5a1a; font-size: 0.93em; }
+    footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 0.9rem; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent-deep); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        QuietStack
+      </a>
+      <a href="index.html" class="back">← Vissza a főoldalra</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <h1>Általános Szerződési Feltételek</h1>
+      <p class="updated">Utolsó frissítés: 2026. május</p>
+
+      <div class="note">
+        <strong>Tervezet.</strong> Ez az ÁSZF a QuietStack szolgáltatás jelenleg ismert
+        feltételei alapján készült vázlat. A <span class="todo">[ … ]</span> jelölt
+        részeket töltsd ki, és a végleges, közzétehető változatot mindenképp nézesd át
+        magyar ügyvéddel.
+      </div>
+
+      <h2>1. A szolgáltató</h2>
+      <p>
+        Név / vállalkozás: <span class="todo">[ teljes név vagy vállalkozás neve ]</span><br />
+        Székhely: <span class="todo">[ cím ]</span><br />
+        Adószám: <span class="todo">[ adószám ]</span><br />
+        E-mail: <a href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a><br />
+        A részletes adatokat az <a href="impresszum.html">Impresszum</a> tartalmazza.
+      </p>
+
+      <h2>2. Az ÁSZF tárgya</h2>
+      <p>
+        A jelen ÁSZF a szolgáltató által nyújtott QuietStack szolgáltatásra vonatkozik:
+        AI-alapú, „kulcsrakész" (Done For You) ügyfélkezelő és automatizációs rendszerek
+        tervezésére, felépítésére és átadására, coachok, online tanárok és digitális
+        szolgáltatók részére.
+      </p>
+
+      <h2>3. A megrendelő</h2>
+      <p>
+        A szolgáltatás vállalkozások és egyéni vállalkozók részére szól. A megrendelő a
+        szerződéskötéskor saját üzleti, szakmai tevékenysége körében jár el, így a
+        felek közötti jogviszony nem minősül fogyasztói szerződésnek.
+      </p>
+
+      <h2>4. A szolgáltatás menete</h2>
+      <ul>
+        <li><strong>Ingyenes konzultáció</strong> — kötelezettségmentes igényfelmérő beszélgetés.</li>
+        <li><strong>Tervezés</strong> — a megrendelő szakmájára szabott rendszerterv.</li>
+        <li><strong>Építés</strong> — a rendszer felépítése a kiválasztott csomag szerint.</li>
+        <li><strong>Betanítás és átadás</strong> — közös beüzemelés és támogatás.</li>
+      </ul>
+      <p>A felek a konkrét tartalmat és ütemezést egyedi megállapodásban (ajánlat / megrendelés) rögzítik.</p>
+
+      <h2>5. Csomagok és díjak</h2>
+      <p>
+        A weboldalon feltüntetett csomagok (Starter, Engine, Premium) egyszeri díjasak.
+        Mindegyikhez opcionális havi karbantartás választható. A szolgáltató ÁFA-mentes
+        számlát állít ki. A weboldalon szereplő árak tájékoztató jellegűek; a véglegesen
+        irányadó díjat az egyedi ajánlat tartalmazza.
+      </p>
+
+      <h2>6. Fizetési feltételek</h2>
+      <p>
+        A fizetés módja és ütemezése: <span class="todo">[ pl. a díj X%-a előlegként a
+        munka megkezdésekor, a fennmaradó rész átadáskor ]</span>. A számlát a szolgáltató
+        elektronikusan állítja ki és küldi meg. Fizetési késedelem esetén a szolgáltató
+        jogosult a munkát felfüggeszteni.
+      </p>
+
+      <h2>7. Teljesítési határidő</h2>
+      <p>
+        A munka időigénye a csomagtól függően jellemzően 1–4 hét, a pontos határidőt az
+        egyedi megállapodás rögzíti. A megrendelő közreműködésének (pl. hozzáférések,
+        adatok, visszajelzés megadása) késedelme a határidőt arányosan kitolja.
+      </p>
+
+      <h2>8. Minőségi garancia</h2>
+      <p>
+        A szolgáltató minőségi garanciát vállal: nem pénzvisszafizetéssel, hanem azzal,
+        hogy a rendszert az átadást követően addig finomítja és javítja, amíg az a
+        megállapodás szerint működik. A garancia a megrendelővel közösen meghatározott,
+        megállapodás szerinti működésre vonatkozik.
+      </p>
+
+      <h2>9. Elállás, lemondás</h2>
+      <p>
+        Mivel a felek közötti jogviszony nem fogyasztói szerződés, továbbá a szolgáltatás
+        kifejezetten a megrendelő egyedi igényei szerint, személyre szabottan készül, a
+        fogyasztókat megillető 14 napos elállási jog nem alkalmazandó. A megrendelés
+        lemondásának és a már elvégzett munka elszámolásának feltételeit az egyedi
+        megállapodás rögzíti.
+      </p>
+
+      <h2>10. Szellemi tulajdon</h2>
+      <p>
+        Az átadott rendszer használati jogát a megrendelő a díj megfizetésével szerzi meg,
+        a saját vállalkozása működtetése céljából. A szolgáltató által használt általános
+        módszerek, sablonok és know-how a szolgáltató tulajdonában maradnak.
+      </p>
+
+      <h2>11. Felelősség</h2>
+      <p>
+        A szolgáltató a rendszert szakszerűen, a megállapodás szerint építi fel. A
+        szolgáltató nem felel a megrendelő által használt harmadik féltől származó
+        eszközök (pl. e-mail-, naptár-, fizetési vagy számlázó szolgáltatások)
+        működéséért, üzemszüneteiért vagy díjszabásuk változásáért, sem a rendszer
+        átadás utáni, megrendelő általi módosításából eredő hibákért.
+      </p>
+
+      <h2>12. Adatkezelés</h2>
+      <p>
+        A személyes adatok kezelésére az <a href="adatvedelem.html">Adatkezelési
+        tájékoztató</a> az irányadó.
+      </p>
+
+      <h2>13. Vegyes rendelkezések</h2>
+      <p>
+        A jelen ÁSZF-re és a felek jogviszonyára a magyar jog az irányadó. A felek a
+        vitás kérdéseket elsősorban egyeztetéssel rendezik. A szolgáltató az ÁSZF-et
+        módosíthatja; a módosítás a weboldalon való közzététellel lép hatályba, és a
+        már megkötött megrendeléseket nem érinti.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="impresszum.html">Impresszum</a> &nbsp;·&nbsp;
+      <a href="adatvedelem.html">Adatkezelési tájékoztató</a> &nbsp;·&nbsp;
+      <a href="aszf.html">ÁSZF</a><br /><br />
+      © <span id="year"></span> Entropy Breakers
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
