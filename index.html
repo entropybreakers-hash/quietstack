@@ -380,6 +380,53 @@
     .fp-node:nth-child(6) .fp-ico, .fp-node:nth-child(6) .fp-ico svg, .fp-node:nth-child(6) .fp-label { transition-delay: 1.4s; }
     .fp-node:nth-child(7) .fp-ico, .fp-node:nth-child(7) .fp-ico svg, .fp-node:nth-child(7) .fp-label { transition-delay: 1.75s; }
 
+    /* Sablon-showcase */
+    .showcase-wrap { position: relative; margin-top: 6px; }
+    .showcase-track {
+      display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory;
+      padding: 6px 2px 22px; scroll-behavior: smooth;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .showcase-track::-webkit-scrollbar { display: none; }
+    .showcase-card { flex: 0 0 340px; max-width: 84vw; scroll-snap-align: center; }
+    .sc-frame {
+      background: #fff; border: 1px solid var(--border); border-radius: 11px; overflow: hidden;
+      box-shadow: 0 20px 44px -26px rgba(60,45,20,0.5);
+    }
+    .sc-bar { display: flex; gap: 5px; padding: 9px 12px; background: #ece9e1; }
+    .sc-bar i { width: 8px; height: 8px; border-radius: 50%; background: #cabfa6; }
+    .sc-screen { height: 212px; padding: 16px; display: flex; flex-direction: column; gap: 9px; background: #fff; }
+    .sc-screen.center { align-items: center; text-align: center; }
+    .sc-screen.split { flex-direction: row; gap: 14px; }
+    .sc-col { display: flex; flex-direction: column; gap: 9px; flex: 1; }
+    .m-hero { height: 58px; border-radius: 7px; background: var(--sc); flex-shrink: 0; }
+    .m-h { height: 10px; width: 68%; border-radius: 3px; background: #d6d1c3; }
+    .sc-screen.center .m-h { width: 78%; }
+    .m-t { height: 6px; border-radius: 3px; background: #e7e3d9; }
+    .m-t.s { width: 50%; }
+    .sc-screen.center .m-t.s { width: 60%; }
+    .m-btn { height: 17px; width: 88px; border-radius: 4px; background: var(--sc); margin-top: 2px; }
+    .m-grid { display: flex; gap: 8px; }
+    .m-grid i { flex: 1; height: 46px; border-radius: 6px; background: #efece3; }
+    .m-mod { height: 27px; border-radius: 6px; background: #f1eee6; display: flex; align-items: center; gap: 8px; padding: 0 9px; }
+    .m-mod i { width: 15px; height: 15px; border-radius: 4px; background: var(--sc); flex-shrink: 0; }
+    .m-mod span { height: 6px; border-radius: 3px; background: #ddd8c9; flex: 1; }
+    .m-sq { width: 92px; border-radius: 8px; background: var(--sc); flex-shrink: 0; }
+    .m-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; width: 100%; margin: 2px 0; }
+    .m-cal i { aspect-ratio: 1; border-radius: 3px; background: #efece3; }
+    .m-cal i.on { background: var(--sc); }
+    .sc-cap { padding: 16px 4px 0; }
+    .sc-cap h3 { font-size: 1.08rem; margin-bottom: 5px; }
+    .sc-cap p { font-size: 0.92rem; color: var(--muted); }
+    .sc-arrows { display: flex; gap: 10px; justify-content: center; margin-top: 8px; }
+    .sc-arrow {
+      width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      font-size: 1.05rem; display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s, border-color 0.15s, transform 0.12s;
+    }
+    .sc-arrow:hover { background: #fff; border-color: var(--accent); transform: translateY(-2px); }
+
     .calc-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 44px; max-width: 720px; margin: 0 auto; }
     .calc-intro { color: var(--muted); margin-bottom: 28px; }
     .calc-controls { display: grid; gap: 24px; margin-bottom: 30px; }
@@ -916,6 +963,112 @@
       </div>
     </section>
 
+    <section id="showcase" class="band">
+      <div class="wrap">
+        <span class="section-tag reveal">Sablonok</span>
+        <h2 class="section-title reveal">Ilyeneket építek Neked</h2>
+        <p class="section-sub reveal">Néhány oldal- és rendszertípus, amit fel tudok építeni a vállalkozásodhoz. Ezek sablonok: a kész munka mindig a Te arculatodra és a Te szövegeddel készül.</p>
+        <div class="showcase-wrap reveal">
+          <div class="showcase-track">
+
+            <div class="showcase-card">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-screen" style="--sc:#C9A876">
+                  <div class="m-hero"></div>
+                  <div class="m-h"></div>
+                  <div class="m-t"></div>
+                  <div class="m-t s"></div>
+                  <div class="m-btn"></div>
+                  <div class="m-grid"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Coach bemutatkozó oldal</h3>
+                <p>Személyes márka egy fő ajánlattal és időpontfoglalással.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-screen" style="--sc:#8a9a7b">
+                  <div class="m-h"></div>
+                  <div class="m-t"></div>
+                  <div class="m-mod"><i></i><span></span></div>
+                  <div class="m-mod"><i></i><span></span></div>
+                  <div class="m-mod"><i></i><span></span></div>
+                  <div class="m-btn"></div>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Online kurzus oldal</h3>
+                <p>Kurzus vagy program eladó oldala, modulokra bontva.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-screen split" style="--sc:#7e93a8">
+                  <div class="m-sq"></div>
+                  <div class="sc-col">
+                    <div class="m-h"></div>
+                    <div class="m-t"></div>
+                    <div class="m-t"></div>
+                    <div class="m-t s"></div>
+                    <div class="m-btn"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Digitális termék oldal</h3>
+                <p>E-book, sablon vagy letölthető termék landing oldala.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-screen center" style="--sc:#c08763">
+                  <div class="m-h"></div>
+                  <div class="m-t s"></div>
+                  <div class="m-cal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
+                  <div class="m-btn"></div>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Konzultáció-foglaló oldal</h3>
+                <p>Időpontfoglalásra kihegyezett, letisztult oldal.</p>
+              </div>
+            </div>
+
+            <div class="showcase-card">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-screen" style="--sc:#4f5358">
+                  <div class="m-hero"></div>
+                  <div class="m-h"></div>
+                  <div class="m-t s"></div>
+                  <div class="m-grid"><i></i><i></i><i></i></div>
+                  <div class="m-btn"></div>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Wellness és fitness oldal</h3>
+                <p>Edzői oldal programokkal és átalakulás-galériával.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="sc-arrows">
+          <button class="sc-arrow sc-prev" type="button" aria-label="Előző">←</button>
+          <button class="sc-arrow sc-next" type="button" aria-label="Következő">→</button>
+        </div>
+      </div>
+    </section>
+
     <section id="csomagok">
       <div class="wrap">
         <span class="section-tag reveal">Csomagok</span>
@@ -1306,6 +1459,16 @@
       });
     }, { threshold: 0.35 });
     calcIO.observe(document.getElementById("calcBox"));
+
+    (function () {
+      var track = document.querySelector(".showcase-track");
+      if (!track) return;
+      var step = 362;
+      var prev = document.querySelector(".sc-prev");
+      var next = document.querySelector(".sc-next");
+      if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step, behavior: "smooth" }); });
+      if (next) next.addEventListener("click", function () { track.scrollBy({ left: step, behavior: "smooth" }); });
+    })();
   </script>
 </body>
 </html>
