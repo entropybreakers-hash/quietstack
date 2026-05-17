@@ -220,14 +220,8 @@
     .pain .section-tag { color: var(--accent); }
     .pain-layout { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 52px; align-items: center; margin-top: 8px; }
     @media (max-width: 840px) { .pain-layout { grid-template-columns: 1fr; gap: 40px; } }
-    .pain-photo { position: relative; }
-    .pain-photo::before {
-      content: ""; position: absolute; z-index: 0; pointer-events: none;
-      left: 50%; top: 47%; transform: translate(-50%, -50%);
-      width: 94%; height: 86%; filter: blur(10px);
-      background: radial-gradient(ellipse at center, rgba(201,168,118,0.20), transparent 68%);
-    }
-    .pain-photo img { position: relative; z-index: 1; width: 100%; height: auto; display: block; }
+    .pain-photo { background: var(--band); border-radius: 14px; overflow: hidden; box-shadow: 0 42px 84px -44px rgba(0,0,0,0.9); }
+    .pain-photo img { width: 100%; height: auto; display: block; }
     .pain-headline {
       font-family: var(--serif); font-size: clamp(1.9rem, 3.4vw, 2.7rem); font-weight: 700;
       color: #fff; line-height: 1.25; margin-bottom: 28px;
