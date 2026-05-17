@@ -7,19 +7,32 @@
 <meta name="description" content="Erőteljes, fenntartható átalakulás. Személyi edzés, online programok és táplálkozási tanácsadás Kovács Bencével.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet">
+=======
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+>>>>>>> origin/main
 <style>
 :root{
   --bg:#15171a;
   --bg-2:#1c1f24;
   --bg-3:#23272e;
   --ink:#f4f5f4;
+<<<<<<< HEAD
   --muted:#9aa1a9;
   --line:#2d323a;
   --accent:#c6f432;
   --accent-deep:#a6d419;
   --radius:16px;
   --maxw:1240px;
+=======
+  --muted:#a4abb3;
+  --line:#2d323a;
+  --accent:#c6f432;
+  --accent-deep:#a6d419;
+  --radius:18px;
+  --maxw:1140px;
+>>>>>>> origin/main
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -27,6 +40,7 @@ body{
   font-family:'Inter',system-ui,sans-serif;
   background:var(--bg);
   color:var(--ink);
+<<<<<<< HEAD
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
@@ -342,6 +356,290 @@ a{color:inherit;text-decoration:none}
 .price-card .per{color:var(--muted);font-size:.84rem;margin-bottom:24px}
 .price-card ul{list-style:none;margin-bottom:28px;flex-grow:1}
 .price-card ul li{font-size:.9rem;padding:8px 0 8px 24px;position:relative}
+=======
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Sora','Inter',sans-serif;line-height:1.15;letter-spacing:-0.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.accent{color:var(--accent)}
+.eyebrow{
+  display:inline-block;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:14px;
+}
+.section{padding:96px 0}
+.section-head{max-width:620px;margin-bottom:54px}
+.section-head h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}
+.section-head p{color:var(--muted);margin-top:14px;font-size:1.05rem}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  font-weight:700;
+  font-size:.98rem;
+  padding:14px 26px;
+  border-radius:999px;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn-primary{
+  background:var(--accent);
+  color:#161616;
+  box-shadow:0 10px 28px -10px rgba(198,244,50,.6);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px -10px rgba(198,244,50,.7)}
+.btn-ghost{
+  background:transparent;
+  color:var(--ink);
+  border-color:var(--line);
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Nav */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(21,23,26,.82);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Sora';font-weight:800;font-size:1.18rem}
+.brand .dot{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-deep));
+  display:grid;place-items:center;color:#161616;font-size:1rem;
+}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a.link{font-size:.94rem;color:var(--muted);font-weight:500;transition:color .15s}
+.nav-links a.link:hover{color:var(--ink)}
+.nav-toggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px}
+
+/* Hero */
+.hero{position:relative;padding:104px 0 110px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(620px 420px at 78% 18%,rgba(198,244,50,.16),transparent 70%),
+    radial-gradient(520px 420px at 8% 92%,rgba(198,244,50,.07),transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:56px;align-items:center;
+}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4rem);font-weight:800}
+.hero h1 .accent{display:inline-block}
+.hero p.lead{color:var(--muted);font-size:1.12rem;margin:22px 0 32px;max-width:480px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-stats{
+  display:flex;gap:34px;margin-top:42px;flex-wrap:wrap;
+}
+.hero-stats .stat .num{font-family:'Sora';font-weight:800;font-size:1.7rem}
+.hero-stats .stat .lbl{color:var(--muted);font-size:.86rem}
+
+/* Hero visual */
+.hero-visual{position:relative;height:440px}
+.hv-block{
+  position:absolute;border-radius:var(--radius);
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+.hv-main{
+  inset:0;
+  background:
+    linear-gradient(160deg,rgba(198,244,50,.22),transparent 55%),
+    linear-gradient(330deg,#262b32,#1a1d22);
+}
+.hv-main::after{
+  content:"";position:absolute;right:-40px;bottom:-40px;
+  width:230px;height:230px;border-radius:50%;
+  background:radial-gradient(circle,var(--accent),transparent 68%);
+  opacity:.55;
+}
+.hv-shape{
+  position:absolute;left:34px;bottom:46px;
+  width:118px;height:118px;border-radius:24px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-deep));
+  transform:rotate(-12deg);
+}
+.hv-bars{
+  position:absolute;right:40px;top:48px;
+  display:flex;align-items:flex-end;gap:9px;height:130px;
+}
+.hv-bars i{width:18px;border-radius:6px 6px 2px 2px;background:rgba(244,245,244,.16)}
+.hv-bars i:nth-child(1){height:46%}
+.hv-bars i:nth-child(2){height:70%}
+.hv-bars i:nth-child(3){height:54%}
+.hv-bars i:nth-child(4){height:100%;background:var(--accent)}
+.hv-card{
+  right:-14px;bottom:-22px;
+  width:208px;background:var(--bg-3);
+  padding:18px 20px;
+}
+.hv-card .ring{
+  width:42px;height:42px;border-radius:50%;
+  border:4px solid var(--line);border-top-color:var(--accent);
+  transform:rotate(45deg);margin-bottom:10px;
+}
+.hv-card strong{font-family:'Sora';font-size:1.05rem;display:block}
+.hv-card span{color:var(--muted);font-size:.82rem}
+
+/* Programs */
+.prog-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.prog-card{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:32px 28px;
+  display:flex;flex-direction:column;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.prog-card:hover{transform:translateY(-6px);border-color:var(--accent)}
+.prog-card.featured{
+  background:linear-gradient(180deg,rgba(198,244,50,.08),var(--bg-2));
+  border-color:rgba(198,244,50,.4);
+}
+.prog-icon{
+  width:52px;height:52px;border-radius:14px;
+  background:var(--bg-3);border:1px solid var(--line);
+  display:grid;place-items:center;margin-bottom:20px;
+}
+.prog-icon b{
+  display:block;width:20px;height:20px;border-radius:5px;
+  background:var(--accent);
+}
+.prog-card h3{font-size:1.32rem;margin-bottom:10px}
+.prog-card p{color:var(--muted);font-size:.96rem;margin-bottom:18px}
+.prog-card ul{list-style:none;margin-bottom:22px}
+.prog-card ul li{
+  font-size:.93rem;padding:7px 0 7px 26px;position:relative;
+  border-top:1px solid var(--line);
+}
+.prog-card ul li:first-child{border-top:0}
+.prog-card ul li::before{
+  content:"";position:absolute;left:0;top:50%;
+  width:14px;height:14px;margin-top:-7px;border-radius:50%;
+  background:rgba(198,244,50,.16);
+  box-shadow:inset 0 0 0 4px var(--accent);
+}
+.prog-card .price-tag{
+  font-family:'Sora';font-weight:800;font-size:1.05rem;
+  margin-top:auto;color:var(--accent);
+}
+
+/* Transformations */
+.trans-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.trans-item{
+  border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--bg-2);
+}
+.trans-pair{display:grid;grid-template-columns:1fr 1fr;height:210px}
+.trans-pair .ba{position:relative;display:grid;place-items:end start}
+.trans-pair .before{background:linear-gradient(165deg,#2a2f37,#1d2126)}
+.trans-pair .after{background:linear-gradient(165deg,rgba(198,244,50,.3),#23272e)}
+.trans-pair .ba span{
+  margin:12px;font-size:.7rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;
+  background:rgba(21,23,26,.7);padding:5px 9px;border-radius:7px;
+}
+.trans-pair .after span{color:var(--accent)}
+.trans-meta{padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
+.trans-meta strong{font-family:'Sora';font-size:1rem}
+.trans-meta em{color:var(--muted);font-style:normal;font-size:.85rem}
+.trans-meta .badge{
+  font-size:.76rem;font-weight:700;color:#161616;
+  background:var(--accent);padding:4px 10px;border-radius:999px;
+}
+
+/* About */
+.about-grid{
+  display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center;
+}
+.about-photo{
+  position:relative;height:420px;border-radius:var(--radius);
+  border:1px solid var(--line);
+  background:
+    linear-gradient(150deg,rgba(198,244,50,.18),transparent 60%),
+    linear-gradient(330deg,#262b32,#191c21);
+  overflow:hidden;
+}
+.about-photo .blob{
+  position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);
+  width:200px;height:200px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent-deep));
+  opacity:.9;
+}
+.about-photo .ring2{
+  position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);
+  width:280px;height:280px;border-radius:50%;
+  border:1px dashed rgba(244,245,244,.22);
+}
+.about-photo .tag{
+  position:absolute;left:20px;bottom:20px;
+  background:var(--bg-3);border:1px solid var(--line);
+  padding:12px 16px;border-radius:12px;
+}
+.about-photo .tag strong{font-family:'Sora';display:block;font-size:.98rem}
+.about-photo .tag span{color:var(--muted);font-size:.8rem}
+.about-text h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;margin-bottom:18px}
+.about-text p{color:var(--muted);margin-bottom:16px}
+.about-creds{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.about-creds span{
+  font-size:.86rem;font-weight:600;
+  background:var(--bg-3);border:1px solid var(--line);
+  padding:8px 14px;border-radius:999px;
+}
+
+/* Pricing */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.price-card{
+  background:var(--bg-2);border:1px solid var(--line);
+  border-radius:var(--radius);padding:34px 28px;
+  display:flex;flex-direction:column;
+}
+.price-card.popular{
+  background:linear-gradient(180deg,rgba(198,244,50,.1),var(--bg-2));
+  border-color:var(--accent);
+  position:relative;
+}
+.price-card.popular .ribbon{
+  position:absolute;top:-13px;left:28px;
+  background:var(--accent);color:#161616;
+  font-size:.74rem;font-weight:800;letter-spacing:.06em;
+  padding:5px 13px;border-radius:999px;text-transform:uppercase;
+}
+.price-card h3{font-size:1.2rem;margin-bottom:6px}
+.price-card .desc{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+.price-card .amount{font-family:'Sora';font-weight:800;font-size:2.4rem;line-height:1}
+.price-card .amount sup{font-size:.95rem;font-weight:600;color:var(--muted);top:-.7em}
+.price-card .per{color:var(--muted);font-size:.85rem;margin-bottom:22px}
+.price-card ul{list-style:none;margin-bottom:26px;flex-grow:1}
+.price-card ul li{
+  font-size:.92rem;padding:8px 0 8px 24px;position:relative;color:var(--ink);
+}
+>>>>>>> origin/main
 .price-card ul li::before{
   content:"";position:absolute;left:0;top:14px;
   width:11px;height:7px;border-left:2px solid var(--accent);
@@ -351,6 +649,7 @@ a{color:inherit;text-decoration:none}
 .price-card ul li.off::before{border-color:var(--line)}
 .price-card .btn{width:100%;justify-content:center}
 
+<<<<<<< HEAD
 /* ===== FINAL CTA : full bleed ===== */
 .final{
   position:relative;overflow:hidden;
@@ -385,20 +684,77 @@ a{color:inherit;text-decoration:none}
   border-top:1px solid var(--line);padding-top:24px;
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
   color:var(--muted);font-size:.84rem;
+=======
+/* Final CTA */
+.final{
+  position:relative;
+  background:linear-gradient(135deg,var(--accent),var(--accent-deep));
+  color:#161616;border-radius:26px;
+  padding:62px 48px;text-align:center;overflow:hidden;
+}
+.final::before{
+  content:"";position:absolute;right:-60px;top:-60px;
+  width:280px;height:280px;border-radius:50%;
+  background:rgba(255,255,255,.18);
+}
+.final::after{
+  content:"";position:absolute;left:-50px;bottom:-80px;
+  width:240px;height:240px;border-radius:50%;
+  background:rgba(0,0,0,.08);
+}
+.final h2{position:relative;font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:800}
+.final p{position:relative;margin:14px auto 28px;max-width:520px;font-weight:500;opacity:.85}
+.final .btn-dark{
+  position:relative;
+  background:#161616;color:var(--accent);
+  box-shadow:0 14px 32px -12px rgba(0,0,0,.5);
+}
+.final .btn-dark:hover{transform:translateY(-2px)}
+
+/* Footer */
+.footer{border-top:1px solid var(--line);padding:54px 0 38px}
+.footer-grid{
+  display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:34px;
+  margin-bottom:38px;
+}
+.footer p.about{color:var(--muted);font-size:.92rem;margin-top:14px;max-width:300px}
+.footer h4{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.footer ul{list-style:none}
+.footer ul li{margin-bottom:9px}
+.footer ul li a{color:var(--ink);font-size:.93rem}
+.footer ul li a:hover{color:var(--accent)}
+.footer-bottom{
+  border-top:1px solid var(--line);padding-top:22px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  color:var(--muted);font-size:.85rem;
+>>>>>>> origin/main
 }
 
 /* QuietStack badge */
 .qs-badge{
+<<<<<<< HEAD
   position:fixed;right:18px;bottom:18px;z-index:120;
   display:inline-flex;align-items:center;gap:8px;
   background:rgba(28,31,36,.94);border:1px solid var(--line);
   color:var(--ink);font-size:.8rem;font-weight:700;
   padding:9px 15px;border-radius:999px;backdrop-filter:blur(8px);
   box-shadow:0 10px 26px -8px rgba(0,0,0,.7);
+=======
+  position:fixed;right:18px;bottom:18px;z-index:90;
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(28,31,36,.92);
+  border:1px solid var(--line);
+  color:var(--ink);
+  font-size:.8rem;font-weight:600;
+  padding:9px 14px;border-radius:999px;
+  backdrop-filter:blur(8px);
+  box-shadow:0 8px 24px -8px rgba(0,0,0,.6);
+>>>>>>> origin/main
   transition:border-color .18s ease,transform .18s ease;
 }
 .qs-badge:hover{border-color:var(--accent);transform:translateY(-2px)}
 .qs-badge .qd{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+<<<<<<< HEAD
 .qs-badge .arr{color:var(--accent);font-weight:900}
 
 /* ===== Responsive ===== */
@@ -442,6 +798,32 @@ a{color:inherit;text-decoration:none}
   .b-feat,.b-wide,.b-tall,.t-hero,.t-mid,.t-s1,.t-s2,.t-s3,.t-quote{grid-column:span 1}
   .footer-grid{grid-template-columns:1fr 1fr}
   .section-head{flex-direction:column;align-items:flex-start}
+=======
+.qs-badge .arr{color:var(--accent);font-weight:800}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .hero-visual{height:340px;order:-1}
+  .prog-grid,.price-grid,.trans-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .section{padding:74px 0}
+  .nav-links{
+    position:absolute;left:0;right:0;top:72px;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--bg-2);border-bottom:1px solid var(--line);
+    padding:10px 22px 18px;display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a.link{padding:13px 0;border-bottom:1px solid var(--line)}
+  .nav-links .btn{margin-top:14px;justify-content:center}
+  .nav-toggle{display:block}
+  .final{padding:48px 24px}
+}
+@media(max-width:560px){
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{gap:22px}
+>>>>>>> origin/main
 }
 </style>
 </head>
@@ -457,7 +839,10 @@ a{color:inherit;text-decoration:none}
     <nav class="nav-links" id="navLinks">
       <a class="link" href="#programok">Programok</a>
       <a class="link" href="#atalakulasok">Átalakulások</a>
+<<<<<<< HEAD
       <a class="link" href="#edzod">Az edződ</a>
+=======
+>>>>>>> origin/main
       <a class="link" href="#arak">Árak</a>
       <a class="btn btn-primary" href="#kapcsolat">Kezdjük el</a>
     </nav>
@@ -469,6 +854,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- HERO -->
 <section class="hero" id="top">
+<<<<<<< HEAD
   <span class="hero-tag" aria-hidden="true">ERŐ</span>
   <div class="wrap hero-inner">
     <div class="hero-text">
@@ -486,12 +872,36 @@ a{color:inherit;text-decoration:none}
       </div>
       <div class="hv-spark"><i></i><i></i><i></i><i></i><i></i></div>
       <div class="hv-pill">
+=======
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">Személyi edző és wellness coach</span>
+      <h1>Építsd fel az <span class="accent">erősebb</span> önmagad, fenntartható módon.</h1>
+      <p class="lead">Nem csodakúrákban hiszek, hanem rendszerben. Személyre szabott edzéstervvel, tudatos táplálkozással és valódi elszámoltathatósággal érünk el tartós eredményt.</p>
+      <div class="hero-cta">
+        <a href="#kapcsolat" class="btn btn-primary">Kezdjük el<span>&rarr;</span></a>
+        <a href="#programok" class="btn btn-ghost">Programok megtekintése</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">12+</div><div class="lbl">év tapasztalat</div></div>
+        <div class="stat"><div class="num">300+</div><div class="lbl">sikeres ügyfél</div></div>
+        <div class="stat"><div class="num">4.9</div><div class="lbl">átlagos értékelés</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hv-block hv-main">
+        <div class="hv-shape"></div>
+        <div class="hv-bars"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="hv-block hv-card">
+>>>>>>> origin/main
         <div class="ring"></div>
         <strong>Heti haladás</strong>
         <span>Edzés, alvás és táplálkozás egy helyen.</span>
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   <!-- full bleed stat band -->
   <div class="statband">
     <div class="wrap statband-inner">
@@ -521,11 +931,42 @@ a{color:inherit;text-decoration:none}
         <h3>Teljes átalakulás</h3>
         <p>Komplex, 12 hetes kísérés edzéssel, táplálkozással és heti elszámoltathatósággal. A legtöbben innen indulnak.</p>
         <div class="price">12 hét</div>
+=======
+</section>
+
+<!-- PROGRAMOK -->
+<section class="section" id="programok">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Programok</span>
+      <h2>Válaszd ki a hozzád illő utat</h2>
+      <p>Minden program egy alapos felméréssel indul, így az edzésterv valóban a te céljaidra, ütemedre és életstílusodra épül.</p>
+    </div>
+    <div class="prog-grid">
+
+      <div class="prog-card">
+        <div class="prog-icon"><b></b></div>
+        <h3>Alapozó Erő</h3>
+        <p>Kezdőknek és újrakezdőknek, akik biztos technikai alapot és magabiztosságot szeretnének.</p>
+        <ul>
+          <li>Heti 2 közös edzés</li>
+          <li>Mozgásfelmérés és technikai korrekció</li>
+          <li>Egyszerű, követhető étrendi keret</li>
+        </ul>
+        <div class="price-tag">8 hetes program</div>
+      </div>
+
+      <div class="prog-card featured">
+        <div class="prog-icon"><b></b></div>
+        <h3>Teljes Átalakulás</h3>
+        <p>A legnépszerűbb választás. Komplex kísérés edzéssel, táplálkozással és heti elszámoltathatósággal.</p>
+>>>>>>> origin/main
         <ul>
           <li>Heti 3 személyre szabott edzés</li>
           <li>Részletes táplálkozási terv</li>
           <li>Heti haladásmérés és konzultáció</li>
         </ul>
+<<<<<<< HEAD
       </div>
 
       <div class="bcard b-wide">
@@ -557,12 +998,28 @@ a{color:inherit;text-decoration:none}
         <h3>Páros tréning</h3>
         <p>Eddzetek együtt baráttal vagy párral. Motiváló közeg, kedvezőbb alkalomár, közös célok.</p>
         <div class="meta">Heti 2 alkalom</div>
+=======
+        <div class="price-tag">12 hetes program</div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-icon"><b></b></div>
+        <h3>Online Coaching</h3>
+        <p>Rugalmas megoldás azoknak, akik távolról, saját ütemükben dolgoznának együtt velem.</p>
+        <ul>
+          <li>Havonta frissülő edzésterv</li>
+          <li>Videós technikai visszajelzés</li>
+          <li>Üzenetes támogatás munkanapokon</li>
+        </ul>
+        <div class="price-tag">Havi konstrukció</div>
+>>>>>>> origin/main
       </div>
 
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 <!-- ATALAKULASOK : asymmetric gallery -->
 <section class="section band-soft" id="atalakulasok">
   <div class="wrap">
@@ -617,11 +1074,90 @@ a{color:inherit;text-decoration:none}
         </div>
 
       </div>
+=======
+<!-- ATALAKULASOK -->
+<section class="section" id="atalakulasok" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Átalakulások</span>
+      <h2>Valódi emberek, valódi eredmények</h2>
+      <p>Néhány ügyfelem útja. A képek illusztrációk, a sablonban helykitöltő grafikák jelennek meg a fotók helyén.</p>
+    </div>
+    <div class="trans-grid">
+
+      <div class="trans-item">
+        <div class="trans-pair">
+          <div class="ba before"><span>Előtte</span></div>
+          <div class="ba after"><span>Utána</span></div>
+        </div>
+        <div class="trans-meta">
+          <div><strong>Anna, 34</strong><br><em>Visszaszerzett energia</em></div>
+          <span class="badge">16 hét</span>
+        </div>
+      </div>
+
+      <div class="trans-item">
+        <div class="trans-pair">
+          <div class="ba before"><span>Előtte</span></div>
+          <div class="ba after"><span>Utána</span></div>
+        </div>
+        <div class="trans-meta">
+          <div><strong>Gábor, 41</strong><br><em>Erősebb, fájdalommentes hát</em></div>
+          <span class="badge">20 hét</span>
+        </div>
+      </div>
+
+      <div class="trans-item">
+        <div class="trans-pair">
+          <div class="ba before"><span>Előtte</span></div>
+          <div class="ba after"><span>Utána</span></div>
+        </div>
+        <div class="trans-meta">
+          <div><strong>Réka, 29</strong><br><em>Forma a verseny előtt</em></div>
+          <span class="badge">12 hét</span>
+        </div>
+      </div>
+
+      <div class="trans-item">
+        <div class="trans-pair">
+          <div class="ba before"><span>Előtte</span></div>
+          <div class="ba after"><span>Utána</span></div>
+        </div>
+        <div class="trans-meta">
+          <div><strong>Tamás, 38</strong><br><em>Tartós fogyás</em></div>
+          <span class="badge">24 hét</span>
+        </div>
+      </div>
+
+      <div class="trans-item">
+        <div class="trans-pair">
+          <div class="ba before"><span>Előtte</span></div>
+          <div class="ba after"><span>Utána</span></div>
+        </div>
+        <div class="trans-meta">
+          <div><strong>Eszter, 46</strong><br><em>Stabil életmódváltás</em></div>
+          <span class="badge">18 hét</span>
+        </div>
+      </div>
+
+      <div class="trans-item">
+        <div class="trans-pair">
+          <div class="ba before"><span>Előtte</span></div>
+          <div class="ba after"><span>Utána</span></div>
+        </div>
+        <div class="trans-meta">
+          <div><strong>Dávid, 25</strong><br><em>Izomtömeg felépítés</em></div>
+          <span class="badge">22 hét</span>
+        </div>
+      </div>
+
+>>>>>>> origin/main
     </div>
   </div>
 </section>
 
 <!-- AZ EDZOD -->
+<<<<<<< HEAD
 <section class="section band-dark" id="edzod">
   <div class="wrap">
     <div class="about">
@@ -645,12 +1181,35 @@ a{color:inherit;text-decoration:none}
           <span>Funkcionális tréning</span>
           <span>Rehabilitációs szemlélet</span>
         </div>
+=======
+<section class="section" id="edzod">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <div class="ring2"></div>
+      <div class="blob"></div>
+      <div class="tag">
+        <strong>Kovács Bence</strong>
+        <span>Okleveles személyi edző</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">Az edződ</span>
+      <h2>Egy edző, aki végig melletted áll</h2>
+      <p>Több mint tizenkét éve segítek embereknek abban, hogy ne csak elkezdjék, hanem be is fejezzék az átalakulást. Hiszek abban, hogy a tartós eredmény nem a kemény napokon, hanem a következetes hétköznapokon dől el.</p>
+      <p>A munkám alapja a türelem és a valódi figyelem. Megnézem, hol tartasz, mi fér bele az életedbe, és olyan tervet építünk, amit hosszú távon is tudsz tartani. Nem hajszolunk, hanem fejlődünk.</p>
+      <div class="about-creds">
+        <span>Okleveles személyi edző</span>
+        <span>Táplálkozási tanácsadó</span>
+        <span>Funkcionális tréning</span>
+        <span>Rehabilitációs szemlélet</span>
+>>>>>>> origin/main
       </div>
     </div>
   </div>
 </section>
 
 <!-- ARAK -->
+<<<<<<< HEAD
 <section class="section band-soft" id="arak">
   <div class="wrap">
     <div class="section-head">
@@ -660,6 +1219,14 @@ a{color:inherit;text-decoration:none}
         <p>Válaszd ki azt a konstrukciót, amely a céljaidhoz és a tempódhoz passzol. Az árak tájékoztató jellegűek.</p>
       </div>
       <span class="idx">03 / CSOMAGOK</span>
+=======
+<section class="section" id="arak" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Árak</span>
+      <h2>Átlátható csomagok, rejtett tételek nélkül</h2>
+      <p>Válaszd ki azt a konstrukciót, amely a céljaidhoz és a hozzád illő tempóhoz passzol. Az árak tájékoztató jellegűek.</p>
+>>>>>>> origin/main
     </div>
     <div class="price-grid">
 
@@ -713,6 +1280,7 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<<<<<<< HEAD
 <!-- FINAL CTA : full bleed -->
 <section class="final" id="kapcsolat">
   <div class="wrap final-inner">
@@ -723,6 +1291,15 @@ a{color:inherit;text-decoration:none}
     <div class="cta-side">
       <a href="#top" class="btn btn-dark">Felmérést kérek <span>&rarr;</span></a>
       <small>Díjmentes, kötelezettség nélkül.</small>
+=======
+<!-- FINAL CTA -->
+<section class="section" id="kapcsolat">
+  <div class="wrap">
+    <div class="final">
+      <h2>Készen állsz az első lépésre?</h2>
+      <p>Foglalj egy díjmentes felmérő beszélgetést, és nézzük meg együtt, hogyan érheted el a céljaidat. Most kezdődik a te átalakulásod.</p>
+      <a href="#top" class="btn btn-dark">Kezdjük el<span>&rarr;</span></a>
+>>>>>>> origin/main
     </div>
   </div>
 </section>
@@ -755,6 +1332,7 @@ a{color:inherit;text-decoration:none}
           <li><a href="#kapcsolat">Budapest, Erő Stúdió</a></li>
         </ul>
       </div>
+<<<<<<< HEAD
       <div>
         <h4>Kövess</h4>
         <ul>
@@ -763,6 +1341,8 @@ a{color:inherit;text-decoration:none}
           <li><a href="#kapcsolat">YouTube</a></li>
         </ul>
       </div>
+=======
+>>>>>>> origin/main
     </div>
     <div class="footer-bottom">
       <span>2026 Kovács Bence. Minden jog fenntartva.</span>
