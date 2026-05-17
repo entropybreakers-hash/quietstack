@@ -218,7 +218,7 @@
     .pain .wrap { position: relative; z-index: 1; }
     @keyframes aurora { 0%,100% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(9deg) scale(1.12); } }
     .pain .section-tag { color: var(--accent); }
-    .pain-layout { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 52px; align-items: center; margin-top: 8px; }
+    .pain-layout { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 52px; align-items: center; margin-top: 8px; }
     @media (max-width: 840px) { .pain-layout { grid-template-columns: 1fr; gap: 40px; } }
     .pain-photo { background: var(--band); border-radius: 14px; overflow: hidden; box-shadow: 0 42px 84px -44px rgba(0,0,0,0.9); }
     .pain-photo img { width: 100%; height: auto; display: block; }
@@ -524,9 +524,6 @@
         <span class="section-tag reveal">A te történeted</span>
         <h2 class="section-title reveal" style="color:#fff;">Te is ezen mész át?</h2>
         <div class="pain-layout">
-          <div class="pain-photo reveal">
-            <img src="assets/bettina-pain.webp" alt="Bettina, a QuietStack alapítója" />
-          </div>
           <div class="reveal">
             <p class="pain-headline">A növekedés mindig ugyanazt ígérte: több munka, kevesebb élet.</p>
             <div class="pain-story">
@@ -546,6 +543,9 @@
               </p>
               <p class="last">Ezt szeretném megépíteni Neked is.</p>
             </div>
+          </div>
+          <div class="pain-photo reveal">
+            <img src="assets/bettina-pain.webp" alt="Bettina, a QuietStack alapítója" />
           </div>
         </div>
       </div>
