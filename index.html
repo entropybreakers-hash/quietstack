@@ -465,6 +465,15 @@
       .showcase-card[aria-hidden] { display: none; }
     }
 
+    #calc {
+      background-image:
+        radial-gradient(ellipse 76% 74% at 50% 46%, transparent 50%, var(--band) 100%),
+        linear-gradient(rgba(171,140,91,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(171,140,91,0.07) 1px, transparent 1px);
+      background-size: 100% 100%, 56px 56px, 56px 56px;
+      background-position: center, center top, center top;
+      background-repeat: no-repeat, repeat, repeat;
+    }
     .calc-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 44px; max-width: 720px; margin: 0 auto; }
     .calc-intro { color: var(--muted); margin-bottom: 28px; }
     .calc-controls { display: grid; gap: 24px; margin-bottom: 30px; }
@@ -1251,7 +1260,7 @@
       </div>
     </section>
 
-    <section class="band">
+    <section class="band" id="calc">
       <div class="wrap">
         <span class="section-tag reveal">Megtérülés</span>
         <h2 class="section-title reveal">Számoljuk ki, mennyit ér Neked az időd</h2>
