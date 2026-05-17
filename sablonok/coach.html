@@ -874,9 +874,9 @@
     return;
   }
 
-  /* Apple-style staggering: items that belong to the same group reveal
-     one gently after another. Steps, voices and package cards each get
-     an incremental delay based on their position within the group.      */
+  /* Apple-style group staggering: items that belong to the same visual
+     group reveal one gently after another. Steps, voices and package
+     cards each get a soft incremental delay based on their position.    */
   var groups = [
     document.querySelectorAll('.approach .step'),
     document.querySelectorAll('.voices .voice'),
@@ -884,9 +884,20 @@
   ];
   groups.forEach(function(group){
     for(var g=0;g<group.length;g++){
-      group[g].style.transitionDelay = (g * 0.12) + 's';
+      group[g].style.transitionDelay = (0.06 + g * 0.13) + 's';
     }
   });
+
+  /* Child-stagger: for every .stagger container, give its direct
+     children a gentle cascading transition-delay so they glide in
+     one after another once the container scrolls into view.            */
+  var staggers = document.querySelectorAll('.stagger');
+  for(var s=0;s<staggers.length;s++){
+    var kids = staggers[s].children;
+    for(var c=0;c<kids.length;c++){
+      kids[c].style.transitionDelay = (c * 0.085) + 's';
+    }
+  }
 
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
@@ -899,21 +910,27 @@
 
   for(var j=0;j<items.length;j++){ io.observe(items[j]); }
 
-  /* Extra safety net: anything still hidden a few seconds after load
-     (for example an element that never scrolls into view) is revealed
-     so nothing can stay permanently invisible.                          */
-  window.addEventListener('load', function(){
-    setTimeout(function(){
-      for(var k=0;k<items.length;k++){
-        var el = items[k];
-        if(!el.classList.contains('is-in')){
-          var r = el.getBoundingClientRect();
-          if(r.top < window.innerHeight && r.bottom > 0){
-            el.classList.add('is-in');
-          }
+  /* Extra safety net: anything still hidden a short while after load
+     (for example an element that never scrolls into view, or if the
+     observer somehow misses it) is revealed so nothing can ever stay
+     permanently invisible.                                              */
+  function revealVisibleStragglers(){
+    for(var k=0;k<items.length;k++){
+      var el = items[k];
+      if(!el.classList.contains('is-in')){
+        var r = el.getBoundingClientRect();
+        if(r.top < window.innerHeight && r.bottom > 0){
+          el.classList.add('is-in');
         }
       }
-    }, 2400);
+    }
+  }
+  window.addEventListener('load', function(){
+    revealVisibleStragglers();
+    setTimeout(revealVisibleStragglers, 1200);
+    /* Final guarantee: after a few seconds, force-reveal anything
+       still hidden, regardless of viewport position.                   */
+    setTimeout(showAll, 4000);
   });
 })();
 </script>

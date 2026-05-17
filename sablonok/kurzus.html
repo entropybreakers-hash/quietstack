@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -619,10 +619,20 @@
   .nav .brand .mark,.qs-badge svg{transition:transform .25s ease;}
   .nav .brand:hover .mark{transform:rotate(-8deg) scale(1.05);}
 
+  /* JS-disabled safety fallback: if scripts never run, show everything */
+  .no-js .reveal,
+  .no-js .reveal-group > *,
+  .no-js .hero-anim{
+    opacity:1 !important;transform:none !important;
+    filter:none !important;animation:none !important;
+  }
+
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
     .reveal,
-    .reveal-group > *{
+    .reveal-group > *,
+    .reveal-group.from-left > *,
+    .reveal-group.from-right > *{
       opacity:1 !important;transform:none !important;
       filter:none !important;transition:none !important;
     }
@@ -719,7 +729,7 @@
       </div>
     </div>
 
-    <div class="enrol-card hero-anim a3">
+    <div class="enrol-card hero-anim glide-right a3">
       <span class="ec-ribbon">Korai jelentkezés</span>
       <div class="ec-top">
         <span class="lbl">Magabiztos angol 6 hét alatt</span>
@@ -745,7 +755,7 @@
 
 <!-- TRUST STRIP -->
 <div class="strip">
-  <div class="wrap strip-inner">
+  <div class="wrap strip-inner reveal-group">
     <span class="item"><b>A1</b> szinttől <b>B2</b> szintig</span>
     <span class="item"><b>100%</b> online, bárhonnan</span>
     <span class="item"><b>1 200+</b> elvégezte a kurzust</span>
@@ -834,12 +844,12 @@
 
 <!-- MID CTA -->
 <section class="midcta" style="padding:46px 0;">
-  <div class="wrap">
-    <div>
+  <div class="wrap reveal-group">
+    <div class="reveal from-left">
       <h3>A következő csoportban már csak 24 hely van.</h3>
       <p>Indulás: 2026. június 8. A korai ár az indulásig érvényes.</p>
     </div>
-    <a class="btn btn-dark btn-lg" href="#jelentkezes">Lefoglalom a helyem</a>
+    <a class="btn btn-dark btn-lg reveal from-right" href="#jelentkezes">Lefoglalom a helyem</a>
   </div>
 </section>
 
