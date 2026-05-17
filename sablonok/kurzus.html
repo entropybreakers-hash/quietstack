@@ -845,11 +845,11 @@
 <!-- MID CTA -->
 <section class="midcta" style="padding:46px 0;">
   <div class="wrap reveal-group">
-    <div class="reveal from-left">
+    <div>
       <h3>A következő csoportban már csak 24 hely van.</h3>
       <p>Indulás: 2026. június 8. A korai ár az indulásig érvényes.</p>
     </div>
-    <a class="btn btn-dark btn-lg reveal from-right" href="#jelentkezes">Lefoglalom a helyem</a>
+    <a class="btn btn-dark btn-lg" href="#jelentkezes">Lefoglalom a helyem</a>
   </div>
 </section>
 
@@ -1081,7 +1081,7 @@
         <a class="btn btn-accent btn-lg" href="#jelentkezes">Ezt választom</a>
       </div>
     </div>
-    <p class="price-guar">
+    <p class="price-guar reveal">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       14 napos pénzvisszafizetési garancia. Kockázat nélkül kipróbálhatod.
     </p>
@@ -1142,7 +1142,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
+    <div class="foot-grid reveal-group">
       <div>
         <div class="brand"><span class="mark">S</span> SpeakUp angolműhely</div>
         <p class="fdesc">Gyakorlatorientált online angol kurzusok, amelyek valódi beszélgetésre tanítanak. Magabiztos angol, lépésről lépésre.</p>
@@ -1196,12 +1196,23 @@
 
 <script>
   (function(){
+    var doc=document.documentElement;
+    /* JS is running: drop the no-js safety class so animated states apply */
+    doc.classList.remove('no-js');
+
+    var items=document.querySelectorAll('.reveal, .reveal-group');
     var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var items=document.querySelectorAll('.reveal');
-    if(reduce||!('IntersectionObserver' in window)){
+
+    function revealAll(){
       for(var i=0;i<items.length;i++){items[i].classList.add('in');}
+    }
+
+    /* Reduced motion or no IntersectionObserver: show everything instantly */
+    if(reduce||!('IntersectionObserver' in window)){
+      revealAll();
       return;
     }
+
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(entry.isIntersecting){
@@ -1209,8 +1220,34 @@
           io.unobserve(entry.target);
         }
       });
-    },{root:null,rootMargin:'0px 0px -10% 0px',threshold:0.12});
+    },{root:null,rootMargin:'0px 0px -12% 0px',threshold:0.12});
+
     for(var j=0;j<items.length;j++){io.observe(items[j]);}
+
+    /* Safety net: nothing should ever stay permanently invisible.
+       Anything still hidden a few seconds after load (e.g. tall pages,
+       elements that never scroll into view) is revealed. */
+    window.addEventListener('load',function(){
+      setTimeout(function(){
+        for(var k=0;k<items.length;k++){
+          var el=items[k];
+          if(el.classList.contains('in'))continue;
+          var r=el.getBoundingClientRect();
+          var vh=window.innerHeight||doc.clientHeight;
+          if(r.top<vh){el.classList.add('in');}
+        }
+      },2600);
+    });
+
+    /* Final guard: if the load event fired before this ran, still sweep once. */
+    setTimeout(function(){
+      for(var m=0;m<items.length;m++){
+        var e=items[m];
+        if(e.classList.contains('in'))continue;
+        var rect=e.getBoundingClientRect();
+        if(rect.top<((window.innerHeight||doc.clientHeight))){e.classList.add('in');}
+      }
+    },5000);
   })();
 </script>
 
