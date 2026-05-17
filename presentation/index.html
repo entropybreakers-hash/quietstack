@@ -126,9 +126,13 @@
 
   /* stack table */
   .stack{display:flex;flex-direction:column;gap:.5rem;margin-top:.3rem;}
-  .srow{display:grid;grid-template-columns:210px 1fr;gap:1.3rem;align-items:center;
+  .srow{display:grid;grid-template-columns:54px 188px 1fr;gap:1.1rem;align-items:center;
     background:var(--surface);border:1px solid var(--border);border-radius:12px;
-    padding:.72rem 1.25rem;box-shadow:0 14px 30px -28px rgba(60,45,20,.55);}
+    padding:.55rem 1.1rem;box-shadow:0 14px 30px -28px rgba(60,45,20,.55);}
+  .logo-tile{width:50px;height:50px;border-radius:12px;background:var(--bg);
+    border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+  .logo-tile svg{width:28px;height:28px;display:block;}
+  .logo-tile .mono{font-family:var(--serif);font-weight:700;font-size:1.18rem;line-height:1;}
   .srow .tool{font-family:var(--serif);font-weight:600;font-size:1.05rem;}
   .srow .desc{font-size:.93rem;color:var(--muted);line-height:1.4;}
 
@@ -385,13 +389,34 @@
     <div class="kicker">A tech stack</div>
     <h2 class="head">Melyik platform <em>mit csinál</em></h2>
     <div class="stack">
-      <div class="srow"><span class="tool">GitHub Pages</span><span class="desc">A landing oldal és az aloldalak otthona — gyors, biztonságos, megbízható.</span></div>
-      <div class="srow"><span class="tool">Supabase</span><span class="desc">Az adatbázis: minden érdeklődő, kvíz-válasz és ügyféladat egy helyen, kereshetően.</span></div>
-      <div class="srow"><span class="tool">AI-asszisztens</span><span class="desc">Azonnali, személyre szabott válasz az érdeklődőknek — a Te hangodra hangolva.</span></div>
-      <div class="srow"><span class="tool">Calendly</span><span class="desc">Időpontfoglalás a naptáradból, automatikus visszaigazolással és emlékeztetővel.</span></div>
-      <div class="srow"><span class="tool">E-mail-automatizáció</span><span class="desc">Visszaigazolók, emlékeztetők, sablonok — a megfelelő üzenet a megfelelő pillanatban.</span></div>
-      <div class="srow"><span class="tool">Stripe</span><span class="desc">Online fizetés és fizetéskövetés — a rendszer tudja, beérkezett-e az összeg.</span></div>
-      <div class="srow"><span class="tool">Számlázz.hu</span><span class="desc">Automatikus, ÁFA-helyes számla a fizetés beérkezésének pillanatában.</span></div>
+      <div class="srow">
+        <div class="logo-tile"><svg viewBox="0 0 24 24" aria-label="GitHub"><path fill="#181717" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div>
+        <span class="tool">GitHub Pages</span>
+        <span class="desc">A landing oldal és az aloldalak otthona — gyors, biztonságos, megbízható.</span></div>
+      <div class="srow">
+        <div class="logo-tile"><svg viewBox="0 0 24 24" aria-label="Supabase"><path fill="#3FCF8E" d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg></div>
+        <span class="tool">Supabase</span>
+        <span class="desc">Az adatbázis: minden érdeklődő, kvíz-válasz és ügyféladat egy helyen, kereshetően.</span></div>
+      <div class="srow">
+        <div class="logo-tile"><svg viewBox="0 0 24 24" aria-label="AI"><path fill="#ab8c5b" d="M12 1.5l2.6 7.9 7.9 2.6-7.9 2.6L12 22.5l-2.6-7.9L1.5 12l7.9-2.6z"/></svg></div>
+        <span class="tool">AI-asszisztens</span>
+        <span class="desc">Azonnali, személyre szabott válasz az érdeklődőknek — a Te hangodra hangolva.</span></div>
+      <div class="srow">
+        <div class="logo-tile"><svg viewBox="0 0 24 24" aria-label="Calendly"><path fill="#006BFF" d="M19.655 14.262c.281 0 .557.023.828.064 0 .005-.005.01-.005.014-.105.267-.234.534-.381.786l-1.219 2.106c-1.112 1.936-3.177 3.127-5.411 3.127h-2.432c-2.23 0-4.294-1.191-5.412-3.127l-1.218-2.106a6.251 6.251 0 0 1 0-6.252l1.218-2.106C6.736 4.832 8.8 3.641 11.035 3.641h2.432c2.23 0 4.294 1.191 5.411 3.127l1.219 2.106c.147.252.271.519.381.786 0 .004.005.009.005.014-.267.041-.543.064-.828.064-1.816 0-2.501-.607-3.291-1.306-.764-.676-1.711-1.517-3.44-1.517h-1.029c-1.251 0-2.387.455-3.2 1.278-.796.805-1.233 1.904-1.233 3.099v1.411c0 1.196.437 2.295 1.233 3.099.813.823 1.949 1.278 3.2 1.278h1.034c1.729 0 2.676-.841 3.439-1.517.791-.703 1.471-1.306 3.287-1.301Zm.005-3.237c.399 0 .794-.036 1.179-.11-.002-.004-.002-.01-.002-.014-.073-.414-.193-.823-.349-1.218.731-.12 1.407-.396 1.986-.819 0-.004-.005-.013-.005-.018-.331-1.085-.832-2.101-1.489-3.03-.649-.915-1.435-1.719-2.331-2.395-1.867-1.398-4.088-2.138-6.428-2.138-1.448 0-2.855.28-4.175.841-1.273.543-2.423 1.315-3.407 2.299S2.878 6.552 2.341 7.83c-.557 1.324-.842 2.726-.842 4.175 0 1.448.281 2.855.842 4.174.542 1.274 1.314 2.423 2.298 3.407s2.129 1.761 3.407 2.299c1.324.556 2.727.841 4.175.841 2.34 0 4.561-.74 6.428-2.137a10.815 10.815 0 0 0 2.331-2.396c.652-.929 1.158-1.949 1.489-3.03 0-.004.005-.014.005-.018-.579-.423-1.255-.699-1.986-.819.161-.395.276-.804.349-1.218.005-.009.005-.014.005-.023.869.166 1.692.506 2.404 1.035.685.505.552 1.075.446 1.416C22.184 20.437 17.619 24 12.221 24c-6.625 0-12-5.375-12-12s5.37-12 12-12c5.398 0 9.963 3.563 11.471 8.464.106.341.239.915-.446 1.421-.717.529-1.535.873-2.404 1.034.128.716.128 1.45 0 2.166-.387-.074-.782-.11-1.182-.11-4.184 0-3.968 2.823-6.736 2.823h-1.029c-1.899 0-3.15-1.357-3.15-3.095v-1.411c0-1.738 1.251-3.094 3.15-3.094h1.034c2.768 0 2.552 2.823 6.731 2.827Z"/></svg></div>
+        <span class="tool">Calendly</span>
+        <span class="desc">Időpontfoglalás a naptáradból, automatikus visszaigazolással és emlékeztetővel.</span></div>
+      <div class="srow">
+        <div class="logo-tile"><svg viewBox="0 0 24 24" fill="none" stroke="#ab8c5b" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-label="E-mail"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg></div>
+        <span class="tool">E-mail-automatizáció</span>
+        <span class="desc">Visszaigazolók, emlékeztetők, sablonok — a megfelelő üzenet a megfelelő pillanatban.</span></div>
+      <div class="srow">
+        <div class="logo-tile"><svg viewBox="0 0 24 24" aria-label="Stripe"><path fill="#635BFF" d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/></svg></div>
+        <span class="tool">Stripe</span>
+        <span class="desc">Online fizetés és fizetéskövetés — a rendszer tudja, beérkezett-e az összeg.</span></div>
+      <div class="srow">
+        <div class="logo-tile"><span class="mono" style="color:#5a9e2f">Sz</span></div>
+        <span class="tool">Számlázz.hu</span>
+        <span class="desc">Automatikus, ÁFA-helyes számla a fizetés beérkezésének pillanatában.</span></div>
     </div>
   </section>
 
