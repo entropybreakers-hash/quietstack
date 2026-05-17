@@ -1,13 +1,14 @@
 # Képek
 
-Az oldal három, webre optimalizált fotót használ:
+Az oldal által használt, webre optimalizált képek:
 
-| Fájl | Hol jelenik meg | Forrás |
-|---|---|---|
-| `bettina-pain.jpg` | „Te is ezen mész át?" szekció | IMG_5759 |
-| `bettina-rolam.jpg` | „Rólam" szekció | IMG_7094 |
-| `bettina-avatar.jpg` | Hero jelvény (kis kör) | IMG_5690 |
+| Fájl | Hol jelenik meg |
+|---|---|
+| `bettina-pain.webp` | „Te is ezen mész át?" szekció (átlátszó hátterű) |
+| `bettina-rolam-4.jpg` | „Ki vagyok?" szekció |
+| `bettina-avatar.jpg` | Hero jelvény (kis kör) |
 
-Az `IMG_*` fájlok az eredeti, vágatlan fotók (forrás/tartalék). Ha le szeretnéd
-cserélni valamelyik megjelenő képet, írd felül a megfelelő `bettina-*.jpg` fájlt
-egy kb. 1100 px széles, álló (4:5) JPG-vel.
+Ha lecserélnél egy képet, írd felül a megfelelő fájlt egy hasonló méretű,
+álló tájolású változattal. Tipp: ha a fájlnevet megváltoztatod (pl. `-5`
+utótaggal) és a hivatkozást is frissíted az `index.html`-ben, a böngésző
+biztosan a friss képet tölti be (nem a gyorsítótárazottat).
