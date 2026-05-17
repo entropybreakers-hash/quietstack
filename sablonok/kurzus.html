@@ -1199,34 +1199,39 @@
           io.unobserve(entry.target);
         }
       });
-    },{root:null,rootMargin:'0px 0px -12% 0px',threshold:0.12});
+    },{root:null,rootMargin:'0px 0px -10% 0px',threshold:0});
 
     for(var j=0;j<items.length;j++){io.observe(items[j]);}
 
-    /* Safety net: nothing should ever stay permanently invisible.
-       Anything still hidden a few seconds after load (e.g. tall pages,
-       elements that never scroll into view) is revealed. */
-    window.addEventListener('load',function(){
-      setTimeout(function(){
-        for(var k=0;k<items.length;k++){
-          var el=items[k];
-          if(el.classList.contains('in'))continue;
-          var r=el.getBoundingClientRect();
-          var vh=window.innerHeight||doc.clientHeight;
-          if(r.top<vh){el.classList.add('in');}
+    /* Scroll-based fallback: guarantees the reveal works on every device,
+       including short mobile screens with tall sections, where a
+       percentage threshold may never be reached. */
+    function sweep(){
+      var vh=window.innerHeight||doc.clientHeight;
+      for(var k=0;k<items.length;k++){
+        var el=items[k];
+        if(el.classList.contains('in'))continue;
+        if(el.getBoundingClientRect().top<vh*0.9){
+          el.classList.add('in');
+          io.unobserve(el);
         }
-      },2600);
-    });
-
-    /* Final guard: if the load event fired before this ran, still sweep once. */
-    setTimeout(function(){
-      for(var m=0;m<items.length;m++){
-        var e=items[m];
-        if(e.classList.contains('in'))continue;
-        var rect=e.getBoundingClientRect();
-        if(rect.top<((window.innerHeight||doc.clientHeight))){e.classList.add('in');}
       }
-    },5000);
+    }
+    var ticking=false;
+    window.addEventListener('scroll',function(){
+      if(ticking)return;
+      ticking=true;
+      requestAnimationFrame(function(){sweep();ticking=false;});
+    },{passive:true});
+    window.addEventListener('resize',sweep);
+    /* paint the initial hidden state first, then reveal above-the-fold items */
+    requestAnimationFrame(function(){requestAnimationFrame(sweep);});
+    window.addEventListener('load',function(){setTimeout(sweep,200);});
+
+    /* ultimate guard: never leave anything permanently hidden */
+    setTimeout(function(){
+      for(var m=0;m<items.length;m++){items[m].classList.add('in');}
+    },8000);
 
     /* count-up animation for the stat numbers */
     function huNum(v,dec,sep){
