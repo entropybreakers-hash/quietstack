@@ -383,13 +383,17 @@
 
     /* Sablon-showcase */
     .showcase-wrap { position: relative; margin-top: 6px; }
-    .showcase-track {
-      display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory;
-      padding: 6px 2px 22px; scroll-behavior: smooth;
-      scrollbar-width: none; -ms-overflow-style: none;
+    .showcase-marquee {
+      overflow: hidden; padding: 6px 0 22px;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+      mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
     }
-    .showcase-track::-webkit-scrollbar { display: none; }
-    .showcase-card { flex: 0 0 340px; max-width: 84vw; scroll-snap-align: center; text-decoration: none; color: inherit; display: block; transition: transform 0.18s; }
+    .showcase-row { display: flex; width: max-content; will-change: transform; animation: sc-scroll 64s linear infinite; }
+    .showcase-marquee:hover .showcase-row,
+    .showcase-marquee:active .showcase-row,
+    .showcase-marquee:focus-within .showcase-row { animation-play-state: paused; }
+    @keyframes sc-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .showcase-card { flex: 0 0 340px; max-width: 84vw; margin-right: 22px; text-decoration: none; color: inherit; display: block; transition: transform 0.18s; }
     .showcase-card:hover { transform: translateY(-5px); }
     .sc-go { display: inline-block; margin-top: 9px; font-size: 0.9rem; font-weight: 600; color: var(--accent-deep); }
     .sc-frame {
@@ -411,14 +415,14 @@
     .sc-cap { padding: 16px 4px 0; }
     .sc-cap h3 { font-size: 1.08rem; margin-bottom: 5px; }
     .sc-cap p { font-size: 0.92rem; color: var(--muted); }
-    .sc-arrows { display: flex; gap: 10px; justify-content: center; margin-top: 8px; }
-    .sc-arrow {
-      width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
-      border: 1px solid var(--border); background: var(--surface); color: var(--text);
-      font-size: 1.05rem; display: flex; align-items: center; justify-content: center;
-      transition: background 0.15s, border-color 0.15s, transform 0.12s;
+    .showcase-cta { text-align: center; margin-top: 26px; }
+    .showcase-cta p { margin-bottom: 14px; color: var(--muted); }
+    @media (prefers-reduced-motion: reduce) {
+      .showcase-marquee { overflow-x: auto; scrollbar-width: none; }
+      .showcase-marquee::-webkit-scrollbar { display: none; }
+      .showcase-row { animation: none; }
+      .showcase-card[aria-hidden] { display: none; }
     }
-    .sc-arrow:hover { background: #fff; border-color: var(--accent); transform: translateY(-2px); }
 
     .calc-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 44px; max-width: 720px; margin: 0 auto; }
     .calc-intro { color: var(--muted); margin-bottom: 28px; }
@@ -962,7 +966,8 @@
         <h2 class="section-title reveal">Így nézhet ki a Te oldalad</h2>
         <p class="section-sub reveal">Kattints bármelyikre, és nézd meg élőben. Ezek sablonok: a Te oldalad a saját arculatoddal és szövegeddel készül el. A bemutatott személyek és vállalkozások kitaláltak.</p>
         <div class="showcase-wrap reveal">
-          <div class="showcase-track">
+          <div class="showcase-marquee">
+            <div class="showcase-row">
 
             <a class="showcase-card" href="sablonok/coach.html" target="_blank" rel="noopener">
               <div class="sc-frame">
@@ -1034,11 +1039,83 @@
               </div>
             </a>
 
+            <!-- másolat a zökkenőmentes, folyamatos loophoz -->
+            <a class="showcase-card" href="sablonok/coach.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/coach.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Coach bemutatkozó oldal</h3>
+                <p>Személyes márka egy fő ajánlattal és időpontfoglalással.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="sablonok/kurzus.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/kurzus.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Online kurzus oldal</h3>
+                <p>Kurzus vagy program eladó oldala, modulokra bontva.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="sablonok/termek.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/termek.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Digitális termék oldal</h3>
+                <p>E-book, sablon vagy letölthető termék landing oldala.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="sablonok/foglalas.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/foglalas.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Konzultáció-foglaló oldal</h3>
+                <p>Időpontfoglalásra kihegyezett, letisztult oldal.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="sablonok/wellness.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="sablonok/wellness.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Wellness és fitness oldal</h3>
+                <p>Edzői oldal programokkal és átalakulás-galériával.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            </div>
           </div>
         </div>
-        <div class="sc-arrows">
-          <button class="sc-arrow sc-prev" type="button" aria-label="Előző">←</button>
-          <button class="sc-arrow sc-next" type="button" aria-label="Következő">→</button>
+        <div class="showcase-cta reveal">
+          <p>Ilyen oldalt szeretnél, a saját arculatoddal és szövegeddel?</p>
+          <a href="https://calendar.app.google/viBhB6cqbiZvmYbP7" class="btn btn-accent" target="_blank" rel="noopener">Beszéljük át egy ingyenes konzultáción →</a>
         </div>
       </div>
     </section>
@@ -1433,16 +1510,6 @@
       });
     }, { threshold: 0.35 });
     calcIO.observe(document.getElementById("calcBox"));
-
-    (function () {
-      var track = document.querySelector(".showcase-track");
-      if (!track) return;
-      var step = 362;
-      var prev = document.querySelector(".sc-prev");
-      var next = document.querySelector(".sc-next");
-      if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step, behavior: "smooth" }); });
-      if (next) next.addEventListener("click", function () { track.scrollBy({ left: step, behavior: "smooth" }); });
-    })();
 
     (function () {
       var DESIGN_W = 1180, DESIGN_H = 740;
