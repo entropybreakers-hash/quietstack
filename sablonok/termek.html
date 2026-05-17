@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiszta Fókusz Notion sabloncsomag | Kata Online</title>
-<meta name="description" content="A Tiszta Fókusz Notion sabloncsomag: kész rendszer coachoknak és digitális alkotóknak a tartalomtervezéshez, ügyfélkövetéshez és a heti tervezéshez.">
+<title>Tiszta Fokusz Notion sabloncsomag | Kata Online</title>
+<meta name="description" content="Tiszta Fokusz: kesz Notion sabloncsomag coachoknak es digitalis alkotoknak. Tartalomtervezes, ugyfelkovetes es heti tervezes egy helyen. 7 900 Ft, azonnali hozzaferes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f6faf9;
+    --bg: #f5faf8;
     --surface: #ffffff;
     --ink: #14302b;
     --muted: #5d736e;
@@ -18,9 +18,9 @@
     --accent-dark: #0a8a77;
     --accent-soft: #e3f6f2;
     --line: #e2ece9;
-    --shadow: 0 18px 48px rgba(15, 64, 56, 0.10);
-    --shadow-sm: 0 6px 20px rgba(15, 64, 56, 0.08);
-    --radius: 18px;
+    --shadow: 0 20px 50px rgba(15, 64, 56, 0.12);
+    --shadow-sm: 0 8px 24px rgba(15, 64, 56, 0.08);
+    --radius: 16px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,68 +31,52 @@
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     background: var(--bg);
     color: var(--ink);
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    padding-bottom: 76px;
   }
 
   a { color: inherit; text-decoration: none; }
 
-  img { max-width: 100%; display: block; }
-
-  .wrap {
+  .shop {
     width: 100%;
-    max-width: 1120px;
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 0 22px;
+    padding: 0 20px;
   }
 
-  /* ---------- NAV ---------- */
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(246, 250, 249, 0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner {
+  /* ---------- TOP BAR ---------- */
+  .topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    height: 64px;
   }
   .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
     font-weight: 800;
-    font-size: 1.12rem;
+    font-size: 1.05rem;
     letter-spacing: -0.02em;
   }
   .brand-mark {
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     font-weight: 800;
-    font-size: 1rem;
-  }
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-  .nav-links a.link {
     font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--muted);
-    transition: color 0.2s ease;
   }
-  .nav-links a.link:hover { color: var(--ink); }
+  .topbar .seller {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
 
   .btn {
     display: inline-flex;
@@ -102,7 +86,7 @@
     font-family: inherit;
     font-weight: 700;
     font-size: 0.97rem;
-    padding: 12px 24px;
+    padding: 13px 26px;
     border-radius: 999px;
     border: none;
     cursor: pointer;
@@ -118,181 +102,78 @@
     transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(15, 179, 154, 0.4);
   }
-  .btn-ghost {
-    background: var(--surface);
-    color: var(--ink);
-    border: 1px solid var(--line);
-  }
-  .btn-ghost:hover {
-    border-color: var(--accent);
-    color: var(--accent-dark);
-    transform: translateY(-2px);
-  }
   .btn-lg { padding: 16px 34px; font-size: 1.05rem; }
+  .btn-block { width: 100%; }
 
-  /* ---------- HERO ---------- */
-  .hero {
-    padding: 84px 0 90px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: -160px;
-    right: -120px;
-    width: 480px;
-    height: 480px;
-    background: radial-gradient(circle, rgba(15, 179, 154, 0.16), transparent 70%);
-    z-index: 0;
-  }
-  .hero-grid {
+  /* ---------- PRODUCT HERO ---------- */
+  .product {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
-    gap: 56px;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent-soft);
-    color: var(--accent-dark);
-    font-weight: 600;
-    font-size: 0.84rem;
-    padding: 7px 14px;
-    border-radius: 999px;
-    margin-bottom: 20px;
-  }
-  .eyebrow .dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--accent);
-  }
-  h1 {
-    font-size: clamp(2.3rem, 5vw, 3.4rem);
-    line-height: 1.12;
-    letter-spacing: -0.03em;
-    font-weight: 800;
-  }
-  .hero p.lead {
-    margin-top: 20px;
-    font-size: 1.13rem;
-    color: var(--muted);
-    max-width: 480px;
-  }
-  .price-row {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin: 28px 0 26px;
-  }
-  .price {
-    font-size: 2.1rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-  }
-  .price-old {
-    font-size: 1.1rem;
-    color: var(--muted);
-    text-decoration: line-through;
-  }
-  .price-tag {
-    background: #fff0e6;
-    color: #c2531a;
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 999px;
-  }
-  .hero-cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    align-items: center;
-  }
-  .hero-note {
-    margin-top: 18px;
-    font-size: 0.88rem;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .check {
-    width: 18px; height: 18px;
-    border-radius: 50%;
-    background: var(--accent-soft);
-    color: var(--accent-dark);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 800;
-    flex-shrink: 0;
+    gap: 44px;
+    align-items: start;
+    padding: 22px 0 56px;
   }
 
-  /* ---------- PRODUCT MOCKUP ---------- */
+  /* visual side */
+  .gallery { position: sticky; top: 22px; }
   .mockup {
     position: relative;
-    aspect-ratio: 4 / 5;
-    border-radius: 24px;
-    background: linear-gradient(160deg, #0a8a77, #0fb39a 55%, #46d6bf);
+    aspect-ratio: 1 / 1;
+    border-radius: 22px;
+    background: linear-gradient(155deg, #0a8a77, #0fb39a 55%, #46d6bf);
     box-shadow: var(--shadow);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 34px;
+    padding: 38px;
   }
   .mockup::after {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 24px;
-    background: radial-gradient(circle at 30% 18%, rgba(255,255,255,0.28), transparent 55%);
+    border-radius: 22px;
+    background: radial-gradient(circle at 28% 16%, rgba(255,255,255,0.3), transparent 55%);
   }
   .mock-card {
     position: relative;
     z-index: 1;
     width: 100%;
     background: var(--surface);
-    border-radius: 16px;
-    padding: 26px 24px;
-    box-shadow: 0 16px 40px rgba(8, 50, 44, 0.28);
+    border-radius: 14px;
+    padding: 24px 22px;
+    box-shadow: 0 16px 40px rgba(8, 50, 44, 0.3);
   }
   .mock-tab {
     display: inline-block;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: var(--accent-dark);
     background: var(--accent-soft);
     padding: 4px 10px;
     border-radius: 6px;
-    margin-bottom: 14px;
+    margin-bottom: 13px;
   }
   .mock-h {
     font-weight: 800;
-    font-size: 1.15rem;
+    font-size: 1.08rem;
     letter-spacing: -0.02em;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .mock-line {
-    height: 11px;
+    height: 10px;
     border-radius: 6px;
     background: var(--line);
-    margin-bottom: 10px;
+    margin-bottom: 9px;
   }
   .mock-line.w80 { width: 80%; }
-  .mock-line.w60 { width: 60%; }
+  .mock-line.w55 { width: 55%; }
   .mock-line.accent { background: var(--accent-soft); }
   .mock-checkrow {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 14px;
-    font-size: 0.85rem;
+    gap: 9px;
+    margin-top: 12px;
+    font-size: 0.82rem;
     color: var(--muted);
     font-weight: 500;
   }
@@ -304,24 +185,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 800;
+    flex-shrink: 0;
   }
   .mock-float {
     position: absolute;
     z-index: 2;
     background: var(--surface);
-    border-radius: 12px;
-    box-shadow: 0 10px 26px rgba(8, 50, 44, 0.22);
-    padding: 12px 16px;
-    font-size: 0.82rem;
+    border-radius: 11px;
+    box-shadow: 0 10px 26px rgba(8, 50, 44, 0.24);
+    padding: 11px 14px;
+    font-size: 0.8rem;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 9px;
   }
-  .mock-float.top { top: 18px; left: -26px; }
-  .mock-float.bottom { bottom: 22px; right: -22px; }
+  .mock-float.top { top: 16px; left: -24px; }
+  .mock-float.bottom { bottom: 20px; right: -20px; }
   .mock-float .pill {
     width: 26px; height: 26px;
     border-radius: 8px;
@@ -331,143 +213,282 @@
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+  }
+  .thumbs {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .thumb {
+    flex: 1;
+    aspect-ratio: 5 / 4;
+    border-radius: 11px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .thumb .tl {
+    height: 6px;
+    border-radius: 4px;
+    background: var(--line);
+  }
+  .thumb .tl.s { width: 60%; }
+  .thumb .tl.a { background: var(--accent); }
+  .thumb .tg {
+    margin-top: auto;
+    display: flex;
+    gap: 4px;
+  }
+  .thumb .tg span {
+    flex: 1;
+    height: 12px;
+    border-radius: 4px;
+    background: var(--accent-soft);
   }
 
-  /* ---------- SECTION SHELL ---------- */
-  section { position: relative; }
-  .section-pad { padding: 80px 0; }
-  .section-head {
-    max-width: 620px;
-    margin: 0 auto 52px;
-    text-align: center;
+  /* info side */
+  .info { padding-top: 4px; }
+  .crumb {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 14px;
   }
-  .kicker {
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  .crumb .here { color: var(--ink); font-weight: 600; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--accent-soft);
     color: var(--accent-dark);
-    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
   }
-  h2 {
-    font-size: clamp(1.7rem, 3.6vw, 2.35rem);
-    line-height: 1.2;
+  .eyebrow .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  h1 {
+    font-size: clamp(1.9rem, 4vw, 2.55rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+  }
+  .value {
+    margin-top: 12px;
+    font-size: 1.06rem;
+    color: var(--muted);
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+  .stars { color: #f0a531; letter-spacing: 1px; font-size: 0.95rem; }
+
+  .buybox {
+    margin-top: 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 24px 22px;
+    box-shadow: var(--shadow-sm);
+  }
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .price {
+    font-size: 2.15rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .price-old {
+    font-size: 1.05rem;
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+  .price-tag {
+    background: #fff0e6;
+    color: #c2531a;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .price-sub {
+    margin-top: 4px;
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+  .buybox .btn { margin-top: 18px; }
+  .reassure {
+    list-style: none;
+    margin-top: 16px;
+    display: grid;
+    gap: 8px;
+  }
+  .reassure li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .check {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.66rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .seller-chip {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 16px;
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .seller-av {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .seller-chip .sc-name { font-weight: 700; font-size: 0.92rem; }
+  .seller-chip .sc-role { font-size: 0.8rem; color: var(--muted); }
+
+  /* ---------- COMPACT SECTIONS ---------- */
+  .strip { border-top: 1px solid var(--line); }
+  .block { padding: 44px 0; }
+  .block-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .block-head h2 {
+    font-size: clamp(1.35rem, 3vw, 1.7rem);
     letter-spacing: -0.025em;
     font-weight: 800;
   }
-  .section-head p {
-    margin-top: 14px;
+  .block-head .meta {
+    font-size: 0.86rem;
     color: var(--muted);
-    font-size: 1.04rem;
+    font-weight: 600;
+    white-space: nowrap;
   }
 
-  /* ---------- WHAT IS INSIDE ---------- */
-  .inside { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .card-grid {
+  /* feature grid */
+  .features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 14px;
   }
-  .card {
-    background: var(--bg);
+  .feat {
+    background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 28px 26px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    padding: 20px 18px;
+    transition: transform 0.18s ease, border-color 0.18s ease;
   }
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-sm);
-    border-color: var(--accent);
-  }
-  .card-ico {
-    width: 46px; height: 46px;
-    border-radius: 12px;
+  .feat:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .feat-ico {
+    width: 40px; height: 40px;
+    border-radius: 11px;
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
-  .card-ico svg { width: 22px; height: 22px; stroke: #fff; }
-  .card h3 {
-    font-size: 1.08rem;
+  .feat-ico svg { width: 20px; height: 20px; stroke: #fff; }
+  .feat h3 {
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: -0.015em;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
   }
-  .card p {
-    font-size: 0.94rem;
+  .feat p {
+    font-size: 0.88rem;
     color: var(--muted);
+    line-height: 1.55;
   }
 
-  /* ---------- BENEFITS ---------- */
-  .benefit-grid {
+  /* benefits strip */
+  .benefits { background: var(--surface); }
+  .benefit-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px 36px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
   }
-  .benefit {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    background: var(--surface);
+  .ben {
+    text-align: left;
+    padding: 18px 16px;
     border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 22px 24px;
+    border-radius: 13px;
+    background: var(--bg);
   }
-  .benefit .b-ico {
-    width: 40px; height: 40px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    background: var(--accent-soft);
-    color: var(--accent-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .ben .num {
+    font-size: 1.5rem;
     font-weight: 800;
+    color: var(--accent-dark);
+    letter-spacing: -0.02em;
+  }
+  .ben h3 {
     font-size: 0.95rem;
-  }
-  .benefit h3 {
-    font-size: 1.02rem;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin: 6px 0 4px;
   }
-  .benefit p {
-    font-size: 0.92rem;
+  .ben p {
+    font-size: 0.84rem;
     color: var(--muted);
+    line-height: 1.5;
   }
 
-  /* ---------- PREVIEW PEEK ---------- */
-  .preview { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .preview-grid {
-    display: grid;
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: 50px;
-    align-items: center;
-  }
+  /* preview peek */
   .peek-frame {
-    border-radius: 20px;
+    border-radius: 16px;
     background: linear-gradient(150deg, #f0fbf9, #d9f1ec);
     border: 1px solid var(--line);
-    padding: 26px;
-    box-shadow: var(--shadow-sm);
+    padding: 20px;
   }
-  .peek-bar {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 16px;
-  }
+  .peek-bar { display: flex; gap: 6px; margin-bottom: 14px; }
   .peek-bar span {
-    width: 11px; height: 11px;
+    width: 10px; height: 10px;
     border-radius: 50%;
     background: #c9ddd8;
   }
   .peek-screen {
     background: var(--surface);
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 11px;
+    padding: 8px 18px;
   }
   .peek-row {
     display: flex;
@@ -486,84 +507,60 @@
   .peek-dot.b { background: #ffd9b0; }
   .peek-dot.c { background: #c7ddf5; }
   .peek-dot.d { background: #d9c7f5; }
-  .peek-txt { flex: 1; }
-  .peek-txt .t1 {
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-  .peek-txt .t2 {
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
+  .peek-txt { flex: 1; min-width: 0; }
+  .peek-txt .t1 { font-size: 0.89rem; font-weight: 600; }
+  .peek-txt .t2 { font-size: 0.76rem; color: var(--muted); }
   .peek-state {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     padding: 3px 9px;
     border-radius: 999px;
+    white-space: nowrap;
   }
   .peek-state.done { background: var(--accent-soft); color: var(--accent-dark); }
   .peek-state.prog { background: #fff0e6; color: #c2531a; }
-  .preview-list {
-    list-style: none;
-    margin-top: 22px;
-  }
-  .preview-list li {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    margin-bottom: 14px;
-    font-size: 0.98rem;
+  .peek-cap {
+    margin-top: 12px;
+    font-size: 0.84rem;
     color: var(--muted);
-  }
-  .preview-list li strong { color: var(--ink); font-weight: 600; }
-
-  /* ---------- TESTIMONIAL ---------- */
-  .testimonial { padding: 86px 0; }
-  .quote-card {
-    max-width: 760px;
-    margin: 0 auto;
-    background: linear-gradient(150deg, #0a8a77, #0fb39a);
-    border-radius: 26px;
-    padding: 52px 50px;
-    color: #fff;
     text-align: center;
-    box-shadow: var(--shadow);
+  }
+
+  /* testimonial */
+  .quote-card {
+    background: linear-gradient(150deg, #0a8a77, #0fb39a);
+    border-radius: 18px;
+    padding: 32px 34px;
+    color: #fff;
     position: relative;
     overflow: hidden;
   }
   .quote-card::before {
     content: "";
     position: absolute;
-    top: -90px; left: -70px;
-    width: 260px; height: 260px;
+    top: -80px; left: -60px;
+    width: 220px; height: 220px;
     background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);
   }
-  .quote-mark {
-    font-size: 3.4rem;
-    font-weight: 800;
-    line-height: 0.4;
-    margin-bottom: 22px;
-    opacity: 0.55;
-  }
   .quote-card blockquote {
-    font-size: 1.32rem;
+    font-size: 1.12rem;
     font-weight: 600;
     line-height: 1.5;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.01em;
     position: relative;
     z-index: 1;
   }
+  .quote-card .stars { margin-bottom: 12px; display: block; position: relative; z-index: 1; }
   .quote-author {
-    margin-top: 26px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 13px;
+    gap: 12px;
     position: relative;
     z-index: 1;
   }
   .quote-avatar {
-    width: 48px; height: 48px;
+    width: 44px; height: 44px;
     border-radius: 50%;
     background: rgba(255,255,255,0.22);
     border: 2px solid rgba(255,255,255,0.5);
@@ -571,131 +568,135 @@
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    flex-shrink: 0;
   }
   .quote-author .qa-name { font-weight: 700; }
-  .quote-author .qa-role { font-size: 0.86rem; opacity: 0.85; }
-  .quote-author .qa-text { text-align: left; }
+  .quote-author .qa-role { font-size: 0.84rem; opacity: 0.85; }
 
-  /* ---------- FINAL CTA ---------- */
-  .final {
-    background: var(--surface);
-    border-top: 1px solid var(--line);
-  }
+  /* final buy block */
+  .final { background: var(--surface); }
   .final-card {
     background: var(--bg);
     border: 1px solid var(--line);
-    border-radius: 26px;
-    padding: 56px 48px;
-    text-align: center;
+    border-radius: 20px;
+    padding: 38px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    flex-wrap: wrap;
     position: relative;
     overflow: hidden;
   }
   .final-card::before {
     content: "";
     position: absolute;
-    bottom: -130px; right: -90px;
-    width: 320px; height: 320px;
+    bottom: -120px; right: -80px;
+    width: 280px; height: 280px;
     background: radial-gradient(circle, rgba(15,179,154,0.14), transparent 70%);
   }
-  .final-card h2 { position: relative; z-index: 1; }
-  .final-card p {
-    position: relative;
-    z-index: 1;
-    max-width: 480px;
-    margin: 14px auto 0;
-    color: var(--muted);
-    font-size: 1.05rem;
+  .final-text { position: relative; z-index: 1; max-width: 460px; }
+  .final-text h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    letter-spacing: -0.025em;
+    font-weight: 800;
   }
-  .final-price {
+  .final-text p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.96rem;
+  }
+  .final-buy {
     position: relative;
     z-index: 1;
+    text-align: center;
+  }
+  .final-buy .price-row { justify-content: center; }
+  .final-buy .btn { margin-top: 14px; }
+  .final-buy .guarantee {
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: var(--muted);
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    gap: 7px;
     justify-content: center;
-    gap: 12px;
-    margin: 26px 0 24px;
-  }
-  .final-cta-wrap {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .guarantee {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.88rem;
-    color: var(--muted);
   }
 
-  /* ---------- FOOTER ---------- */
+  /* footer */
   footer {
     background: var(--ink);
     color: #b9ccc7;
-    padding: 50px 0 30px;
+    padding: 30px 0;
   }
-  .foot-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding-bottom: 28px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .foot-brand {
+  .foot-inner {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: #fff;
-  }
-  .foot-brand p {
-    font-weight: 400;
-    font-size: 0.9rem;
-    color: #8ba39e;
-    margin-top: 10px;
-    max-width: 280px;
-  }
-  .foot-links {
-    display: flex;
-    gap: 44px;
-    flex-wrap: wrap;
-  }
-  .foot-col h4 {
-    color: #fff;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    margin-bottom: 12px;
-  }
-  .foot-col a {
-    display: block;
-    font-size: 0.92rem;
-    color: #b9ccc7;
-    margin-bottom: 8px;
-    transition: color 0.2s ease;
-  }
-  .foot-col a:hover { color: var(--accent); }
-  .foot-bottom {
-    margin-top: 24px;
-    display: flex;
     justify-content: space-between;
-    gap: 14px;
+    gap: 16px;
     flex-wrap: wrap;
-    font-size: 0.85rem;
-    color: #8ba39e;
+    font-size: 0.84rem;
   }
+  .foot-inner .foot-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .foot-links a { color: #b9ccc7; transition: color 0.2s ease; }
+  .foot-links a:hover { color: var(--accent); }
+  .foot-note {
+    margin-top: 14px;
+    font-size: 0.78rem;
+    color: #7e948f;
+  }
+
+  /* ---------- STICKY BUY BAR ---------- */
+  .buybar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -8px 28px rgba(15, 64, 56, 0.08);
+  }
+  .buybar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 76px;
+  }
+  .buybar-info { min-width: 0; }
+  .buybar-info .bb-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .buybar-info .bb-price {
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+  .buybar-info .bb-price strong {
+    color: var(--ink);
+    font-size: 1.05rem;
+    font-weight: 800;
+  }
+  .buybar .btn { flex-shrink: 0; }
 
   /* ---------- QUIETSTACK BADGE ---------- */
   .qs-badge {
     position: fixed;
-    bottom: 18px;
+    bottom: 92px;
     right: 18px;
     z-index: 100;
     display: inline-flex;
@@ -703,9 +704,9 @@
     gap: 7px;
     background: rgba(20, 48, 43, 0.92);
     color: #fff;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    padding: 9px 15px;
+    padding: 9px 14px;
     border-radius: 999px;
     box-shadow: 0 8px 22px rgba(8, 50, 44, 0.32);
     backdrop-filter: blur(6px);
@@ -716,75 +717,55 @@
     background: var(--accent-dark);
   }
   .qs-badge .qs-arrow {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     transition: transform 0.18s ease;
   }
   .qs-badge:hover .qs-arrow { transform: translateX(2px); }
 
   /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 880px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 44px; }
-    .hero { padding: 56px 0 64px; }
-    .hero p.lead { max-width: none; }
-    .card-grid { grid-template-columns: 1fr; }
-    .benefit-grid { grid-template-columns: 1fr; }
-    .preview-grid { grid-template-columns: 1fr; gap: 36px; }
-    .nav-links .link { display: none; }
-    .section-pad { padding: 62px 0; }
-    .quote-card { padding: 40px 28px; }
-    .quote-card blockquote { font-size: 1.12rem; }
-    .final-card { padding: 44px 26px; }
-    .mock-float.top { left: 6px; }
-    .mock-float.bottom { right: 4px; }
+  @media (max-width: 860px) {
+    .product { grid-template-columns: 1fr; gap: 30px; padding-top: 14px; }
+    .gallery { position: static; }
+    .mock-float.top { left: 8px; }
+    .mock-float.bottom { right: 6px; }
+    .features { grid-template-columns: 1fr 1fr; }
+    .benefit-row { grid-template-columns: 1fr 1fr; }
+    .block-head { flex-direction: column; gap: 6px; align-items: flex-start; }
   }
-  @media (max-width: 520px) {
-    .hero-cta { flex-direction: column; align-items: stretch; }
-    .hero-cta .btn { width: 100%; }
-    .price { font-size: 1.7rem; }
+  @media (max-width: 560px) {
+    .features { grid-template-columns: 1fr; }
+    .benefit-row { grid-template-columns: 1fr; }
+    .topbar .seller { display: none; }
+    .final-card { padding: 28px 22px; }
+    .final-buy { width: 100%; }
+    .final-buy .btn { width: 100%; }
+    .buybar-inner { height: 70px; }
+    .buybar .btn { padding: 12px 20px; font-size: 0.92rem; }
+    .buybar-info .bb-name { font-size: 0.86rem; }
+    .price { font-size: 1.85rem; }
+    .qs-badge { bottom: 84px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="wrap nav-inner">
+<!-- TOP BAR -->
+<div class="shop">
+  <div class="topbar">
     <a href="#" class="brand">
       <span class="brand-mark">K</span>
       <span>Kata Online</span>
     </a>
-    <div class="nav-links">
-      <a class="link" href="#tartalom">Mi van benne</a>
-      <a class="link" href="#elonyok">Miert eri meg</a>
-      <a class="link" href="#bepillantas">Bepillantas</a>
-      <a class="btn btn-primary" href="#vasarlas">Megveszem</a>
-    </div>
+    <span class="seller">Notion sablonok digitalis alkotoknak</span>
   </div>
-</nav>
+</div>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow"><span class="dot"></span>Notion sabloncsomag</span>
-      <h1>Tiszta Fokusz: kesz rendszer a kaotikus hetek helyett</h1>
-      <p class="lead">Egy atgondolt Notion sabloncsomag coachoknak es digitalis alkotoknak. Tartalomtervezes, ugyfelkovetes es heti tervezes egy helyen, hogy ne a rendszerezessel teljen a napod.</p>
-      <div class="price-row">
-        <span class="price">7 900 Ft</span>
-        <span class="price-old">12 900 Ft</span>
-        <span class="price-tag">Bevezeto ar</span>
-      </div>
-      <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="#vasarlas">Megveszem</a>
-        <a class="btn btn-ghost btn-lg" href="#bepillantas">Bepillantok</a>
-      </div>
-      <div class="hero-note">
-        <span class="check">+</span>
-        Azonnali hozzaferes, eletre szolo frissitesekkel.
-      </div>
-    </div>
+<!-- PRODUCT HERO -->
+<main class="shop">
+  <div class="product">
 
-    <div>
+    <!-- VISUAL -->
+    <div class="gallery">
       <div class="mockup">
         <div class="mock-float top">
           <span class="pill">7</span>
@@ -795,7 +776,7 @@
           <div class="mock-h">Tiszta Fokusz iranyitopult</div>
           <div class="mock-line w80"></div>
           <div class="mock-line accent"></div>
-          <div class="mock-line w60"></div>
+          <div class="mock-line w55"></div>
           <div class="mock-checkrow">
             <span class="box">+</span>
             Tartalomnaptar a kovetkezo honapra
@@ -810,201 +791,225 @@
           <span>kesz oldal</span>
         </div>
       </div>
+      <div class="thumbs">
+        <div class="thumb">
+          <span class="tl a"></span><span class="tl"></span><span class="tl s"></span>
+          <div class="tg"><span></span><span></span></div>
+        </div>
+        <div class="thumb">
+          <span class="tl"></span><span class="tl s"></span><span class="tl a"></span>
+          <div class="tg"><span></span><span></span><span></span></div>
+        </div>
+        <div class="thumb">
+          <span class="tl s"></span><span class="tl"></span><span class="tl"></span>
+          <div class="tg"><span></span></div>
+        </div>
+      </div>
     </div>
+
+    <!-- INFO -->
+    <div class="info">
+      <div class="crumb">Sablonok / Produktivitas / <span class="here">Tiszta Fokusz</span></div>
+      <span class="eyebrow"><span class="dot"></span>Notion sabloncsomag</span>
+      <h1>Tiszta Fokusz Notion sabloncsomag</h1>
+      <p class="value">Kesz rendszer coachoknak es digitalis alkotoknak: tartalom, ugyfelek es heti tervezes egy atlathato helyen.</p>
+      <div class="rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>4,9 / 5, 124 visszajelzes alapjan</span>
+      </div>
+
+      <div class="buybox">
+        <div class="price-row">
+          <span class="price">7 900 Ft</span>
+          <span class="price-old">12 900 Ft</span>
+          <span class="price-tag">Bevezeto ar</span>
+        </div>
+        <div class="price-sub">Egyszeri vasarlas, nincs elofizetes.</div>
+        <a class="btn btn-primary btn-lg btn-block" href="#vasarlas">Megveszem</a>
+        <ul class="reassure">
+          <li><span class="check">+</span>Azonnali hozzaferes vasarlas utan</li>
+          <li><span class="check">+</span>Eletre szolo frissitesek, ingyen</li>
+          <li><span class="check">+</span>14 napos penzvisszafizetesi garancia</li>
+        </ul>
+        <div class="seller-chip">
+          <span class="seller-av">KO</span>
+          <div>
+            <div class="sc-name">Kata Online</div>
+            <div class="sc-role">2018 ota keszit rendszereket alkotoknak</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-</header>
+</main>
 
 <!-- MI VAN BENNE -->
-<section class="inside section-pad" id="tartalom">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Mi van benne</div>
-      <h2>Minden, amire egy mukodo rendszerhez szukseged van</h2>
-      <p>A csomag 12 osszekapcsolt Notion oldalbol all, amelyek egymasra epulnek. Nem kell nullarol kezdened, csak importalod es testreszabod.</p>
+<section class="strip">
+  <div class="shop block" id="tartalom">
+    <div class="block-head">
+      <h2>Mi van benne</h2>
+      <span class="meta">12 osszekapcsolt Notion oldal</span>
     </div>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-ico">
+    <div class="features">
+      <div class="feat">
+        <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
         </div>
         <h3>Tartalomnaptar</h3>
-        <p>Heti es havi nezet a posztokhoz, hirlevelekhez es videokhoz, kesz statusz cimkekkel es otletbankkal.</p>
+        <p>Heti es havi nezet posztokhoz, hirlevelekhez es videokhoz, kesz statusz cimkekkel.</p>
       </div>
-      <div class="card">
-        <div class="card-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
         </div>
         <h3>Ugyfel pipeline</h3>
-        <p>Atlathato CRM nezet az erdeklodoktol a leadasig, jegyzetekkel, kovetkezo lepesekkel es bevetel kovetessel.</p>
+        <p>Atlathato CRM nezet az erdeklodoktol a leadasig, jegyzetekkel es kovetkezo lepesekkel.</p>
       </div>
-      <div class="card">
-        <div class="card-ico">
+      <div class="feat">
+        <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         </div>
         <h3>Heti tervezo</h3>
-        <p>Egyszeru rutin, amellyel 15 perc alatt megtervezed a heted, es vasarnap mar nem a fejedben kavarog minden.</p>
+        <p>Egyszeru rutin, amellyel 15 perc alatt megtervezed a heted, kaosz nelkul.</p>
       </div>
-      <div class="card">
-        <div class="card-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>
         </div>
-        <h3>Ajanlat es projekt sablonok</h3>
-        <p>Kesz sablonok ajanlatokhoz, onboardinghoz es projektkovetes, hogy minden ugyfel ugyanazt a gondos elmenyt kapja.</p>
+        <h3>Ajanlat sablonok</h3>
+        <p>Kesz sablonok ajanlatokhoz es onboardinghoz, hogy minden ugyfel gondos elmenyt kapjon.</p>
       </div>
-      <div class="card">
-        <div class="card-ico">
+      <div class="feat">
+        <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
         </div>
-        <h3>Otletbank es swipe file</h3>
-        <p>Strukturalt gyujtohely a tartalomotleteknek, inspiracioknak es a bevalt szovegsemaknak, cimkezve es kereshetoen.</p>
+        <h3>Otletbank</h3>
+        <p>Strukturalt gyujtohely a tartalomotleteknek es a bevalt szovegsemaknak, kereshetoen.</p>
       </div>
-      <div class="card">
-        <div class="card-ico">
+      <div class="feat">
+        <div class="feat-ico">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
         <h3>Beallitasi utmutato</h3>
-        <p>Lepesrol lepesre vegigvezeto leiras es rovid videos sugok, hogy 30 perc alatt elindulj a sajat adataiddal.</p>
+        <p>Lepesrol lepesre leiras es rovid videos sugok, hogy 30 perc alatt elindulj.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- MIERT ERI MEG -->
-<section class="section-pad" id="elonyok">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Miert eri meg</div>
-      <h2>Tobb fokusz, kevesebb fejben tartott teendo</h2>
-      <p>Nem egy ujabb ures sablon. Egy atgondolt mukodes, amit alkotokkal egyutt teszteltunk valodi heteken.</p>
+<section class="strip benefits">
+  <div class="shop block" id="elonyok">
+    <div class="block-head">
+      <h2>Miert eri meg</h2>
+      <span class="meta">Valodi heteken tesztelve</span>
     </div>
-    <div class="benefit-grid">
-      <div class="benefit">
-        <span class="b-ico">1</span>
-        <div>
-          <h3>Sporolj heti orakat</h3>
-          <p>A keszre tervezett struktura miatt nem ujraepiteni, csak hasznalni kell. A tervezes percek kerdese lesz.</p>
-        </div>
+    <div class="benefit-row">
+      <div class="ben">
+        <div class="num">1</div>
+        <h3>Heti orakat sporolsz</h3>
+        <p>A keszre tervezett struktura miatt nem epiteni, csak hasznalni kell.</p>
       </div>
-      <div class="benefit">
-        <span class="b-ico">2</span>
-        <div>
-          <h3>Semmi nem esik at a rosten</h3>
-          <p>Egy helyen latod az ugyfeleket, a hatariddoket es a tartalmakat, igy nem a memoriadra kell tamaszkodnod.</p>
-        </div>
+      <div class="ben">
+        <div class="num">2</div>
+        <h3>Semmi nem vesz el</h3>
+        <p>Egy nezetben latod az ugyfeleket, a hatariddoket es a tartalmakat.</p>
       </div>
-      <div class="benefit">
-        <span class="b-ico">3</span>
-        <div>
-          <h3>Profi benyomast keltesz</h3>
-          <p>A kesz ajanlat es onboarding sablonok miatt minden ugyfeled rendezett, kovetkezetes elmenyt kap.</p>
-        </div>
+      <div class="ben">
+        <div class="num">3</div>
+        <h3>Profi benyomas</h3>
+        <p>A kesz onboarding sablonok rendezett, kovetkezetes elmenyt adnak.</p>
       </div>
-      <div class="benefit">
-        <span class="b-ico">4</span>
-        <div>
-          <h3>Veled egyutt no</h3>
-          <p>Konnyen bovitheto es atszabhato felepites, ami akkor is kiszolgal, amikor mar tobb ajanlatod es projekted van.</p>
-        </div>
+      <div class="ben">
+        <div class="num">4</div>
+        <h3>Veled egyutt no</h3>
+        <p>Konnyen bovitheto felepites, ami tobb projektnel is kiszolgal.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- BEPILLANTAS -->
-<section class="preview section-pad" id="bepillantas">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Bepillantas</div>
-      <h2>Nezz bele, mielott megveszed</h2>
-      <p>Igy nez ki a hetente hasznalt iranyitopult. Tiszta, atlathato, es pontosan annyi, amennyire szukseged van.</p>
+<section class="strip">
+  <div class="shop block" id="bepillantas">
+    <div class="block-head">
+      <h2>Bepillantas</h2>
+      <span class="meta">Igy nez ki a hetente hasznalt nezet</span>
     </div>
-    <div class="preview-grid">
-      <div class="peek-frame">
-        <div class="peek-bar"><span></span><span></span><span></span></div>
-        <div class="peek-screen">
-          <div class="peek-row">
-            <div class="peek-dot a"></div>
-            <div class="peek-txt">
-              <div class="t1">Heti hirlevel megirasa</div>
-              <div class="t2">Tartalom, hatarido csutortok</div>
-            </div>
-            <span class="peek-state done">Kesz</span>
+    <div class="peek-frame">
+      <div class="peek-bar"><span></span><span></span><span></span></div>
+      <div class="peek-screen">
+        <div class="peek-row">
+          <div class="peek-dot a"></div>
+          <div class="peek-txt">
+            <div class="t1">Heti hirlevel megirasa</div>
+            <div class="t2">Tartalom, hatarido csutortok</div>
           </div>
-          <div class="peek-row">
-            <div class="peek-dot b"></div>
-            <div class="peek-txt">
-              <div class="t1">Uj ugyfel onboarding</div>
-              <div class="t2">Pipeline, kovetkezo lepes</div>
-            </div>
-            <span class="peek-state prog">Folyamatban</span>
+          <span class="peek-state done">Kesz</span>
+        </div>
+        <div class="peek-row">
+          <div class="peek-dot b"></div>
+          <div class="peek-txt">
+            <div class="t1">Uj ugyfel onboarding</div>
+            <div class="t2">Pipeline, kovetkezo lepes</div>
           </div>
-          <div class="peek-row">
-            <div class="peek-dot c"></div>
-            <div class="peek-txt">
-              <div class="t1">Instagram poszt sorozat</div>
-              <div class="t2">Tartalomnaptar, 3 reszbol</div>
-            </div>
-            <span class="peek-state prog">Folyamatban</span>
+          <span class="peek-state prog">Folyamatban</span>
+        </div>
+        <div class="peek-row">
+          <div class="peek-dot c"></div>
+          <div class="peek-txt">
+            <div class="t1">Instagram poszt sorozat</div>
+            <div class="t2">Tartalomnaptar, 3 reszbol</div>
           </div>
-          <div class="peek-row">
-            <div class="peek-dot d"></div>
-            <div class="peek-txt">
-              <div class="t1">Ajanlat kuldese</div>
-              <div class="t2">Sablonbol, jovo hetfo</div>
-            </div>
-            <span class="peek-state done">Kesz</span>
+          <span class="peek-state prog">Folyamatban</span>
+        </div>
+        <div class="peek-row">
+          <div class="peek-dot d"></div>
+          <div class="peek-txt">
+            <div class="t1">Ajanlat kuldese</div>
+            <div class="t2">Sablonbol, jovo hetfo</div>
           </div>
+          <span class="peek-state done">Kesz</span>
         </div>
       </div>
-      <div>
-        <h2 style="font-size:1.5rem;">Amit ebben a nezetben latsz</h2>
-        <ul class="preview-list">
-          <li><span class="check">+</span><span><strong>Egyetlen helyen</strong> minden aktiv teendod, statusszal es hatariddovel.</span></li>
-          <li><span class="check">+</span><span><strong>Szinkodolt kategoriak</strong>, hogy egy pillantassal lasd, mibol mennyi van.</span></li>
-          <li><span class="check">+</span><span><strong>Szuresek es nezetek</strong>, amelyek a te munkamenetedre vannak hangolva.</span></li>
-          <li><span class="check">+</span><span><strong>Mobilon is hasznalhato</strong>, igy uton is hozzaferhetsz a feladataidhoz.</span></li>
-        </ul>
-        <a class="btn btn-primary btn-lg" href="#vasarlas" style="margin-top:8px;">Kerem a teljes csomagot</a>
-      </div>
     </div>
+    <p class="peek-cap">Szinkodolt kategoriak, statuszok es szuresek, mobilon is hasznalhato nezetben.</p>
   </div>
 </section>
 
 <!-- TESTIMONIAL -->
-<section class="testimonial">
-  <div class="wrap">
+<section class="strip">
+  <div class="shop block">
     <div class="quote-card">
-      <div class="quote-mark">&#8220;</div>
-      <blockquote>Mar az elso heten ereztem a kulonbseget. Eddig ot kulonbozo helyen vezettem mindent, most viszont egy nezetben latom az ugyfeleimet es a tartalmaimat. Vasarnap esti tervezesbol 15 perc lett.</blockquote>
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <blockquote>Mar az elso heten ereztem a kulonbseget. Eddig ot kulonbozo helyen vezettem mindent, most viszont egy nezetben latom az ugyfeleimet es a tartalmaimat. A vasarnap esti tervezesbol 15 perc lett.</blockquote>
       <div class="quote-author">
         <span class="quote-avatar">RD</span>
-        <span class="qa-text">
-          <span class="qa-name">Reka Dora</span><br>
-          <span class="qa-role">eletmod coach es online oktato</span>
-        </span>
+        <div>
+          <div class="qa-name">Reka Dora</div>
+          <div class="qa-role">eletmod coach es online oktato</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final section-pad" id="vasarlas">
-  <div class="wrap">
+<!-- FINAL BUY BLOCK -->
+<section class="strip final">
+  <div class="shop block" id="vasarlas">
     <div class="final-card">
-      <div class="kicker">Keszen allsz</div>
-      <h2>Indulj el meg ma a Tiszta Fokusszal</h2>
-      <p>Egyszeri vasarlas, azonnali hozzaferes. Importalod a Notionbe, beallitod a sajat adataiddal, es mar hasznalod is.</p>
-      <div class="final-price">
-        <span class="price">7 900 Ft</span>
-        <span class="price-old">12 900 Ft</span>
-        <span class="price-tag">Bevezeto ar</span>
+      <div class="final-text">
+        <h2>Indulj el meg ma a Tiszta Fokusszal</h2>
+        <p>Importalod a Notionbe, beallitod a sajat adataiddal, es mar hasznalod is. Egyszeri vasarlas, azonnali hozzaferes.</p>
       </div>
-      <div class="final-cta-wrap">
-        <a class="btn btn-primary btn-lg" href="#vasarlas">Megveszem</a>
-        <div class="guarantee">
-          <span class="check">+</span>
-          14 napos penzvisszafizetesi garancia, kerdes nelkul.
+      <div class="final-buy">
+        <div class="price-row">
+          <span class="price">7 900 Ft</span>
+          <span class="price-old">12 900 Ft</span>
         </div>
+        <a class="btn btn-primary btn-lg" href="#vasarlas">Megveszem</a>
+        <div class="guarantee"><span class="check">+</span>14 napos penzvisszafizetesi garancia</div>
       </div>
     </div>
   </div>
@@ -1012,38 +1017,34 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <div class="foot-brand">
-          <span class="brand-mark">K</span>
-          <span>Kata Online</span>
-        </div>
-        <p>Notion sablonok es rendszerek coachoknak es digitalis alkotoknak, hogy tobb ido jusson a lenyegre.</p>
-      </div>
+  <div class="shop">
+    <div class="foot-inner">
+      <span class="foot-brand">
+        <span class="brand-mark">K</span>
+        Kata Online
+      </span>
       <div class="foot-links">
-        <div class="foot-col">
-          <h4>Termek</h4>
-          <a href="#tartalom">Mi van benne</a>
-          <a href="#elonyok">Miert eri meg</a>
-          <a href="#bepillantas">Bepillantas</a>
-          <a href="#vasarlas">Megveszem</a>
-        </div>
-        <div class="foot-col">
-          <h4>Informacio</h4>
-          <a href="#">Gyakori kerdesek</a>
-          <a href="#">Kapcsolat</a>
-          <a href="#">Adatkezeles</a>
-          <a href="#">Aszf</a>
-        </div>
+        <a href="#tartalom">Mi van benne</a>
+        <a href="#elonyok">Miert eri meg</a>
+        <a href="#bepillantas">Bepillantas</a>
+        <a href="#">Gyakori kerdesek</a>
+        <a href="#">Kapcsolat</a>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>2026 Kata Online. Minden jog fenntartva.</span>
-      <span>Ez egy demo sablon oldal, a tartalom illusztracio.</span>
-    </div>
+    <div class="foot-note">2026 Kata Online. Ez egy demo sablon oldal, a tartalom illusztracio.</div>
   </div>
 </footer>
+
+<!-- STICKY BUY BAR -->
+<div class="buybar">
+  <div class="shop buybar-inner">
+    <div class="buybar-info">
+      <div class="bb-name">Tiszta Fokusz Notion sabloncsomag</div>
+      <div class="bb-price"><strong>7 900 Ft</strong> <span class="price-old" style="font-size:0.8rem;">12 900 Ft</span></div>
+    </div>
+    <a class="btn btn-primary" href="#vasarlas">Megveszem</a>
+  </div>
+</div>
 
 <!-- QUIETSTACK BADGE -->
 <a class="qs-badge" href="https://quietstack.entropybreakers.com" target="_blank" rel="noopener">
