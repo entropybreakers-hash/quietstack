@@ -83,12 +83,25 @@
       <h2>2. A weboldal működése</h2>
       <p>
         A <strong>quietstack.entropybreakers.com</strong> egy statikus bemutatkozó weboldal.
-        A weboldal önmagában <strong>nem tartalmaz űrlapot, nem helyez el sütiket (cookie-kat),
-        és nem használ látogatottság-mérő vagy reklámkövető eszközt.</strong> Pusztán a weboldal
-        böngészésével nem adsz meg személyes adatot.
+        A weboldal <strong>nem tartalmaz űrlapot, nem helyez el sütiket (cookie-kat), és nem
+        használ reklámkövető eszközt.</strong> Pusztán a weboldal böngészésével nem adsz meg
+        személyes adatot. A látogatottság összesített méréséről a 3. pont tájékoztat.
       </p>
 
-      <h2>3. Időpontfoglalás (Google Naptár)</h2>
+      <h2>3. Látogatottság-mérés (Cloudflare Web Analytics)</h2>
+      <p>
+        A weboldal a Cloudflare Web Analytics szolgáltatását használja a látogatottság
+        összesített méréséhez (például az oldalmegtekintések száma). Ez a megoldás
+        <strong>nem helyez el sütit, nem hoz létre egyedi azonosítót, és nem követi a
+        látogatókat oldalak vagy weboldalak között.</strong> A szolgáltatás nem tárol
+        IP-címet, és a mérésből egyetlen látogató sem azonosítható. Mivel kizárólag
+        anonim, összesített statisztika készül, sütibanner (cookie-figyelmeztetés) nem
+        szükséges. A szolgáltatást a Cloudflare, Inc. nyújtja; adatkezeléséről a
+        <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare adatvédelmi szabályzata</a>
+        ad tájékoztatást.
+      </p>
+
+      <h2>4. Időpontfoglalás (Google Naptár)</h2>
       <p>
         A weboldalon az „Ingyenes konzultáció" gombok egy Google időpontfoglaló oldalra
         vezetnek. Ha ott foglalsz időpontot, az általad megadott adatokat (pl. név, e-mail-cím,
@@ -99,7 +112,7 @@
         adnak tájékoztatást.
       </p>
 
-      <h2>4. Kapcsolatfelvétel e-mailben</h2>
+      <h2>5. Kapcsolatfelvétel e-mailben</h2>
       <p>
         Ha e-mailben írsz nekünk, a megadott adataidat (név, e-mail-cím, üzenet tartalma)
         a megkeresésed megválaszolása és a kapcsolattartás céljából kezeljük. Az adatkezelés
@@ -107,7 +120,7 @@
         adatokat addig őrizzük, ameddig a kapcsolattartás indokolttá teszi, ezt követően töröljük.
       </p>
 
-      <h2>5. Számlázás</h2>
+      <h2>6. Számlázás</h2>
       <p>
         Megrendelés esetén a szolgáltatás díjáról számlát állítunk ki. A számlázáshoz
         szükséges adatokat (név vagy cégnév, cím, adószám, a szolgáltatás megnevezése) a
@@ -116,7 +129,7 @@
         tárolásához a sevDesk (sevDesk GmbH) számlázó programot vesszük igénybe.
       </p>
 
-      <h2>6. Tárhely és technikai naplók</h2>
+      <h2>7. Tárhely és technikai naplók</h2>
       <p>
         A weboldal tárhelyét a GitHub Pages (GitHub, Inc.) biztosítja. A tárhelyszolgáltató
         a weboldal kiszolgálása során technikai naplót vezethet (például IP-cím, böngésző
@@ -124,14 +137,15 @@
         adatkezelési tájékoztatója irányadó.
       </p>
 
-      <h2>7. Adatfeldolgozók</h2>
+      <h2>8. Adatfeldolgozók</h2>
       <ul>
         <li>GitHub, Inc.: tárhelyszolgáltatás (weboldal kiszolgálása)</li>
+        <li>Cloudflare, Inc.: látogatottság-mérés (Web Analytics)</li>
         <li>Google LLC: időpontfoglaló szolgáltatás</li>
         <li>sevDesk GmbH: számlázó program (számlák kiállítása és tárolása)</li>
       </ul>
 
-      <h2>8. Az érintett jogai</h2>
+      <h2>9. Az érintett jogai</h2>
       <p>Az általunk kezelt személyes adataiddal kapcsolatban a GDPR alapján jogod van:</p>
       <ul>
         <li>tájékoztatást kérni az adatkezelésről,</li>
@@ -145,7 +159,7 @@
         nélkül válaszolunk.
       </p>
 
-      <h2>9. Jogorvoslat</h2>
+      <h2>10. Jogorvoslat</h2>
       <p>
         Ha úgy érzed, hogy az adatkezelés sérti a jogaidat, panaszt tehetsz az osztrák
         adatvédelmi hatóságnál:<br />
@@ -165,5 +179,8 @@
     </div>
   </footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "71d3c4699e9e4d50b4675d0385c2316c"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
