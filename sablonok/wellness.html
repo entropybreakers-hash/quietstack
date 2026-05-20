@@ -34,7 +34,15 @@ body{
 }
 h1,h2,h3,h4{font-family:'Archivo','Inter',sans-serif;line-height:1.04;letter-spacing:-0.025em}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 30px;width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 30px;width:100%;box-sizing:border-box}
+
+/* Defensive: ne lógjon ki vízszintesen, ne préselődjön össze a mobil grid */
+html{max-width:100%;overflow-x:hidden}
+*,*::before,*::after{box-sizing:border-box}
+.bento,.trans-grid,.price-grid,.footer-grid,.statband-inner,.about,.hero-inner,.final-inner{min-width:0}
+.bcard,.tcard,.price-card{min-width:0;max-width:100%}
+.bcard h3,.bcard p,.bcard ul li,.bcard .meta,.bcard .tagline,
+.tcard h3,.tcard p,.tcard .info,.tcard .wks{overflow-wrap:anywhere;word-break:break-word}
 .accent{color:var(--accent)}
 .eyebrow{
   display:inline-flex;align-items:center;gap:9px;
@@ -506,8 +514,9 @@ a{color:inherit;text-decoration:none}
 }
 @media(max-width:560px){
   .wrap{padding:0 20px}
-  .bento,.trans-grid{grid-template-columns:1fr}
-  .b-feat,.b-wide,.b-tall,.t-hero,.t-mid,.t-s1,.t-s2,.t-s3,.t-quote{grid-column:span 1}
+  .bento,.trans-grid{grid-template-columns:1fr !important;grid-auto-rows:auto !important}
+  .b-feat,.b-wide,.b-tall,.t-hero,.t-mid,.t-s1,.t-s2,.t-s3,.t-quote{grid-column:1 / -1 !important;grid-row:auto !important}
+  .bcard,.tcard{width:100%}
   .footer-grid{grid-template-columns:1fr 1fr}
   .section-head{flex-direction:column;align-items:flex-start}
 }
