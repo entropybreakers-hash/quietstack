@@ -110,7 +110,18 @@
     /* Hero (dark cinematic) */
     .hero {
       position: relative; overflow: hidden; padding: 30px 0 70px;
-      background: radial-gradient(ellipse 68% 58% at 50% 33%, #261f16 0%, #17130d 58%, #100d08 100%);
+      background:
+        radial-gradient(ellipse 82% 42% at 50% 114%, rgba(201,168,118,0.22), transparent 62%),
+        radial-gradient(ellipse 66% 56% at 50% 32%, #2b2318 0%, #15120c 60%, #0d0b06 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(201,168,118,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,118,0.05) 1px, transparent 1px);
+      background-size: 132px 132px, 132px 132px;
+      -webkit-mask-image: radial-gradient(ellipse 92% 82% at 50% 42%, #000 28%, transparent 84%);
+      mask-image: radial-gradient(ellipse 92% 82% at 50% 42%, #000 28%, transparent 84%);
     }
     .hero-live-wrap { position: relative; z-index: 4; text-align: center; }
     .hero-live {
@@ -124,16 +135,16 @@
 
     .hero-stage { position: relative; max-width: 1180px; margin: 6px auto 0; height: clamp(380px, 56vw, 620px); }
     .hero-pipe { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
-    .pipe-line { fill: none; stroke: rgba(206,176,124,0.5); stroke-width: 3; filter: drop-shadow(0 0 5px rgba(201,168,118,0.5)); }
-    .pipe-node { fill: #1d1912; stroke: rgba(214,184,132,0.85); stroke-width: 2; filter: drop-shadow(0 0 7px rgba(201,168,118,0.45)); }
-    .pipe-ico { fill: none; stroke: #e8cd9e; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-    .pipe-pulse { fill: #f5e4be; filter: drop-shadow(0 0 6px rgba(245,228,190,0.95)); }
+    .pipe-line { fill: none; stroke: #eccf9c; stroke-width: 4.5; filter: drop-shadow(0 0 2px rgba(245,222,176,0.9)) drop-shadow(0 0 7px rgba(201,168,118,0.7)) drop-shadow(0 0 16px rgba(201,168,118,0.45)); }
+    .pipe-node { fill: rgba(34,28,19,0.92); stroke: #f1d6a2; stroke-width: 3; filter: drop-shadow(0 0 3px rgba(245,222,176,0.85)) drop-shadow(0 0 10px rgba(201,168,118,0.6)) drop-shadow(0 0 22px rgba(201,168,118,0.4)); }
+    .pipe-ico { fill: none; stroke: #f4e3c0; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    .pipe-pulse { fill: #fff4da; filter: drop-shadow(0 0 5px rgba(255,244,218,1)) drop-shadow(0 0 11px rgba(245,228,190,0.85)); }
 
     .hero-glow {
       position: absolute; left: 50%; top: 46%; transform: translate(-50%,-50%);
-      width: 56%; height: 92%; z-index: 2; pointer-events: none;
-      background: radial-gradient(ellipse at center, rgba(201,168,118,0.34), transparent 66%);
-      filter: blur(36px);
+      width: 60%; height: 94%; z-index: 2; pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(201,168,118,0.42), transparent 66%);
+      filter: blur(38px);
     }
     .hero-portrait {
       position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
@@ -697,15 +708,15 @@
             <g transform="translate(1480,400)"><circle cx="0" cy="0" r="13" /><path d="M0,0 V-8 M0,0 L7,3" /></g>
           </g>
           <g class="pipe-pulses">
-            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite"><mpath href="#e1" /></animateMotion></circle>
-            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="0.2s" repeatCount="indefinite"><mpath href="#e2" /></animateMotion></circle>
-            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="0.6s" repeatCount="indefinite"><mpath href="#e3" /></animateMotion></circle>
-            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#e4" /></animateMotion></circle>
-            <circle class="pipe-pulse" r="6"><animateMotion dur="2.6s" begin="1.1s" repeatCount="indefinite"><mpath href="#e5" /></animateMotion></circle>
-            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="1.5s" repeatCount="indefinite"><mpath href="#e6" /></animateMotion></circle>
-            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="1.7s" repeatCount="indefinite"><mpath href="#e7" /></animateMotion></circle>
-            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="2.1s" repeatCount="indefinite"><mpath href="#e8" /></animateMotion></circle>
-            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="2.3s" repeatCount="indefinite"><mpath href="#e9" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="7"><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite"><mpath href="#e1" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="7"><animateMotion dur="2.4s" begin="0.2s" repeatCount="indefinite"><mpath href="#e2" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="7"><animateMotion dur="2.4s" begin="0.6s" repeatCount="indefinite"><mpath href="#e3" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="7"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#e4" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="7"><animateMotion dur="2.6s" begin="1.1s" repeatCount="indefinite"><mpath href="#e5" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="7"><animateMotion dur="2.4s" begin="1.5s" repeatCount="indefinite"><mpath href="#e6" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="7"><animateMotion dur="2.4s" begin="1.7s" repeatCount="indefinite"><mpath href="#e7" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="7"><animateMotion dur="2.4s" begin="2.1s" repeatCount="indefinite"><mpath href="#e8" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="7"><animateMotion dur="2.4s" begin="2.3s" repeatCount="indefinite"><mpath href="#e9" /></animateMotion></circle>
           </g>
         </svg>
         <div class="hero-glow" aria-hidden="true"></div>
