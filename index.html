@@ -111,6 +111,8 @@
     .hero {
       position: relative; overflow: hidden; padding: 30px 0 70px;
       background:
+        radial-gradient(circle at 11% 48%, rgba(201,168,118,0.10), transparent 28%),
+        radial-gradient(circle at 89% 48%, rgba(201,168,118,0.10), transparent 28%),
         radial-gradient(ellipse 82% 42% at 50% 114%, rgba(201,168,118,0.22), transparent 62%),
         radial-gradient(ellipse 66% 56% at 50% 32%, #2b2318 0%, #15120c 60%, #0d0b06 100%);
     }
@@ -139,6 +141,10 @@
     .pipe-node { fill: rgba(34,28,19,0.92); stroke: #f1d6a2; stroke-width: 3; filter: drop-shadow(0 0 3px rgba(245,222,176,0.85)) drop-shadow(0 0 10px rgba(201,168,118,0.6)) drop-shadow(0 0 22px rgba(201,168,118,0.4)); }
     .pipe-ico { fill: none; stroke: #f4e3c0; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
     .pipe-pulse { fill: #fff4da; filter: drop-shadow(0 0 5px rgba(255,244,218,1)) drop-shadow(0 0 11px rgba(245,228,190,0.85)); }
+    .pipe-stub { opacity: 0.4; }
+    .pipe-sparks circle { fill: rgba(201,168,118,0.5); }
+    .pipe-labels text { fill: #cdbf9c; font-family: var(--mono); font-size: 30px; text-anchor: middle; letter-spacing: 0.02em; }
+    .hero-flow { display: none; }
 
     .hero-glow {
       position: absolute; left: 50%; top: 46%; transform: translate(-50%,-50%);
@@ -234,8 +240,14 @@
       .eyebrow { font-size: 0.66rem; letter-spacing: 0.12em; margin-bottom: 12px; }
       .hero h1 { font-size: 1.95rem; line-height: 1.16; margin-bottom: 13px; }
       .hero h1 .line2 { font-size: 0.82em; }
-      .hero p.lead { font-size: 1rem; margin-bottom: 20px; }
+      .hero p.lead { font-size: 1rem; margin-bottom: 14px; }
       .scroll-hint { margin-top: 16px; }
+      .pipe-labels { display: none; }
+      .hero-flow {
+        display: block; font-family: var(--mono); font-size: 0.72rem;
+        letter-spacing: 0.03em; color: var(--accent); margin: 0 auto 18px;
+        line-height: 1.6;
+      }
     }
 
     section { padding: 84px 0; }
@@ -701,11 +713,29 @@
             <g transform="translate(120,400)"><circle cx="0" cy="-6" r="6" /><path d="M-11,12 C-11,3 -6,-1 0,-1 C6,-1 11,3 11,12" /></g>
             <g transform="translate(330,270)"><path d="M0,-14 L3.5,-3.5 L14,0 L3.5,3.5 L0,14 L-3.5,3.5 L-14,0 L-3.5,-3.5 Z" /></g>
             <g transform="translate(330,530)"><rect x="-13" y="-11" width="26" height="24" rx="2" /><path d="M-13,-4 H13 M-6,-15 V-7 M6,-15 V-7" /></g>
-            <g transform="translate(545,400)"><rect x="-15" y="-10" width="30" height="20" rx="2" /><path d="M-15,-8 L0,3 L15,-8" /></g>
-            <g transform="translate(1055,400)"><path d="M-10,-14 H6 L12,-8 V14 H-10 Z M5,-14 V-7 H12 M-5,1 H7 M-5,7 H7" /></g>
-            <g transform="translate(1270,270)"><path d="M-14,10 L-4,-3 L4,4 L14,-11 M14,-11 H7 M14,-11 V-4" /></g>
-            <g transform="translate(1270,530)"><path d="M-12,0 L-3,9 L13,-10" /></g>
+            <g transform="translate(545,400)"><circle cx="0" cy="0" r="5" /></g>
+            <g transform="translate(1055,400)"><circle cx="0" cy="0" r="5" /></g>
+            <g transform="translate(1270,270)"><rect x="-15" y="-10" width="30" height="20" rx="2" /><path d="M-15,-8 L0,3 L15,-8" /></g>
+            <g transform="translate(1270,530)"><path d="M-10,-14 H6 L12,-8 V14 H-10 Z M5,-14 V-7 H12 M-5,1 H7 M-5,7 H7" /></g>
             <g transform="translate(1480,400)"><circle cx="0" cy="0" r="13" /><path d="M0,0 V-8 M0,0 L7,3" /></g>
+          </g>
+          <g class="pipe-stub">
+            <path class="pipe-line" d="M120,400 H10" />
+            <path class="pipe-line" d="M1480,400 H1590" />
+          </g>
+          <circle class="pipe-node" cx="10" cy="400" r="9" />
+          <circle class="pipe-node" cx="1590" cy="400" r="9" />
+          <g class="pipe-sparks">
+            <circle cx="70" cy="120" r="3" /><circle cx="210" cy="700" r="2.5" /><circle cx="40" cy="500" r="2.5" /><circle cx="300" cy="190" r="2.5" /><circle cx="160" cy="860" r="3" />
+            <circle cx="1540" cy="150" r="3" /><circle cx="1400" cy="760" r="2.5" /><circle cx="1560" cy="520" r="2.5" /><circle cx="1320" cy="220" r="2.5" /><circle cx="1460" cy="840" r="3" />
+          </g>
+          <g class="pipe-labels">
+            <text x="120" y="480">Érdeklődő</text>
+            <text x="330" y="350">AI válasz</text>
+            <text x="330" y="610">Időpont</text>
+            <text x="1270" y="350">E-mail</text>
+            <text x="1270" y="610">Számla</text>
+            <text x="1480" y="480">Időd</text>
           </g>
           <g class="pipe-pulses">
             <circle class="pipe-pulse" r="7"><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite"><mpath href="#e1" /></animateMotion></circle>
@@ -731,6 +761,7 @@
         <p class="lead">
           Megépítem az AI-rendszered, ami helyetted viszi az adminisztrációt.
         </p>
+        <p class="hero-flow">Érdeklődő › AI válasz › Időpont › E-mail › Számla › Időd</p>
         <div class="hero-cta">
           <a href="#kapcsolat" class="btn btn-accent">Ingyenes 20 perces konzultáció →</a>
         </div>
