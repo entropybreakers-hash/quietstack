@@ -137,9 +137,11 @@
 
     .hero-stage { position: relative; max-width: none; margin: 6px auto 0; height: clamp(380px, 56vw, 620px); }
     .hero-pipe { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
-    .pipe-line { fill: none; stroke: #eccf9c; stroke-width: 4.5; filter: drop-shadow(0 0 2px rgba(245,222,176,0.9)) drop-shadow(0 0 7px rgba(201,168,118,0.7)) drop-shadow(0 0 16px rgba(201,168,118,0.45)); }
-    .pipe-node { fill: rgba(34,28,19,0.92); stroke: #f1d6a2; stroke-width: 3; filter: drop-shadow(0 0 3px rgba(245,222,176,0.85)) drop-shadow(0 0 10px rgba(201,168,118,0.6)) drop-shadow(0 0 22px rgba(201,168,118,0.4)); }
-    .pipe-ico { fill: none; stroke: #f4e3c0; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    .pipe-panels rect { fill: rgba(28,24,17,0.4); stroke: rgba(201,168,118,0.13); stroke-width: 2; }
+    .pipe-line { fill: none; stroke: #efd3a0; stroke-width: 6; filter: drop-shadow(0 0 2px rgba(247,230,194,0.95)) drop-shadow(0 0 9px rgba(201,168,118,0.8)) drop-shadow(0 0 20px rgba(201,168,118,0.5)); }
+    .pipe-core path { fill: none; stroke: #fff7e4; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .pipe-node { fill: url(#qsNode); stroke: #f3d8a4; stroke-width: 3; filter: drop-shadow(0 0 3px rgba(247,230,194,0.9)) drop-shadow(0 0 12px rgba(201,168,118,0.65)) drop-shadow(0 0 26px rgba(201,168,118,0.4)); }
+    .pipe-ico { fill: none; stroke: #fbeed0; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
     .pipe-pulse { fill: #fff4da; }
     .pipe-stub { opacity: 0.5; }
     .pipe-detail path { fill: none; stroke: rgba(201,168,118,0.35); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -691,6 +693,18 @@
       <div class="hero-live-wrap"><span class="hero-live"><i aria-hidden="true"></i>Élő rendszer</span></div>
       <div class="hero-stage">
         <svg class="hero-pipe" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <radialGradient id="qsNode" cx="50%" cy="42%" r="70%">
+              <stop offset="0%" stop-color="#3a3122" />
+              <stop offset="100%" stop-color="#14100a" />
+            </radialGradient>
+          </defs>
+          <g class="pipe-panels">
+            <rect x="40" y="120" width="150" height="130" rx="14" /><rect x="250" y="700" width="170" height="150" rx="14" />
+            <rect x="1410" y="120" width="150" height="130" rx="14" /><rect x="1190" y="700" width="170" height="150" rx="14" />
+            <rect x="690" y="55" width="210" height="120" rx="14" /><rect x="640" y="825" width="250" height="130" rx="14" />
+            <rect x="55" y="430" width="120" height="150" rx="14" /><rect x="1425" y="430" width="120" height="150" rx="14" />
+          </g>
           <path id="e1" class="pipe-line" d="M120,400 Q225,319 330,270" />
           <path id="e2" class="pipe-line" d="M120,400 Q225,481 330,530" />
           <path id="e3" class="pipe-line" d="M330,270 Q437,351 545,400" />
@@ -700,15 +714,23 @@
           <path id="e7" class="pipe-line" d="M1055,400 Q1162,481 1270,530" />
           <path id="e8" class="pipe-line" d="M1270,270 Q1375,351 1480,400" />
           <path id="e9" class="pipe-line" d="M1270,530 Q1375,449 1480,400" />
+          <g class="pipe-core">
+            <path d="M120,400 Q225,319 330,270" /><path d="M120,400 Q225,481 330,530" />
+            <path d="M330,270 Q437,351 545,400" /><path d="M330,530 Q437,449 545,400" />
+            <path d="M545,400 Q800,400 1055,400" />
+            <path d="M1055,400 Q1162,319 1270,270" /><path d="M1055,400 Q1162,481 1270,530" />
+            <path d="M1270,270 Q1375,351 1480,400" /><path d="M1270,530 Q1375,449 1480,400" />
+            <path d="M120,400 H0" /><path d="M1480,400 H1600" />
+          </g>
           <g>
-            <rect class="pipe-node" x="74" y="354" width="92" height="92" rx="20" />
-            <rect class="pipe-node" x="284" y="224" width="92" height="92" rx="20" />
-            <rect class="pipe-node" x="284" y="484" width="92" height="92" rx="20" />
-            <rect class="pipe-node" x="499" y="354" width="92" height="92" rx="20" />
-            <rect class="pipe-node" x="1009" y="354" width="92" height="92" rx="20" />
-            <rect class="pipe-node" x="1224" y="224" width="92" height="92" rx="20" />
-            <rect class="pipe-node" x="1224" y="484" width="92" height="92" rx="20" />
-            <rect class="pipe-node" x="1434" y="354" width="92" height="92" rx="20" />
+            <rect class="pipe-node" x="68" y="348" width="104" height="104" rx="22" />
+            <rect class="pipe-node" x="278" y="218" width="104" height="104" rx="22" />
+            <rect class="pipe-node" x="278" y="478" width="104" height="104" rx="22" />
+            <rect class="pipe-node" x="493" y="348" width="104" height="104" rx="22" />
+            <rect class="pipe-node" x="1003" y="348" width="104" height="104" rx="22" />
+            <rect class="pipe-node" x="1218" y="218" width="104" height="104" rx="22" />
+            <rect class="pipe-node" x="1218" y="478" width="104" height="104" rx="22" />
+            <rect class="pipe-node" x="1428" y="348" width="104" height="104" rx="22" />
           </g>
           <g class="pipe-ico">
             <g transform="translate(120,400)"><circle cx="0" cy="-6" r="6" /><path d="M-11,12 C-11,3 -6,-1 0,-1 C6,-1 11,3 11,12" /></g>
