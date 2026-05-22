@@ -122,7 +122,7 @@
     }
     .hero-live i { width: 8px; height: 8px; border-radius: 50%; background: #5fbf6a; box-shadow: 0 0 9px #5fbf6a; animation: livePulse 1.8s ease-in-out infinite; }
 
-    .hero-stage { position: relative; max-width: 1180px; margin: 10px auto 0; height: clamp(330px, 50vw, 540px); }
+    .hero-stage { position: relative; max-width: 1180px; margin: 6px auto 0; height: clamp(380px, 56vw, 620px); }
     .hero-pipe { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
     .pipe-line { fill: none; stroke: rgba(206,176,124,0.5); stroke-width: 3; filter: drop-shadow(0 0 5px rgba(201,168,118,0.5)); }
     .pipe-node { fill: #1d1912; stroke: rgba(214,184,132,0.85); stroke-width: 2; filter: drop-shadow(0 0 7px rgba(201,168,118,0.45)); }
@@ -137,7 +137,7 @@
     }
     .hero-portrait {
       position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
-      height: 100%; width: auto; z-index: 3; pointer-events: none;
+      height: 112%; width: auto; z-index: 3; pointer-events: none;
       -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
       mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
     }
@@ -219,7 +219,7 @@
 
     @media (max-width: 640px) {
       .hero { padding: 16px 0 46px; }
-      .hero-stage { height: clamp(300px, 82vw, 430px); margin-top: 4px; }
+      .hero-stage { height: clamp(340px, 90vw, 480px); margin-top: 2px; }
       .eyebrow { font-size: 0.66rem; letter-spacing: 0.12em; margin-bottom: 12px; }
       .hero h1 { font-size: 1.95rem; line-height: 1.16; margin-bottom: 13px; }
       .hero h1 .line2 { font-size: 0.82em; }
@@ -687,13 +687,13 @@
             <rect class="pipe-node" x="1434" y="354" width="92" height="92" rx="20" />
           </g>
           <g class="pipe-ico">
-            <g transform="translate(120,400)"><circle cx="0" cy="-3" r="11" /><path d="M-5,11 H5" /></g>
-            <g transform="translate(330,270)"><path d="M-14,12 V2 M0,12 V-6 M14,12 V-4" /></g>
-            <g transform="translate(330,530)"><path d="M-13,10 L0,-12 L13,10 M0,-12 V12" /></g>
-            <g transform="translate(545,400)"><path d="M-14,10 L-4,-4 L4,4 L14,-12" /></g>
-            <g transform="translate(1055,400)"><path d="M-14,10 L-4,-4 L4,4 L14,-12" /></g>
-            <g transform="translate(1270,270)"><path d="M-14,12 V2 M0,12 V-6 M14,12 V-4" /></g>
-            <g transform="translate(1270,530)"><path d="M-13,10 L0,-12 L13,10 M0,-12 V12" /></g>
+            <g transform="translate(120,400)"><circle cx="0" cy="-6" r="6" /><path d="M-11,12 C-11,3 -6,-1 0,-1 C6,-1 11,3 11,12" /></g>
+            <g transform="translate(330,270)"><path d="M0,-14 L3.5,-3.5 L14,0 L3.5,3.5 L0,14 L-3.5,3.5 L-14,0 L-3.5,-3.5 Z" /></g>
+            <g transform="translate(330,530)"><rect x="-13" y="-11" width="26" height="24" rx="2" /><path d="M-13,-4 H13 M-6,-15 V-7 M6,-15 V-7" /></g>
+            <g transform="translate(545,400)"><rect x="-15" y="-10" width="30" height="20" rx="2" /><path d="M-15,-8 L0,3 L15,-8" /></g>
+            <g transform="translate(1055,400)"><path d="M-10,-14 H6 L12,-8 V14 H-10 Z M5,-14 V-7 H12 M-5,1 H7 M-5,7 H7" /></g>
+            <g transform="translate(1270,270)"><path d="M-14,10 L-4,-3 L4,4 L14,-11 M14,-11 H7 M14,-11 V-4" /></g>
+            <g transform="translate(1270,530)"><path d="M-12,0 L-3,9 L13,-10" /></g>
             <g transform="translate(1480,400)"><circle cx="0" cy="0" r="13" /><path d="M0,0 V-8 M0,0 L7,3" /></g>
           </g>
           <g class="pipe-pulses">
@@ -718,16 +718,8 @@
           <span class="line2">Most a coachingot csinálom, nem az adminisztrációt.</span>
         </h1>
         <p class="lead">
-          AI-rendszereket építek coachoknak, online tanároknak és digitális termékek
-          eladóinak, hogy te is azzal foglalkozz, amiért elindítottad a vállalkozásod.
+          Megépítem az AI-rendszered, ami helyetted viszi az adminisztrációt.
         </p>
-        <div class="hero-by">
-          <span class="hero-by-photo"><img src="assets/bettina-avatar.jpg" alt="Baranyi Bettina" onerror="this.remove()" /></span>
-          <span class="hero-by-text">
-            <strong>Baranyi Bettina</strong>
-            <span>QuietStack alapító</span>
-          </span>
-        </div>
         <div class="hero-cta">
           <a href="#kapcsolat" class="btn btn-accent">Ingyenes 20 perces konzultáció →</a>
         </div>
