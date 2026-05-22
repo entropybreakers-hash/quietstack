@@ -107,50 +107,61 @@
     .photo-slot.dark::before { background: linear-gradient(150deg, #1f1d18, #0c0b09); color: #6f6a5e; }
     .photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-    /* Hero */
+    /* Hero (dark cinematic) */
     .hero {
-      padding: 92px 0 92px; position: relative; overflow: hidden;
-      background-image:
-        radial-gradient(ellipse 78% 72% at 50% 40%, transparent 52%, var(--bg) 100%),
-        linear-gradient(rgba(171,140,91,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(171,140,91,0.07) 1px, transparent 1px);
-      background-size: 100% 100%, 56px 56px, 56px 56px;
-      background-position: center, center top, center top;
-      background-repeat: no-repeat, repeat, repeat;
+      position: relative; overflow: hidden; padding: 30px 0 70px;
+      background: radial-gradient(ellipse 68% 58% at 50% 33%, #261f16 0%, #17130d 58%, #100d08 100%);
     }
-    .hero::before, .hero::after {
-      content: ""; position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; filter: blur(20px);
+    .hero-live-wrap { position: relative; z-index: 4; text-align: center; }
+    .hero-live {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; color: #e7d9bd;
+      border: 1px solid rgba(201,168,118,0.4); border-radius: 999px;
+      padding: 7px 16px; background: rgba(20,18,14,0.45);
     }
-    .hero::before {
-      width: 520px; height: 520px; top: -200px; right: -120px;
-      background: radial-gradient(circle, rgba(201,168,118,0.32), transparent 70%);
-      animation: drift1 17s ease-in-out infinite;
+    .hero-live i { width: 8px; height: 8px; border-radius: 50%; background: #5fbf6a; box-shadow: 0 0 9px #5fbf6a; animation: livePulse 1.8s ease-in-out infinite; }
+
+    .hero-stage { position: relative; max-width: 1180px; margin: 10px auto 0; height: clamp(330px, 50vw, 540px); }
+    .hero-pipe { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+    .pipe-line { fill: none; stroke: rgba(206,176,124,0.5); stroke-width: 3; filter: drop-shadow(0 0 5px rgba(201,168,118,0.5)); }
+    .pipe-node { fill: #1d1912; stroke: rgba(214,184,132,0.85); stroke-width: 2; filter: drop-shadow(0 0 7px rgba(201,168,118,0.45)); }
+    .pipe-ico { fill: none; stroke: #e8cd9e; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .pipe-pulse { fill: #f5e4be; filter: drop-shadow(0 0 6px rgba(245,228,190,0.95)); }
+
+    .hero-glow {
+      position: absolute; left: 50%; top: 46%; transform: translate(-50%,-50%);
+      width: 56%; height: 92%; z-index: 2; pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(201,168,118,0.34), transparent 66%);
+      filter: blur(36px);
     }
-    .hero::after {
-      width: 380px; height: 380px; bottom: -170px; left: -110px;
-      background: radial-gradient(circle, rgba(201,168,118,0.18), transparent 70%);
-      animation: drift2 21s ease-in-out infinite;
+    .hero-portrait {
+      position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+      height: 100%; width: auto; z-index: 3; pointer-events: none;
+      -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
     }
-    @keyframes drift1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-44px,30px); } }
-    @keyframes drift2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(52px,-28px); } }
-    .hero .wrap { position: relative; z-index: 1; }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
-    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 60px; } }
+
+    .hero-copy { position: relative; z-index: 4; text-align: center; max-width: 740px; margin: 0 auto; padding: 4px 24px 0; }
     .eyebrow {
-      display: inline-block; font-size: 0.8rem; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep);
-      margin-bottom: 22px;
+      display: inline-block; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 16px;
     }
-    .hero h1 { font-size: clamp(2.3rem, 5.2vw, 3.6rem); margin-bottom: 24px; }
+    .hero h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); margin-bottom: 18px; }
     .hero h1 .line1 {
       display: block;
-      background: linear-gradient(100deg, #9c7d4f, #d8b87f);
+      background: linear-gradient(100deg, #c9a876, #f0d6a4);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .hero h1 .line2 { display: block; }
-    .hero p.lead { font-size: 1.17rem; color: var(--muted); margin-bottom: 32px; max-width: 540px; }
-    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-    .scroll-hint { margin-top: 26px; font-size: 0.95rem; color: var(--muted); font-style: italic; }
+    .hero h1 .line2 { display: block; color: #f3f0e8; font-size: 0.82em; }
+    .hero p.lead { font-size: 1.12rem; color: #c2bcae; margin: 0 auto 26px; max-width: 560px; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; }
+    .scroll-hint { margin-top: 22px; font-size: 0.95rem; color: #97917f; font-style: italic; }
+    .hero-copy .hero-by { justify-content: center; margin: 0 auto 22px; }
+    .hero-copy .hero-by-photo { width: 60px; height: 60px; border-color: rgba(201,168,118,0.5); }
+    .hero-copy .hero-by-text strong { color: #f3f0e8; }
+    .hero-copy .hero-by-text span { color: #a9a394; }
 
     .hero-visual { position: relative; }
     .hero-panel {
@@ -207,13 +218,13 @@
     .hero-by-text span { font-size: 0.82rem; color: var(--muted); }
 
     @media (max-width: 640px) {
-      .hero { padding: 44px 0 58px; }
-      .hero-grid { gap: 30px; }
-      .eyebrow { font-size: 0.68rem; letter-spacing: 0.1em; margin-bottom: 13px; }
-      .hero h1 { font-size: 2.05rem; line-height: 1.16; margin-bottom: 15px; }
-      .hero h1 .line2 { font-size: 0.84em; }
-      .hero p.lead { font-size: 1.05rem; margin-bottom: 22px; }
-      .scroll-hint { margin-top: 18px; }
+      .hero { padding: 16px 0 46px; }
+      .hero-stage { height: clamp(300px, 82vw, 430px); margin-top: 4px; }
+      .eyebrow { font-size: 0.66rem; letter-spacing: 0.12em; margin-bottom: 12px; }
+      .hero h1 { font-size: 1.95rem; line-height: 1.16; margin-bottom: 13px; }
+      .hero h1 .line2 { font-size: 0.82em; }
+      .hero p.lead { font-size: 1rem; margin-bottom: 20px; }
+      .scroll-hint { margin-top: 16px; }
     }
 
     section { padding: 84px 0; }
@@ -620,10 +631,11 @@
 
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
-      .hero::before, .hero::after, .hp-live-dot,
+      .hero::before, .hero::after, .hp-live-dot, .hero-live i,
       .pain::before, .final::before,
       .pain::after, .flows::after, .final::after,
       .steps.is-drawn::after, .tool-chip { animation: none !important; }
+      .pipe-pulse { display: none; }
       .steps::after, .step::after { transition: none !important; }
       html { scroll-behavior: auto; }
     }
@@ -652,69 +664,74 @@
   <main>
 
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="reveal">
-          <span class="eyebrow">AI rendszerek &middot; coachoknak és digitális szolgáltatóknak</span>
-          <h1>
-            <span class="line1">Visszakaptam az időmet.</span>
-            <span class="line2">Most a coachingot csinálom, nem az adminisztrációt.</span>
-          </h1>
-          <p class="lead">
-            AI-rendszereket építek coachoknak, online tanároknak és digitális termékek
-            eladóinak, hogy te is azzal foglalkozz, amiért elindítottad a vállalkozásod.
-          </p>
-          <div class="hero-by">
-            <span class="hero-by-photo"><img src="assets/bettina-avatar.jpg" alt="Baranyi Bettina" onerror="this.remove()" /></span>
-            <span class="hero-by-text">
-              <strong>Baranyi Bettina</strong>
-              <span>QuietStack alapító</span>
-            </span>
-          </div>
-          <div class="hero-cta">
-            <a href="#kapcsolat" class="btn btn-accent">Ingyenes 20 perces konzultáció →</a>
-          </div>
-          <p class="scroll-hint">Görgess lejjebb, és megmutatom, hogyan működik.</p>
+      <div class="hero-live-wrap"><span class="hero-live"><i aria-hidden="true"></i>Élő rendszer</span></div>
+      <div class="hero-stage">
+        <svg class="hero-pipe" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <path id="e1" class="pipe-line" d="M120,400 Q225,319 330,270" />
+          <path id="e2" class="pipe-line" d="M120,400 Q225,481 330,530" />
+          <path id="e3" class="pipe-line" d="M330,270 Q437,351 545,400" />
+          <path id="e4" class="pipe-line" d="M330,530 Q437,449 545,400" />
+          <path id="e5" class="pipe-line" d="M545,400 Q800,400 1055,400" />
+          <path id="e6" class="pipe-line" d="M1055,400 Q1162,319 1270,270" />
+          <path id="e7" class="pipe-line" d="M1055,400 Q1162,481 1270,530" />
+          <path id="e8" class="pipe-line" d="M1270,270 Q1375,351 1480,400" />
+          <path id="e9" class="pipe-line" d="M1270,530 Q1375,449 1480,400" />
+          <g>
+            <rect class="pipe-node" x="74" y="354" width="92" height="92" rx="20" />
+            <rect class="pipe-node" x="284" y="224" width="92" height="92" rx="20" />
+            <rect class="pipe-node" x="284" y="484" width="92" height="92" rx="20" />
+            <rect class="pipe-node" x="499" y="354" width="92" height="92" rx="20" />
+            <rect class="pipe-node" x="1009" y="354" width="92" height="92" rx="20" />
+            <rect class="pipe-node" x="1224" y="224" width="92" height="92" rx="20" />
+            <rect class="pipe-node" x="1224" y="484" width="92" height="92" rx="20" />
+            <rect class="pipe-node" x="1434" y="354" width="92" height="92" rx="20" />
+          </g>
+          <g class="pipe-ico">
+            <g transform="translate(120,400)"><circle cx="0" cy="-3" r="11" /><path d="M-5,11 H5" /></g>
+            <g transform="translate(330,270)"><path d="M-14,12 V2 M0,12 V-6 M14,12 V-4" /></g>
+            <g transform="translate(330,530)"><path d="M-13,10 L0,-12 L13,10 M0,-12 V12" /></g>
+            <g transform="translate(545,400)"><path d="M-14,10 L-4,-4 L4,4 L14,-12" /></g>
+            <g transform="translate(1055,400)"><path d="M-14,10 L-4,-4 L4,4 L14,-12" /></g>
+            <g transform="translate(1270,270)"><path d="M-14,12 V2 M0,12 V-6 M14,12 V-4" /></g>
+            <g transform="translate(1270,530)"><path d="M-13,10 L0,-12 L13,10 M0,-12 V12" /></g>
+            <g transform="translate(1480,400)"><circle cx="0" cy="0" r="13" /><path d="M0,0 V-8 M0,0 L7,3" /></g>
+          </g>
+          <g class="pipe-pulses">
+            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite"><mpath href="#e1" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="0.2s" repeatCount="indefinite"><mpath href="#e2" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="0.6s" repeatCount="indefinite"><mpath href="#e3" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#e4" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="6"><animateMotion dur="2.6s" begin="1.1s" repeatCount="indefinite"><mpath href="#e5" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="1.5s" repeatCount="indefinite"><mpath href="#e6" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="1.7s" repeatCount="indefinite"><mpath href="#e7" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="2.1s" repeatCount="indefinite"><mpath href="#e8" /></animateMotion></circle>
+            <circle class="pipe-pulse" r="6"><animateMotion dur="2.4s" begin="2.3s" repeatCount="indefinite"><mpath href="#e9" /></animateMotion></circle>
+          </g>
+        </svg>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <img class="hero-portrait" src="assets/new-hero.png" alt="Baranyi Bettina, a QuietStack alapítója" onerror="this.remove()" />
+      </div>
+      <div class="hero-copy reveal">
+        <span class="eyebrow">AI rendszerek &middot; coachoknak és digitális szolgáltatóknak</span>
+        <h1>
+          <span class="line1">Visszakaptam az időmet.</span>
+          <span class="line2">Most a coachingot csinálom, nem az adminisztrációt.</span>
+        </h1>
+        <p class="lead">
+          AI-rendszereket építek coachoknak, online tanároknak és digitális termékek
+          eladóinak, hogy te is azzal foglalkozz, amiért elindítottad a vállalkozásod.
+        </p>
+        <div class="hero-by">
+          <span class="hero-by-photo"><img src="assets/bettina-avatar.jpg" alt="Baranyi Bettina" onerror="this.remove()" /></span>
+          <span class="hero-by-text">
+            <strong>Baranyi Bettina</strong>
+            <span>QuietStack alapító</span>
+          </span>
         </div>
-        <div class="reveal hero-visual">
-          <div class="hero-panel" id="heroPanel">
-            <div class="hp-head">
-              <span class="hp-title">QuietStack rendszer</span>
-              <span class="hp-live"><span class="hp-live-dot" aria-hidden="true"></span>élő</span>
-            </div>
-            <div class="hp-flow">
-              <div class="hp-line"><div class="hp-line-fill" id="hpFill"></div></div>
-              <div class="hp-node">
-                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
-                <span class="hp-label">Új érdeklődő érkezik</span>
-                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></span>
-              </div>
-              <div class="hp-node">
-                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 5.4L19.5 10l-5.4 1.6L12 17l-2.1-5.4L4.5 10l5.4-1.6z"/></svg></span>
-                <span class="hp-label">Az AI besorolja és választ készít</span>
-                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></span>
-              </div>
-              <div class="hp-node">
-                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
-                <span class="hp-label">Időpont a naptárba kerül</span>
-                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></span>
-              </div>
-              <div class="hp-node">
-                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-                <span class="hp-label">Visszaigazoló e-mail kimegy</span>
-                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></span>
-              </div>
-              <div class="hp-node">
-                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5M9 13h6M9 17h6"/></svg></span>
-                <span class="hp-label">A számla elkészül</span>
-                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></span>
-              </div>
-            </div>
-            <div class="hp-foot">
-              <span class="hp-foot-num" id="hpHours">0</span>
-              <span class="hp-foot-label">óra megspórolva ezen a héten</span>
-            </div>
-          </div>
+        <div class="hero-cta">
+          <a href="#kapcsolat" class="btn btn-accent">Ingyenes 20 perces konzultáció →</a>
         </div>
+        <p class="scroll-hint">Görgess lejjebb, és megmutatom, hogyan működik.</p>
       </div>
     </section>
 
@@ -1241,8 +1258,9 @@
         <span class="section-tag reveal">Csomagok</span>
         <h2 class="section-title reveal">Három csomag: válaszd, ami illik Hozzád</h2>
         <p class="section-sub reveal">
-          Mindegyik egyszeri díj. Mindegyikhez tartozik egy havi karbantartási lehetőség
-          (nem kötelező). ÁFA-mentes számlát adok.
+          Minden csomag egy egyszeri felépítésből és folyamatos havi üzemeltetésből áll.
+          A felépítés a kezdet. Az üzemeltetés az, ami tényleg felszabadítja az idődet:
+          a rendszert hónapról hónapra én futtatom és optimalizálom helyetted. ÁFA-mentes számlát adok.
         </p>
         <div class="pricing">
 
@@ -1265,7 +1283,7 @@
               <li>1 órás betanítás</li>
               <li>2 hét támogatás az átadás után</li>
             </ul>
-            <div class="maint">Karbantartás (nem kötelező): <strong>12 000 Ft / hó</strong></div>
+            <div class="maint">Folyamatos üzemeltetés + optimalizálás: <strong>24 000 Ft / hó</strong> <small>(alapító ár)</small></div>
             <a href="#kapcsolat" class="btn btn-ghost">Kérek Starter konzultációt →</a>
           </div>
 
@@ -1290,7 +1308,7 @@
               <li>2 órás betanítás (2 alkalommal)</li>
               <li>1 hónap teljes támogatás</li>
             </ul>
-            <div class="maint">Karbantartás (nem kötelező): <strong>25 000 Ft / hó</strong></div>
+            <div class="maint">Folyamatos üzemeltetés + optimalizálás: <strong>49 000 Ft / hó</strong> <small>(alapító ár)</small></div>
             <a href="#kapcsolat" class="btn btn-accent">Kérek Engine konzultációt →</a>
           </div>
 
@@ -1314,12 +1332,12 @@
               <li>24 órán belüli válasz 6 hónapig</li>
               <li>Örökös elsőbbség: minden új funkció ingyen</li>
             </ul>
-            <div class="maint">Karbantartás (nem kötelező): <strong>40 000 Ft / hó</strong></div>
+            <div class="maint">Folyamatos üzemeltetés + optimalizálás: <strong>79 000 Ft / hó</strong> <small>(alapító ár)</small></div>
             <a href="#kapcsolat" class="btn btn-ghost">Kérek Premium konzultációt →</a>
           </div>
 
         </div>
-        <p class="pricing-note reveal">Nem tudod, melyik a Tied? Az ingyenes konzultáción együtt eldöntjük.<br />Ha egyik sem fedi pontosan, amit szeretnél, egyedi ajánlatot is készítek.</p>
+        <p class="pricing-note reveal">A havidíj nem puszta karbantartás: a teljes rendszered üzemeltetése, folyamatos optimalizálása, az új automatizációk és az AI-költség is benne van. Az alapító ár az első ügyfeleimnek szól.<br />Nem tudod, melyik a Tied? Az ingyenes konzultáción együtt eldöntjük. Ha egyik sem fedi pontosan, amit szeretnél, egyedi ajánlatot is készítek.</p>
       </div>
     </section>
 
@@ -1437,8 +1455,9 @@
             <div class="answer">
               Az építés ideje alatt szinte semennyibe, azt én csinálom. 1–2 hosszabb
               beszélgetés kell a tervezéshez (összesen kb. 2 óra), és 1–3 órás betanítás.
-              A többit én viszem. Az átadás után a heti karbantartás a Te oldaladról
-              kb. 30–60 perc.
+              A többit én viszem. Az átadás után a rendszert havidíj keretében én
+              üzemeltetem és optimalizálom helyetted, így neked gyakorlatilag nincs vele
+              dolgod: csak használod.
             </div>
           </details>
           <details class="reveal">
@@ -1600,6 +1619,7 @@
       var nodes = document.querySelectorAll(".hp-node");
       var fill = document.getElementById("hpFill");
       var hours = document.getElementById("hpHours");
+      if (!fill || !hours || !nodes.length) return;
       var i = 0;
       function render() {
         fill.style.height = (i / nodes.length * 100) + "%";
