@@ -307,6 +307,16 @@
     .ps-solution p { color: var(--text); }
     .ps-arrow { display: flex; align-items: center; justify-content: center; background: var(--surface); }
     .ps-arrow svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .ps-row.reveal { opacity: 1; transform: none; transition: none; }
+    .ps-row .ps-cell { opacity: 0; transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+    .ps-row .ps-problem { transform: translateX(-26px); }
+    .ps-row .ps-solution { transform: translateX(26px); }
+    .ps-row .ps-arrow { opacity: 0; transform: scale(0.4); transition: opacity 0.5s ease 0.2s, transform 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.2s; }
+    .ps-row.in .ps-cell { opacity: 1; transform: none; }
+    .ps-row.in .ps-arrow { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .ps-row .ps-cell, .ps-row .ps-arrow { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
     @media (max-width: 680px) {
       .ps-row { grid-template-columns: 1fr; }
       .ps-arrow { height: 46px; }
