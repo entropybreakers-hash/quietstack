@@ -59,12 +59,19 @@
     .link {
       display: flex; align-items: center; gap: 14px; text-align: left;
       text-decoration: none; color: #f1ece3;
-      background: rgba(26,23,20,0.55); border: 1px solid rgba(201,168,118,0.28); border-radius: 16px;
-      padding: 16px 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.28);
-      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.16); border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.30), inset 0 1px 0 rgba(255,255,255,0.18);
+      -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
       transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
-    .link:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.4); border-color: var(--accent); background: rgba(42,37,32,0.62); }
+    .link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.42), inset 0 1px 0 rgba(255,255,255,0.26);
+      border-color: rgba(201,168,118,0.55);
+      background: linear-gradient(135deg, rgba(255,255,255,0.17), rgba(255,255,255,0.06));
+    }
     .link-ico {
       flex: 0 0 auto; width: 42px; height: 42px; border-radius: 12px;
       background: rgba(201,168,118,0.12); border: 1px solid rgba(201,168,118,0.35);
@@ -122,7 +129,7 @@
           <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16M12 4v2.5M6.5 9.5c1 4.5 3 7.5 5.5 9.5M17.5 9.5c-.7 3.2-2 5.7-3.6 7.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 19.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         </span>
         <span class="link-text">
-          <span class="link-title">Angol Mentoring</span>
+          <span class="link-title">Angol oktatás</span>
           <span class="link-sub">Felnőtteknek - rugalmasan, online</span>
         </span>
         <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h13M12.5 6 19 12l-6.5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
