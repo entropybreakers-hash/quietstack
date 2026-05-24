@@ -152,7 +152,7 @@
       letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep);
       margin-bottom: 16px;
     }
-    .hero h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(3rem, 7.5vw, 5.6rem); line-height: 1.08; letter-spacing: -0.01em; margin-bottom: 20px; }
     .hero h1 .line1 {
       display: block;
       background: linear-gradient(100deg, #ab8c5b, #cda86f);
@@ -161,6 +161,11 @@
     .hero h1 .line2 { display: block; color: var(--text); font-size: 0.82em; }
     .hero p.lead { font-size: 1.1rem; color: var(--muted); margin: 0 auto 26px; max-width: 580px; }
     .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; }
+    .hero-head { padding-top: 0; padding-bottom: 0; }
+    .hero-head h1 { margin-bottom: 6px; }
+    .hero-foot { margin-top: 22px; }
+    .hero-foot .hero-cta { margin-bottom: 24px; }
+    .hero-foot .eyebrow { margin-bottom: 14px; }
     .scroll-hint { margin-top: 22px; font-size: 0.95rem; color: #97917f; font-style: italic; }
     .hero-copy .hero-by { justify-content: center; margin: 0 auto 22px; }
     .hero-copy .hero-by-photo { width: 60px; height: 60px; border-color: rgba(201,168,118,0.5); }
@@ -225,7 +230,7 @@
       .hero { padding: 16px 0 46px; }
       .hero-stage { height: clamp(340px, 90vw, 480px); margin-top: 2px; }
       .eyebrow { font-size: 0.66rem; letter-spacing: 0.12em; margin-bottom: 12px; }
-      .hero h1 { font-size: 1.95rem; line-height: 1.16; margin-bottom: 13px; }
+      .hero h1 { font-size: 2.9rem; line-height: 1.12; margin-bottom: 13px; }
       .hero h1 .line2 { font-size: 0.82em; }
       .hero p.lead { font-size: 1rem; margin-bottom: 14px; }
       .scroll-hint { margin-top: 16px; }
@@ -685,6 +690,12 @@
 
     <section class="hero">
       <div class="hero-live-wrap"><span class="hero-live"><i aria-hidden="true"></i>Élő rendszer</span></div>
+      <div class="hero-copy hero-head">
+        <h1>
+          <span class="line1">Az állandó chateléstől</span>
+          <span class="line2">az automata ügyfélútig.</span>
+        </h1>
+      </div>
       <div class="hero-stage">
         <svg class="hero-pipe" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
           <path class="pipe-stub" d="M110,330 H0" />
@@ -729,19 +740,15 @@
         <div class="hero-glow" aria-hidden="true"></div>
         <img class="hero-portrait" src="assets/new-hero.webp" alt="Baranyi Bettina, a QuietStack alapítója" onerror="this.remove()" />
       </div>
-      <div class="hero-copy reveal">
+      <div class="hero-copy hero-foot reveal">
+        <div class="hero-cta">
+          <a href="#kapcsolat" class="btn btn-accent">Ingyenes 20 perces konzultáció →</a>
+        </div>
         <span class="eyebrow">AI rendszerek &middot; coachoknak és digitális szolgáltatóknak</span>
-        <h1>
-          <span class="line1">Az állandó chateléstől</span>
-          <span class="line2">az automata ügyfélútig.</span>
-        </h1>
         <p class="lead">
           Claude AI alapú rendszerek, amelyek felszabadítják a heti munkaidőd.
           Mostantól a coachinggal foglalkozz, ne a háttérmunkával.
         </p>
-        <div class="hero-cta">
-          <a href="#kapcsolat" class="btn btn-accent">Ingyenes 20 perces konzultáció →</a>
-        </div>
       </div>
     </section>
 
