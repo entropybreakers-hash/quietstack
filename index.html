@@ -97,13 +97,14 @@
     @media (max-width: 860px) { .nav-links a:not(.btn) { display: none; } }
 
     /* Photo slot: graceful placeholder until image is added */
-    .photo-slot { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 5; }
+    .photo-slot { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 5; background: linear-gradient(150deg, #eceef2, #e4e7ec 60%, #d9dde4); }
     .photo-slot::before {
       content: attr(data-ph); position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center; text-align: center;
       padding: 26px; font-size: 0.88rem; line-height: 1.5;
-      background: linear-gradient(150deg, #eceef2, #e4e7ec 60%, #d9dde4); color: #8a7a55;
+      background: linear-gradient(150deg, #eceef2, #e4e7ec 60%, #d9dde4); color: #8a8d95;
     }
+    .photo-slot:has(img)::before { display: none; }
     .photo-slot.dark::before { background: linear-gradient(150deg, #1f1d18, #0c0b09); color: #6a7077; }
     .photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
