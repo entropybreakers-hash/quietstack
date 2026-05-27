@@ -739,6 +739,53 @@
     .invest-note { color: var(--muted); margin-top: 14px; }
     .pill { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-deep); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; margin-bottom: 16px; }
     .proof-card.dark .pill { color: var(--accent); border-color: rgba(110,118,129,0.45); }
+
+    /* ============================================================
+       SCROLL-CINEMATIC LAYER — elements flow in tied to scroll
+       Progressive enhancement: only where scroll timelines exist,
+       and only when the visitor hasn't asked for reduced motion.
+       ============================================================ */
+    body { overflow-x: hidden; }
+    @keyframes flowUp    { from { opacity: 0; transform: translateY(90px) scale(0.95); filter: blur(9px); } to { opacity: 1; transform: none; filter: blur(0); } }
+    @keyframes flowLeft  { from { opacity: 0; transform: translateX(-80px) scale(0.97); filter: blur(8px); } to { opacity: 1; transform: none; filter: blur(0); } }
+    @keyframes flowRight { from { opacity: 0; transform: translateX(80px) scale(0.97); filter: blur(8px); } to { opacity: 1; transform: none; filter: blur(0); } }
+    @keyframes flowScale { from { opacity: 0; transform: scale(0.88); filter: blur(12px); } to { opacity: 1; transform: none; filter: blur(0); } }
+    @keyframes driftGlow { from { transform: translate3d(0, -160px, 0); } to { transform: translate3d(0, 160px, 0); } }
+    @keyframes heroSink  { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-70px) scale(0.96); filter: blur(4px); } }
+
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view()) {
+        /* every revealed block now animates against its own scroll position */
+        .reveal {
+          opacity: 1; transform: none;
+          animation: flowUp linear both;
+          animation-timeline: view();
+          animation-range: entry 0% entry 82%;
+        }
+        /* directional variety — cards alternate in from the sides */
+        .proof-grid > *:nth-child(odd)  { animation-name: flowLeft; }
+        .proof-grid > *:nth-child(even) { animation-name: flowRight; }
+        .grid-3 > *, .grid-4 > *, .steps > * { animation-range: entry 0% entry 92%; }
+        .section-title, .section-tag { animation-range: entry 0% entry 95%; }
+        .hero-visual { animation-name: flowScale; }
+
+        /* drifting glow inside each plain section → backgrounds feel alive */
+        main > section { position: relative; }
+        main > section > * { position: relative; z-index: 1; }
+        main > section:not(.hero):not(.system-strip):not(.final)::before {
+          content: ""; position: absolute; z-index: 0; pointer-events: none;
+          top: 10%; right: 4%; width: clamp(240px, 34vw, 460px); aspect-ratio: 1;
+          background: radial-gradient(circle, rgba(110,118,129,0.13), transparent 70%);
+          filter: blur(34px);
+          animation: driftGlow linear both;
+          animation-timeline: view(); animation-range: cover;
+        }
+        main > section:nth-of-type(even):not(.hero):not(.system-strip):not(.final)::before { right: auto; left: 4%; background: radial-gradient(circle, rgba(201,168,118,0.11), transparent 70%); }
+
+        /* hero gently sinks away as you scroll past it */
+        .hero-head { animation: heroSink linear both; animation-timeline: view(); animation-range: exit 0% exit 95%; }
+      }
+    }
   </style>
 </head>
 <body>
@@ -1277,7 +1324,7 @@
         ticking = true;
         requestAnimationFrame(function () {
           var y = window.scrollY;
-          if (y < 1000) portrait.style.transform = "translateX(-50%) translateY(" + (y * 0.07) + "px)";
+          if (y < 1200) portrait.style.transform = "translateX(-50%) translateY(" + (y * 0.16) + "px) scale(" + (1 + y * 0.00012) + ")";
           ticking = false;
         });
       }, { passive: true });
