@@ -1,52 +1,51 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adatkezelési tájékoztató | QuietStack</title>
+  <title>Privacy Policy | QuietStack</title>
   <meta name="robots" content="noindex" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231A1A1A'/%3E%3Crect x='7' y='8' width='18' height='4' rx='2' fill='%23C9A876'/%3E%3Crect x='7' y='14' width='18' height='4' rx='2' fill='%23C9A876' opacity='0.7'/%3E%3Crect x='7' y='20' width='18' height='4' rx='2' fill='%23C9A876' opacity='0.45'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230D0D0D'/%3E%3Crect x='7' y='8' width='18' height='4' rx='2' fill='%237DA2FF'/%3E%3Crect x='7' y='14' width='18' height='4' rx='2' fill='%237DA2FF' opacity='0.7'/%3E%3Crect x='7' y='20' width='18' height='4' rx='2' fill='%237DA2FF' opacity='0.45'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #F3F4F6; --surface: #FFFFFF; --text: #1A1A1A; --muted: #6a7077;
-      --accent: #6e7681; --accent-deep: #2f343b; --border: #E2E5EA;
-      --serif: "Playfair Display", Georgia, serif;
+      --bg: #0F1115; --surface: #161b24; --text: #ECEDEF; --muted: #8a93a3;
+      --accent: #7DA2FF; --accent-deep: #4f74d6; --border: rgba(170,190,230,0.11);
       --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--sans); font-size: 17px; line-height: 1.7; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
-    a { color: var(--accent-deep); }
+    a { color: var(--accent); }
     .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
-    header { border-bottom: 1px solid var(--border); background: rgba(243,244,246,0.92); }
+    header { border-bottom: 1px solid var(--border); background: rgba(12,12,14,0.72); backdrop-filter: blur(10px); position: sticky; top: 0; }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .logo { display: flex; align-items: center; gap: 11px; font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+    .logo { display: flex; align-items: center; gap: 11px; font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
     .logo-mark { display: grid; gap: 3.5px; }
     .logo-mark span { display: block; width: 22px; height: 4.5px; border-radius: 2px; background: var(--accent); }
     .logo-mark span:nth-child(2) { opacity: 0.7; }
     .logo-mark span:nth-child(3) { opacity: 0.45; }
-    .nav .back { font-size: 0.95rem; font-weight: 500; }
+    .nav .back { font-size: 0.95rem; font-weight: 500; color: var(--muted); text-decoration: none; }
+    .nav .back:hover { color: var(--text); }
     main { padding: 60px 0 80px; }
-    h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.7rem); margin-bottom: 10px; }
+    h1 { font-size: clamp(2rem, 4vw, 2.7rem); margin-bottom: 10px; letter-spacing: -0.02em; }
     .updated { color: var(--muted); font-size: 0.92rem; margin-bottom: 32px; }
-    h2 { font-family: var(--serif); font-size: 1.3rem; margin: 36px 0 12px; }
-    p, li { color: #333; margin-bottom: 12px; }
+    h2 { font-size: 1.3rem; margin: 36px 0 12px; letter-spacing: -0.01em; }
+    p, li { color: #c4cad4; margin-bottom: 12px; }
     ul { padding-left: 22px; }
     .note {
-      background: #eceef2; border: 1px solid var(--accent);
-      border-radius: 8px; padding: 18px 22px; margin-bottom: 36px; font-size: 0.96rem;
+      background: rgba(125,162,255,0.07); border: 1px solid rgba(125,162,255,0.22);
+      border-radius: 10px; padding: 18px 22px; margin-bottom: 36px; font-size: 0.96rem; color: #c4cad4;
     }
-    .note strong { color: #474b52; }
+    .note strong { color: var(--text); }
     .data-table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; }
     .data-table th, .data-table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
     .data-table th { width: 38%; font-weight: 600; color: var(--text); }
-    .data-table td { color: #333; }
-    .todo { background: #f6e0c4; border-radius: 4px; padding: 1px 7px; font-weight: 600; color: #8a5a1a; font-size: 0.93em; }
+    .data-table td { color: #c4cad4; }
     footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 0.9rem; }
     footer a { color: var(--muted); }
-    footer a:hover { color: var(--accent-deep); }
+    footer a:hover { color: var(--text); }
   </style>
 </head>
 <body>
@@ -56,127 +55,124 @@
         <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
         QuietStack
       </a>
-      <a href="index.html" class="back">← Vissza a főoldalra</a>
+      <a href="index.html" class="back">← Back to home</a>
     </div>
   </header>
 
   <main>
     <div class="wrap">
-      <h1>Adatkezelési tájékoztató</h1>
-      <p class="updated">Utolsó frissítés: 2026. május</p>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: May 2026</p>
 
       <div class="note">
-        <strong>Megjegyzés.</strong> A szolgáltató Ausztriában bejegyzett vállalkozás, ezért
-        az adatkezelésre az általános adatvédelmi rendelet (GDPR) és az osztrák adatvédelmi
-        törvény (DSG) az irányadó. A végleges szöveget érdemes adatvédelmi szakértővel
-        átnézetni a közzététel előtt.
+        <strong>Note.</strong> The provider is a business registered in Austria, so data
+        processing is governed by the General Data Protection Regulation (GDPR) and the
+        Austrian Data Protection Act (DSG). It is advisable to have the final text reviewed
+        by a data-protection specialist before publishing.
       </div>
 
-      <h2>1. Az adatkezelő</h2>
+      <h2>1. Data controller</h2>
       <table class="data-table">
-        <tr><th>Név</th><td>Baranyi Bettina (Entropy Breakers)</td></tr>
-        <tr><th>Székhely</th><td>Kärntnerstrasse 50/53, 6020 Innsbruck, Ausztria</td></tr>
-        <tr><th>E-mail</th><td><a href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a></td></tr>
-        <tr><th>Telefon</th><td><a href="tel:+436606258973">+43 660 625 8973</a></td></tr>
+        <tr><th>Name</th><td>Baranyi Bettina (Entropy Breakers)</td></tr>
+        <tr><th>Registered office</th><td>Kärntnerstrasse 50/53, 6020 Innsbruck, Austria</td></tr>
+        <tr><th>Email</th><td><a href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a></td></tr>
+        <tr><th>Phone</th><td><a href="tel:+436606258973">+43 660 625 8973</a></td></tr>
       </table>
 
-      <h2>2. A weboldal működése</h2>
+      <h2>2. How the website works</h2>
       <p>
-        A <strong>quietstack.entropybreakers.com</strong> egy statikus bemutatkozó weboldal.
-        A weboldal <strong>nem helyez el sütiket (cookie-kat), és nem használ reklámkövető
-        eszközt.</strong> Pusztán a weboldal böngészésével nem adsz meg személyes adatot;
-        adatot csak akkor, ha kitöltöd a kapcsolatfelvételi űrlapot (lásd a 4. pont). A
-        látogatottság összesített méréséről a 3. pont tájékoztat.
+        <strong>quietstack.entropybreakers.com</strong> is a static informational website.
+        The website <strong>does not set cookies and does not use advertising trackers.</strong>
+        Simply browsing the website does not require you to provide any personal data; you only
+        provide data if you fill in the contact form (see section 4). Aggregate traffic
+        measurement is described in section 3.
       </p>
 
-      <h2>3. Látogatottság-mérés (Cloudflare Web Analytics)</h2>
+      <h2>3. Traffic measurement (Cloudflare Web Analytics)</h2>
       <p>
-        A weboldal a Cloudflare Web Analytics szolgáltatását használja a látogatottság
-        összesített méréséhez (például az oldalmegtekintések száma). Ez a megoldás
-        <strong>nem helyez el sütit, nem hoz létre egyedi azonosítót, és nem követi a
-        látogatókat oldalak vagy weboldalak között.</strong> A szolgáltatás nem tárol
-        IP-címet, és a mérésből egyetlen látogató sem azonosítható. Mivel kizárólag
-        anonim, összesített statisztika készül, sütibanner (cookie-figyelmeztetés) nem
-        szükséges. A szolgáltatást a Cloudflare, Inc. nyújtja; adatkezeléséről a
-        <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare adatvédelmi szabályzata</a>
-        ad tájékoztatást.
+        The website uses Cloudflare Web Analytics to measure traffic in aggregate (for example,
+        the number of page views). This solution <strong>does not set cookies, does not create a
+        unique identifier, and does not track visitors across pages or websites.</strong> The
+        service does not store IP addresses, and no individual visitor can be identified from
+        the measurement. Because only anonymous, aggregated statistics are produced, a cookie
+        banner is not required. The service is provided by Cloudflare, Inc.; information about
+        its data processing is available in the
+        <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare Privacy Policy</a>.
       </p>
 
-      <h2>4. Kapcsolatfelvételi űrlap</h2>
+      <h2>4. Contact form</h2>
       <p>
-        A weboldalon kitölthető egy kapcsolatfelvételi űrlap. Az itt megadott adatokat
-        (név, e-mail-cím, telefonszám, tevékenységi terület, valamint az általad megadott
-        szabad szöveg) kizárólag a megkeresésed megválaszolása és a konzultáció egyeztetése
-        céljából kezeljük. Az adatkezelés jogalapja a hozzájárulásod, amelyet az űrlap
-        elküldése előtt a jelölőnégyzet bepipálásával adsz meg. Az űrlap beküldött adatait
-        a Make automatizációs szolgáltatás továbbítja a szolgáltató e-mail-fiókjába. Az
-        adatokat addig őrizzük, ameddig a megkereséssel összefüggő kapcsolattartás
-        indokolttá teszi, ezt követően töröljük.
+        A contact form can be filled in on the website. The data you provide here (name, email
+        address, phone number, type of business, and any free text you enter) is processed solely
+        to respond to your enquiry and to arrange a consultation. The legal basis for processing
+        is your consent, which you give by ticking the checkbox before submitting the form. The
+        submitted form data is forwarded to the provider's email account by the Make automation
+        service. The data is retained for as long as the contact related to your enquiry requires,
+        after which it is deleted.
       </p>
 
-      <h2>5. Kapcsolatfelvétel e-mailben</h2>
+      <h2>5. Contact by email</h2>
       <p>
-        Ha e-mailben írsz nekünk, a megadott adataidat (név, e-mail-cím, üzenet tartalma)
-        a megkeresésed megválaszolása és a kapcsolattartás céljából kezeljük. Az adatkezelés
-        jogalapja a hozzájárulásod, illetve a megkereséssel összefüggő jogos érdek. Az
-        adatokat addig őrizzük, ameddig a kapcsolattartás indokolttá teszi, ezt követően töröljük.
+        If you write to us by email, we process the data you provide (name, email address, content
+        of the message) in order to respond to your enquiry and maintain contact. The legal basis
+        for processing is your consent and our legitimate interest in handling the enquiry. The
+        data is retained for as long as the contact requires, after which it is deleted.
       </p>
 
-      <h2>6. Számlázás</h2>
+      <h2>6. Invoicing</h2>
       <p>
-        Megrendelés esetén a szolgáltatás díjáról számlát állítunk ki. A számlázáshoz
-        szükséges adatokat (név vagy cégnév, cím, adószám, a szolgáltatás megnevezése) a
-        számviteli és adójogszabályokban előírt kötelezettség teljesítése céljából kezeljük,
-        és a jogszabályban meghatározott ideig megőrizzük. A számlák kiállításához és
-        tárolásához a sevDesk (sevDesk GmbH) számlázó programot vesszük igénybe.
+        In the event of an order, we issue an invoice for the service fee. The data required for
+        invoicing (name or company name, address, tax number, description of the service) is
+        processed to fulfil obligations under accounting and tax law, and retained for the period
+        prescribed by law. We use the sevDesk invoicing software (sevDesk GmbH) to issue and store
+        invoices.
       </p>
 
-      <h2>7. Tárhely és technikai naplók</h2>
+      <h2>7. Hosting and technical logs</h2>
       <p>
-        A weboldal tárhelyét a GitHub Pages (GitHub, Inc.) biztosítja. A tárhelyszolgáltató
-        a weboldal kiszolgálása során technikai naplót vezethet (például IP-cím, böngésző
-        típusa), amelyet üzemeltetési és biztonsági célból kezel. Erre a GitHub saját
-        adatkezelési tájékoztatója irányadó.
+        The website is hosted by GitHub Pages (GitHub, Inc.). In the course of serving the website,
+        the hosting provider may keep technical logs (for example, IP address, browser type), which
+        it processes for operational and security purposes. GitHub's own privacy policy applies to this.
       </p>
 
-      <h2>8. Adatfeldolgozók</h2>
+      <h2>8. Processors</h2>
       <ul>
-        <li>GitHub, Inc.: tárhelyszolgáltatás (weboldal kiszolgálása)</li>
-        <li>Cloudflare, Inc.: látogatottság-mérés (Web Analytics)</li>
-        <li>Make.com: a kapcsolatfelvételi űrlap beküldött adatainak fogadása és továbbítása</li>
-        <li>sevDesk GmbH: számlázó program (számlák kiállítása és tárolása)</li>
+        <li>GitHub, Inc.: hosting (serving the website)</li>
+        <li>Cloudflare, Inc.: traffic measurement (Web Analytics)</li>
+        <li>Make.com: receiving and forwarding the submitted contact-form data</li>
+        <li>sevDesk GmbH: invoicing software (issuing and storing invoices)</li>
       </ul>
 
-      <h2>9. Az érintett jogai</h2>
-      <p>Az általunk kezelt személyes adataiddal kapcsolatban a GDPR alapján jogod van:</p>
+      <h2>9. Your rights</h2>
+      <p>In relation to the personal data we process about you, under the GDPR you have the right to:</p>
       <ul>
-        <li>tájékoztatást kérni az adatkezelésről,</li>
-        <li>kérni az adatok helyesbítését, törlését vagy kezelésük korlátozását,</li>
-        <li>tiltakozni az adatkezelés ellen,</li>
-        <li>az adathordozhatósághoz,</li>
-        <li>a hozzájárulás visszavonásához.</li>
+        <li>request information about the processing,</li>
+        <li>request rectification, erasure or restriction of the data,</li>
+        <li>object to the processing,</li>
+        <li>data portability,</li>
+        <li>withdraw your consent.</li>
       </ul>
       <p>
-        Kérelmedet a fenti e-mail-címen jelezheted. A megkeresésre indokolatlan késedelem
-        nélkül válaszolunk.
+        You can submit your request to the email address above. We will respond to your request
+        without undue delay.
       </p>
 
-      <h2>10. Jogorvoslat</h2>
+      <h2>10. Right to lodge a complaint</h2>
       <p>
-        Ha úgy érzed, hogy az adatkezelés sérti a jogaidat, panaszt tehetsz az osztrák
-        adatvédelmi hatóságnál:<br />
-        Österreichische Datenschutzbehörde, Barichgasse 40-42, 1030 Wien, Ausztria;
+        If you believe that the processing of your data infringes your rights, you can lodge a
+        complaint with the Austrian data protection authority:<br />
+        Österreichische Datenschutzbehörde, Barichgasse 40-42, 1030 Vienna, Austria;
         <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>.<br />
-        Emellett bírósághoz is fordulhatsz.
+        You may also take the matter to court.
       </p>
     </div>
   </main>
 
   <footer>
     <div class="wrap">
-      <a href="impresszum.html">Impresszum</a> &nbsp;·&nbsp;
-      <a href="adatvedelem.html">Adatkezelési tájékoztató</a> &nbsp;·&nbsp;
-      <a href="aszf.html">ÁSZF</a><br /><br />
+      <a href="impresszum.html">Imprint</a> &nbsp;·&nbsp;
+      <a href="adatvedelem.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="aszf.html">Terms &amp; Conditions</a><br /><br />
       © <span id="year"></span> Entropy Breakers
     </div>
   </footer>
