@@ -1,48 +1,47 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ÁSZF | QuietStack</title>
+  <title>Terms &amp; Conditions | QuietStack</title>
   <meta name="robots" content="noindex" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231A1A1A'/%3E%3Crect x='7' y='8' width='18' height='4' rx='2' fill='%23C9A876'/%3E%3Crect x='7' y='14' width='18' height='4' rx='2' fill='%23C9A876' opacity='0.7'/%3E%3Crect x='7' y='20' width='18' height='4' rx='2' fill='%23C9A876' opacity='0.45'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230D0D0D'/%3E%3Crect x='7' y='8' width='18' height='4' rx='2' fill='%237DA2FF'/%3E%3Crect x='7' y='14' width='18' height='4' rx='2' fill='%237DA2FF' opacity='0.7'/%3E%3Crect x='7' y='20' width='18' height='4' rx='2' fill='%237DA2FF' opacity='0.45'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #F3F4F6; --surface: #FFFFFF; --text: #1A1A1A; --muted: #6a7077;
-      --accent: #6e7681; --accent-deep: #2f343b; --border: #E2E5EA;
-      --serif: "Playfair Display", Georgia, serif;
+      --bg: #0F1115; --surface: #161b24; --text: #ECEDEF; --muted: #8a93a3;
+      --accent: #7DA2FF; --accent-deep: #4f74d6; --border: rgba(170,190,230,0.11);
       --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--sans); font-size: 17px; line-height: 1.7; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
-    a { color: var(--accent-deep); }
+    a { color: var(--accent); }
     .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
-    header { border-bottom: 1px solid var(--border); background: rgba(243,244,246,0.92); }
+    header { border-bottom: 1px solid var(--border); background: rgba(12,12,14,0.72); backdrop-filter: blur(10px); position: sticky; top: 0; }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .logo { display: flex; align-items: center; gap: 11px; font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+    .logo { display: flex; align-items: center; gap: 11px; font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
     .logo-mark { display: grid; gap: 3.5px; }
     .logo-mark span { display: block; width: 22px; height: 4.5px; border-radius: 2px; background: var(--accent); }
     .logo-mark span:nth-child(2) { opacity: 0.7; }
     .logo-mark span:nth-child(3) { opacity: 0.45; }
-    .nav .back { font-size: 0.95rem; font-weight: 500; }
+    .nav .back { font-size: 0.95rem; font-weight: 500; color: var(--muted); text-decoration: none; }
+    .nav .back:hover { color: var(--text); }
     main { padding: 60px 0 80px; }
-    h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.7rem); margin-bottom: 10px; }
+    h1 { font-size: clamp(2rem, 4vw, 2.7rem); margin-bottom: 10px; letter-spacing: -0.02em; }
     .updated { color: var(--muted); font-size: 0.92rem; margin-bottom: 32px; }
-    h2 { font-family: var(--serif); font-size: 1.3rem; margin: 36px 0 12px; }
-    p, li { color: #333; margin-bottom: 12px; }
+    h2 { font-size: 1.3rem; margin: 36px 0 12px; letter-spacing: -0.01em; }
+    p, li { color: #c4cad4; margin-bottom: 12px; }
     ul { padding-left: 22px; }
     .note {
-      background: #eceef2; border: 1px solid var(--accent);
-      border-radius: 8px; padding: 18px 22px; margin-bottom: 36px; font-size: 0.96rem;
+      background: rgba(125,162,255,0.07); border: 1px solid rgba(125,162,255,0.22);
+      border-radius: 10px; padding: 18px 22px; margin-bottom: 36px; font-size: 0.96rem; color: #c4cad4;
     }
-    .note strong { color: #474b52; }
-    .todo { background: #f6e0c4; border-radius: 4px; padding: 1px 7px; font-weight: 600; color: #8a5a1a; font-size: 0.93em; }
+    .note strong { color: var(--text); }
     footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 0.9rem; }
     footer a { color: var(--muted); }
-    footer a:hover { color: var(--accent-deep); }
+    footer a:hover { color: var(--text); }
   </style>
 </head>
 <body>
@@ -52,132 +51,126 @@
         <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
         QuietStack
       </a>
-      <a href="index.html" class="back">← Vissza a főoldalra</a>
+      <a href="index.html" class="back">← Back to home</a>
     </div>
   </header>
 
   <main>
     <div class="wrap">
-      <h1>Általános Szerződési Feltételek</h1>
-      <p class="updated">Utolsó frissítés: 2026. május</p>
+      <h1>Terms &amp; Conditions</h1>
+      <p class="updated">Last updated: May 2026</p>
 
       <div class="note">
-        <strong>Tervezet.</strong> Ez az ÁSZF a QuietStack szolgáltatás ismert feltételei
-        alapján készült. A szolgáltató Ausztriában bejegyzett vállalkozás, ezért a
-        feltételekre az osztrák jog az irányadó. A végleges, közzétehető változatot
-        mindenképp nézesd át osztrák ügyvéddel.
+        <strong>Draft.</strong> These Terms are based on the known conditions of the QuietStack
+        service. The provider is a business registered in Austria, so Austrian law applies. Be
+        sure to have the final, publishable version reviewed by an Austrian lawyer.
       </div>
 
-      <h2>1. A szolgáltató</h2>
+      <h2>1. Provider</h2>
       <p>
-        Név: Baranyi Bettina<br />
-        Vállalkozás: Entropy Breakers<br />
-        Székhely: Kärntnerstrasse 50/53, 6020 Innsbruck, Ausztria<br />
-        Adószám: 81 522/2377<br />
-        E-mail: <a href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a><br />
-        A részletes adatokat az <a href="impresszum.html">Impresszum</a> tartalmazza.
+        Name: Baranyi Bettina<br />
+        Business: Entropy Breakers<br />
+        Registered office: Kärntnerstrasse 50/53, 6020 Innsbruck, Austria<br />
+        Tax number: 81 522/2377<br />
+        Email: <a href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a><br />
+        Full details are provided in the <a href="impresszum.html">Imprint</a>.
       </p>
 
-      <h2>2. Az ÁSZF tárgya</h2>
+      <h2>2. Subject of these Terms</h2>
       <p>
-        A jelen ÁSZF a szolgáltató által nyújtott QuietStack szolgáltatásra vonatkozik:
-        AI-alapú, „kulcsrakész" (Done For You) ügyfélkezelő és automatizációs rendszerek
-        tervezésére, felépítésére és átadására, coachok, online tanárok és digitális
-        szolgáltatók részére.
+        These Terms apply to the QuietStack service provided by the provider: the design, build
+        and handover of AI-based, done-for-you client-management and automation systems for
+        coaches, online educators and digital service providers.
       </p>
 
-      <h2>3. A megrendelő</h2>
+      <h2>3. The client</h2>
       <p>
-        A szolgáltatás vállalkozások és egyéni vállalkozók részére szól. A megrendelő a
-        szerződéskötéskor saját üzleti, szakmai tevékenysége körében jár el, így a felek
-        közötti jogviszony nem minősül fogyasztói szerződésnek.
+        The service is intended for businesses and sole traders. When entering into the contract,
+        the client acts within their own business or professional activity, so the relationship
+        between the parties does not qualify as a consumer contract.
       </p>
 
-      <h2>4. A szolgáltatás menete</h2>
+      <h2>4. Service process</h2>
       <ul>
-        <li><strong>Ingyenes konzultáció:</strong> kötelezettségmentes igényfelmérő beszélgetés.</li>
-        <li><strong>Tervezés:</strong> a megrendelő szakmájára szabott rendszerterv.</li>
-        <li><strong>Építés:</strong> a rendszer felépítése a kiválasztott csomag szerint.</li>
-        <li><strong>Betanítás és átadás:</strong> közös beüzemelés és támogatás.</li>
+        <li><strong>Free consultation:</strong> a no-obligation needs-assessment conversation.</li>
+        <li><strong>Planning:</strong> a system plan tailored to the client's profession.</li>
+        <li><strong>Build:</strong> building the system according to the chosen package.</li>
+        <li><strong>Onboarding and handover:</strong> joint setup and support.</li>
       </ul>
-      <p>A felek a konkrét tartalmat és ütemezést egyedi megállapodásban (ajánlat / megrendelés) rögzítik.</p>
+      <p>The parties record the specific scope and schedule in an individual agreement (offer / order).</p>
 
-      <h2>5. Csomagok és díjak</h2>
+      <h2>5. Packages and fees</h2>
       <p>
-        A weboldalon feltüntetett csomagok (Starter, Engine, Premium) egyszeri díjasak.
-        Mindegyikhez opcionális havi karbantartás választható. A szolgáltató osztrák
-        kisvállalkozói minősítés (Kleinunternehmer) alapján forgalmi adó (ÁFA) nélkül
-        állítja ki a számlát. A weboldalon szereplő árak tájékoztató jellegűek; a
-        véglegesen irányadó díjat az egyedi ajánlat tartalmazza.
+        The service packages are offered for a one-time fee, with an optional monthly maintenance
+        plan available for each. The provider issues invoices without value-added tax (VAT) on the
+        basis of the Austrian small-business scheme (Kleinunternehmer). Any prices shown on the
+        website are indicative; the final applicable fee is set out in the individual offer.
       </p>
 
-      <h2>6. Fizetési feltételek</h2>
+      <h2>6. Payment terms</h2>
       <p>
-        A csomag teljes díja a munka megkezdése előtt, egy összegben esedékes, a
-        szolgáltató által kiállított számla alapján. A munka a díj beérkezését követően
-        indul. Az opcionális havi karbantartás díja havonta előre fizetendő.
+        The full package fee is due before work begins, as a single payment, based on the invoice
+        issued by the provider. Work starts once payment has been received. The fee for optional
+        monthly maintenance is payable monthly in advance.
       </p>
 
-      <h2>7. Teljesítési határidő</h2>
+      <h2>7. Delivery time</h2>
       <p>
-        A munka időigénye a csomagtól függően jellemzően 1–4 hét, a pontos határidőt az
-        egyedi megállapodás rögzíti. A megrendelő közreműködésének (pl. hozzáférések,
-        adatok, visszajelzés megadása) késedelme a határidőt arányosan kitolja.
+        Depending on the package, the work typically takes one to four weeks; the exact deadline is
+        set in the individual agreement. Any delay in the client's cooperation (e.g. providing
+        access, data or feedback) extends the deadline proportionally.
       </p>
 
-      <h2>8. Minőségi garancia</h2>
+      <h2>8. Quality guarantee</h2>
       <p>
-        A szolgáltató minőségi garanciát vállal: nem pénzvisszafizetéssel, hanem azzal,
-        hogy a rendszert az átadást követően addig finomítja és javítja, amíg az a
-        megállapodás szerint működik. A garancia a megrendelővel közösen meghatározott,
-        megállapodás szerinti működésre vonatkozik.
+        The provider offers a quality guarantee: not in the form of a refund, but by continuing to
+        refine and fix the system after handover until it works as agreed. The guarantee relates to
+        the operation agreed jointly with the client.
       </p>
 
-      <h2>9. Elállás, lemondás</h2>
+      <h2>9. Withdrawal and cancellation</h2>
       <p>
-        Mivel a felek közötti jogviszony nem fogyasztói szerződés, továbbá a szolgáltatás
-        kifejezetten a megrendelő egyedi igényei szerint, személyre szabottan készül, a
-        fogyasztókat megillető elállási jog nem alkalmazandó. A megrendelés lemondásának
-        és a már elvégzett munka elszámolásának feltételeit az egyedi megállapodás rögzíti.
+        Because the relationship between the parties is not a consumer contract, and because the
+        service is created specifically and individually according to the client's needs, the right
+        of withdrawal available to consumers does not apply. The conditions for cancelling an order
+        and for settling work already performed are set out in the individual agreement.
       </p>
 
-      <h2>10. Szellemi tulajdon</h2>
+      <h2>10. Intellectual property</h2>
       <p>
-        Az átadott rendszer használati jogát a megrendelő a díj megfizetésével szerzi meg,
-        a saját vállalkozása működtetése céljából. A szolgáltató által használt általános
-        módszerek, sablonok és know-how a szolgáltató tulajdonában maradnak.
+        The client acquires the right to use the delivered system upon payment of the fee, for the
+        purpose of operating their own business. The general methods, templates and know-how used by
+        the provider remain the property of the provider.
       </p>
 
-      <h2>11. Felelősség</h2>
+      <h2>11. Liability</h2>
       <p>
-        A szolgáltató a rendszert szakszerűen, a megállapodás szerint építi fel. A
-        szolgáltató nem felel a megrendelő által használt harmadik féltől származó
-        eszközök (pl. e-mail-, naptár-, fizetési vagy számlázó szolgáltatások)
-        működéséért, üzemszüneteiért vagy díjszabásuk változásáért, sem a rendszer
-        átadás utáni, megrendelő általi módosításából eredő hibákért.
+        The provider builds the system professionally and in accordance with the agreement. The
+        provider is not liable for the operation, outages or pricing changes of third-party tools
+        used by the client (e.g. email, calendar, payment or invoicing services), nor for errors
+        arising from the client's own modifications to the system after handover.
       </p>
 
-      <h2>12. Adatkezelés</h2>
+      <h2>12. Data processing</h2>
       <p>
-        A személyes adatok kezelésére az <a href="adatvedelem.html">Adatkezelési
-        tájékoztató</a> az irányadó.
+        The processing of personal data is governed by the <a href="adatvedelem.html">Privacy Policy</a>.
       </p>
 
-      <h2>13. Vegyes rendelkezések</h2>
+      <h2>13. Miscellaneous</h2>
       <p>
-        A jelen ÁSZF-re és a felek jogviszonyára az osztrák jog az irányadó. A felek a
-        vitás kérdéseket elsősorban egyeztetéssel rendezik. A szolgáltató az ÁSZF-et
-        módosíthatja; a módosítás a weboldalon való közzététellel lép hatályba, és a
-        már megkötött megrendeléseket nem érinti.
+        These Terms and the relationship between the parties are governed by Austrian law. The
+        parties will seek to resolve any disputes primarily through negotiation. The provider may
+        amend these Terms; amendments take effect upon publication on the website and do not affect
+        orders already placed.
       </p>
     </div>
   </main>
 
   <footer>
     <div class="wrap">
-      <a href="impresszum.html">Impresszum</a> &nbsp;·&nbsp;
-      <a href="adatvedelem.html">Adatkezelési tájékoztató</a> &nbsp;·&nbsp;
-      <a href="aszf.html">ÁSZF</a><br /><br />
+      <a href="impresszum.html">Imprint</a> &nbsp;·&nbsp;
+      <a href="adatvedelem.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="aszf.html">Terms &amp; Conditions</a><br /><br />
       © <span id="year"></span> Entropy Breakers
     </div>
   </footer>
