@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="_LHq5VtecCeOIMMJE-UxyjANxRzvzcrU1Lcttiz5zYU" />
 
-  <title>QuietStack: AI systems for coaches & service businesses | Less admin, more coaching</title>
-  <meta name="description" content="AI-powered client systems for coaches, consultants and online experts. Free up 10+ hours a week. Book a free consultation." />
+  <title>QuietStack | More qualified clients. Less operational chaos.</title>
+  <meta name="description" content="QuietStack builds practical AI systems and automation workflows that help service businesses save time, streamline operations and improve client flow. Book a strategy call." />
   <meta name="theme-color" content="#F3F4F6" />
 
-  <meta property="og:title" content="QuietStack: AI systems for coaches & service businesses" />
-  <meta property="og:description" content="The system works for you — not the other way around." />
+  <meta property="og:title" content="QuietStack | More qualified clients. Less operational chaos." />
+  <meta property="og:description" content="Practical AI systems and automation for service businesses. Quiet systems. Scalable operations." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://quietstack.entropybreakers.com/en/" />
@@ -329,6 +329,21 @@
 
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     @media (max-width: 880px) { .grid-3 { grid-template-columns: 1fr; } }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    @media (max-width: 980px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .grid-4 { grid-template-columns: 1fr; } }
+    .steps.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 880px) { .steps.cols-3 { grid-template-columns: 1fr; } }
+    .problem-close { text-align: center; max-width: 680px; margin: 50px auto 0; font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 1.7rem); line-height: 1.4; color: var(--text); }
+    .ba-list { list-style: none; padding: 0; margin: 16px 0 0; }
+    .ba-list li { position: relative; padding-left: 26px; margin-bottom: 12px; color: var(--muted); }
+    .ba-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+    .ba-list.before li { text-decoration: line-through; text-decoration-color: rgba(110,118,129,0.4); }
+    .proof-card.dark .ba-list li { color: #e6e3d8; }
+    .proof-card.dark .ba-list li::before { background: #5fbf6a; box-shadow: 0 0 9px rgba(95,191,106,0.6); }
+    .why-wrap { text-align: center; }
+    .why-copy { color: var(--muted); font-size: 1.1rem; line-height: 1.85; max-width: 640px; margin: 0 auto; }
+    .why-copy p { margin-bottom: 16px; }
     .card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 8px; padding: 34px 30px;
@@ -676,727 +691,236 @@
         QuietStack
       </a>
       <nav class="nav-links">
-        <a href="#kiknek">Who it's for</a>
-        <a href="#folyamat">How it works</a>
-        <a href="#csomagok">Packages</a>
-        <a href="#gyik">FAQ</a>
-        <a href="#kapcsolat" class="btn btn-accent">Free consultation</a>
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#why">Why QuietStack</a>
+        <a href="#work">Work</a>
+        <a href="#contact" class="btn btn-accent">Book a Strategy Call</a>
       </nav>
     </div>
   </header>
 
   <main>
 
+    <!-- 1. HERO -->
     <section class="hero">
       <div class="hero-live-wrap"><span class="hero-live"><i aria-hidden="true"></i>Live system</span></div>
       <div class="hero-copy hero-head">
+        <span class="eyebrow">AI systems &amp; automation for service businesses</span>
         <h1>
-          <span class="line1">From constant chatting</span>
-          <span class="line2">to an automated client journey.</span>
+          <span class="line1">More qualified clients.</span>
+          <span class="line2">Less operational chaos.</span>
         </h1>
-      </div>
-      <div class="hero-stage">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <img class="hero-portrait" src="../assets/new-hero.webp" alt="Bettina Baranyi, founder of QuietStack" onerror="this.remove()" />
-      </div>
-      <div class="hero-copy hero-foot reveal">
-        <div class="hero-cta">
-          <a href="#kapcsolat" class="btn btn-accent">Free 20-minute consultation →</a>
-        </div>
-        <span class="eyebrow">AI systems &middot; for coaches &amp; service businesses</span>
         <p class="lead">
-          Claude AI-powered systems for coaches that completely take over the repetitive
-          back-office work. Win back your focus and get back to coaching —
-          not admin.
+          QuietStack builds practical AI systems and automation workflows that help
+          service businesses save time, streamline operations and improve client flow.
         </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-accent">Book a Strategy Call →</a>
+          <a href="#services" class="btn btn-ghost">View Systems</a>
+        </div>
       </div>
-    </section>
-
-    <section class="pain" id="pain">
-      <div class="wrap">
-        <span class="section-tag reveal">Your story</span>
-        <h2 class="section-title reveal" style="color:#fff;">Does this sound familiar?</h2>
-        <div class="pain-layout">
-          <div class="reveal">
-            <p class="pain-headline">Growth promised more. It just gave me more work.</p>
-            <div class="pain-story">
-              <p>I'm a mentor. I wanted to grow: more clients, more income, more freedom.</p>
-              <p>
-                But every new client brought new admin. Emails. Bookings.
-                Invoices. Follow-ups. My evenings filled up with it, my weekends too. I woke up
-                tired and went to bed with an unfinished to-do list. I had no free time.
-                No quiet.
-              </p>
-              <p>
-                Meanwhile I knew: I should be creating content, posting, staying visible.
-                A coach lives by being seen. But by the time I'd fought through the daily admin,
-                I had no energy left. Less content, less reach, fewer leads.
-              </p>
-              <p class="em">Admin didn't just take my time. It took my growth.</p>
-              <p>
-                Then I built my own AI system. The back-office work ran by itself.
-                I had time again — for content, for my clients, and for myself.
-              </p>
-              <p class="last">This is what I want to build for you, too.</p>
+      <div class="hero-visual reveal" style="max-width:560px; margin:34px auto 0; padding:0 24px;">
+        <div class="hero-panel">
+          <div class="hp-head">
+            <span class="hp-title">Client flow</span>
+            <span class="hp-live"><span class="hp-live-dot"></span>Live</span>
+          </div>
+          <div class="hp-flow">
+            <div class="hp-line"><div class="hp-line-fill" id="hpFill"></div></div>
+            <div class="hp-node">
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
+              <span class="hp-label">Lead captured &amp; qualified</span>
+              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+            </div>
+            <div class="hp-node">
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+              <span class="hp-label">Automated follow-up sent</span>
+              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+            </div>
+            <div class="hp-node">
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h6"/></svg></span>
+              <span class="hp-label">Onboarding completed</span>
+              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+            </div>
+            <div class="hp-node">
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
+              <span class="hp-label">Payment processed</span>
+              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+            </div>
+            <div class="hp-node">
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span>
+              <span class="hp-label">Client active &amp; tracked</span>
+              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
             </div>
           </div>
-          <div class="pain-photo reveal">
-            <img src="../assets/tortenet.webp" alt="Bettina Baranyi, founder of QuietStack" />
+          <div class="hp-foot">
+            <span class="hp-foot-num" id="hpHours">10+</span>
+            <span class="hp-foot-label">hours reclaimed every week</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="megoldas">
+    <!-- 2. THE PROBLEM -->
+    <section class="band" id="problem">
       <div class="wrap">
-        <span class="section-tag reveal">Problem and solution</span>
-        <h2 class="section-title reveal">Recognise the daily struggle?</h2>
-        <p class="section-sub reveal">This is what most coaches wrestle with every single day — and exactly how QuietStack takes it off your plate.</p>
-        <div class="ps-list">
-          <div class="ps-row reveal">
-            <div class="ps-cell ps-problem">
-              <span class="ps-label p">The problem</span>
-              <p>You spend hours every day answering emails and arranging appointments.</p>
-            </div>
-            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-            <div class="ps-cell ps-solution">
-              <span class="ps-label s">The solution</span>
-              <p>An AI assistant and automated booking system handle enquiries around the clock, for you.</p>
-            </div>
-          </div>
-          <div class="ps-row reveal">
-            <div class="ps-cell ps-problem">
-              <span class="ps-label p">The problem</span>
-              <p>Onboarding every new client is manual work: contract, payment, first appointment.</p>
-            </div>
-            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-            <div class="ps-cell ps-solution">
-              <span class="ps-label s">The solution</span>
-              <p>A single automated flow guides everything, from first enquiry to first session.</p>
-            </div>
-          </div>
-          <div class="ps-row reveal">
-            <div class="ps-cell ps-problem">
-              <span class="ps-label p">The problem</span>
-              <p>Invoices slip through the cracks, and you have to chase who has actually paid.</p>
-            </div>
-            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-            <div class="ps-cell ps-solution">
-              <span class="ps-label s">The solution</span>
-              <p>Invoicing integration with automatic payment tracking, so the finances run themselves.</p>
-            </div>
-          </div>
-          <div class="ps-row reveal">
-            <div class="ps-cell ps-problem">
-              <span class="ps-label p">The problem</span>
-              <p>Admin eats the time you should spend on content. Fewer posts, less reach, fewer new leads.</p>
-            </div>
-            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-            <div class="ps-cell ps-solution">
-              <span class="ps-label s">The solution</span>
-              <p>An AI content engine that constantly feeds you ideas and drafts, so you post regularly and stay visible.</p>
-            </div>
-          </div>
-          <div class="ps-row reveal">
-            <div class="ps-cell ps-problem">
-              <span class="ps-label p">The problem</span>
-              <p>Every new client brings more stress, not more freedom.</p>
-            </div>
-            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-            <div class="ps-cell ps-solution">
-              <span class="ps-label s">The solution</span>
-              <p>The system takes over the repetitive work, so you scale while still having time to live.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="kiknek" class="band">
-      <div class="wrap">
-        <span class="section-tag reveal">Who it's for</span>
-        <h2 class="section-title reveal">This is for you if…</h2>
-        <p class="section-sub reveal">Three typical situations — you'll probably recognise yourself in one of them.</p>
+        <span class="section-tag reveal">The problem</span>
+        <h2 class="section-title reveal">Growth becomes exhausting when everything depends on manual work.</h2>
+        <p class="section-sub reveal">The symptoms look different, but the cause is always the same: operations held together by hand.</p>
         <div class="grid-3">
           <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
-            <h3>Online coach or teacher</h3>
-            <p>
-              You work with one-on-one clients. Admin (email, appointments, homework,
-              invoicing) eats 10+ hours a week. You know your system is broken, but you
-              don't know where to start.
-            </p>
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3>Leads slip away</h3>
+            <p>Enquiries vanish into scattered chats and inboxes before anyone follows up.</p>
           </div>
           <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 7v10M3 9.5v5M17.5 7v10M21 9.5v5M6.5 12h11"/></svg></div>
-            <h3>Fitness, health or wellness coach</h3>
-            <p>
-              You run online programmes. Clients want training plans, meal plans and weekly
-              feedback. You work too much, and every new client means extra load, not
-              freedom.
-            </p>
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/><path d="M12 8v4l3 2"/></svg></div>
+            <h3>Inconsistent follow-ups</h3>
+            <p>Some prospects hear back in minutes, others never — and you can't tell which.</p>
           </div>
           <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
-            <h3>Digital product seller</h3>
-            <p>
-              You sell e-books, courses or template packs. Marketing, client management and
-              tracking payments are pulling you apart. You've heard about AI tools, but you
-              don't know how they come together into a working system.
-            </p>
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/><circle cx="12" cy="12" r="2.5"/></svg></div>
+            <h3>Repetitive onboarding</h3>
+            <p>Every new client means the same manual steps, typed out by hand again.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="9" r="2.4"/><circle cx="9" cy="18" r="2.4"/><path d="M8 7l8 1.5M8.5 16l8-6"/></svg></div>
+            <h3>Scattered communication</h3>
+            <p>Messages spread across email, DMs, notes and tools that don't talk to each other.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+            <h3>Operational overload</h3>
+            <p>The business runs on your attention instead of running on systems.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+            <h3>Too many tools, no system</h3>
+            <p>A dozen apps, none of them connected into one reliable workflow.</p>
           </div>
         </div>
+        <p class="problem-close reveal">Most businesses don't need more hustle.<br />They need better operational structure.</p>
       </div>
     </section>
 
-    <section id="rolam">
-      <div class="wrap about-grid">
-        <div class="reveal">
-          <div class="photo-slot" data-ph="Portrait of Bettina Baranyi">
-            <img src="../assets/kivagyok.webp" alt="Bettina Baranyi, founder of QuietStack" onerror="this.remove()" />
-          </div>
-        </div>
-        <div class="about-text reveal">
-          <span class="section-tag" style="text-align:left;">About me</span>
-          <h2>Who am I?</h2>
-          <p>I'm Bettina. A mentor who builds systems.</p>
-          <p>
-            For seven years I've been preparing European professionals to speak English:
-            psychologists, engineers, marketers, logistics specialists, from the basics all
-            the way to C1 level. Not textbook English, but real, confident speaking.
-          </p>
-          <p>
-            More than 500 learners have broken through the "I can't speak" wall with me. And
-            I never just gave language lessons: there was always a complete system behind my
-            teaching. My own platform, AI feedback, a Notion student hub, personalised
-            materials. Because I believe there's no such thing as "language talent" — only
-            a good or a bad method.
-          </p>
-          <p>
-            At some point I realised: what I'd built for teaching works exactly the same way
-            in any service business. I learned to build systems with AI, first for myself,
-            then on other platforms too. Today I pass that on through QuietStack: I build the
-            system that takes admin off your plate, so you have time for what you love —
-            coaching, teaching, your clients.
-          </p>
-          <p class="punch">
-            I'm not a programmer, I'm a mentor. And that's exactly why I understand what
-            you're going through.
-          </p>
-          <p style="margin-top:24px;">
-            <a href="#kapcsolat" class="btn btn-accent">Book a consultation →</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="folyamat" class="band">
+    <!-- 3. THE TRANSFORMATION -->
+    <section id="transformation">
       <div class="wrap">
-        <span class="section-tag reveal">The process</span>
-        <h2 class="section-title reveal">How we work together</h2>
-        <p class="section-sub reveal">Four clear steps from first conversation to a working system.</p>
-        <div class="steps">
+        <span class="section-tag reveal">The shift</span>
+        <h2 class="section-title reveal">Quiet systems create scalable businesses.</h2>
+        <p class="section-sub reveal">The same business, before and after the operational layer is in place.</p>
+        <div class="proof-grid">
+          <div class="proof-card reveal">
+            <h3>Before</h3>
+            <ul class="ba-list before">
+              <li>Constant admin</li>
+              <li>Reactive communication</li>
+              <li>Disorganised workflows</li>
+              <li>An overwhelmed founder</li>
+            </ul>
+          </div>
+          <div class="proof-card dark reveal">
+            <h3>After</h3>
+            <ul class="ba-list">
+              <li>Structured client flow</li>
+              <li>Automated follow-ups</li>
+              <li>Smoother onboarding</li>
+              <li>More available time</li>
+              <li>Scalable operations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SERVICES -->
+    <section class="band" id="services">
+      <div class="wrap">
+        <span class="section-tag reveal">Services</span>
+        <h2 class="section-title reveal">What QuietStack helps with</h2>
+        <p class="section-sub reveal">Four core systems that quietly run the operational side of your business.</p>
+        <div class="grid-4">
+          <div class="card reveal">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M12 3v9l5 3"/></svg></div>
+            <h3>Lead Handling Systems</h3>
+            <p>Automated qualification, follow-ups and booking workflows so no enquiry goes cold.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h4"/></svg></div>
+            <h3>Client Onboarding</h3>
+            <p>Structured onboarding systems that reduce manual communication and first-week friction.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3 1a7 7 0 0 0-2-1.2L16 2H8l-.6 2.5a7 7 0 0 0-2 1.2l-2.3-1-2 3.4 2 1.5A7 7 0 0 0 3 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.3-1c.6.5 1.3.9 2 1.2L8 22h8l.6-2.5c.7-.3 1.4-.7 2-1.2l2.3 1 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/></svg></div>
+            <h3>Operational Automation</h3>
+            <p>Cutting repetitive admin through practical workflows and integrations between your tools.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 10h6M9 13h3"/></svg></div>
+            <h3>AI-Assisted Communication</h3>
+            <p>Smarter systems for consistent client communication, replies and support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS -->
+    <section id="process">
+      <div class="wrap">
+        <span class="section-tag reveal">How it works</span>
+        <h2 class="section-title reveal">Simple systems. Clear implementation.</h2>
+        <p class="section-sub reveal">Three steps from operational bottlenecks to streamlined workflows.</p>
+        <div class="steps cols-3">
           <div class="step reveal">
             <div class="step-num">1</div>
-            <div class="step-meta">20 min</div>
-            <h3>Free consultation</h3>
-            <p>
-              A 20-minute conversation. Not a sales pitch. We look at where you lose the
-              most time, and which package fits your business. Or I'll tell you if I'm not
-              the right choice for you.
-            </p>
+            <h3>Audit</h3>
+            <p>Understanding your operational bottlenecks and the gaps in your current workflows.</p>
           </div>
           <div class="step reveal">
             <div class="step-num">2</div>
-            <div class="step-meta">1 week</div>
-            <h3>System design</h3>
-            <p>
-              I design the system around your profession and your clients. I work out what
-              can stay manual (the parts you enjoy) and what we automate (the parts you
-              hate).
-            </p>
+            <h3>System Design</h3>
+            <p>Building a practical automation structure designed around how your business actually works.</p>
           </div>
           <div class="step reveal">
             <div class="step-num">3</div>
-            <div class="step-meta">1–3 weeks</div>
-            <h3>Build</h3>
-            <p>
-              I build the system: AI, automation tools, integration with your existing
-              tools (Google, your invoicing tool, Stripe, Calendly, etc.). Meanwhile you
-              keep coaching.
-            </p>
-          </div>
-          <div class="step reveal">
-            <div class="step-num">4</div>
-            <div class="step-meta">Handover</div>
-            <h3>Training and handover</h3>
-            <p>
-              A 1–3 hour setup session together. I show you how it works. Continuous support
-              throughout the first month — I answer every question you have.
-            </p>
+            <h3>Implementation</h3>
+            <p>Creating streamlined workflows that save time and improve day-to-day operations.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="eszkozok">
-      <div class="wrap">
-        <span class="section-tag reveal">Tools</span>
-        <h2 class="section-title reveal">Built on proven tools</h2>
-        <p class="section-sub reveal">Your system is built on reliable, industry-standard tools that many people know and use. Nothing exotic, nothing opaque.</p>
-        <div class="tool-chips reveal">
-          <span class="tool-chip">Claude Code</span>
-          <span class="tool-chip">Supabase</span>
-          <span class="tool-chip">GitHub</span>
-          <span class="tool-chip">Vercel</span>
-          <span class="tool-chip">Make.com</span>
-          <span class="tool-chip">Calendly</span>
-          <span class="tool-chip">Airtable</span>
-          <span class="tool-chip">Stripe</span>
+    <!-- 6. WHY QUIETSTACK -->
+    <section class="band" id="why">
+      <div class="wrap narrow why-wrap">
+        <span class="section-tag reveal">Why QuietStack</span>
+        <h2 class="section-title reveal">Built for clarity, not complexity.</h2>
+        <div class="why-copy reveal">
+          <p>Most businesses are overwhelmed by tools, notifications and fragmented processes.</p>
+          <p>QuietStack focuses on building systems that feel calm, structured and sustainable.</p>
+          <p>The goal isn't adding more technology. It's reducing operational noise so you can focus on growth, clients and high-value work.</p>
         </div>
       </div>
     </section>
 
-    <section class="flows">
+    <!-- 7 + 8. WORK / CASE STUDY -->
+    <section id="work">
       <div class="wrap">
-        <span class="section-tag reveal">What you get</span>
-        <h2 class="section-title reveal">What I build for you</h2>
-        <p class="section-sub reveal">I build everything into your own accounts and hand it over. The system stays yours. Here's what you get with each package.</p>
-        <div class="flow-panels">
-
-          <div class="flow-panel reveal">
-            <div class="fp-head">
-              <div class="fp-head-top">
-                <span class="fp-name">Starter</span>
-                <span class="fp-live" aria-hidden="true"><span class="fp-live-dot"></span>live</span>
-              </div>
-              <span class="fp-tag">The core system</span>
-            </div>
-            <div class="fp-flow">
-              <div class="fp-line"><div class="fp-line-fill"></div></div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></span>
-                <span class="fp-label">Professional landing page</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
-                <span class="fp-label">Booking system with automatic reminders</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h6"/></svg></span>
-                <span class="fp-label">Onboarding questionnaire, organised into a database</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-                <span class="fp-label">5 automated email templates</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 5.4L19.5 10l-5.4 1.6L12 17l-2.1-5.4L4.5 10l5.4-1.6z"/></svg></span>
-                <span class="fp-label">AI assistant for frequently asked questions</span>
-              </div>
-            </div>
-            <div class="fp-foot">3–5 hours freed up per week</div>
-          </div>
-
-          <div class="flow-panel featured reveal">
-            <div class="fp-head">
-              <div class="fp-head-top">
-                <span class="fp-name">Engine</span>
-                <span class="fp-live" aria-hidden="true"><span class="fp-live-dot"></span>live</span>
-              </div>
-              <span class="fp-tag">The complete client-management engine</span>
-            </div>
-            <p class="fp-prev">Everything in Starter, plus:</p>
-            <div class="fp-flow">
-              <div class="fp-line"><div class="fp-line-fill"></div></div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5M9 12h6M9 16h6"/></svg></span>
-                <span class="fp-label">Full client intake: form, contract, payment</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-                <span class="fp-label">AI-assisted email replies in your own style</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
-                <span class="fp-label">Invoicing integration with payment tracking</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span>
-                <span class="fp-label">Client progress-tracking dashboard</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg></span>
-                <span class="fp-label">Weekly automated feedback email to clients</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M14 6l4 4"/></svg></span>
-                <span class="fp-label">Content calendar with AI ideas</span>
-              </div>
-            </div>
-            <div class="fp-foot">10+ hours freed up per week</div>
-          </div>
-
-          <div class="flow-panel reveal">
-            <div class="fp-head">
-              <div class="fp-head-top">
-                <span class="fp-name">Premium</span>
-                <span class="fp-live" aria-hidden="true"><span class="fp-live-dot"></span>live</span>
-              </div>
-              <span class="fp-tag">Scalable system</span>
-            </div>
-            <p class="fp-prev">Everything in Engine, plus:</p>
-            <div class="fp-flow">
-              <div class="fp-line"><div class="fp-line-fill"></div></div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
-                <span class="fp-label">Custom client portal, browser-based, mobile-optimised</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 5.4L19.5 10l-5.4 1.6L12 17l-2.1-5.4L4.5 10l5.4-1.6z"/></svg></span>
-                <span class="fp-label">AI generator: training plans, meal plans, course material</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3.2 2.5-5.3 5.5-5.3s5.5 2.1 5.5 5.3"/><path d="M15.6 5.3a3.2 3.2 0 0 1 0 9.2M16 14.8c2.6.3 4.5 2.3 4.5 5.2"/></svg></span>
-                <span class="fp-label">Group programme management: challenges, courses</span>
-              </div>
-              <div class="fp-node">
-                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="M8.4 10.8l7.2-3.6M8.4 13.2l7.2 3.6"/></svg></span>
-                <span class="fp-label">Referral programme with tracking system</span>
-              </div>
-            </div>
-            <div class="fp-foot">scalable capacity</div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="showcase" class="band">
-      <div class="wrap">
-        <span class="section-tag reveal">Templates</span>
-        <h2 class="section-title reveal">This is what your page could look like</h2>
-        <p class="section-sub reveal">Click any of them to see it live. These are templates: your page is built with your own branding and copy. The people and businesses shown are fictional.</p>
-        <div class="showcase-wrap reveal">
-          <div class="showcase-marquee">
-            <div class="showcase-row">
-
-            <a class="showcase-card" href="../sablonok/coach.html" target="_blank" rel="noopener">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/coach.html" title="Coach template preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Coach landing page</h3>
-                <p>A personal brand with one main offer and appointment booking.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            <a class="showcase-card" href="../sablonok/kurzus.html" target="_blank" rel="noopener">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/kurzus.html" title="Online course template preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Online course page</h3>
-                <p>A sales page for a course or programme, broken into modules.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            <a class="showcase-card" href="../sablonok/termek.html" target="_blank" rel="noopener">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/termek.html" title="Digital product template preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Digital product page</h3>
-                <p>A landing page for an e-book, template or downloadable product.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            <a class="showcase-card" href="../sablonok/foglalas.html" target="_blank" rel="noopener">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/foglalas.html" title="Consultation booking template preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Consultation booking page</h3>
-                <p>A clean page focused entirely on booking appointments.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            <a class="showcase-card" href="../sablonok/wellness.html" target="_blank" rel="noopener">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/wellness.html" title="Wellness and fitness template preview" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Wellness and fitness page</h3>
-                <p>A trainer's page with programmes and a transformation gallery.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            <!-- duplicate for the seamless, continuous loop -->
-            <a class="showcase-card" href="../sablonok/coach.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/coach.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Coach landing page</h3>
-                <p>A personal brand with one main offer and appointment booking.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            <a class="showcase-card" href="../sablonok/kurzus.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/kurzus.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Online course page</h3>
-                <p>A sales page for a course or programme, broken into modules.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            <a class="showcase-card" href="../sablonok/termek.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/termek.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Digital product page</h3>
-                <p>A landing page for an e-book, template or downloadable product.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            <a class="showcase-card" href="../sablonok/foglalas.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/foglalas.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Consultation booking page</h3>
-                <p>A clean page focused entirely on booking appointments.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            <a class="showcase-card" href="../sablonok/wellness.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-              <div class="sc-frame">
-                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-                <div class="sc-shot">
-                  <iframe src="../sablonok/wellness.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
-                </div>
-              </div>
-              <div class="sc-cap">
-                <h3>Wellness and fitness page</h3>
-                <p>A trainer's page with programmes and a transformation gallery.</p>
-                <span class="sc-go">View it live →</span>
-              </div>
-            </a>
-
-            </div>
-          </div>
-        </div>
-        <div class="showcase-cta reveal">
-          <p>Want a page like this, with your own branding and copy?</p>
-          <a href="#kapcsolat" class="btn btn-accent">Let's talk it through on a free consultation →</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="csomagok">
-      <div class="wrap">
-        <span class="section-tag reveal">Packages</span>
-        <h2 class="section-title reveal">Three packages: choose the one that fits you</h2>
-        <p class="section-sub reveal">
-          Every package consists of a one-time build and ongoing monthly operation.
-          The build is the start. The operation is what really frees up your time:
-          month after month, I run and optimise the system for you.
-        </p>
-        <div class="pricing">
-
-          <div class="plan reveal">
-            <div class="tier">Starter</div>
-            <h3>The core system</h3>
-            <div class="price">€990<small>one-time setup</small></div>
-            <div class="time">Time required: 1 week of my work</div>
-            <p class="who">
-              For a coach / teacher just starting out or 1–2 years in, ready to step out of
-              the chaos. The core system that frees up <strong>3–5 hours a week</strong>.
-            </p>
-            <div class="feat-label">What's included</div>
-            <ul>
-              <li>A simple, professional landing page (intro + 1 main offer + contact)</li>
-              <li>Calendar-based booking system (Calendly) with automatic reminders</li>
-              <li>5 core email templates automated: welcome, appointment confirmation, 24-hour reminder, thank-you, re-engagement (for dormant clients)</li>
-              <li>New-client questionnaire, with answers automatically saved to a spreadsheet</li>
-              <li>1 AI assistant for the most common questions</li>
-              <li>1-hour training session</li>
-              <li>2 weeks of support after handover</li>
-            </ul>
-            <div class="maint">Ongoing operation + optimisation: <strong>€190 / mo</strong> <small>(founding rate)</small></div>
-            <a href="#kapcsolat" class="btn btn-ghost">Request a Starter consultation →</a>
-          </div>
-
-          <div class="plan featured reveal">
-            <div class="plan-badge">Most popular</div>
-            <div class="tier">Engine</div>
-            <h3>The complete client-management engine</h3>
-            <div class="price">€2,900<small>one-time setup</small></div>
-            <div class="time">Time required: 2–3 weeks of my work</div>
-            <p class="who">
-              For an active coach / teacher with 5–15 clients who wants to scale to 25–30
-              without burning out. Frees up <strong>10+ hours a week</strong>.
-            </p>
-            <div class="feat-label">Everything in Starter, plus</div>
-            <ul>
-              <li>Full client-intake flow: form → contract → payment → first session booking, all automatic</li>
-              <li>AI-assisted email replies tuned to your own style</li>
-              <li>Invoicing integration (your invoicing tool + automatic payment tracking)</li>
-              <li>Client progress-tracking dashboard (Notion or Google Sheets based)</li>
-              <li>Weekly automated feedback email to clients</li>
-              <li>Content-calendar template with AI ideas (Instagram, TikTok)</li>
-              <li>2-hour training (across 2 sessions)</li>
-              <li>1 month of full support</li>
-            </ul>
-            <div class="maint">Ongoing operation + optimisation: <strong>€490 / mo</strong> <small>(founding rate)</small></div>
-            <a href="#kapcsolat" class="btn btn-accent">Request an Engine consultation →</a>
-          </div>
-
-          <div class="plan reveal">
-            <div class="tier">Premium</div>
-            <h3>Scalable system and mentoring</h3>
-            <div class="price">from €4,900<small>one-time setup</small></div>
-            <div class="time">Time required: 3–4 weeks of my work</div>
-            <p class="who">
-              For a coach / teacher who wants to scale (15+ clients), or who's launching
-              online programmes. A full premium system + 3 months of mentoring from me.
-              Frees up <strong>10+ hours a week</strong>, with scalable capacity.
-            </p>
-            <div class="feat-label">Everything in Engine, plus</div>
-            <ul>
-              <li>Custom client portal: browser-based, mobile-optimised, with your own logo and branding (can be added to the phone home screen)</li>
-              <li>AI-powered generator for training plans, meal plans and course material</li>
-              <li>Group programme management (online challenges, courses)</li>
-              <li>Referral programme with tracking system</li>
-              <li>1 hour of mentoring per week for 3 months: how to use it more effectively, how to scale</li>
-              <li>Replies within 24 hours for 6 months</li>
-              <li>Lifetime priority: every new feature free</li>
-            </ul>
-            <div class="maint">Ongoing operation + optimisation: <strong>€990 / mo</strong> <small>(founding rate)</small></div>
-            <a href="#kapcsolat" class="btn btn-ghost">Request a Premium consultation →</a>
-          </div>
-
-        </div>
-        <p class="pricing-note reveal">The monthly fee isn't mere maintenance: it covers running your entire system, ongoing optimisation, new automations and the AI costs. <strong>Founding offer:</strong> the first 5 clients get 25% off the setup fee in exchange for a detailed case study — and keep the founding monthly rate for good.<br />Not sure which one is yours? We'll decide together on the free consultation. And if none of them is exactly what you need, I'll put together a custom offer.</p>
-      </div>
-    </section>
-
-    <section class="band" id="calc">
-      <div class="wrap">
-        <span class="section-tag reveal">Return on investment</span>
-        <h2 class="section-title reveal">Let's work out what your time is worth</h2>
-        <div class="calc-box reveal" id="calcBox">
-          <p class="calc-intro">Drag the sliders and see live what this means with your own numbers.</p>
-          <div class="calc-controls">
-            <div class="calc-field">
-              <label for="rate">Your hourly rate <output id="rateOut">€60</output></label>
-              <input type="range" id="rate" min="20" max="200" step="5" value="60" />
-            </div>
-            <div class="calc-field">
-              <label for="hours">Time reclaimed per week <output id="hoursOut">10 hrs</output></label>
-              <input type="range" id="hours" min="3" max="20" step="1" value="10" />
-            </div>
-          </div>
-          <div class="calc-results">
-            <div class="calc-result">
-              <span class="cr-label">Weekly value</span>
-              <span class="cr-value" id="weekly">€600</span>
-            </div>
-            <div class="calc-result highlight">
-              <span class="cr-label">Extra monthly income</span>
-              <span class="cr-value" id="monthly">€2,598</span>
-            </div>
-          </div>
-          <div class="calc-payback-label">How quickly it pays for itself</div>
-          <div class="calc-rows">
-            <div class="calc-row">
-              <span class="lbl">Starter package: €990</span>
-              <span class="val" id="pbStarter">≈ 1.7 weeks</span>
-            </div>
-            <div class="calc-row">
-              <span class="lbl">Engine package: €2,900</span>
-              <span class="val" id="pbEngine">≈ 4.8 weeks</span>
-            </div>
-            <div class="calc-row">
-              <span class="lbl">Premium package: €4,900</span>
-              <span class="val" id="pbPremium">≈ 8.2 weeks</span>
-            </div>
-          </div>
-          <p class="calc-closing">
-            And that's just the value of the time you reclaim. The real gain: calm, more
-            energy, and loving your business again.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="founding">
-      <div class="wrap">
-        <span class="section-tag reveal">Just launching</span>
-        <h2 class="section-title reveal">I'm taking on founding clients</h2>
-        <p class="section-sub reveal">A new service, and a live example that it works.</p>
+        <span class="section-tag reveal">Selected work</span>
+        <h2 class="section-title reveal">Systems that already run in the real world</h2>
+        <p class="section-sub reveal">Before building for clients, I built and operate these systems myself.</p>
         <div class="proof-grid">
           <div class="proof-card reveal">
-            <h3>I'm taking on founding clients in summer 2026</h3>
-            <p>This is a new service, just launched.</p>
-            <p>
-              I work with the first 5 clients at a reduced price, in exchange for a detailed
-              case study that future clients will see too.
-            </p>
-            <p>If a founding spot interests you, let's talk on the free consultation.</p>
-            <a href="#kapcsolat" class="btn btn-accent">Book a consultation →</a>
+            <h3>Case study — Coaching business onboarding</h3>
+            <p><strong>Problem.</strong> Manual onboarding and inconsistent follow-ups were eating hours every week.</p>
+            <p><strong>Solution.</strong> An automated onboarding workflow paired with a lead-qualification system.</p>
+            <p><strong>Outcome.</strong> A more structured client flow and a noticeably reduced admin workload.</p>
           </div>
           <div class="proof-card dark reveal">
-            <h3>My own systems, the ones that work</h3>
-            <p>Before I build for others, I built for myself, and I still run them today.</p>
-            <p>
-              Get Client Ready is my own AI coaching platform: a 6-week programme that
-              assesses, gives practice, and ends with a personalised action plan. I built
-              it in 3 weeks.
-            </p>
-            <p>
-              Entropy Breakers is my own work too. If you're curious what a working system
-              looks like, here are two live references:
-            </p>
+            <h3>Live systems I built and run</h3>
+            <p><strong>Get Client Ready</strong> — my own AI coaching platform: a 6-week programme that assesses, gives practice, and ends with a personalised action plan.</p>
+            <p><strong>Entropy Breakers</strong> — the operational backbone behind QuietStack, also built and run in-house.</p>
             <div class="proof-links">
               <a href="https://getclientready.entropybreakers.com" class="btn btn-accent" target="_blank" rel="noopener">Get Client Ready →</a>
               <a href="https://entropybreakers.com/" class="btn btn-accent" target="_blank" rel="noopener">Entropy Breakers →</a>
@@ -1406,84 +930,12 @@
       </div>
     </section>
 
-    <section id="gyik" class="band">
-      <div class="wrap">
-        <span class="section-tag reveal">FAQ</span>
-        <h2 class="section-title reveal">Frequently asked questions</h2>
-        <p class="section-sub reveal">The things most people ask before we get started.</p>
-        <div class="faq">
-          <details class="reveal">
-            <summary>What if I'm not technical?</summary>
-            <div class="answer">
-              That's exactly the point. You don't want to be a tech expert, you want to be
-              a coach. I build the system, you just use it. In the training session I show
-              you what every button does. If you have any question, you write to me and I
-              answer.
-            </div>
-          </details>
-          <details class="reveal">
-            <summary>Which tools do you use?</summary>
-            <div class="answer">
-              ChatGPT and Claude, Make.com (automation), Calendly, Notion or Google
-              Sheets, Stripe, an invoicing tool, and whatever else suits your profession.
-              We build on your existing systems, we don't replace everything.
-            </div>
-          </details>
-          <details class="reveal">
-            <summary>How much of my time does this take?</summary>
-            <div class="answer">
-              During the build, almost none — I do that part. We need 1–2 longer
-              conversations for the design (about 2 hours total) and a 1–3 hour training
-              session. I handle the rest. After handover I run and optimise the system for
-              you as part of the monthly fee, so you essentially have nothing to do with it:
-              you just use it.
-            </div>
-          </details>
-          <details class="reveal">
-            <summary>What if something doesn't work well?</summary>
-            <div class="answer">
-              Quality guarantee: I don't work with refunds, I work by refining and fixing
-              the system until it genuinely serves you well. If something doesn't work the
-              way we agreed, I fix it. My goal is a working system, not a closed invoice.
-              That's exactly why we start with a free consultation: so we're both sure this
-              is right for you.
-            </div>
-          </details>
-          <details class="reveal">
-            <summary>What kind of invoice do I get?</summary>
-            <div class="answer">
-              You receive a proper business invoice, which you can expense as a business
-              cost. We'll go through the exact invoicing details on the consultation.
-            </div>
-          </details>
-          <details class="reveal">
-            <summary>Do we work online or in person?</summary>
-            <div class="answer">
-              I work entirely online — we design and set everything up over video call, so
-              wherever you are, we can work together.
-            </div>
-          </details>
-          <details class="reveal">
-            <summary>What's the difference between you and an "AI academy" type course?</summary>
-            <div class="answer">
-              An AI academy teaches. You learn from them, and you build the system yourself.
-              If you have the time and the appetite to build it yourself, that's a fine
-              path too. I build it for you. Meanwhile you coach. In 2–4 weeks you have a
-              working system without having had to become a tech expert.
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="final" id="kapcsolat">
+    <!-- 9. FINAL CTA -->
+    <section class="final" id="contact">
       <div class="wrap narrow">
-        <h2>Let's talk.</h2>
-        <p>Fill it in in a few seconds and I'll get back to you within one business day. No sales pitch.</p>
-        <p>
-          We'll look at where you lose the most time, and decide together which package
-          (if any) fits you.
-        </p>
+        <h2>Better systems create more space to grow.</h2>
+        <p>QuietStack helps service businesses simplify operations and reclaim time through practical automation systems.</p>
+        <p>Book a free strategy call. We'll map where your operations leak time, and decide together whether a system makes sense for you. No pitch.</p>
         <form class="lead-form" id="leadForm">
           <div class="lf-row">
             <label for="lf-nev">Your name</label>
@@ -1498,28 +950,29 @@
             <input type="tel" id="lf-telefon" name="telefon" required autocomplete="tel" placeholder="+43 660 123 4567" />
           </div>
           <div class="lf-row">
-            <label for="lf-terulet">What do you do?</label>
+            <label for="lf-terulet">What's your business?</label>
             <select id="lf-terulet" name="terulet" required>
               <option value="" disabled selected>Choose...</option>
               <option>Coach</option>
-              <option>Online teacher</option>
-              <option>Digital product</option>
+              <option>Consultant</option>
+              <option>Agency</option>
+              <option>Online service business</option>
               <option>Other</option>
             </select>
           </div>
           <div class="lf-row">
-            <label for="lf-idorablo">What's your biggest time-drain right now? (optional)</label>
+            <label for="lf-idorablo">Where does your operation lose the most time? (optional)</label>
             <textarea id="lf-idorablo" name="idorablo" rows="3" placeholder="A few words is enough."></textarea>
           </div>
           <div class="lf-consent">
             <input type="checkbox" id="lf-hozzajarulas" name="hozzajarulas" required />
             <label for="lf-hozzajarulas">I consent to QuietStack processing the data I provide in order to respond to my enquiry. Details in the <a href="../adatvedelem.html" target="_blank" rel="noopener">Privacy Policy</a>.</label>
           </div>
-          <button type="submit" class="btn btn-accent">Send →</button>
+          <button type="submit" class="btn btn-accent">Book a Strategy Call →</button>
         </form>
         <div class="lf-success" id="leadSuccess">
-          <h3>Thank you, I've got it!</h3>
-          <p>I'll get back to you by email soon, within one business day at the latest.</p>
+          <h3>Thank you — I've got it.</h3>
+          <p>I'll be in touch by email within one business day to schedule your call.</p>
         </div>
       </div>
     </section>
@@ -1534,13 +987,13 @@
             <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
             QuietStack
           </div>
-          <p>QuietStack is a service by Entropy Breakers: AI systems for coaches and online service businesses.</p>
+          <p>Quiet systems. Scalable operations.</p>
         </div>
         <div class="footer-col">
           <p>
             Email: <a href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a><br />
-            Phone: <a href="tel:+436606258973">+43 660 625 8973</a><br />
-            Online service, wherever you are
+            A service by Entropy Breakers<br />
+            Online — wherever you are
           </p>
         </div>
       </div>
@@ -1562,7 +1015,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
 
-    document.querySelectorAll(".grid-3, .steps, .pricing, .proof-grid, .faq, .ps-list").forEach(function (group) {
+    document.querySelectorAll(".grid-3, .grid-4, .steps, .proof-grid").forEach(function (group) {
       var i = 0;
       group.querySelectorAll(":scope > .reveal").forEach(function (el) {
         el.style.transitionDelay = (i++ * 80) + "ms";
@@ -1631,63 +1084,6 @@
       }
       setInterval(tick, 1150);
     })();
-
-    var rate = document.getElementById("rate");
-    var hours = document.getElementById("hours");
-    var rateOut = document.getElementById("rateOut");
-    var hoursOut = document.getElementById("hoursOut");
-    var weeklyEl = document.getElementById("weekly");
-    var monthlyEl = document.getElementById("monthly");
-    var pbStarter = document.getElementById("pbStarter");
-    var pbEngine = document.getElementById("pbEngine");
-    var pbPremium = document.getElementById("pbPremium");
-
-    function eur(n) { return "€" + Math.round(n).toLocaleString("en-US"); }
-    function fillTrack(el) {
-      var p = (el.value - el.min) / (el.max - el.min) * 100;
-      el.style.background = "linear-gradient(90deg, var(--accent) " + p + "%, var(--border) " + p + "%)";
-    }
-    function payback(price, weekly) {
-      var w = price / weekly;
-      return "≈ " + w.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + " weeks";
-    }
-    function update() {
-      var r = +rate.value, h = +hours.value, weekly = r * h;
-      rateOut.textContent = eur(r);
-      hoursOut.textContent = h + " hrs";
-      weeklyEl.textContent = eur(weekly);
-      monthlyEl.textContent = eur(weekly * 4.33);
-      pbStarter.textContent = payback(990, weekly);
-      pbEngine.textContent = payback(2900, weekly);
-      pbPremium.textContent = payback(4900, weekly);
-      fillTrack(rate); fillTrack(hours);
-    }
-    rate.addEventListener("input", update);
-    hours.addEventListener("input", update);
-    update();
-
-    function countUp(el, target) {
-      if (reduceMotion) { el.textContent = eur(target); return; }
-      var start = performance.now(), dur = 900;
-      function frame(now) {
-        var t = Math.min((now - start) / dur, 1);
-        var eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = eur(target * eased);
-        if (t < 1) requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
-    }
-    var calcIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          var weekly = +rate.value * +hours.value;
-          countUp(weeklyEl, weekly);
-          countUp(monthlyEl, weekly * 4.33);
-          calcIO.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.35 });
-    calcIO.observe(document.getElementById("calcBox"));
 
     (function () {
       var DESIGN_W = 1180, DESIGN_H = 740;
