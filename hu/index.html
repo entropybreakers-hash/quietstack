@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="_LHq5VtecCeOIMMJE-UxyjANxRzvzcrU1Lcttiz5zYU" />
 
-  <title>QuietStack | More qualified clients. Less operational chaos.</title>
-  <meta name="description" content="QuietStack builds practical AI systems and automation workflows that help service businesses save time, streamline operations and improve client flow. Book a strategy call." />
+  <title>QuietStack: AI rendszerek coachoknak és digitális szolgáltatóknak | Kevesebb admin, több coaching</title>
+  <meta name="description" content="AI-alapú ügyfélkezelő rendszerek coachoknak, online tanároknak és digitális termékek eladóinak. Heti 10+ óra felszabadítás. Ingyenes konzultáció." />
   <meta name="theme-color" content="#F3F4F6" />
 
-  <meta property="og:title" content="QuietStack | More qualified clients. Less operational chaos." />
-  <meta property="og:description" content="Practical AI systems and automation for service businesses. Quiet systems. Scalable operations." />
+  <meta property="og:title" content="QuietStack: AI rendszerek coachoknak és digitális szolgáltatóknak" />
+  <meta property="og:description" content="A rendszer kiszolgál Téged, nem fordítva." />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content="https://quietstack.entropybreakers.com/en/" />
+  <meta property="og:locale" content="hu_HU" />
+  <meta property="og:url" content="https://quietstack.entropybreakers.com/hu/" />
+    <link rel="alternate" hreflang="en" href="https://quietstack.entropybreakers.com/" />
+    <link rel="alternate" hreflang="hu" href="https://quietstack.entropybreakers.com/hu/" />
+    <link rel="alternate" hreflang="x-default" href="https://quietstack.entropybreakers.com/" />
   <meta property="og:image" content="https://quietstack.entropybreakers.com/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="QuietStack: AI systems for coaches & service businesses" />
+  <meta property="og:image:alt" content="QuietStack: AI-rendszerek coachoknak és digitális szolgáltatóknak" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://quietstack.entropybreakers.com/assets/og-image.jpg" />
 
@@ -96,6 +99,8 @@
     .logo-mark span:nth-child(2) { opacity: 0.7; }
     .logo-mark span:nth-child(3) { opacity: 0.45; }
     .nav-links { display: flex; gap: 30px; align-items: center; }
+    .nav-lang { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 4px 11px; }
+    .nav-lang:hover { color: var(--text); border-color: var(--accent); }
     .nav-links a:not(.btn) { color: var(--muted); font-size: 0.96rem; font-weight: 500; transition: color 0.15s; }
     .nav-links a:not(.btn):hover { color: var(--text); }
     .nav .btn { padding: 11px 22px; font-size: 0.95rem; }
@@ -298,7 +303,7 @@
     .pain-story p.em { color: #fff; font-family: var(--serif); font-size: 1.5rem; line-height: 1.4; margin: 22px 0; }
     .pain-story p.last { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; margin-top: 22px; }
 
-    /* Problem / solution */
+    /* Probléma / megoldás */
     .ps-list { display: flex; flex-direction: column; gap: 16px; max-width: 940px; margin: 0 auto; }
     .ps-row { display: grid; grid-template-columns: 1fr 58px 1fr; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
     .ps-cell { padding: 24px 26px; }
@@ -329,21 +334,6 @@
 
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     @media (max-width: 880px) { .grid-3 { grid-template-columns: 1fr; } }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
-    @media (max-width: 980px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 560px) { .grid-4 { grid-template-columns: 1fr; } }
-    .steps.cols-3 { grid-template-columns: repeat(3, 1fr); }
-    @media (max-width: 880px) { .steps.cols-3 { grid-template-columns: 1fr; } }
-    .problem-close { text-align: center; max-width: 680px; margin: 50px auto 0; font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 1.7rem); line-height: 1.4; color: var(--text); }
-    .ba-list { list-style: none; padding: 0; margin: 16px 0 0; }
-    .ba-list li { position: relative; padding-left: 26px; margin-bottom: 12px; color: var(--muted); }
-    .ba-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
-    .ba-list.before li { text-decoration: line-through; text-decoration-color: rgba(110,118,129,0.4); }
-    .proof-card.dark .ba-list li { color: #e6e3d8; }
-    .proof-card.dark .ba-list li::before { background: #5fbf6a; box-shadow: 0 0 9px rgba(95,191,106,0.6); }
-    .why-wrap { text-align: center; }
-    .why-copy { color: var(--muted); font-size: 1.1rem; line-height: 1.85; max-width: 640px; margin: 0 auto; }
-    .why-copy p { margin-bottom: 16px; }
     .card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 8px; padding: 34px 30px;
@@ -435,7 +425,7 @@
     .plan .btn { width: 100%; justify-content: center; margin-top: auto; }
     .pricing-note { text-align: center; color: var(--muted); font-size: 0.92rem; margin-top: 30px; }
 
-    /* Package flows */
+    /* Csomag-folyamatok */
     .flows { background: var(--text); position: relative; overflow: hidden; }
     .flows .wrap { position: relative; z-index: 1; }
     .flows .section-tag { color: var(--accent); }
@@ -691,236 +681,726 @@
         QuietStack
       </a>
       <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#process">How it works</a>
-        <a href="#why">Why QuietStack</a>
-        <a href="#work">Work</a>
-        <a href="#contact" class="btn btn-accent">Book a Strategy Call</a>
+        <a href="#kiknek">Kiknek szól</a>
+        <a href="#folyamat">Hogyan működik</a>
+        <a href="#csomagok">Csomagok</a>
+        <a href="#gyik">GYIK</a>
+        <a href="/" class="nav-lang">EN</a>
+        <a href="#kapcsolat" class="btn btn-accent">Ingyenes konzultáció</a>
       </nav>
     </div>
   </header>
 
   <main>
 
-    <!-- 1. HERO -->
     <section class="hero">
-      <div class="hero-live-wrap"><span class="hero-live"><i aria-hidden="true"></i>Live system</span></div>
+      <div class="hero-live-wrap"><span class="hero-live"><i aria-hidden="true"></i>Élő rendszer</span></div>
       <div class="hero-copy hero-head">
-        <span class="eyebrow">AI systems &amp; automation for service businesses</span>
         <h1>
-          <span class="line1">More qualified clients.</span>
-          <span class="line2">Less operational chaos.</span>
+          <span class="line1">Az állandó chateléstől</span>
+          <span class="line2">az automata ügyfélútig.</span>
         </h1>
-        <p class="lead">
-          QuietStack builds practical AI systems and automation workflows that help
-          service businesses save time, streamline operations and improve client flow.
-        </p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-accent">Book a Strategy Call →</a>
-          <a href="#services" class="btn btn-ghost">View Systems</a>
-        </div>
       </div>
-      <div class="hero-visual reveal" style="max-width:560px; margin:34px auto 0; padding:0 24px;">
-        <div class="hero-panel">
-          <div class="hp-head">
-            <span class="hp-title">Client flow</span>
-            <span class="hp-live"><span class="hp-live-dot"></span>Live</span>
+      <div class="hero-stage">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <img class="hero-portrait" src="../assets/new-hero.webp" alt="Baranyi Bettina, a QuietStack alapítója" onerror="this.remove()" />
+      </div>
+      <div class="hero-copy hero-foot reveal">
+        <div class="hero-cta">
+          <a href="#kapcsolat" class="btn btn-accent">Ingyenes 20 perces konzultáció →</a>
+        </div>
+        <span class="eyebrow">AI rendszerek &middot; coachoknak és digitális szolgáltatóknak</span>
+        <p class="lead">
+          Claude AI-alapú rendszerek coachoknak, amelyek teljesen átveszik a repetitív
+          háttérmunkát. Szerezd vissza a fókuszodat, és foglalkozz újra a coachinggal,
+          ne az adminisztrációval.
+        </p>
+      </div>
+    </section>
+
+    <section class="pain" id="pain">
+      <div class="wrap">
+        <span class="section-tag reveal">A te történeted</span>
+        <h2 class="section-title reveal" style="color:#fff;">Te is ezen mész át?</h2>
+        <div class="pain-layout">
+          <div class="reveal">
+            <p class="pain-headline">A növekedés többet ígért. Több munkát adott.</p>
+            <div class="pain-story">
+              <p>Mentor vagyok. Növekedni akartam: több ügyfél, több bevétel, több szabadság.</p>
+              <p>
+                De minden új ügyfél új adminisztrációt hozott. E-mailek. Időpontok.
+                Számlák. Utánkövetés. Az estéim ezzel teltek, a hétvégéim is. Fáradtan
+                ébredtem, és kipipálatlan listával feküdtem le. Nem volt szabadidőm.
+                Nem volt csendem.
+              </p>
+              <p>
+                Közben tudtam: tartalmat kéne gyártanom, posztolni, láthatónak lennem.
+                Egy coach abból él, hogy látszik. De mire a napi adminon átrágtam magam,
+                nem maradt energiám. Kevesebb tartalom, kevesebb elérés, kevesebb érdeklődő.
+              </p>
+              <p class="em">Az adminisztráció nem csak az időmet vette el. A növekedésemet is.</p>
+              <p>
+                Aztán megépítettem magamnak a saját AI-rendszerem. A háttérmunka magától
+                ment. Nekem maradt időm a tartalomra, a diákjaimra és magamra.
+              </p>
+              <p class="last">Ezt szeretném megépíteni Neked is.</p>
+            </div>
           </div>
-          <div class="hp-flow">
-            <div class="hp-line"><div class="hp-line-fill" id="hpFill"></div></div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
-              <span class="hp-label">Lead captured &amp; qualified</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-              <span class="hp-label">Automated follow-up sent</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h6"/></svg></span>
-              <span class="hp-label">Onboarding completed</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
-              <span class="hp-label">Payment processed</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span>
-              <span class="hp-label">Client active &amp; tracked</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-          </div>
-          <div class="hp-foot">
-            <span class="hp-foot-num" id="hpHours">10+</span>
-            <span class="hp-foot-label">hours reclaimed every week</span>
+          <div class="pain-photo reveal">
+            <img src="../assets/tortenet.webp" alt="Baranyi Bettina, a QuietStack alapítója" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. THE PROBLEM -->
-    <section class="band" id="problem">
+    <section id="megoldas">
       <div class="wrap">
-        <span class="section-tag reveal">The problem</span>
-        <h2 class="section-title reveal">Growth becomes exhausting when everything depends on manual work.</h2>
-        <p class="section-sub reveal">The symptoms look different, but the cause is always the same: operations held together by hand.</p>
+        <span class="section-tag reveal">Probléma és megoldás</span>
+        <h2 class="section-title reveal">Ismerős a napi küzdelem?</h2>
+        <p class="section-sub reveal">Ezekkel birkózik a legtöbb coach nap mint nap, és pontosan így veszi le a válladról a QuietStack.</p>
+        <div class="ps-list">
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Naponta órákat töltesz e-mailek megválaszolásával és időpont-egyeztetéssel.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>Egy AI-asszisztens és automata foglalórendszer kezeli a megkereséseket, éjjel-nappal, helyetted.</p>
+            </div>
+          </div>
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Minden új ügyfél beléptetése külön kézi munka: szerződés, fizetés, első időpont.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>Egyetlen automatikus folyamat vezet végig mindent, az érdeklődéstől az első alkalomig.</p>
+            </div>
+          </div>
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Elúsznak a számlák, és utánajárás kell, hogy mindenki befizetett-e.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>Számlázás-integráció automatikus fizetéskövetéssel, így a pénzügy magától halad.</p>
+            </div>
+          </div>
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Az adminisztráció elviszi az idődet a tartalomgyártástól. Kevesebb poszt, kevesebb elérés, kevesebb új érdeklődő.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>AI-tartalommotor, amely folyamatosan ötletet és vázlatot ad, így rendszeresen tudsz posztolni, és látható maradsz.</p>
+            </div>
+          </div>
+          <div class="ps-row reveal">
+            <div class="ps-cell ps-problem">
+              <span class="ps-label p">A probléma</span>
+              <p>Minden új ügyfél több stresszt hoz, nem több szabadságot.</p>
+            </div>
+            <div class="ps-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="ps-cell ps-solution">
+              <span class="ps-label s">A megoldás</span>
+              <p>A rendszer átveszi az ismétlődő munkát, így úgy skálázol, hogy közben marad időd élni.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kiknek" class="band">
+      <div class="wrap">
+        <span class="section-tag reveal">Kiknek szól</span>
+        <h2 class="section-title reveal">Neked való, ha…</h2>
+        <p class="section-sub reveal">Három tipikus helyzet, valószínűleg magadra ismersz az egyikben.</p>
         <div class="grid-3">
           <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <h3>Leads slip away</h3>
-            <p>Enquiries vanish into scattered chats and inboxes before anyone follows up.</p>
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
+            <h3>Online coach vagy tanár</h3>
+            <p>
+              Egyéni ügyfelekkel dolgozol. Heti 10+ órát viszel el az adminisztráció
+              (e-mail, időpontok, házi feladat, számlázás). Tudod, hogy a rendszered
+              rosszul működik, de nem tudod, hol kezdj hozzá.
+            </p>
           </div>
           <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/><path d="M12 8v4l3 2"/></svg></div>
-            <h3>Inconsistent follow-ups</h3>
-            <p>Some prospects hear back in minutes, others never — and you can't tell which.</p>
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 7v10M3 9.5v5M17.5 7v10M21 9.5v5M6.5 12h11"/></svg></div>
+            <h3>Fitness-, egészség- vagy wellness-coach</h3>
+            <p>
+              Online programokat vezetsz. Edzésterveket, étrendet, heti visszajelzést
+              kérnek tőled. Túl sokat dolgozol, és minden új ügyfél extra terhet jelent,
+              nem szabadságot.
+            </p>
           </div>
           <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/><circle cx="12" cy="12" r="2.5"/></svg></div>
-            <h3>Repetitive onboarding</h3>
-            <p>Every new client means the same manual steps, typed out by hand again.</p>
-          </div>
-          <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="9" r="2.4"/><circle cx="9" cy="18" r="2.4"/><path d="M8 7l8 1.5M8.5 16l8-6"/></svg></div>
-            <h3>Scattered communication</h3>
-            <p>Messages spread across email, DMs, notes and tools that don't talk to each other.</p>
-          </div>
-          <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></div>
-            <h3>Operational overload</h3>
-            <p>The business runs on your attention instead of running on systems.</p>
-          </div>
-          <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
-            <h3>Too many tools, no system</h3>
-            <p>A dozen apps, none of them connected into one reliable workflow.</p>
-          </div>
-        </div>
-        <p class="problem-close reveal">Most businesses don't need more hustle.<br />They need better operational structure.</p>
-      </div>
-    </section>
-
-    <!-- 3. THE TRANSFORMATION -->
-    <section id="transformation">
-      <div class="wrap">
-        <span class="section-tag reveal">The shift</span>
-        <h2 class="section-title reveal">Quiet systems create scalable businesses.</h2>
-        <p class="section-sub reveal">The same business, before and after the operational layer is in place.</p>
-        <div class="proof-grid">
-          <div class="proof-card reveal">
-            <h3>Before</h3>
-            <ul class="ba-list before">
-              <li>Constant admin</li>
-              <li>Reactive communication</li>
-              <li>Disorganised workflows</li>
-              <li>An overwhelmed founder</li>
-            </ul>
-          </div>
-          <div class="proof-card dark reveal">
-            <h3>After</h3>
-            <ul class="ba-list">
-              <li>Structured client flow</li>
-              <li>Automated follow-ups</li>
-              <li>Smoother onboarding</li>
-              <li>More available time</li>
-              <li>Scalable operations</li>
-            </ul>
+            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
+            <h3>Digitális termékek eladója</h3>
+            <p>
+              E-könyvet, kurzust, sabloncsomagot árulsz. A marketing, az ügyfélkezelés
+              és a fizetések követése szétfeszít. Hallottál az AI-eszközökről, de nem
+              tudod, hogyan állnak össze egy működő rendszerré.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. SERVICES -->
-    <section class="band" id="services">
-      <div class="wrap">
-        <span class="section-tag reveal">Services</span>
-        <h2 class="section-title reveal">What QuietStack helps with</h2>
-        <p class="section-sub reveal">Four core systems that quietly run the operational side of your business.</p>
-        <div class="grid-4">
-          <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M12 3v9l5 3"/></svg></div>
-            <h3>Lead Handling Systems</h3>
-            <p>Automated qualification, follow-ups and booking workflows so no enquiry goes cold.</p>
+    <section id="rolam">
+      <div class="wrap about-grid">
+        <div class="reveal">
+          <div class="photo-slot" data-ph="Baranyi Bettina portréfotója">
+            <img src="../assets/kivagyok.webp" alt="Baranyi Bettina, a QuietStack alapítója" onerror="this.remove()" />
           </div>
-          <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h4"/></svg></div>
-            <h3>Client Onboarding</h3>
-            <p>Structured onboarding systems that reduce manual communication and first-week friction.</p>
-          </div>
-          <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3 1a7 7 0 0 0-2-1.2L16 2H8l-.6 2.5a7 7 0 0 0-2 1.2l-2.3-1-2 3.4 2 1.5A7 7 0 0 0 3 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.3-1c.6.5 1.3.9 2 1.2L8 22h8l.6-2.5c.7-.3 1.4-.7 2-1.2l2.3 1 2-3.4-2-1.5c.1-.4.1-.8.1-1.2z"/></svg></div>
-            <h3>Operational Automation</h3>
-            <p>Cutting repetitive admin through practical workflows and integrations between your tools.</p>
-          </div>
-          <div class="card reveal">
-            <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 10h6M9 13h3"/></svg></div>
-            <h3>AI-Assisted Communication</h3>
-            <p>Smarter systems for consistent client communication, replies and support.</p>
-          </div>
+        </div>
+        <div class="about-text reveal">
+          <span class="section-tag" style="text-align:left;">Rólam</span>
+          <h2>Ki vagyok?</h2>
+          <p>Bettina vagyok. Mentor, aki rendszereket épít.</p>
+          <p>
+            Hét éve európai szakembereket készítek fel az angol nyelvre: pszichológusokat,
+            mérnököket, marketingeseket, logisztikai szakembereket, az alapoktól egészen
+            C1 szintig. Nem tankönyvi angolra, hanem valódi, magabiztos megszólalásra.
+          </p>
+          <p>
+            Több mint 500 tanuló jutott át nálam a „nem tudok megszólalni" falon. És
+            sosem csak nyelvórákat adtam: a tanításom mögött mindig egy teljes rendszer
+            állt. Saját platform, AI-visszajelzés, Notion-diákoldal, személyre szabott
+            anyagok. Mert hiszem, hogy nincs „nyelvtehetség", csak jó vagy rossz módszer.
+          </p>
+          <p>
+            Egy ponton rájöttem: amit a tanításban felépítettem, az bármelyik szolgáltató
+            vállalkozásban ugyanúgy működik. Megtanultam AI-val rendszereket építeni,
+            előbb magamnak, aztán más platformokra is. Ma ezt adom tovább a QuietStackkel:
+            neked építem fel azt a rendszert, ami leveszi a válladról az adminisztrációt,
+            hogy arra jusson időd, amit szeretsz: a coachingra, a tanításra, az ügyfeleidre.
+          </p>
+          <p class="punch">
+            Nem programozó vagyok, hanem mentor. És pont ezért értem meg, min mész át.
+          </p>
+          <p style="margin-top:24px;">
+            <a href="#kapcsolat" class="btn btn-accent">Foglalj konzultációt →</a>
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- 5. HOW IT WORKS -->
-    <section id="process">
+    <section id="folyamat" class="band">
       <div class="wrap">
-        <span class="section-tag reveal">How it works</span>
-        <h2 class="section-title reveal">Simple systems. Clear implementation.</h2>
-        <p class="section-sub reveal">Three steps from operational bottlenecks to streamlined workflows.</p>
-        <div class="steps cols-3">
+        <span class="section-tag reveal">A folyamat</span>
+        <h2 class="section-title reveal">Hogyan dolgozunk együtt</h2>
+        <p class="section-sub reveal">Négy átlátható lépés a beszélgetéstől a működő rendszerig.</p>
+        <div class="steps">
           <div class="step reveal">
             <div class="step-num">1</div>
-            <h3>Audit</h3>
-            <p>Understanding your operational bottlenecks and the gaps in your current workflows.</p>
+            <div class="step-meta">20 perc</div>
+            <h3>Ingyenes konzultáció</h3>
+            <p>
+              Egy 20 perces beszélgetés. Nem értékesítés. Megnézzük, hol veszíted el a
+              legtöbb időt, és hogy melyik csomag való a Te vállalkozásodnak. Vagy szólok,
+              ha mégsem én vagyok a jó választás Neked.
+            </p>
           </div>
           <div class="step reveal">
             <div class="step-num">2</div>
-            <h3>System Design</h3>
-            <p>Building a practical automation structure designed around how your business actually works.</p>
+            <div class="step-meta">1 hét</div>
+            <h3>Rendszer-tervezés</h3>
+            <p>
+              A Te szakmádra és a Te ügyfeleidre tervezem a rendszert. Felmérem, mi
+              maradhat kézi munka (amit szeretsz csinálni), és mit automatizálunk
+              (amit utálsz).
+            </p>
           </div>
           <div class="step reveal">
             <div class="step-num">3</div>
-            <h3>Implementation</h3>
-            <p>Creating streamlined workflows that save time and improve day-to-day operations.</p>
+            <div class="step-meta">1–3 hét</div>
+            <h3>Építés</h3>
+            <p>
+              Megépítem a rendszert: AI, automatizációs eszközök, integráció a meglévő
+              eszközeiddel (Google, Számlázz.hu, Stripe, Calendly stb.). Te közben
+              folytatod a coachingot.
+            </p>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">4</div>
+            <div class="step-meta">Átadás</div>
+            <h3>Betanítás és átadás</h3>
+            <p>
+              1–3 órás közös beüzemelés. Megmutatom, hogyan működik. Az első hónapban
+              folyamatos támogatás, minden kérdésedre válaszolok.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. WHY QUIETSTACK -->
-    <section class="band" id="why">
-      <div class="wrap narrow why-wrap">
-        <span class="section-tag reveal">Why QuietStack</span>
-        <h2 class="section-title reveal">Built for clarity, not complexity.</h2>
-        <div class="why-copy reveal">
-          <p>Most businesses are overwhelmed by tools, notifications and fragmented processes.</p>
-          <p>QuietStack focuses on building systems that feel calm, structured and sustainable.</p>
-          <p>The goal isn't adding more technology. It's reducing operational noise so you can focus on growth, clients and high-value work.</p>
+    <section id="eszkozok">
+      <div class="wrap">
+        <span class="section-tag reveal">Eszközök</span>
+        <h2 class="section-title reveal">Bevált eszközökre építek</h2>
+        <p class="section-sub reveal">A rendszered megbízható, iparágilag elterjedt eszközökre épül, amiket sokan ismernek és használnak. Semmi egzotikus, semmi átláthatatlan.</p>
+        <div class="tool-chips reveal">
+          <span class="tool-chip">Claude Code</span>
+          <span class="tool-chip">Supabase</span>
+          <span class="tool-chip">GitHub</span>
+          <span class="tool-chip">Vercel</span>
+          <span class="tool-chip">Make.com</span>
+          <span class="tool-chip">Calendly</span>
+          <span class="tool-chip">Airtable</span>
+          <span class="tool-chip">Stripe</span>
         </div>
       </div>
     </section>
 
-    <!-- 7 + 8. WORK / CASE STUDY -->
-    <section id="work">
+    <section class="flows">
       <div class="wrap">
-        <span class="section-tag reveal">Selected work</span>
-        <h2 class="section-title reveal">Systems that already run in the real world</h2>
-        <p class="section-sub reveal">Before building for clients, I built and operate these systems myself.</p>
+        <span class="section-tag reveal">Amit megkapsz</span>
+        <h2 class="section-title reveal">Mit építek be Neked?</h2>
+        <p class="section-sub reveal">Mindent a saját fiókjaidba építek fel, és átadom. A rendszer a tiéd marad. Csomagonként ezt kapod kézhez.</p>
+        <div class="flow-panels">
+
+          <div class="flow-panel reveal">
+            <div class="fp-head">
+              <div class="fp-head-top">
+                <span class="fp-name">Starter</span>
+                <span class="fp-live" aria-hidden="true"><span class="fp-live-dot"></span>élő</span>
+              </div>
+              <span class="fp-tag">Az alaprendszer</span>
+            </div>
+            <div class="fp-flow">
+              <div class="fp-line"><div class="fp-line-fill"></div></div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></span>
+                <span class="fp-label">Profi bemutatkozó (landing) oldal</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+                <span class="fp-label">Időpontfoglaló automatikus emlékeztetőkkel</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h6"/></svg></span>
+                <span class="fp-label">Onboarding kérdőív, adatbázisba rendezve</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+                <span class="fp-label">5 automatikus e-mail-sablon</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 5.4L19.5 10l-5.4 1.6L12 17l-2.1-5.4L4.5 10l5.4-1.6z"/></svg></span>
+                <span class="fp-label">AI-asszisztens a gyakori kérdésekre</span>
+              </div>
+            </div>
+            <div class="fp-foot">heti 3–5 óra felszabadítva</div>
+          </div>
+
+          <div class="flow-panel featured reveal">
+            <div class="fp-head">
+              <div class="fp-head-top">
+                <span class="fp-name">Engine</span>
+                <span class="fp-live" aria-hidden="true"><span class="fp-live-dot"></span>élő</span>
+              </div>
+              <span class="fp-tag">A teljes ügyfélkezelő motor</span>
+            </div>
+            <p class="fp-prev">Minden a Starterből, és:</p>
+            <div class="fp-flow">
+              <div class="fp-line"><div class="fp-line-fill"></div></div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5M9 12h6M9 16h6"/></svg></span>
+                <span class="fp-label">Teljes ügyfélfogadás: űrlap, szerződés, fizetés</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+                <span class="fp-label">AI-asszisztált e-mail-válaszok a stílusodban</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
+                <span class="fp-label">Számlázás-integráció fizetéskövetéssel</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span>
+                <span class="fp-label">Ügyfél-haladást követő felület</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 3h16z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg></span>
+                <span class="fp-label">Heti automatikus visszajelző e-mail az ügyfeleknek</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M14 6l4 4"/></svg></span>
+                <span class="fp-label">Tartalomnaptár AI-ötletekkel</span>
+              </div>
+            </div>
+            <div class="fp-foot">heti 10+ óra felszabadítva</div>
+          </div>
+
+          <div class="flow-panel reveal">
+            <div class="fp-head">
+              <div class="fp-head-top">
+                <span class="fp-name">Premium</span>
+                <span class="fp-live" aria-hidden="true"><span class="fp-live-dot"></span>élő</span>
+              </div>
+              <span class="fp-tag">Skálázható rendszer</span>
+            </div>
+            <p class="fp-prev">Minden az Engine-ből, és:</p>
+            <div class="fp-flow">
+              <div class="fp-line"><div class="fp-line-fill"></div></div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+                <span class="fp-label">Egyéni ügyfélportál, böngészőből, telefonra szabva</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 5.4L19.5 10l-5.4 1.6L12 17l-2.1-5.4L4.5 10l5.4-1.6z"/></svg></span>
+                <span class="fp-label">AI-generátor: edzésterv, étrend, tananyag</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3.2 2.5-5.3 5.5-5.3s5.5 2.1 5.5 5.3"/><path d="M15.6 5.3a3.2 3.2 0 0 1 0 9.2M16 14.8c2.6.3 4.5 2.3 4.5 5.2"/></svg></span>
+                <span class="fp-label">Csoportos programkezelés: kihívások, kurzusok</span>
+              </div>
+              <div class="fp-node">
+                <span class="fp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="M8.4 10.8l7.2-3.6M8.4 13.2l7.2 3.6"/></svg></span>
+                <span class="fp-label">Ajánlói program követőrendszerrel</span>
+              </div>
+            </div>
+            <div class="fp-foot">skálázható kapacitás</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="showcase" class="band">
+      <div class="wrap">
+        <span class="section-tag reveal">Sablonok</span>
+        <h2 class="section-title reveal">Így nézhet ki a Te oldalad</h2>
+        <p class="section-sub reveal">Kattints bármelyikre, és nézd meg élőben. Ezek sablonok: a Te oldalad a saját arculatoddal és szövegeddel készül el. A bemutatott személyek és vállalkozások kitaláltak.</p>
+        <div class="showcase-wrap reveal">
+          <div class="showcase-marquee">
+            <div class="showcase-row">
+
+            <a class="showcase-card" href="../sablonok/coach.html" target="_blank" rel="noopener">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/coach.html" title="Coach sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Coach bemutatkozó oldal</h3>
+                <p>Személyes márka egy fő ajánlattal és időpontfoglalással.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="../sablonok/kurzus.html" target="_blank" rel="noopener">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/kurzus.html" title="Online kurzus sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Online kurzus oldal</h3>
+                <p>Kurzus vagy program eladó oldala, modulokra bontva.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="../sablonok/termek.html" target="_blank" rel="noopener">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/termek.html" title="Digitális termék sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Digitális termék oldal</h3>
+                <p>E-book, sablon vagy letölthető termék landing oldala.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="../sablonok/foglalas.html" target="_blank" rel="noopener">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/foglalas.html" title="Konzultáció-foglaló sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Konzultáció-foglaló oldal</h3>
+                <p>Időpontfoglalásra kihegyezett, letisztult oldal.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="../sablonok/wellness.html" target="_blank" rel="noopener">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/wellness.html" title="Wellness és fitness sablon előnézete" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Wellness és fitness oldal</h3>
+                <p>Edzői oldal programokkal és átalakulás-galériával.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <!-- másolat a zökkenőmentes, folyamatos loophoz -->
+            <a class="showcase-card" href="../sablonok/coach.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/coach.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Coach bemutatkozó oldal</h3>
+                <p>Személyes márka egy fő ajánlattal és időpontfoglalással.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="../sablonok/kurzus.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/kurzus.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Online kurzus oldal</h3>
+                <p>Kurzus vagy program eladó oldala, modulokra bontva.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="../sablonok/termek.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/termek.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Digitális termék oldal</h3>
+                <p>E-book, sablon vagy letölthető termék landing oldala.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="../sablonok/foglalas.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/foglalas.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Konzultáció-foglaló oldal</h3>
+                <p>Időpontfoglalásra kihegyezett, letisztult oldal.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            <a class="showcase-card" href="../sablonok/wellness.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+              <div class="sc-frame">
+                <div class="sc-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="sc-shot">
+                  <iframe src="../sablonok/wellness.html" title="" tabindex="-1" aria-hidden="true" loading="lazy" scrolling="no"></iframe>
+                </div>
+              </div>
+              <div class="sc-cap">
+                <h3>Wellness és fitness oldal</h3>
+                <p>Edzői oldal programokkal és átalakulás-galériával.</p>
+                <span class="sc-go">Megnézem élőben →</span>
+              </div>
+            </a>
+
+            </div>
+          </div>
+        </div>
+        <div class="showcase-cta reveal">
+          <p>Ilyen oldalt szeretnél, a saját arculatoddal és szövegeddel?</p>
+          <a href="#kapcsolat" class="btn btn-accent">Beszéljük át egy ingyenes konzultáción →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="csomagok">
+      <div class="wrap">
+        <span class="section-tag reveal">Csomagok</span>
+        <h2 class="section-title reveal">Három csomag: válaszd, ami illik Hozzád</h2>
+        <p class="section-sub reveal">
+          Minden csomag egy egyszeri felépítésből és folyamatos havi üzemeltetésből áll.
+          A felépítés a kezdet. Az üzemeltetés az, ami tényleg felszabadítja az idődet:
+          a rendszert hónapról hónapra én futtatom és optimalizálom helyetted. ÁFA-mentes számlát adok.
+        </p>
+        <div class="pricing">
+
+          <div class="plan reveal">
+            <div class="tier">Starter</div>
+            <h3>Az alaprendszer</h3>
+            <div class="price">180 000 Ft<small>egyszeri díj, ÁFA-mentes</small></div>
+            <div class="time">Időigény: 1 hét munkám</div>
+            <p class="who">
+              Kezdő, vagy 1–2 éve működő coachnak / tanárnak, aki most akar kilépni a
+              káoszból. Az alaprendszer, ami <strong>heti 3–5 órát</strong> szabadít fel.
+            </p>
+            <div class="feat-label">Mit tartalmaz</div>
+            <ul>
+              <li>Egyszerű, profi bemutatkozó oldal (bemutatkozás + 1 fő ajánlat + kapcsolat)</li>
+              <li>Naptáras időpontfoglaló rendszer (Calendly) automatikus emlékeztetőkkel</li>
+              <li>5 alap e-mail-sablon automatizálva: üdvözlő, időpont-megerősítés, 24 órás emlékeztető, köszönő, visszahívó (alvó ügyfeleknek)</li>
+              <li>Új ügyfél kérdőív, a válaszok automatikusan táblázatba kerülnek</li>
+              <li>1 AI-asszisztens a leggyakoribb kérdésekre</li>
+              <li>1 órás betanítás</li>
+              <li>2 hét támogatás az átadás után</li>
+            </ul>
+            <div class="maint">Folyamatos üzemeltetés + optimalizálás: <strong>24 000 Ft / hó</strong> <small>(alapító ár)</small></div>
+            <a href="#kapcsolat" class="btn btn-ghost">Kérek Starter konzultációt →</a>
+          </div>
+
+          <div class="plan featured reveal">
+            <div class="plan-badge">Legnépszerűbb</div>
+            <div class="tier">Engine</div>
+            <h3>A teljes ügyfélkezelő motor</h3>
+            <div class="price">390 000 Ft<small>egyszeri díj, ÁFA-mentes</small></div>
+            <div class="time">Időigény: 2–3 hét munkám</div>
+            <p class="who">
+              Aktív coachnak / tanárnak 5–15 ügyféllel, aki 25–30-ra szeretne skálázni
+              anélkül, hogy belerokkanna. <strong>Heti 10+ óra</strong> felszabadítás.
+            </p>
+            <div class="feat-label">Minden a Starterből, és még</div>
+            <ul>
+              <li>Teljes ügyfélfogadási folyamat: űrlap → szerződés → fizetés → első alkalom foglalása, minden automatikusan</li>
+              <li>AI-asszisztált e-mail-válaszok a Te stílusodra hangolva</li>
+              <li>Számlázási integráció (Számlázz.hu vagy Billingo + automatikus fizetéskövetés)</li>
+              <li>Ügyfél-haladást követő felület (Notion vagy Google Sheets alapú)</li>
+              <li>Heti automatikus visszajelző e-mail az ügyfeleknek</li>
+              <li>Tartalomnaptár-sablon AI-ötletekkel (Instagram, TikTok)</li>
+              <li>2 órás betanítás (2 alkalommal)</li>
+              <li>1 hónap teljes támogatás</li>
+            </ul>
+            <div class="maint">Folyamatos üzemeltetés + optimalizálás: <strong>49 000 Ft / hó</strong> <small>(alapító ár)</small></div>
+            <a href="#kapcsolat" class="btn btn-accent">Kérek Engine konzultációt →</a>
+          </div>
+
+          <div class="plan reveal">
+            <div class="tier">Premium</div>
+            <h3>Skálázható rendszer és mentorálás</h3>
+            <div class="price">690 000 Ft<small>egyszeri díj, ÁFA-mentes</small></div>
+            <div class="time">Időigény: 3–4 hét munkám</div>
+            <p class="who">
+              Skálázni akaró coachnak / tanárnak (15+ ügyfél), vagy aki online programokat
+              is indítana. Teljes prémium rendszer + 3 hónap mentorálás tőlem.
+              <strong>Heti 10+ óra</strong> felszabadítás, skálázható kapacitással.
+            </p>
+            <div class="feat-label">Minden az Engine-ből, és még</div>
+            <ul>
+              <li>Egyéni ügyfélportál: böngészőből elérhető, telefonra optimalizált felület, saját logóddal és arculatoddal (a telefon kezdőképernyőjére is kitehető)</li>
+              <li>AI-alapú edzésterv-, étrend- és tananyag-generátor</li>
+              <li>Csoportos programkezelés (online kihívások, kurzusok)</li>
+              <li>Ajánlói program követőrendszerrel</li>
+              <li>Heti 1 órás mentorálás 3 hónapig: hogyan használd hatékonyabban, hogyan skálázz</li>
+              <li>24 órán belüli válasz 6 hónapig</li>
+              <li>Örökös elsőbbség: minden új funkció ingyen</li>
+            </ul>
+            <div class="maint">Folyamatos üzemeltetés + optimalizálás: <strong>79 000 Ft / hó</strong> <small>(alapító ár)</small></div>
+            <a href="#kapcsolat" class="btn btn-ghost">Kérek Premium konzultációt →</a>
+          </div>
+
+        </div>
+        <p class="pricing-note reveal">A havidíj nem puszta karbantartás: a teljes rendszered üzemeltetése, folyamatos optimalizálása, az új automatizációk és az AI-költség is benne van. Az alapító ár az első ügyfeleimnek szól.<br />Nem tudod, melyik a Tied? Az ingyenes konzultáción együtt eldöntjük. Ha egyik sem fedi pontosan, amit szeretnél, egyedi ajánlatot is készítek.</p>
+      </div>
+    </section>
+
+    <section class="band" id="calc">
+      <div class="wrap">
+        <span class="section-tag reveal">Megtérülés</span>
+        <h2 class="section-title reveal">Számoljuk ki, mennyit ér Neked az időd</h2>
+        <div class="calc-box reveal" id="calcBox">
+          <p class="calc-intro">Húzd a csúszkákat, és nézd meg élőben, mit jelent ez a Te számaiddal.</p>
+          <div class="calc-controls">
+            <div class="calc-field">
+              <label for="rate">Az óradíjad <output id="rateOut">15 000 Ft</output></label>
+              <input type="range" id="rate" min="5000" max="40000" step="1000" value="15000" />
+            </div>
+            <div class="calc-field">
+              <label for="hours">Hetente visszanyert idő <output id="hoursOut">10 óra</output></label>
+              <input type="range" id="hours" min="3" max="20" step="1" value="10" />
+            </div>
+          </div>
+          <div class="calc-results">
+            <div class="calc-result">
+              <span class="cr-label">Heti érték</span>
+              <span class="cr-value" id="weekly">150 000 Ft</span>
+            </div>
+            <div class="calc-result highlight">
+              <span class="cr-label">Havi többletbevétel</span>
+              <span class="cr-value" id="monthly">649 500 Ft</span>
+            </div>
+          </div>
+          <div class="calc-payback-label">Ennyi idő alatt fizeti vissza magát</div>
+          <div class="calc-rows">
+            <div class="calc-row">
+              <span class="lbl">Starter csomag: 180 000 Ft</span>
+              <span class="val" id="pbStarter">≈ 1,2 hét</span>
+            </div>
+            <div class="calc-row">
+              <span class="lbl">Engine csomag: 390 000 Ft</span>
+              <span class="val" id="pbEngine">≈ 2,6 hét</span>
+            </div>
+            <div class="calc-row">
+              <span class="lbl">Premium csomag: 690 000 Ft</span>
+              <span class="val" id="pbPremium">≈ 4,6 hét</span>
+            </div>
+          </div>
+          <p class="calc-closing">
+            És ez csak a visszanyert idő értéke. A valódi nyereség: a nyugalom, a több
+            energia, és hogy újra szereted a vállalkozásod.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="founding">
+      <div class="wrap">
+        <span class="section-tag reveal">Most indul</span>
+        <h2 class="section-title reveal">Alapító ügyfeleket fogadok</h2>
+        <p class="section-sub reveal">Egy új szolgáltatás, és egy élő példa arra, hogy működik.</p>
         <div class="proof-grid">
           <div class="proof-card reveal">
-            <h3>Case study — Coaching business onboarding</h3>
-            <p><strong>Problem.</strong> Manual onboarding and inconsistent follow-ups were eating hours every week.</p>
-            <p><strong>Solution.</strong> An automated onboarding workflow paired with a lead-qualification system.</p>
-            <p><strong>Outcome.</strong> A more structured client flow and a noticeably reduced admin workload.</p>
+            <h3>Alapító ügyfeleket fogadok 2026 nyarán</h3>
+            <p>Ez egy új szolgáltatás, most indult.</p>
+            <p>
+              Az első 5 ügyfélnek kedvezőbb áron dolgozom, cserébe részletes
+              ügyféltörténetet írunk, amelyet a későbbi ügyfelek is látnak majd.
+            </p>
+            <p>Ha érdekel egy alapító hely, beszéljünk az ingyenes konzultáción.</p>
+            <a href="#kapcsolat" class="btn btn-accent">Foglalj konzultációt →</a>
           </div>
           <div class="proof-card dark reveal">
-            <h3>Live systems I built and run</h3>
-            <p><strong>Get Client Ready</strong> — my own AI coaching platform: a 6-week programme that assesses, gives practice, and ends with a personalised action plan.</p>
-            <p><strong>Entropy Breakers</strong> — the operational backbone behind QuietStack, also built and run in-house.</p>
+            <h3>A saját rendszereim, amik működnek</h3>
+            <p>Mielőtt másoknak építek, magamnak építettem, és ma is én üzemeltetem őket.</p>
+            <p>
+              A Get Client Ready a saját AI-coachingplatformom: 6 hetes program, amely
+              felmér, gyakoroltat, és a végén személyre szabott cselekvési tervet ad.
+              3 hét alatt építettem fel.
+            </p>
+            <p>
+              Az Entropy Breakers szintén a saját kezem munkája. Ha kíváncsi vagy,
+              hogy néz ki egy működő rendszer, itt két élő referencia:
+            </p>
             <div class="proof-links">
               <a href="https://getclientready.entropybreakers.com" class="btn btn-accent" target="_blank" rel="noopener">Get Client Ready →</a>
               <a href="https://entropybreakers.com/" class="btn btn-accent" target="_blank" rel="noopener">Entropy Breakers →</a>
@@ -930,49 +1410,121 @@
       </div>
     </section>
 
-    <!-- 9. FINAL CTA -->
-    <section class="final" id="contact">
+    <section id="gyik" class="band">
+      <div class="wrap">
+        <span class="section-tag reveal">GYIK</span>
+        <h2 class="section-title reveal">Gyakori kérdések</h2>
+        <p class="section-sub reveal">Amit a legtöbben megkérdeznek, mielőtt belevágnánk.</p>
+        <div class="faq">
+          <details class="reveal">
+            <summary>Mi van, ha nem értek a technológiához?</summary>
+            <div class="answer">
+              Épp ez a lényeg. Te nem technológiai szakember akarsz lenni, te coach
+              akarsz lenni. Én építem a rendszert, te csak használod. A betanításon
+              minden gombról megmutatom, mit csinál. Ha bármi kérdésed van, írsz, és
+              válaszolok.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Milyen eszközöket használsz?</summary>
+            <div class="answer">
+              ChatGPT és Claude, Make.com (automatizáció), Calendly, Notion vagy Google
+              Sheets, Stripe, Számlázz.hu vagy Billingo, és a szakmádhoz illő egyéb
+              eszközök. A meglévő rendszereidre építünk, nem cserélünk le mindent.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Mennyi időbe telik ez nekem?</summary>
+            <div class="answer">
+              Az építés ideje alatt szinte semennyibe, azt én csinálom. 1–2 hosszabb
+              beszélgetés kell a tervezéshez (összesen kb. 2 óra), és 1–3 órás betanítás.
+              A többit én viszem. Az átadás után a rendszert havidíj keretében én
+              üzemeltetem és optimalizálom helyetted, így neked gyakorlatilag nincs vele
+              dolgod: csak használod.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Mi van, ha valami nem működik jól?</summary>
+            <div class="answer">
+              Minőségi garancia: nem pénzvisszafizetéssel dolgozom, hanem azzal, hogy
+              addig finomítom és javítom a rendszert, amíg tényleg jól szolgál Téged.
+              Ha valami nem úgy működik, ahogy megbeszéltük, kijavítom. A célom egy
+              működő rendszer, nem egy lezárt számla. Épp ezért kezdjük ingyenes
+              konzultációval: hogy mindketten biztosak legyünk benne, hogy ez Neked való.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Milyen számlát kapok?</summary>
+            <div class="answer">
+              ÁFA-mentes számlát adok. Vállalkozóként (KATA-s vagy más adózási formában)
+              költségként elszámolhatod. A számlázás pontos részleteit a konzultáción
+              átbeszéljük.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Online dolgozunk, vagy személyesen?</summary>
+            <div class="answer">
+              Teljesen online dolgozom, videohíváson tervezünk és üzemelünk be, így
+              bárhol is vagy, együtt tudunk dolgozni.
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Mi a különbség Közted és egy „AI-akadémia" típusú kurzus között?</summary>
+            <div class="answer">
+              Az AI-akadémia tanít. Te tanulsz tőlük, és Te építed meg a rendszert.
+              Ha van időd és kedved magad megépíteni, az is jó út. Én megépítem helyetted.
+              Te közben coacholsz. 2–4 hét múlva van egy működő rendszered anélkül, hogy
+              technológiai szakemberré kellett volna válnod.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final" id="kapcsolat">
       <div class="wrap narrow">
-        <h2>Better systems create more space to grow.</h2>
-        <p>QuietStack helps service businesses simplify operations and reclaim time through practical automation systems.</p>
-        <p>Book a free strategy call. We'll map where your operations leak time, and decide together whether a system makes sense for you. No pitch.</p>
+        <h2>Beszéljünk.</h2>
+        <p>Töltsd ki pár másodperc alatt, és egy munkanapon belül jelentkezem. Nem értékesítés.</p>
+        <p>
+          Megnézzük, hol veszíted el a legtöbb időt, és együtt eldöntjük, hogy melyik
+          csomag (ha bármelyik) passzol Hozzád.
+        </p>
         <form class="lead-form" id="leadForm">
           <div class="lf-row">
-            <label for="lf-nev">Your name</label>
-            <input type="text" id="lf-nev" name="nev" required autocomplete="name" placeholder="e.g. Anna Smith" />
+            <label for="lf-nev">Neved</label>
+            <input type="text" id="lf-nev" name="nev" required autocomplete="name" placeholder="Például Kovács Anna" />
           </div>
           <div class="lf-row">
-            <label for="lf-email">Your email address</label>
-            <input type="email" id="lf-email" name="email" required autocomplete="email" placeholder="anna@example.com" />
+            <label for="lf-email">E-mail-címed</label>
+            <input type="email" id="lf-email" name="email" required autocomplete="email" placeholder="anna@pelda.hu" />
           </div>
           <div class="lf-row">
-            <label for="lf-telefon">Your phone number</label>
-            <input type="tel" id="lf-telefon" name="telefon" required autocomplete="tel" placeholder="+43 660 123 4567" />
+            <label for="lf-telefon">Telefonszámod</label>
+            <input type="tel" id="lf-telefon" name="telefon" required autocomplete="tel" placeholder="+36 30 123 4567" />
           </div>
           <div class="lf-row">
-            <label for="lf-terulet">What's your business?</label>
+            <label for="lf-terulet">Mivel foglalkozol?</label>
             <select id="lf-terulet" name="terulet" required>
-              <option value="" disabled selected>Choose...</option>
+              <option value="" disabled selected>Válassz...</option>
               <option>Coach</option>
-              <option>Consultant</option>
-              <option>Agency</option>
-              <option>Online service business</option>
-              <option>Other</option>
+              <option>Online tanár</option>
+              <option>Digitális termék</option>
+              <option>Egyéb</option>
             </select>
           </div>
           <div class="lf-row">
-            <label for="lf-idorablo">Where does your operation lose the most time? (optional)</label>
-            <textarea id="lf-idorablo" name="idorablo" rows="3" placeholder="A few words is enough."></textarea>
+            <label for="lf-idorablo">Mi most a legnagyobb időrablód? (nem kötelező)</label>
+            <textarea id="lf-idorablo" name="idorablo" rows="3" placeholder="Pár szó is elég."></textarea>
           </div>
           <div class="lf-consent">
             <input type="checkbox" id="lf-hozzajarulas" name="hozzajarulas" required />
-            <label for="lf-hozzajarulas">I consent to QuietStack processing the data I provide in order to respond to my enquiry. Details in the <a href="../adatvedelem.html" target="_blank" rel="noopener">Privacy Policy</a>.</label>
+            <label for="lf-hozzajarulas">Hozzájárulok, hogy a QuietStack a megadott adataimat a megkeresésem megválaszolása céljából kezelje. Részletek az <a href="../adatvedelem.html" target="_blank" rel="noopener">Adatkezelési tájékoztatóban</a>.</label>
           </div>
-          <button type="submit" class="btn btn-accent">Book a Strategy Call →</button>
+          <button type="submit" class="btn btn-accent">Elküldöm →</button>
         </form>
         <div class="lf-success" id="leadSuccess">
-          <h3>Thank you — I've got it.</h3>
-          <p>I'll be in touch by email within one business day to schedule your call.</p>
+          <h3>Köszönöm, megkaptam!</h3>
+          <p>Hamarosan, legkésőbb egy munkanapon belül jelentkezem e-mailben.</p>
         </div>
       </div>
     </section>
@@ -987,22 +1539,22 @@
             <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
             QuietStack
           </div>
-          <p>Quiet systems. Scalable operations.</p>
+          <p>A QuietStack az Entropy Breakers szolgáltatása: AI-rendszerek coachoknak és online szolgáltatóknak.</p>
         </div>
         <div class="footer-col">
           <p>
-            Email: <a href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a><br />
-            A service by Entropy Breakers<br />
-            Online — wherever you are
+            E-mail: <a href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a><br />
+            Telefon: <a href="tel:+436606258973">+43 660 625 8973</a><br />
+            Online szolgáltatás, helytől függetlenül
           </p>
         </div>
       </div>
       <div class="footer-links">
-        <a href="../impresszum.html">Imprint</a>
-        <a href="../adatvedelem.html">Privacy Policy</a>
-        <a href="../aszf.html">Terms &amp; Conditions</a>
+        <a href="../impresszum.html">Impresszum</a>
+        <a href="../adatvedelem.html">Adatkezelési tájékoztató</a>
+        <a href="../aszf.html">ÁSZF</a>
         <a href="https://entropybreakers.com/" target="_blank" rel="noopener">Entropy Breakers</a>
-        <a href="https://getclientready.entropybreakers.com" target="_blank" rel="noopener">Get Client Ready</a>
+        <a href="https://getclientready.entropybreakers.com" target="_blank" rel="noopener">Get Client Ready (angol)</a>
       </div>
       <div class="footer-bottom">
         © <span id="year"></span> Entropy Breakers
@@ -1015,7 +1567,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
 
-    document.querySelectorAll(".grid-3, .grid-4, .steps, .proof-grid").forEach(function (group) {
+    document.querySelectorAll(".grid-3, .steps, .pricing, .proof-grid, .faq, .ps-list").forEach(function (group) {
       var i = 0;
       group.querySelectorAll(":scope > .reveal").forEach(function (el) {
         el.style.transitionDelay = (i++ * 80) + "ms";
@@ -1085,6 +1637,63 @@
       setInterval(tick, 1150);
     })();
 
+    var rate = document.getElementById("rate");
+    var hours = document.getElementById("hours");
+    var rateOut = document.getElementById("rateOut");
+    var hoursOut = document.getElementById("hoursOut");
+    var weeklyEl = document.getElementById("weekly");
+    var monthlyEl = document.getElementById("monthly");
+    var pbStarter = document.getElementById("pbStarter");
+    var pbEngine = document.getElementById("pbEngine");
+    var pbPremium = document.getElementById("pbPremium");
+
+    function huf(n) { return Math.round(n).toLocaleString("hu-HU") + " Ft"; }
+    function fillTrack(el) {
+      var p = (el.value - el.min) / (el.max - el.min) * 100;
+      el.style.background = "linear-gradient(90deg, var(--accent) " + p + "%, var(--border) " + p + "%)";
+    }
+    function payback(price, weekly) {
+      var w = price / weekly;
+      return "≈ " + w.toLocaleString("hu-HU", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + " hét";
+    }
+    function update() {
+      var r = +rate.value, h = +hours.value, weekly = r * h;
+      rateOut.textContent = huf(r);
+      hoursOut.textContent = h + " óra";
+      weeklyEl.textContent = huf(weekly);
+      monthlyEl.textContent = huf(weekly * 4.33);
+      pbStarter.textContent = payback(180000, weekly);
+      pbEngine.textContent = payback(390000, weekly);
+      pbPremium.textContent = payback(690000, weekly);
+      fillTrack(rate); fillTrack(hours);
+    }
+    rate.addEventListener("input", update);
+    hours.addEventListener("input", update);
+    update();
+
+    function countUp(el, target) {
+      if (reduceMotion) { el.textContent = huf(target); return; }
+      var start = performance.now(), dur = 900;
+      function frame(now) {
+        var t = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = huf(target * eased);
+        if (t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+    var calcIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var weekly = +rate.value * +hours.value;
+          countUp(weeklyEl, weekly);
+          countUp(monthlyEl, weekly * 4.33);
+          calcIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    calcIO.observe(document.getElementById("calcBox"));
+
     (function () {
       var DESIGN_W = 1180, DESIGN_H = 740;
       var shots = document.querySelectorAll(".sc-shot");
@@ -1111,12 +1720,12 @@
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!WEBHOOK) {
-          alert("The form is going live soon. In the meantime, please email baranyibettina@entropybreakers.com and I'll get back to you.");
+          alert("Az űrlap hamarosan élesedik. Addig kérlek írj a baranyibettina@entropybreakers.com címre, és jelentkezem.");
           return;
         }
         var orig = btn.textContent;
         btn.disabled = true;
-        btn.textContent = "Sending...";
+        btn.textContent = "Küldés...";
         fetch(WEBHOOK, { method: "POST", mode: "no-cors", body: new FormData(form) })
           .then(function () {
             form.style.display = "none";
@@ -1126,7 +1735,7 @@
           .catch(function () {
             btn.disabled = false;
             btn.textContent = orig;
-            alert("Something went wrong while sending. Please try again, or email baranyibettina@entropybreakers.com.");
+            alert("Hiba történt a küldéskor. Kérlek próbáld újra, vagy írj a baranyibettina@entropybreakers.com címre.");
           });
       });
     })();
