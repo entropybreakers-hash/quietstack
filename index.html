@@ -135,7 +135,7 @@
     .hero-label { display: inline-block; font-family: var(--mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); opacity: 0.85; margin-bottom: 26px; }
     .hero-right { position: relative; }
     .hero-portrait-wrap { position: relative; }
-    .hero-portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 72% center; border-radius: 16px; border: 1px solid rgba(170,190,230,0.14); box-shadow: 0 50px 100px -52px rgba(0,0,0,0.88); filter: grayscale(0.12) contrast(1.04) brightness(0.94); }
+    .hero-portrait { display: block; width: 100%; aspect-ratio: 4 / 4.2; object-fit: cover; object-position: 50% 88%; border-radius: 16px; border: 1px solid rgba(170,190,230,0.14); box-shadow: 0 50px 100px -52px rgba(0,0,0,0.88); filter: grayscale(0.12) contrast(1.04) brightness(0.94); }
     .hero-portrait-wrap::after { content: ""; position: absolute; inset: 0; border-radius: 16px; pointer-events: none; background: linear-gradient(180deg, transparent 46%, rgba(9,11,17,0.5)); }
     .hero-panel-float { position: absolute; left: -30px; bottom: -26px; width: min(290px, 82%); z-index: 3; padding: 18px 18px 15px; }
     .hero-panel-float .hp-title { font-size: 0.95rem; }
@@ -1266,6 +1266,29 @@
               <option>Agency</option>
               <option>Online service business</option>
               <option>Other</option>
+            </select>
+          </div>
+          <div class="lf-row">
+            <label for="lf-automate">What would you most like to take off your plate first?</label>
+            <select id="lf-automate" name="automate" required>
+              <option value="" disabled selected>Choose...</option>
+              <option>Lead capture &amp; follow-up</option>
+              <option>Client onboarding &amp; delivery</option>
+              <option>Scheduling &amp; admin</option>
+              <option>Reporting &amp; data</option>
+              <option>Content &amp; marketing ops</option>
+              <option>Not sure yet — let's explore</option>
+            </select>
+          </div>
+          <div class="lf-row">
+            <label for="lf-budget">Indicative budget for this project (optional)</label>
+            <select id="lf-budget" name="budget">
+              <option value="" disabled selected>Choose a range...</option>
+              <option>Under €2,000</option>
+              <option>€2,000 – €5,000</option>
+              <option>€5,000 – €10,000</option>
+              <option>€10,000+</option>
+              <option>Still deciding</option>
             </select>
           </div>
           <div class="lf-row">
