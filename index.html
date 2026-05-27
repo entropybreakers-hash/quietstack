@@ -1337,22 +1337,6 @@
     document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
 
     (function () {
-      if (reduceMotion) return;
-      var portrait = document.querySelector(".hero-portrait");
-      if (!portrait) return;
-      var ticking = false;
-      window.addEventListener("scroll", function () {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(function () {
-          var y = window.scrollY;
-          if (y < 1200) portrait.style.transform = "translateX(-50%) translateY(" + (y * 0.16) + "px) scale(" + (1 + y * 0.00012) + ")";
-          ticking = false;
-        });
-      }, { passive: true });
-    })();
-
-    (function () {
       var steps = document.querySelector(".steps");
       if (!steps) return;
       if (reduceMotion) { steps.classList.add("is-drawn"); return; }
