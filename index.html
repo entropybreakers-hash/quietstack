@@ -134,7 +134,18 @@
     .hero-left .hero-cta { justify-content: flex-start; }
     .hero-label { display: inline-block; font-family: var(--mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); opacity: 0.85; margin-bottom: 26px; }
     .hero-right { position: relative; }
-    @media (max-width: 920px) { .hero-right { max-width: 520px; margin: 0 auto; width: 100%; } }
+    .hero-portrait-wrap { position: relative; }
+    .hero-portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 16px; border: 1px solid rgba(170,190,230,0.14); box-shadow: 0 50px 100px -52px rgba(0,0,0,0.88); filter: grayscale(0.12) contrast(1.04) brightness(0.94); }
+    .hero-portrait-wrap::after { content: ""; position: absolute; inset: 0; border-radius: 16px; pointer-events: none; background: linear-gradient(180deg, transparent 46%, rgba(9,11,17,0.5)); }
+    .hero-panel-float { position: absolute; left: -30px; bottom: -26px; width: min(290px, 82%); z-index: 3; padding: 18px 18px 15px; }
+    .hero-panel-float .hp-title { font-size: 0.95rem; }
+    .hero-panel-float .hp-label { font-size: 0.82rem; }
+    .hero-panel-float .hp-foot-num { font-size: 1.5rem; }
+    @media (max-width: 920px) {
+      .hero-right { max-width: 520px; margin: 0 auto; width: 100%; }
+      .hero-panel-float { position: static; width: 100%; left: auto; bottom: auto; margin-top: 16px; }
+      .hero-portrait-wrap::after { display: none; }
+    }
     .hero-live-wrap { position: relative; z-index: 4; text-align: center; }
     .hero-live {
       display: inline-flex; align-items: center; gap: 8px;
@@ -884,7 +895,9 @@
           </div>
         </div>
         <div class="hero-right">
-          <div class="hero-panel">
+          <div class="hero-portrait-wrap">
+            <img class="hero-portrait" src="assets/new-hero.webp" alt="Bettina Baranyi, founder of QuietStack" onerror="this.style.display='none'" />
+          <div class="hero-panel hero-panel-float">
             <div class="hp-head">
               <span class="hp-title">Client flow</span>
               <span class="hp-live"><span class="hp-live-dot"></span>Live</span>
@@ -921,6 +934,7 @@
               <span class="hp-foot-num" id="hpHours">10+</span>
               <span class="hp-foot-label">hours reclaimed every week</span>
             </div>
+          </div>
           </div>
         </div>
       </div>
