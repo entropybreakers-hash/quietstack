@@ -34,14 +34,14 @@
 
   <style>
     :root {
-      --bg: #F3F4F6;
-      --surface: #FFFFFF;
-      --band: #E9EBEF;
-      --text: #1A1A1A;
-      --muted: #6a7077;
-      --accent: #74808f;
-      --accent-deep: #2b313c;
-      --border: #E2E5EA;
+      --bg: #0D0D0D;
+      --surface: #161616;
+      --band: #121316;
+      --text: #ECEDEF;
+      --muted: #8B9097;
+      --accent: #7DA2FF;
+      --accent-deep: #4f74d6;
+      --border: rgba(255,255,255,0.09);
       --glow: 125, 162, 255;
       --serif: "Satoshi", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -65,10 +65,9 @@
     .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(6px); transition: opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1), filter 1s cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
     .reveal.in { opacity: 1; transform: none; filter: none; }
     @keyframes heroRise { from { opacity: 0; transform: translateY(42px); filter: blur(9px); } to { opacity: 1; transform: none; filter: none; } }
-    .hero-live-wrap, .hero-head, .hero-stage { animation: heroRise 1.15s cubic-bezier(0.16,1,0.3,1) both; }
-    .hero-live-wrap { animation-delay: 0.05s; }
-    .hero-head { animation-delay: 0.22s; }
-    .hero-stage { animation-delay: 0.4s; }
+    .hero-left, .hero-right { animation: heroRise 1.15s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-left { animation-delay: 0.08s; }
+    .hero-right { animation-delay: 0.26s; }
 
     .scroll-progress {
       position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 100;
@@ -87,11 +86,11 @@
     .btn-accent { background: var(--accent-deep); color: #fff; box-shadow: 0 10px 30px -12px rgba(var(--glow), 0.55), inset 0 0 0 1px rgba(255,255,255,0.05); will-change: transform; }
     .btn-accent:hover { background: #1f2530; color: #fff; box-shadow: 0 18px 46px -10px rgba(var(--glow), 0.85), inset 0 0 0 1px rgba(255,255,255,0.09); }
     .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); box-shadow: none; }
-    .btn-ghost:hover { background: #fff; border-color: var(--accent); transform: translateY(-2px); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); transform: translateY(-2px); }
 
     header {
       position: sticky; top: 0; z-index: 60;
-      background: rgba(250, 250, 247, 0.9);
+      background: rgba(12, 12, 14, 0.72);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -123,9 +122,18 @@
 
     /* Hero (light, clean) */
     .hero {
-      position: relative; overflow: hidden; padding: 30px 0 64px;
-      background: radial-gradient(ellipse 60% 64% at 50% 44%, #ffffff 0%, var(--bg) 72%);
+      position: relative; overflow: hidden; padding: clamp(72px, 11vh, 150px) 0 clamp(72px, 11vh, 140px);
+      background: radial-gradient(ellipse 75% 65% at 28% 32%, #15181f 0%, #09090b 72%);
     }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: clamp(40px, 6vw, 92px); align-items: center; position: relative; z-index: 1; }
+    @media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } }
+    .hero-left { text-align: left; }
+    .hero-left h1, .hero-left .lead { text-align: left; }
+    .hero-left .lead { margin: 0 0 32px; max-width: 32ch; }
+    .hero-left .hero-cta { justify-content: flex-start; }
+    .hero-label { display: inline-block; font-family: var(--mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); opacity: 0.85; margin-bottom: 26px; }
+    .hero-right { position: relative; }
+    @media (max-width: 920px) { .hero-right { max-width: 520px; margin: 0 auto; width: 100%; } }
     .hero-live-wrap { position: relative; z-index: 4; text-align: center; }
     .hero-live {
       display: inline-flex; align-items: center; gap: 8px;
@@ -155,13 +163,13 @@
     .hero-copy { position: relative; z-index: 4; text-align: center; max-width: 740px; margin: 0 auto; padding: 4px 24px 0; }
     .eyebrow {
       display: inline-block; font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep);
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
       margin-bottom: 16px;
     }
     .hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.6rem); line-height: 1.04; letter-spacing: -0.03em; margin-bottom: 22px; }
     .hero h1 .line1 {
       display: block;
-      background: linear-gradient(100deg, #2f343b, #8b929c);
+      background: linear-gradient(100deg, #ffffff 0%, #aebfe6 55%, #7DA2FF 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
     .hero h1 .line2 { display: block; color: var(--text); font-size: 0.82em; }
@@ -180,7 +188,7 @@
 
     .hero-visual { position: relative; }
     .hero-panel {
-      background: #16140f; border: 1px solid rgba(110,118,129,0.2);
+      background: #12151b; border: 1px solid rgba(125,162,255,0.14);
       border-radius: 16px; padding: 26px 26px 22px; position: relative; overflow: hidden;
       box-shadow: 0 34px 74px -36px rgba(20,22,26,0.85);
     }
@@ -254,7 +262,7 @@
     .section-tag {
       display: block; text-align: center; font-family: var(--mono);
       font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent-deep);
+      letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent);
       margin-bottom: 14px;
     }
     .section-title { text-align: center; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 18px; }
@@ -363,7 +371,7 @@
       display: flex; align-items: center; justify-content: center;
       background: rgba(110,118,129,0.14);
     }
-    .card-ico svg { width: 26px; height: 26px; stroke: var(--accent-deep); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .card-ico svg { width: 26px; height: 26px; stroke: var(--accent); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
     .card h3 { font-size: 1.18rem; margin-bottom: 10px; }
     .card p { color: var(--muted); font-size: 0.99rem; }
 
@@ -592,7 +600,7 @@
       transition: transform 0.18s, box-shadow 0.18s;
     }
     .proof-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -30px rgba(23,26,31,0.5); }
-    .proof-card.dark { background: var(--text); color: #f0f1f4; border-color: var(--text); }
+    .proof-card.dark { background: #0f1218; color: #e9ecf2; border-color: rgba(125,162,255,0.16); }
     .proof-card h3 { font-size: 1.4rem; margin-bottom: 14px; }
     .proof-card.dark h3 { color: #fff; }
     .proof-card p { color: var(--muted); margin-bottom: 14px; font-size: 1rem; }
@@ -649,7 +657,7 @@
     }
     .lf-row select {
       appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 38px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a876' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237DA2FF' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 15px center;
     }
     .lf-row select option { color: #1a1a1a; }
@@ -667,7 +675,7 @@
     .lf-success h3 { color: #fff; font-size: 1.3rem; margin-bottom: 10px; }
     .lf-success p { color: #cdcabf; margin: 0; max-width: none; }
 
-    footer { background: #15140f; color: #a4aab2; padding: 56px 0 40px; }
+    footer { background: #0b0b0d; color: #8B9097; padding: 56px 0 40px; }
     .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 34px; }
     .footer-brand { display: flex; align-items: center; gap: 11px; font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: #fff; margin-bottom: 12px; }
     .footer-col p { font-size: 0.93rem; max-width: 320px; }
@@ -854,27 +862,62 @@
     <section class="hero">
       <div class="aurora" aria-hidden="true"></div>
       <div class="hero-cursor-light" aria-hidden="true"></div>
-      <div class="hero-live-wrap"><span class="hero-live"><i aria-hidden="true"></i>Live system</span></div>
-      <div class="hero-copy hero-head">
-        <span class="eyebrow">AI systems for coaches &amp; high-ticket consultants</span>
-        <h1>
-          <span class="line1">Scale your expertise</span>
-          <span class="line2">without scaling the chaos.</span>
-        </h1>
-      </div>
-      <div class="hero-stage">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <img class="hero-portrait" src="assets/new-hero.webp" alt="Bettina Baranyi, founder of QuietStack" onerror="this.remove()" />
-      </div>
-      <div class="hero-copy hero-foot reveal">
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-accent">Book Your Systems Audit →</a>
-          <a href="#services" class="btn btn-ghost">View Systems</a>
+      <div class="wrap hero-grid">
+        <div class="hero-left">
+          <span class="hero-label">Operational AI systems</span>
+          <h1>
+            <span class="line1">Scale your expertise</span>
+            <span class="line2">without scaling the chaos.</span>
+          </h1>
+          <p class="lead">
+            Custom AI infrastructure that automates delivery and operations, so your growth
+            feels quieter, not heavier.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-accent">Book Your Systems Audit →</a>
+            <a href="#services" class="btn btn-ghost">View what we build</a>
+          </div>
         </div>
-        <p class="lead">
-          Custom AI infrastructure that automates delivery and operations, so your growth
-          feels quieter, not heavier.
-        </p>
+        <div class="hero-right">
+          <div class="hero-panel">
+            <div class="hp-head">
+              <span class="hp-title">Client flow</span>
+              <span class="hp-live"><span class="hp-live-dot"></span>Live</span>
+            </div>
+            <div class="hp-flow">
+              <div class="hp-line"><div class="hp-line-fill" id="hpFill"></div></div>
+              <div class="hp-node">
+                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
+                <span class="hp-label">Lead captured &amp; qualified</span>
+                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+              </div>
+              <div class="hp-node">
+                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+                <span class="hp-label">Automated follow-up sent</span>
+                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+              </div>
+              <div class="hp-node">
+                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h6"/></svg></span>
+                <span class="hp-label">Onboarding completed</span>
+                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+              </div>
+              <div class="hp-node">
+                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
+                <span class="hp-label">Payment processed</span>
+                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+              </div>
+              <div class="hp-node">
+                <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span>
+                <span class="hp-label">Client active &amp; tracked</span>
+                <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+              </div>
+            </div>
+            <div class="hp-foot">
+              <span class="hp-foot-num" id="hpHours">10+</span>
+              <span class="hp-foot-label">hours reclaimed every week</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1017,55 +1060,6 @@
             <p>Turn your repeatable processes and SOPs into systems that run themselves behind the scenes.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- 1b. LIVE SYSTEM (cinematic) -->
-    <section class="system-strip">
-      <div class="wrap narrow system-strip-inner">
-        <span class="section-tag reveal">In motion</span>
-        <h2 class="section-title reveal">Your client flow, running on autopilot.</h2>
-        <p class="section-sub reveal">From first enquiry to active client, every step handled quietly in the background.</p>
-      <div class="hero-visual reveal" style="max-width:560px; margin:34px auto 0; padding:0 24px;">
-        <div class="hero-panel">
-          <div class="hp-head">
-            <span class="hp-title">Client flow</span>
-            <span class="hp-live"><span class="hp-live-dot"></span>Live</span>
-          </div>
-          <div class="hp-flow">
-            <div class="hp-line"><div class="hp-line-fill" id="hpFill"></div></div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
-              <span class="hp-label">Lead captured &amp; qualified</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-              <span class="hp-label">Automated follow-up sent</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h6"/></svg></span>
-              <span class="hp-label">Onboarding completed</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
-              <span class="hp-label">Payment processed</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-            <div class="hp-node">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span>
-              <span class="hp-label">Client active &amp; tracked</span>
-              <span class="hp-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
-            </div>
-          </div>
-          <div class="hp-foot">
-            <span class="hp-foot-num" id="hpHours">10+</span>
-            <span class="hp-foot-label">hours reclaimed every week</span>
-          </div>
-        </div>
-      </div>
       </div>
     </section>
 
