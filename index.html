@@ -136,7 +136,7 @@
     .hero-right { position: relative; }
     .hero-portrait-wrap { position: relative; }
     .hero-portrait-wrap::before { display: none; }
-    .hero-portrait { position: relative; z-index: 1; display: block; width: 100%; height: auto; border: none; }
+    .hero-portrait { display: block; width: 100%; aspect-ratio: 4 / 4.2; object-fit: cover; object-position: 50% 86%; border-radius: 16px; border: 1px solid rgba(170,190,230,0.14); box-shadow: 0 44px 90px -54px rgba(0,0,0,0.85); }
     .hero-portrait-wrap::after { display: none; }
     .hero-panel-float { position: absolute; left: -30px; bottom: -26px; width: min(290px, 82%); z-index: 3; padding: 18px 18px 15px; }
     .hero-panel-float .hp-title { font-size: 0.95rem; }
@@ -891,7 +891,7 @@
         </div>
         <div class="hero-right">
           <div class="hero-portrait-wrap">
-            <img class="hero-portrait" src="assets/hero-portrait.png" alt="Bettina Baranyi, founder of QuietStack" onerror="this.style.display='none'" />
+            <img class="hero-portrait" src="assets/new-hero.webp" alt="Bettina Baranyi, founder of QuietStack" onerror="this.style.display='none'" />
           </div>
         </div>
       </div>
