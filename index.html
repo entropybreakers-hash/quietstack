@@ -681,8 +681,47 @@
       .pain::after, .flows::after, .final::after,
       .steps.is-drawn::after, .tool-chip { animation: none !important; }
       .steps::after, .step::after { transition: none !important; }
+      .hero h1 .line1, .hero-panel, .system-strip::before, .system-strip::after { animation: none !important; }
       html { scroll-behavior: auto; }
     }
+
+    /* ---------- cinematic layer ---------- */
+    .hero h1 .line1 { background-size: 220% auto; animation: lineShimmer 8s linear infinite; }
+    @keyframes lineShimmer { to { background-position: 220% center; } }
+
+    .system-strip { background: var(--text); position: relative; overflow: hidden; padding: clamp(64px, 9vw, 124px) 0; }
+    .system-strip::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(110,118,129,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(110,118,129,0.06) 1px, transparent 1px);
+      background-size: 40px 40px; animation: grid-drift 38s linear infinite;
+      -webkit-mask-image: radial-gradient(ellipse 72% 64% at 50% 32%, #000, transparent 76%);
+      mask-image: radial-gradient(ellipse 72% 64% at 50% 32%, #000, transparent 76%);
+    }
+    .system-strip::after {
+      content: ""; position: absolute; top: -180px; left: 50%; width: 640px; height: 640px; margin-left: -320px;
+      pointer-events: none; background: radial-gradient(circle, rgba(110,118,129,0.22), transparent 62%);
+      filter: blur(42px); animation: glowShift 14s ease-in-out infinite;
+    }
+    .system-strip .wrap { position: relative; z-index: 2; }
+    .system-strip-inner { text-align: center; }
+    .system-strip .section-tag { color: var(--accent); }
+    .system-strip .section-title { color: #fff; }
+    .system-strip .section-sub { color: #b0b6bd; }
+    .hero-panel { animation: floatY 6.5s ease-in-out infinite; }
+    @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+
+    .card { transition: transform 0.45s cubic-bezier(.2,.7,.2,1), box-shadow 0.45s ease, border-color 0.45s ease; }
+    .card:hover { transform: translateY(-7px); box-shadow: 0 26px 54px -28px rgba(23,26,31,0.5); border-color: rgba(110,118,129,0.5); }
+    .step-num { transition: transform 0.4s cubic-bezier(.2,.7,.2,1), box-shadow 0.4s ease; }
+    .step:hover .step-num { transform: scale(1.1) rotate(-3deg); }
+    .proof-card { transition: transform 0.45s cubic-bezier(.2,.7,.2,1), box-shadow 0.45s ease; }
+    .proof-card:hover { transform: translateY(-5px); box-shadow: 0 26px 54px -30px rgba(23,26,31,0.5); }
+    .btn { transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
+    .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -12px rgba(47,52,59,0.55); }
+    .ba-list li { transition: transform 0.3s ease; }
+    .proof-card:hover .ba-list li { transform: translateX(3px); }
   </style>
 </head>
 <body>
@@ -717,15 +756,29 @@
           <span class="line1">More qualified clients.</span>
           <span class="line2">Less operational chaos.</span>
         </h1>
-        <p class="lead">
-          QuietStack builds practical AI systems and automation workflows that help
-          service businesses save time, streamline operations and improve client flow.
-        </p>
+      </div>
+      <div class="hero-stage">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <img class="hero-portrait" src="assets/new-hero.webp" alt="Bettina Baranyi, founder of QuietStack" onerror="this.remove()" />
+      </div>
+      <div class="hero-copy hero-foot reveal">
         <div class="hero-cta">
           <a href="#contact" class="btn btn-accent">Book a Strategy Call →</a>
           <a href="#services" class="btn btn-ghost">View Systems</a>
         </div>
+        <p class="lead">
+          QuietStack builds practical AI systems and automation workflows that help
+          service businesses save time, streamline operations and improve client flow.
+        </p>
       </div>
+    </section>
+
+    <!-- 1b. LIVE SYSTEM (cinematic) -->
+    <section class="system-strip">
+      <div class="wrap narrow system-strip-inner">
+        <span class="section-tag reveal">In motion</span>
+        <h2 class="section-title reveal">Your client flow, running on autopilot.</h2>
+        <p class="section-sub reveal">From first enquiry to active client — every step handled quietly in the background.</p>
       <div class="hero-visual reveal" style="max-width:560px; margin:34px auto 0; padding:0 24px;">
         <div class="hero-panel">
           <div class="hp-head">
@@ -765,6 +818,7 @@
             <span class="hp-foot-label">hours reclaimed every week</span>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
