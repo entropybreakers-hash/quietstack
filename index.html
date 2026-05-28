@@ -134,7 +134,7 @@
     .hero-left .hero-cta { justify-content: flex-start; }
     .hero-label { display: inline-block; font-family: var(--mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); opacity: 0.85; margin-bottom: 26px; }
     .hero-right { position: relative; }
-    .hero-portrait-wrap { position: relative; }
+    .hero-portrait-wrap { position: relative; margin-top: clamp(-72px, -3.5vw, -30px); }
     .hero-portrait-wrap::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(52% 48% at 50% 34%, rgba(125,162,255,0.16) 0%, transparent 62%); }
     .hero-portrait { position: relative; z-index: 1; display: block; width: 100%; aspect-ratio: 4 / 5.25; object-fit: cover; object-position: 50% 100%; border: none; -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 76%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 76%, transparent 100%); }
     .hero-portrait-wrap::after { display: none; }
@@ -173,7 +173,7 @@
       letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
       margin-bottom: 16px;
     }
-    .hero h1 { font-size: clamp(2.9rem, 7.2vw, 5.3rem); line-height: 1.0; letter-spacing: -0.035em; margin-bottom: 24px; }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.02; letter-spacing: -0.032em; margin-bottom: 24px; }
     .hero h1 .line1 {
       display: block;
       background: linear-gradient(100deg, #ffffff 0%, #aebfe6 55%, #7DA2FF 100%);
@@ -361,7 +361,7 @@
     .ba-list { list-style: none; padding: 0; margin: 16px 0 0; }
     .ba-list li { position: relative; padding-left: 26px; margin-bottom: 12px; color: var(--muted); }
     .ba-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
-    .ba-list.before li { text-decoration: line-through; text-decoration-color: rgba(220,110,100,0.65); text-decoration-thickness: 2.5px; text-decoration-skip-ink: none; color: rgba(160,160,170,0.55); }
+    .ba-list.before li { text-decoration: line-through; text-decoration-color: rgba(91,127,214,0.9); text-decoration-thickness: 2.5px; text-decoration-skip-ink: none; color: rgba(190,200,215,0.85); }
     .proof-card.dark .ba-list li { color: #e6e3d8; }
     .proof-card.dark .ba-list li::before { background: #5fbf6a; box-shadow: 0 0 9px rgba(95,191,106,0.6); }
     .why-wrap { text-align: center; }
