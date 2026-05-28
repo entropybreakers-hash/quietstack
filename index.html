@@ -359,20 +359,14 @@
     @media (max-width: 880px) { .steps.cols-3 { grid-template-columns: 1fr; } }
     .problem-close { text-align: center; max-width: 680px; margin: 50px auto 0; font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 1.7rem); line-height: 1.4; color: var(--text); }
 
-    /* by the numbers — premium hierarchy */
-    #proof .section-sub { margin-bottom: clamp(56px, 7vw, 96px); }
-    .stat-lead { text-align: center; padding: clamp(40px, 5vw, 72px) 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .stat-lead-num { display: block; font-family: var(--serif); font-weight: 600; font-size: clamp(5.5rem, 13vw, 10rem); line-height: 0.92; letter-spacing: -0.04em; color: var(--text); }
-    .stat-lead-num .pct { font-size: 0.5em; font-weight: 500; color: var(--accent); opacity: 0.85; margin-left: 4px; vertical-align: 0.18em; }
-    .stat-lead-cap { font-size: 1.08rem; color: var(--muted); margin: 26px auto 0; max-width: 38ch; }
-    .stat-lead-src { display: block; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 22px; opacity: 0.7; }
-    .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); padding-top: clamp(40px, 5vw, 72px); }
-    @media (max-width: 720px) { .stat-row { grid-template-columns: 1fr; gap: 56px; padding-top: 48px; } }
-    .stat-cell { text-align: center; }
-    .stat-num { display: block; font-family: var(--serif); font-weight: 600; font-size: clamp(3rem, 6.5vw, 5.4rem); line-height: 0.95; letter-spacing: -0.03em; color: var(--text); }
-    .stat-num .pct { font-size: 0.5em; font-weight: 500; color: var(--accent); opacity: 0.85; margin-left: 3px; vertical-align: 0.18em; }
-    .stat-cap { font-size: 0.98rem; color: var(--muted); margin: 20px auto 0; max-width: 30ch; }
-    .stat-src { display: block; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 16px; opacity: 0.65; }
+    /* by the numbers — stacked column */
+    #proof .section-sub { margin-bottom: clamp(40px, 5vw, 64px); }
+    .stat-stack { border-top: 1px solid var(--border); }
+    .stat-block { text-align: center; padding: clamp(44px, 6vw, 80px) 0; border-bottom: 1px solid var(--border); }
+    .stat-block-num { display: block; font-family: var(--serif); font-weight: 600; font-size: clamp(4.4rem, 10vw, 7.5rem); line-height: 0.92; letter-spacing: -0.04em; color: var(--text); }
+    .stat-block-num .pct { font-size: 0.5em; font-weight: 500; color: var(--accent); opacity: 0.85; margin-left: 4px; vertical-align: 0.18em; }
+    .stat-block-cap { font-size: 1.05rem; color: var(--muted); margin: 22px auto 0; max-width: 38ch; }
+    .stat-block-src { display: block; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 18px; opacity: 0.7; }
     .ba-list { list-style: none; padding: 0; margin: 16px 0 0; }
     .ba-list li { position: relative; padding-left: 26px; margin-bottom: 12px; color: var(--muted); }
     .ba-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
@@ -966,22 +960,21 @@
         <h2 class="section-title reveal">The market has already moved.</h2>
         <p class="section-sub reveal">AI is not the future. It's the current operating advantage.</p>
 
-        <div class="stat-lead reveal">
-          <span class="stat-lead-num">72<span class="pct">%</span></span>
-          <p class="stat-lead-cap">of organisations now use AI in at least one business function.</p>
-          <span class="stat-lead-src">McKinsey · State of AI, 2024</span>
-        </div>
-
-        <div class="stat-row">
-          <div class="stat-cell reveal">
-            <span class="stat-num">75<span class="pct">%</span></span>
-            <p class="stat-cap">of knowledge workers already use AI in their daily work.</p>
-            <span class="stat-src">Microsoft × LinkedIn · Work Trend Index, 2024</span>
+        <div class="stat-stack">
+          <div class="stat-block reveal">
+            <span class="stat-block-num">72<span class="pct">%</span></span>
+            <p class="stat-block-cap">of organisations now use AI in at least one business function.</p>
+            <span class="stat-block-src">McKinsey · State of AI, 2024</span>
           </div>
-          <div class="stat-cell reveal">
-            <span class="stat-num">14<span class="pct">%</span></span>
-            <p class="stat-cap">average productivity gain from AI use, measured in real workflows.</p>
-            <span class="stat-src">Brynjolfsson, Li &amp; Raymond · NBER, 2023</span>
+          <div class="stat-block reveal">
+            <span class="stat-block-num">75<span class="pct">%</span></span>
+            <p class="stat-block-cap">of knowledge workers already use AI in their daily work.</p>
+            <span class="stat-block-src">Microsoft × LinkedIn · Work Trend Index, 2024</span>
+          </div>
+          <div class="stat-block reveal">
+            <span class="stat-block-num">14<span class="pct">%</span></span>
+            <p class="stat-block-cap">average productivity gain from AI use, measured in real workflows.</p>
+            <span class="stat-block-src">Brynjolfsson, Li &amp; Raymond · NBER, 2023</span>
           </div>
         </div>
       </div>
