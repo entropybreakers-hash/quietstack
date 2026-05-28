@@ -182,6 +182,9 @@
     .hero h1 .line2 { display: block; color: var(--text); font-size: 0.82em; }
     .hero p.lead { font-size: 1.1rem; color: var(--muted); margin: 0 auto 26px; max-width: 580px; }
     .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; }
+    .cta-meta { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 18px; opacity: 0.85; }
+    .hero-left .cta-meta { text-align: left; }
+    .cta-meta--form { text-align: center; margin-top: 14px; opacity: 0.75; }
     .hero-head { padding-top: 0; padding-bottom: 0; }
     .hero-head h1 { margin-bottom: 6px; }
     .hero-foot { margin-top: 22px; }
@@ -900,8 +903,9 @@
           </p>
           <div class="hero-cta">
             <a href="#contact" class="btn btn-accent">Book Your Systems Audit →</a>
-            <a href="#services" class="btn btn-ghost">View what we build</a>
+            <a href="#process" class="btn btn-ghost">See how it works</a>
           </div>
+          <p class="cta-meta">Reply within 24 hours · No pitch on the call.</p>
         </div>
         <div class="hero-right">
           <div class="hero-portrait-wrap">
@@ -1339,6 +1343,7 @@
             <label for="lf-hozzajarulas">I consent to QuietStack processing the data I provide in order to respond to my enquiry. Details in the <a href="adatvedelem.html" target="_blank" rel="noopener">Privacy Policy</a>.</label>
           </div>
           <button type="submit" class="btn btn-accent">Book Your Systems Audit →</button>
+          <p class="cta-meta cta-meta--form">Reply within 24 hours · No pitch on the call.</p>
         </form>
         <div class="lf-success" id="leadSuccess">
           <h3>Thank you, I've got it.</h3>
