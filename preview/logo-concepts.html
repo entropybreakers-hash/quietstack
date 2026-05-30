@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c14'/%3E%3Ccircle cx='15' cy='15.5' r='7.5' stroke='%236b93ff' stroke-width='3' fill='none'/%3E%3Crect x='18.5' y='19.2' width='6.6' height='3.4' rx='1.7' transform='rotate(45 18.5 19.2)' fill='%232f57d8'/%3E%3C/svg%3E" />
+<title>Logo Concepts | QuietStack</title>
+<meta name="robots" content="noindex" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root{
+  --bg:#0a0c14; --panel:#111726; --ink:#06080f;
+  --fg:#E6E9F2; --muted:#8b90a0; --muted2:#5c6172; --line:rgba(230,233,242,0.08);
+  --accent:#4d7cfe; --accent-br:#6b93ff; --accent-dp:#2f57d8; --accent-line:rgba(77,124,254,.38);
+  --d:'Schibsted Grotesk',system-ui,sans-serif; --m:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;}
+body{background:var(--bg);color:var(--fg);font-family:var(--d);-webkit-font-smoothing:antialiased;}
+.grid-bg{position:fixed;inset:0;z-index:0;opacity:.5;pointer-events:none;
+  background-image:linear-gradient(rgba(230,233,242,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(230,233,242,.04) 1px,transparent 1px);
+  background-size:60px 60px;-webkit-mask-image:radial-gradient(circle at 50% 0%,#000,transparent 75%);}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:clamp(40px,7vw,90px) clamp(20px,5vw,56px);}
+.glow{position:fixed;top:-280px;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;z-index:0;pointer-events:none;
+  background:radial-gradient(circle,rgba(77,124,254,.14),transparent 62%);}
+.top{margin-bottom:clamp(40px,6vw,68px);max-width:760px;}
+.eyebrow{font-family:var(--m);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:9px;margin-bottom:20px;}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;letter-spacing:-.03em;line-height:1.04;margin-bottom:16px;
+  background-image:linear-gradient(100deg,var(--accent-br),#fff 50%,var(--accent-br));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.sub{color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.6;max-width:620px;}
+.note{margin-top:18px;font-size:14px;color:var(--muted2);}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:880px){.cards{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.cards{grid-template-columns:1fr;}}
+.card{background:linear-gradient(135deg,var(--panel) 0%,var(--ink) 100%);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s;}
+.card:hover{border-color:var(--accent-line);transform:translateY(-4px);box-shadow:0 0 50px rgba(77,124,254,.16);}
+.stage{height:170px;display:grid;place-items:center;border-bottom:1px solid var(--line);position:relative;}
+.stage svg{width:74px;height:74px;}
+.lockup{display:flex;align-items:center;gap:11px;padding:18px 22px;}
+.lockup svg{width:26px;height:26px;flex-shrink:0;}
+.lockup .wm{font-weight:600;font-size:19px;letter-spacing:-.02em;}
+.meta{padding:0 22px 22px;}
+.meta .nm{font-family:var(--m);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-br);margin-bottom:7px;}
+.meta .ds{font-size:13.5px;color:var(--muted);line-height:1.5;}
+.foot{margin-top:48px;font-size:14px;color:var(--muted2);text-align:center;}
+.foot a{color:var(--accent-br);}
+.cur{display:inline-flex;align-items:center;gap:9px;margin-top:14px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--muted);}
+.cur svg{width:18px;height:18px;}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="glow"></div>
+<div class="wrap">
+  <div class="top">
+    <div class="eyebrow">Brand exploration</div>
+    <h1>Logo concepts for QuietStack</h1>
+    <p class="sub">Six directions, all built from the same idea: <strong style="color:var(--fg)">quiet systems, stacked with intent.</strong> One blue accent, geometric, calm. Tell me which mark (or detail) you're drawn to and I'll refine it into a full set.</p>
+    <div class="cur">
+      <!-- current logo -->
+      <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b93ff"/><stop offset="1" stop-color="#2f57d8"/></linearGradient></defs><rect x="3" y="3" width="26" height="26" rx="7" fill="url(#cg)"/><rect x="19" y="7" width="6" height="6" rx="2" fill="#0a0c14"/></svg>
+      <span>Your current mark — for comparison</span>
+    </div>
+  </div>
+
+  <div class="cards">
+    <!-- 1 Stacked bars -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 64 64" fill="none"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b93ff"/><stop offset="1" stop-color="#2f57d8"/></linearGradient></defs>
+          <rect x="12" y="16" width="40" height="8" rx="4" fill="url(#g1)"/>
+          <rect x="12" y="28" width="30" height="8" rx="4" fill="#6b93ff" opacity=".7"/>
+          <rect x="12" y="40" width="20" height="8" rx="4" fill="#4d7cfe" opacity=".45"/>
+        </svg>
+      </div>
+      <div class="lockup">
+        <svg viewBox="0 0 64 64" fill="none"><rect x="12" y="16" width="40" height="8" rx="4" fill="url(#g1)"/><rect x="12" y="28" width="30" height="8" rx="4" fill="#6b93ff" opacity=".7"/><rect x="12" y="40" width="20" height="8" rx="4" fill="#4d7cfe" opacity=".45"/></svg>
+        <span class="wm">QuietStack</span>
+      </div>
+      <div class="meta"><div class="nm">01 · The Stack</div><div class="ds">Three settling bars — a literal stack winding down to calm. Most legible at tiny sizes.</div></div>
+    </div>
+
+    <!-- 2 Q-node -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 64 64" fill="none"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b93ff"/><stop offset="1" stop-color="#2f57d8"/></linearGradient></defs>
+          <circle cx="30" cy="32" r="15" stroke="url(#g2)" stroke-width="6" fill="none"/>
+          <rect x="38" y="40" width="11" height="6" rx="3" transform="rotate(45 38 40)" fill="#6b93ff"/>
+        </svg>
+      </div>
+      <div class="lockup">
+        <svg viewBox="0 0 64 64" fill="none"><circle cx="30" cy="32" r="15" stroke="url(#g2)" stroke-width="6" fill="none"/><rect x="38" y="40" width="11" height="6" rx="3" transform="rotate(45 38 40)" fill="#6b93ff"/></svg>
+        <span class="wm">QuietStack</span>
+      </div>
+      <div class="meta"><div class="nm">02 · Q-Node</div><div class="ds">A clean “Q” whose tail becomes a connection node — the quiet system, running.</div></div>
+    </div>
+
+    <!-- 3 Chevron stack -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 64 64" fill="none"><defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b93ff"/><stop offset="1" stop-color="#2f57d8"/></linearGradient></defs>
+          <path d="M20 18 L32 26 L44 18" stroke="url(#g3)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M20 30 L32 38 L44 30" stroke="#6b93ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".6"/>
+          <path d="M20 42 L32 50 L44 42" stroke="#4d7cfe" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".32"/>
+        </svg>
+      </div>
+      <div class="lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M20 18 L32 26 L44 18" stroke="url(#g3)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M20 30 L32 38 L44 30" stroke="#6b93ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".6"/><path d="M20 42 L32 50 L44 42" stroke="#4d7cfe" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".32"/></svg>
+        <span class="wm">QuietStack</span>
+      </div>
+      <div class="meta"><div class="nm">03 · Layers</div><div class="ds">Stacked chevrons fading into quiet — a nod to code and depth without being techy-loud.</div></div>
+    </div>
+
+    <!-- 4 Offset squares -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 64 64" fill="none"><defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b93ff"/><stop offset="1" stop-color="#2f57d8"/></linearGradient></defs>
+          <rect x="16" y="16" width="26" height="26" rx="7" fill="#4d7cfe" opacity=".3"/>
+          <rect x="22" y="22" width="26" height="26" rx="7" fill="url(#g4)"/>
+          <rect x="37" y="27" width="6" height="6" rx="2" fill="#0a0c14"/>
+        </svg>
+      </div>
+      <div class="lockup">
+        <svg viewBox="0 0 64 64" fill="none"><rect x="16" y="16" width="26" height="26" rx="7" fill="#4d7cfe" opacity=".3"/><rect x="22" y="22" width="26" height="26" rx="7" fill="url(#g4)"/><rect x="37" y="27" width="6" height="6" rx="2" fill="#0a0c14"/></svg>
+        <span class="wm">QuietStack</span>
+      </div>
+      <div class="meta"><div class="nm">04 · Depth</div><div class="ds">Your current mark, evolved: two stacked tiles for depth. Familiar, but with more intent.</div></div>
+    </div>
+
+    <!-- 5 Monogram QS -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 64 64" fill="none"><defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b93ff"/><stop offset="1" stop-color="#2f57d8"/></linearGradient></defs>
+          <rect x="13" y="13" width="38" height="38" rx="11" stroke="url(#g5)" stroke-width="4" fill="none"/>
+          <path d="M37 26 C37 23 33 22 30 22 C26 22 24 24 24 27 C24 33 40 31 40 37 C40 40 37 42 33 42 C29 42 26 41 26 38" stroke="#6b93ff" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="lockup">
+        <svg viewBox="0 0 64 64" fill="none"><rect x="13" y="13" width="38" height="38" rx="11" stroke="url(#g5)" stroke-width="4" fill="none"/><path d="M37 26 C37 23 33 22 30 22 C26 22 24 24 24 27 C24 33 40 31 40 37 C40 40 37 42 33 42 C29 42 26 41 26 38" stroke="#6b93ff" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+        <span class="wm">QuietStack</span>
+      </div>
+      <div class="meta"><div class="nm">05 · Monogram</div><div class="ds">An “S” held in a soft-cornered frame — quiet, contained, premium. Works as an app icon.</div></div>
+    </div>
+
+    <!-- 6 Quiet waveform -->
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 64 64" fill="none"><defs><linearGradient id="g6" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6b93ff"/><stop offset="1" stop-color="#2f57d8"/></linearGradient></defs>
+          <rect x="15" y="26" width="5" height="12" rx="2.5" fill="#4d7cfe" opacity=".4"/>
+          <rect x="24" y="20" width="5" height="24" rx="2.5" fill="#6b93ff" opacity=".7"/>
+          <rect x="33" y="14" width="5" height="36" rx="2.5" fill="url(#g6)"/>
+          <rect x="42" y="22" width="5" height="20" rx="2.5" fill="#6b93ff" opacity=".55"/>
+        </svg>
+      </div>
+      <div class="lockup">
+        <svg viewBox="0 0 64 64" fill="none"><rect x="15" y="26" width="5" height="12" rx="2.5" fill="#4d7cfe" opacity=".4"/><rect x="24" y="20" width="5" height="24" rx="2.5" fill="#6b93ff" opacity=".7"/><rect x="33" y="14" width="5" height="36" rx="2.5" fill="url(#g6)"/><rect x="42" y="22" width="5" height="20" rx="2.5" fill="#6b93ff" opacity=".55"/></svg>
+        <span class="wm">QuietStack</span>
+      </div>
+      <div class="meta"><div class="nm">06 · Signal</div><div class="ds">A calm equaliser — vertical bars that read as “systems working quietly in the background.”</div></div>
+    </div>
+  </div>
+
+  <p class="foot">These are starting points, not finished logos. Pick a direction (or mix details across two) and I'll deliver a full set: light/dark, favicon, social avatar and spacing rules. <a href="QuietStack Landing.html">← Back to the landing page</a></p>
+</div>
+</body>
+</html>
