@@ -370,6 +370,28 @@
     .stat-block-num .pct { font-size: 0.5em; font-weight: 500; color: var(--accent); opacity: 0.85; margin-left: 4px; vertical-align: 0.18em; }
     .stat-block-cap { font-size: 1.05rem; color: #c8ced8; margin: 22px auto 0; max-width: 38ch; }
     .stat-block-src { display: block; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: #aab2bf; margin-top: 20px; }
+
+    /* self-audit */
+    #audit .section-sub { margin-bottom: clamp(40px, 5vw, 64px); }
+    .audit { border-top: 1px solid var(--border); }
+    .audit-row { display: grid; grid-template-columns: 1fr auto; gap: clamp(20px, 4vw, 56px); align-items: center; padding: clamp(28px, 4vw, 40px) 0; border-bottom: 1px solid var(--border); }
+    @media (max-width: 640px) { .audit-row { grid-template-columns: 1fr; gap: 16px; } }
+    .audit-q-name { display: block; font-family: var(--mono); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .audit-q p { color: #c8ced8; font-size: 1.02rem; line-height: 1.55; margin: 0; max-width: 52ch; }
+    .audit-toggle { display: inline-flex; gap: 8px; }
+    .audit-opt { font-family: var(--sans); font-size: 0.95rem; font-weight: 500; color: var(--muted); background: transparent; border: 1px solid var(--border); border-radius: 999px; padding: 11px 22px; cursor: pointer; transition: all 0.18s; min-width: 78px; }
+    .audit-opt:hover { color: var(--text); border-color: rgba(170,190,230,0.28); }
+    .audit-opt.is-active { background: var(--text); color: var(--bg); border-color: var(--text); }
+    .audit-result { text-align: center; padding: clamp(48px, 6vw, 80px) 0 0; }
+    .audit-result-label { display: block; font-family: var(--mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+    .audit-result-num { display: block; font-family: var(--serif); font-weight: 600; font-size: clamp(4rem, 9vw, 6.5rem); line-height: 0.95; letter-spacing: -0.035em; color: var(--text); transition: color 0.3s; }
+    .audit-result-unit { display: block; font-family: var(--mono); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 14px; }
+    .audit-result-desc { font-size: 1.05rem; color: #c8ced8; margin: 26px auto 0; max-width: 42ch; min-height: 1.5em; }
+    .audit-cta { margin-top: 32px; opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity 0.35s, transform 0.35s; }
+    .audit-cta.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .audit-result.is-mild .audit-result-num { color: var(--text); }
+    .audit-result.is-warn .audit-result-num { color: #e8b56a; }
+    .audit-result.is-burn .audit-result-num { color: #e57676; }
     .ba-list { list-style: none; padding: 0; margin: 16px 0 0; }
     .ba-list li { position: relative; padding-left: 26px; margin-bottom: 12px; color: var(--muted); }
     .ba-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
@@ -957,6 +979,68 @@
       </div>
     </section>
 
+    <!-- 2a. SELF-AUDIT -->
+    <section id="audit">
+      <div class="wrap narrow">
+        <span class="section-tag reveal">Self-audit</span>
+        <h2 class="section-title reveal">Where is your client flow leaking?</h2>
+        <p class="section-sub reveal">Four questions. Sixty seconds. Honest answer.</p>
+
+        <div class="audit reveal">
+          <div class="audit-row" data-hours="4">
+            <div class="audit-q">
+              <span class="audit-q-name">Lead capture</span>
+              <p>When a new enquiry comes in, does it get a personalised reply within 5 minutes, automatically?</p>
+            </div>
+            <div class="audit-toggle">
+              <button type="button" class="audit-opt" data-val="yes">Yes</button>
+              <button type="button" class="audit-opt" data-val="no">No</button>
+            </div>
+          </div>
+
+          <div class="audit-row" data-hours="3">
+            <div class="audit-q">
+              <span class="audit-q-name">Follow-up</span>
+              <p>Do leads get a sequenced follow-up if they don't reply, without you having to remember to send it?</p>
+            </div>
+            <div class="audit-toggle">
+              <button type="button" class="audit-opt" data-val="yes">Yes</button>
+              <button type="button" class="audit-opt" data-val="no">No</button>
+            </div>
+          </div>
+
+          <div class="audit-row" data-hours="3">
+            <div class="audit-q">
+              <span class="audit-q-name">Onboarding</span>
+              <p>Do new clients get a personalised onboarding flow, without you assembling materials each time?</p>
+            </div>
+            <div class="audit-toggle">
+              <button type="button" class="audit-opt" data-val="yes">Yes</button>
+              <button type="button" class="audit-opt" data-val="no">No</button>
+            </div>
+          </div>
+
+          <div class="audit-row" data-hours="2">
+            <div class="audit-q">
+              <span class="audit-q-name">Reporting</span>
+              <p>Can you see your revenue, pipeline and key numbers live, without pulling a spreadsheet together?</p>
+            </div>
+            <div class="audit-toggle">
+              <button type="button" class="audit-opt" data-val="yes">Yes</button>
+              <button type="button" class="audit-opt" data-val="no">No</button>
+            </div>
+          </div>
+
+          <div class="audit-result" id="auditResult">
+            <span class="audit-result-label">Your flow is leaking approximately</span>
+            <span class="audit-result-num"><span id="auditHours">0</span><span class="audit-result-unit">hours / week</span></span>
+            <p class="audit-result-desc" id="auditDesc">Answer the four questions above to see your estimate.</p>
+            <a href="#contact" class="btn btn-accent audit-cta" id="auditCta">Map this properly &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 2b. BY THE NUMBERS / SOCIAL PROOF -->
     <section id="proof">
       <div class="wrap narrow">
@@ -1386,6 +1470,60 @@
   <script>
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* self-audit logic */
+    (function () {
+      var rows = document.querySelectorAll(".audit-row");
+      if (!rows.length) return;
+      var hoursEl = document.getElementById("auditHours");
+      var descEl = document.getElementById("auditDesc");
+      var resultEl = document.getElementById("auditResult");
+      var ctaEl = document.getElementById("auditCta");
+      var answers = {};
+
+      function update() {
+        var total = 0;
+        var answered = 0;
+        rows.forEach(function (r, i) {
+          var v = answers[i];
+          if (v !== undefined) answered++;
+          if (v === "no") total += parseInt(r.getAttribute("data-hours"), 10);
+        });
+        hoursEl.textContent = total;
+        resultEl.classList.remove("is-mild", "is-warn", "is-burn");
+        if (answered < rows.length) {
+          descEl.textContent = "Answer the four questions above to see your estimate.";
+          ctaEl.classList.remove("is-visible");
+          return;
+        }
+        ctaEl.classList.add("is-visible");
+        if (total === 0) {
+          descEl.textContent = "Your operations are tight. Quiet AI infrastructure may not be priority for you yet.";
+        } else if (total <= 5) {
+          descEl.textContent = "A few hours a week, manageable but compounding. Worth tightening before you scale further.";
+          resultEl.classList.add("is-mild");
+        } else if (total <= 8) {
+          descEl.textContent = "Around a full day each week. This is where founder burnout typically starts.";
+          resultEl.classList.add("is-warn");
+        } else {
+          descEl.textContent = "More than a day each week. The founder is the bottleneck, and it compounds.";
+          resultEl.classList.add("is-burn");
+        }
+      }
+
+      rows.forEach(function (row, i) {
+        var opts = row.querySelectorAll(".audit-opt");
+        opts.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var val = btn.getAttribute("data-val");
+            opts.forEach(function (o) { o.classList.remove("is-active"); });
+            btn.classList.add("is-active");
+            answers[i] = val;
+            update();
+          });
+        });
+      });
+    })();
 
 
     document.querySelectorAll(".grid-3, .grid-4, .steps, .proof-grid").forEach(function (group) {
