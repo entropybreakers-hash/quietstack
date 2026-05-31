@@ -14,7 +14,8 @@
 
     // hero
     heroKicker: L("Operational AI systems for coaches & consultants", "Operative KI-Systeme für Coaches & Berater"),
-    heroL1:     L("You don't need more leads first.", "Sie brauchen nicht zuerst mehr Leads."),
+    heroL1:     L("You don't need", "Sie brauchen nicht"),
+    heroL1b:    L("more leads first.", "zuerst mehr Leads."),
     heroL2:     L("You need a system that can", "Sie brauchen ein System, das"),
     heroL3:     L("carry your success.", "Ihren Erfolg trägt."),
     bookAudit:  L("Book your systems audit <span class=\"arr\">→</span>", "Systems-Audit buchen <span class=\"arr\">→</span>"),
@@ -25,6 +26,7 @@
     trust3:     L("Built into your own accounts", "In Ihre eigenen Accounts gebaut"),
 
     // hero live panel
+    heroSignRole: L("Founder, QuietStack", "Gründerin, QuietStack"),
     panelTitle: L("QuietStack · Automations", "QuietStack · Automatisierungen"),
     panelLive:  L("Live", "Live"),
     panelFoot:  L("0 manual steps · running while you focus", "0 manuelle Schritte · läuft, während Sie arbeiten"),
@@ -386,7 +388,7 @@
       var totalEl = stage.closest(".fam-pin-sec").querySelector(".fc-total");
       if (totalEl) totalEl.textContent = pad2(PROBLEMS.length + 1);
       var sec = stage.closest(".fam-pin-sec");
-      if (sec) sec.style.height = "calc(100vh + " + ((PROBLEMS.length + 1) * 105) + "vh)";
+      if (sec) sec.style.height = "calc(100vh + " + ((PROBLEMS.length + 1) * 80) + "vh)";
     }
 
     // quiz
@@ -454,7 +456,7 @@
       var stotal = ss.closest(".fam-pin-sec").querySelector(".fc-total");
       if (stotal) stotal.textContent = pad2(SERVICES.length);
       var ssec = ss.closest(".fam-pin-sec");
-      if (ssec) ssec.style.height = "calc(100vh + " + (SERVICES.length * 105) + "vh)";
+      if (ssec) ssec.style.height = "calc(100vh + " + (SERVICES.length * 80) + "vh)";
     }
 
     // process

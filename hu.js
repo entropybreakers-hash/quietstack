@@ -122,6 +122,8 @@ window.HU = {
   "Founder": "Alapító",
   "Systems that survive scale": "Rendszer, ami bírja a növekedést",
   "You don't need more leads first.": "Nem több leadre van szükséged először.",
+  "You don't need": "Nem több leadre",
+  "more leads first.": "van szükséged először.",
   "You need a system that can": "Hanem egy rendszerre,",
   "carry your success.": "ami elbírja a sikered.",
   "freed up once your systems run": "szabadul fel, amint megy a rendszer",
