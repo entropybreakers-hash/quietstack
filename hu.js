@@ -113,6 +113,9 @@ window.HU = {
   "Built into your own accounts": "A saját fiókjaidba építve",
 
   // ---- Hero ----
+  "Replace yourself in your own business — with AI.": "Vedd ki magad a saját vállalkozásodból — AI-val.",
+  "Your business shouldn't depend on you for every single step.": "A vállalkozásod ne függjön tőled minden egyes lépésnél.",
+  "Free audit": "Ingyenes audit",
   "Operational AI systems for coaches & consultants": "Operatív AI-rendszerek coachoknak és tanácsadóknak",
   "Operational AI systems": "Operatív AI-rendszerek",
   "Let your business run itself.": "Működjön a vállalkozásod magától.",
