@@ -1,7 +1,7 @@
 /* ============================================================
    QuietStack — dark / grain / cool-blue landing
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
 :root{
   --bg:        #0A0C14;
@@ -27,7 +27,7 @@
   --font-display:'Schibsted Grotesk', 'Hanken Grotesk', system-ui, sans-serif;
   --font-body:'Schibsted Grotesk', 'Hanken Grotesk', system-ui, sans-serif;
   --font-mono:'IBM Plex Mono', ui-monospace, monospace;
-  --font-serif:'Playfair Display', 'EB Garamond', Georgia, serif;
+  --font-serif:'Cormorant Garamond', 'EB Garamond', Georgia, serif;
 
   --maxw: 1240px;
   --gutter: clamp(20px, 5vw, 64px);
