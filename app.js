@@ -10,10 +10,11 @@
     navProcess:  L("How it works", "So funktioniert's"),
     navWhy:      L("Why QuietStack", "Warum QuietStack"),
     navFaq:      L("FAQ", "FAQ"),
-    navCta:      L("Book your audit <span class=\"arr\">→</span>", "Audit buchen <span class=\"arr\">→</span>"),
+    navCta:      L("Free audit <span class=\"arr\">→</span>", "Gratis-Audit <span class=\"arr\">→</span>"),
 
     // hero
-    heroKicker: L("Operational AI systems for coaches & consultants", "Operative KI-Systeme für Coaches & Berater"),
+    heroKicker:   L("Replace yourself in your own business — with AI.", "Ersetzen Sie sich in Ihrem eigenen Business — mit KI."),
+    heroHeadline: L("Your business shouldn't depend on you for every single step.", "Ihr Business sollte nicht bei jedem einzelnen Schritt von Ihnen abhängen."),
     heroL1:     L("You don't need", "Sie brauchen nicht"),
     heroL1b:    L("more leads first.", "zuerst mehr Leads."),
     heroL2:     L("You need a system that can", "Sie brauchen ein System, das"),
