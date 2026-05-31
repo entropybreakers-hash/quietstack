@@ -34,6 +34,7 @@
       <div class="lang-switch" role="group" aria-label="Language">
         <button data-lang="en" class="on">EN</button>
         <button data-lang="de">DE</button>
+        <button data-lang="hu">HU</button>
       </div>
       <a href="index.html" class="btn btn-ghost" data-i18n="back">← Back to home</a>
     </div>
@@ -179,6 +180,34 @@
     sentP:{en:"I'll be in touch by email within one business day to schedule your audit.",de:"Ich melde mich innerhalb eines Werktags per E-Mail, um Ihr Audit zu terminieren."},
     legal:{en:"Imprint · Privacy Policy · Terms & Conditions",de:"Impressum · Datenschutz · AGB"}
   };
+
+  // Hungarian layer (HUF budget calibrated to the Hungarian market)
+  var HU_WWU = {
+    navServices:"Szolgáltatások", navProcess:"Hogyan működik", navWhy:"Miért QuietStack", navFaq:"GYIK",
+    back:"← Vissza a főoldalra",
+    kicker:"Dolgozzunk együtt",
+    head:"Építsünk egy vállalkozást, ami nélküled is működik.",
+    lead:"Foglalj egy ingyenes rendszer-felmérést. Feltérképezzük, hol veszít időt a működésed és hol ad az MI valódi tőkeáttételt, aztán közösen eldöntjük, illik-e. Semmi nyomás, semmi kötelezettség.",
+    iBased:"Székhely", vBased:"Ausztria · teljesen online",
+    iEmail:"E-mail",
+    iWith:"Velük dolgozom", vWith:"Coachok és tanácsadók a DACH-régióban és az EU-ban",
+    iResp:"Válaszidő", vResp:"24 órán belül · GDPR-konform",
+    lFirst:"Keresztnév", lLast:"Vezetéknév",
+    lEmail:"Céges e-mail",
+    lCompany:"Cég", phCompany:"Cég neve", lWebsite:"Weboldal",
+    lRole:"Szerepköröd", role0:"Válassz szerepkört…", role1:"Alapító / Tulajdonos", role2:"Coach", role3:"Tanácsadó", role4:"COO / Működési vezető", role5:"Egyéb",
+    lSize:"Cégméret", size0:"Hány fő…", size1:"Csak én",
+    lBudget:"Költségkeret", bud0:"Válassz tartományt…", bud1:"300 000 Ft alatt", bud2:"300 000 – 800 000 Ft", bud3:"800 000 – 2 000 000 Ft", bud4:"2 000 000 Ft felett", bud5:"Még nem tudom",
+    lProject:"Mesélj a projektedről", phProject:"Hol veszít a működésed a legtöbb időt? Egy-két mondat is elég.",
+    consent:"Hozzájárulok, hogy a QuietStack a megadott adataimat a megkeresésem megválaszolása céljából kezelje. Részletek az Adatvédelmi tájékoztatóban.",
+    lImprint:"Impresszum", lPrivacy:"Adatvédelem", lTerms:"ÁSZF",
+    submit:"Megkeresés elküldése",
+    formFoot:"Válasz 24 órán belül · A híváson semmi értékesítés.",
+    sentH:"Köszönöm, megkaptam.",
+    sentP:"Egy munkanapon belül e-mailben jelentkezem, hogy egyeztessük a felmérés időpontját.",
+    legal:"Impresszum · Adatvédelem · ÁSZF"
+  };
+  Object.keys(HU_WWU).forEach(function(k){ if(I18N[k]) I18N[k].hu = HU_WWU[k]; });
 
   function applyLang(lang){
     document.documentElement.setAttribute("lang", lang);
