@@ -23,19 +23,19 @@
 
 <nav class="nav" id="nav">
   <div class="wrap nav-in">
-    <a href="QuietStack Landing.html" class="brand"><span class="mark"></span>QuietStack</a>
+    <a href="index.html" class="brand"><span class="mark"></span>QuietStack</a>
     <div class="nav-links">
-      <a href="QuietStack Landing.html#services" data-i18n="navServices">Services</a>
-      <a href="QuietStack Landing.html#process" data-i18n="navProcess">How it works</a>
-      <a href="QuietStack Landing.html#why" data-i18n="navWhy">Why QuietStack</a>
-      <a href="QuietStack Landing.html#faq" data-i18n="navFaq">FAQ</a>
+      <a href="index.html#services" data-i18n="navServices">Services</a>
+      <a href="index.html#process" data-i18n="navProcess">How it works</a>
+      <a href="index.html#why" data-i18n="navWhy">Why QuietStack</a>
+      <a href="index.html#faq" data-i18n="navFaq">FAQ</a>
     </div>
     <div class="nav-cta">
       <div class="lang-switch" role="group" aria-label="Language">
         <button data-lang="en" class="on">EN</button>
         <button data-lang="de">DE</button>
       </div>
-      <a href="QuietStack Landing.html" class="btn btn-ghost" data-i18n="back">← Back to home</a>
+      <a href="index.html" class="btn btn-ghost" data-i18n="back">← Back to home</a>
     </div>
   </div>
 </nav>
@@ -59,16 +59,16 @@
       <div class="form-card" data-reveal data-reveal-x="right">
         <form id="wwuForm">
           <div class="frow">
-            <div class="field"><label data-i18n="lFirst">First name</label><input type="text" placeholder="Jane" required /></div>
-            <div class="field"><label data-i18n="lLast">Last name</label><input type="text" placeholder="Doe" required /></div>
+            <div class="field"><label data-i18n="lFirst">First name</label><input type="text" name="first_name" placeholder="Jane" required /></div>
+            <div class="field"><label data-i18n="lLast">Last name</label><input type="text" name="last_name" placeholder="Doe" required /></div>
           </div>
-          <div class="field"><label data-i18n="lEmail">Work email</label><input type="email" placeholder="jane@company.com" required /></div>
+          <div class="field"><label data-i18n="lEmail">Work email</label><input type="email" name="email" placeholder="jane@company.com" required /></div>
           <div class="frow">
-            <div class="field"><label data-i18n="lCompany">Company</label><input type="text" data-i18n-ph="phCompany" placeholder="Company name" /></div>
-            <div class="field"><label data-i18n="lWebsite">Company website</label><input type="text" placeholder="company.com" /></div>
+            <div class="field"><label data-i18n="lCompany">Company</label><input type="text" name="company" data-i18n-ph="phCompany" placeholder="Company name" /></div>
+            <div class="field"><label data-i18n="lWebsite">Company website</label><input type="text" name="website" placeholder="company.com" /></div>
           </div>
           <div class="field"><label data-i18n="lRole">Your role</label>
-            <select required>
+            <select name="role" required>
               <option value="" disabled selected data-i18n="role0">Select your role…</option>
               <option data-i18n="role1">Founder / Owner</option>
               <option data-i18n="role2">Coach</option>
@@ -78,7 +78,7 @@
             </select>
           </div>
           <div class="field"><label data-i18n="lSize">Company size</label>
-            <select required>
+            <select name="company_size" required>
               <option value="" disabled selected data-i18n="size0">Number of people…</option>
               <option data-i18n="size1">Just me</option>
               <option>2 - 5</option>
@@ -88,7 +88,7 @@
             </select>
           </div>
           <div class="field"><label data-i18n="lBudget">Budget Range</label>
-            <select required>
+            <select name="budget" required>
               <option value="" disabled selected data-i18n="bud0">Select a range…</option>
               <option data-i18n="bud1">Under €2,000</option>
               <option data-i18n="bud2">€2,000 - €5,000</option>
@@ -98,9 +98,9 @@
             </select>
           </div>
           <div class="field"><label data-i18n="lProject">Tell us about your project</label>
-            <textarea data-i18n-ph="phProject" placeholder="Where does your operation lose the most time? A sentence or two is plenty."></textarea>
+            <textarea name="project" data-i18n-ph="phProject" placeholder="Where does your operation lose the most time? A sentence or two is plenty."></textarea>
           </div>
-          <label class="consent"><input type="checkbox" required /><span data-i18n="consent">I consent to QuietStack processing the data I provide in order to respond to my enquiry. Details in the Privacy Policy.</span></label>
+          <label class="consent"><input type="checkbox" name="consent" required /><span data-i18n="consent">I consent to QuietStack processing the data I provide in order to respond to my enquiry. Details in the Privacy Policy.</span></label>
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"><span data-i18n="submit">Submit inquiry</span> <span class="arr">→</span></button>
           <div class="form-foot" data-i18n="formFoot">Reply within 24 hours · No pitch on the call.</div>
         </form>
@@ -234,8 +234,14 @@
   // form
   document.getElementById("wwuForm").addEventListener("submit", function(e){
     e.preventDefault();
-    document.getElementById("wwuForm").style.display = "none";
-    document.getElementById("wwuSent").classList.add("show");
+    var form = document.getElementById("wwuForm");
+    var sent = document.getElementById("wwuSent");
+    var btn  = form.querySelector("button[type=submit]");
+    if (btn) { btn.disabled = true; btn.style.opacity = "0.7"; }
+    var WEBHOOK = "https://hook.eu1.make.com/n9ir1g0uhmrsn97r9kdo4db6w9uwa28e";
+    fetch(WEBHOOK, { method: "POST", mode: "no-cors", body: new FormData(form) })
+      .catch(function(){})
+      .finally(function(){ form.style.display = "none"; sent.classList.add("show"); });
   });
 </script>
 </body>
