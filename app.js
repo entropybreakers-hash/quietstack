@@ -14,14 +14,11 @@
 
     // hero
     heroKicker: L("Operational AI systems for coaches & consultants", "Operative KI-Systeme für Coaches & Berater"),
-    heroL1:     L("You don't need", "Sie brauchen nicht"),
-    heroL2:     L("more leads.", "mehr Leads."),
-    heroL3:     L("You need systems.", "Sie brauchen Systeme."),
-    heroHighlight: L("Most clients free up <strong>20–30 hours a week</strong>, with the first systems working in days, not months.",
-                     "Die meisten Kund:innen gewinnen <strong>20–30 Stunden pro Woche</strong>, die ersten Systeme laufen in Tagen, nicht Monaten."),
-    heroLead:   L("I'm Bettina, and I build AI infrastructure that runs delivery and operations quietly in the background, so your business stops depending on you for every single move.",
-                  "Ich bin Bettina und baue KI-Infrastruktur, die Umsetzung und Betrieb leise im Hintergrund übernimmt, damit Ihr Business nicht bei jedem einzelnen Schritt von Ihnen abhängt."),
+    heroL1:     L("You don't need more leads first.", "Sie brauchen nicht zuerst mehr Leads."),
+    heroL2:     L("You need a system that can", "Sie brauchen ein System, das"),
+    heroL3:     L("carry your success.", "Ihren Erfolg trägt."),
     bookAudit:  L("Book your systems audit <span class=\"arr\">→</span>", "Systems-Audit buchen <span class=\"arr\">→</span>"),
+    ctaBtn:     L("Book your free systems audit <span class=\"arr\">→</span>", "Kostenloses Audit buchen <span class=\"arr\">→</span>"),
     seeHow:     L("See how it works", "So funktioniert's"),
     trust1:     L("A personal reply from me within 24 hours", "Persönliche Antwort von mir in 24 Stunden"),
     trust2:     L("EU-based · DSGVO-aligned", "EU-basiert · DSGVO-konform"),
@@ -320,7 +317,11 @@
 
   function tx(o) {
     if (o == null) return "";
-    if (typeof o === "object" && "en" in o) return o[LANG] != null ? o[LANG] : o.en;
+    if (typeof o === "object" && "en" in o) {
+      if (LANG === "hu") return (window.HU && window.HU[o.en] != null) ? window.HU[o.en] : o.en;
+      return o[LANG] != null ? o[LANG] : o.en;
+    }
+    if (LANG === "hu" && window.HU && window.HU[o] != null) return window.HU[o];
     return o;
   }
   function pad2(n) { return n < 10 ? "0" + n : "" + n; }
@@ -385,7 +386,7 @@
       var totalEl = stage.closest(".fam-pin-sec").querySelector(".fc-total");
       if (totalEl) totalEl.textContent = pad2(PROBLEMS.length + 1);
       var sec = stage.closest(".fam-pin-sec");
-      if (sec) sec.style.height = "calc(100vh + " + ((PROBLEMS.length + 1) * 70) + "vh)";
+      if (sec) sec.style.height = "calc(100vh + " + ((PROBLEMS.length + 1) * 105) + "vh)";
     }
 
     // quiz
@@ -453,7 +454,7 @@
       var stotal = ss.closest(".fam-pin-sec").querySelector(".fc-total");
       if (stotal) stotal.textContent = pad2(SERVICES.length);
       var ssec = ss.closest(".fam-pin-sec");
-      if (ssec) ssec.style.height = "calc(100vh + " + (SERVICES.length * 68) + "vh)";
+      if (ssec) ssec.style.height = "calc(100vh + " + (SERVICES.length * 105) + "vh)";
     }
 
     // process
@@ -498,8 +499,9 @@
   /* ============ quiz state ============ */
   var quizAns = {};
   function partial(n) {
-    return LANG === "de" ? (n + " von 4 Stufen laufen über Sie, nicht über ein System.")
-                         : (n + " of 4 stages are running on you, not on a system.");
+    if (LANG === "hu") return n + " a 4 szakaszból rajtad fut, nem rendszeren.";
+    if (LANG === "de") return n + " von 4 Stufen laufen über Sie, nicht über ein System.";
+    return n + " of 4 stages are running on you, not on a system.";
   }
   function updateQuiz() {
     var noCount = 0, answered = 0;
@@ -614,15 +616,15 @@
       var HOLD = 0.68;
       var active = base;
       slides.forEach(function (sl, i) {
-        var op = 0, y = 24;
+        var op = 0, y = 36;
         if (i === base) {
-          if (frac <= HOLD) { op = 1; y = -frac * 12; }
-          else { var tns = (frac - HOLD) / (1 - HOLD); op = 1 - tns; y = -tns * 46; }
+          if (frac <= HOLD) { op = 1; y = -frac * 14; }
+          else { var tns = (frac - HOLD) / (1 - HOLD); op = 1 - tns; y = -tns * 60; }
         } else if (i === base + 1) {
-          if (frac <= HOLD) { op = 0; y = 30; }
-          else { var tns2 = (frac - HOLD) / (1 - HOLD); op = tns2; y = (1 - tns2) * 30; active = tns2 > 0.5 ? i : base; }
+          if (frac <= HOLD) { op = 0; y = 44; }
+          else { var tns2 = (frac - HOLD) / (1 - HOLD); op = tns2; y = (1 - tns2) * 44; active = tns2 > 0.5 ? i : base; }
         }
-        var bl = (1 - op) * 7;
+        var bl = (1 - op) * 12;
         sl.style.opacity = op.toFixed(3);
         sl.style.transform = "translateY(calc(-50% + " + y.toFixed(1) + "px))";
         sl.style.filter = op > 0.02 ? "blur(" + bl.toFixed(1) + "px)" : "blur(7px)";
