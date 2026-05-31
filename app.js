@@ -446,9 +446,7 @@
     if (ss) {
       var shtml = "";
       SERVICES.forEach(function (s, i) {
-        var paths = s.i.map(function (d) { return '<path d="' + d + '" />'; }).join("");
         shtml += '<div class="fam-slide svc-slide" data-slide="' + i + '">';
-        shtml += '<div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + paths + '</svg></div>';
         shtml += '<h3 class="fam-stmt"><span class="idx">' + pad2(i + 1) + '</span>' + tx(s.t) + '</h3>';
         shtml += '<p class="fam-sub">' + tx(s.d) + '</p>';
         shtml += '</div>';
@@ -513,7 +511,7 @@
     var pct = Math.min(100, (noCount / QUIZ.length) * 100);
     document.getElementById("quizHours").textContent = hours;
     document.getElementById("quizBar").style.width = pct + "%";
-    var msg = answered < QUIZ.length ? tx(T.mNeed)
+    var msg = answered < QUIZ.length ? ""
             : noCount === 0 ? tx(T.mZero)
             : noCount === QUIZ.length ? tx(T.mAll)
             : partial(noCount);
