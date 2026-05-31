@@ -4,7 +4,7 @@
 window.HU = {
   // ---- Problems ----
   "You answer the same questions every day": "Minden nap ugyanazt magyarázod el újra",
-  "The same advice, the same intro, the same objections, typed out by hand, again. Your expertise is stuck on repeat.": "Ugyanaz a tanács, ugyanaz a bemutatkozás, ugyanazok a kifogások, megint kézzel begépelve. A szaktudásod ismétlésben ragad.",
+  "The same advice, the same intro, the same objections, typed out by hand, again. Your expertise is stuck on repeat.": "Ugyanaz a tanács, ugyanaz a bemutatkozás, ugyanazok a kifogások, megint kézzel begépelve. A szaktudásod ismétlésre van ítélve.",
   "Admin eats the hours clients pay for": "Az admin elviszi az órákat, amikért az ügyfél fizet",
   "DMs, email, scheduling, notes. The work that grows the business loses every time to the work that just keeps it alive.": "Üzenetek, e-mailek, időpontok, jegyzetek. Ami vinné előre a vállalkozást, mindig alulmarad azzal szemben, ami épp csak életben tartja.",
   "Warm leads go cold while you're busy": "A warm lead kihűl, amíg te máson dolgozol",
@@ -18,18 +18,18 @@ window.HU = {
 
   // ---- Quiz ----
   "Lead capture": "Lead-begyűjtés",
-  "When a new enquiry comes in, does it get a personal reply within 5 minutes, automatically?": "Ha új megkeresés jön, kap automatikusan, 5 percen belül személyes választ?",
+  "When a new enquiry comes in, does it get a personal reply within 5 minutes, automatically?": "Amikor új megkeresés jön, kap-e automatikusan személyes választ 5 percen belül?",
   "Follow-up": "Utánkövetés",
-  "Do quiet leads get a sequenced follow-up without you having to remember to send it?": "A csendes leadek kapnak automatikus utánkövetést anélkül, hogy neked kellene rá emlékezned?",
+  "Do quiet leads get a sequenced follow-up without you having to remember to send it?": "Az elcsendesült leadek kapnak-e automatikus utánkövetést anélkül, hogy neked kellene rájuk emlékezned?",
   "Onboarding": "Beléptetés",
-  "Do new clients get a personal onboarding flow without you assembling materials each time?": "Az új ügyfél végigmegy egy személyes beléptetésen anélkül, hogy mindig külön összerakd az anyagot?",
+  "Do new clients get a personal onboarding flow without you assembling materials each time?": "Az új ügyfél végigmegy-e egy személyes beléptetési folyamaton anélkül, hogy minden alkalommal külön összerakd neki az anyagot?",
   "Reporting": "Riportok",
-  "Can you see revenue, pipeline and key numbers live, without building a spreadsheet?": "Látod élőben a bevételt, a pipeline-t és a fő számokat anélkül, hogy táblázatot építenél?",
+  "Can you see revenue, pipeline and key numbers live, without building a spreadsheet?": "Látod-e élőben a bevételt, a pipeline-t és a fő számokat anélkül, hogy táblázatot kellene építened?",
 
   // ---- Stats ----
-  "of organisations now use AI in at least one business function.": "a cégeknek már legalább egy területen használ AI-t.",
-  "of knowledge workers already use AI in their daily work.": "a szellemi munkát végzőknek már napi szinten használ AI-t.",
-  "average productivity gain from AI, measured in real workflows.": "átlagos hatékonyságnövekedés AI-jal, valós munkában mérve.",
+  "of organisations now use AI in at least one business function.": "— a cégek ekkora hányadánál működik már AI legalább egy üzleti területen.",
+  "of knowledge workers already use AI in their daily work.": "— a szellemi munkát végzők ekkora hányada használ AI-t a napi munkájában.",
+  "average productivity gain from AI, measured in real workflows.": "— átlagos hatékonyság-növekedés AI-jal, valós munkafolyamatokban mérve.",
 
   // ---- Before / After ----
   "Drowning in DMs and email": "Fuldokolsz az üzenetekben és e-mailekben",
@@ -41,12 +41,12 @@ window.HU = {
   "A smooth, automated onboarding flow": "Gördülékeny, automata beléptetés",
   "Your expertise answering on autopilot": "A szaktudásod válaszol helyetted, automatán",
   "A premium, consistent client experience": "Prémium, egyenletes ügyfélélmény",
-  "A business that runs without you in every step": "Egy vállalkozás, ami nem igényel téged minden lépésnél",
+  "A business that runs without you in every step": "Egy vállalkozás, ami nem rajtad múlik minden lépésnél",
 
   // ---- Fit ----
   "You're a coach, consultant or expert advisor with real, paying demand.": "Coach, tanácsadó vagy szakértő vagy, valódi, fizető kereslettel.",
   "You're losing 10+ hours a week to manual operations.": "Heti 10+ órád megy el kézi munkára.",
-  "You want a done-for-you system, not another course to grind through.": "Kész, kulcsrakész rendszert akarsz, nem egy újabb kurzust, amit végig kell rágni.",
+  "You want a done-for-you system, not another course to grind through.": "Kulcsrakész rendszert szeretnél, nem egy újabb kurzust, amit végig kell rágni.",
   "You're ready to invest in operations that compound over time.": "Készen állsz olyan rendszerbe fektetni, ami idővel kamatozik.",
   "You're pre-revenue or still validating the idea.": "Még bevétel előtt vagy, vagy még teszteled az ötletet.",
   "You want to build and maintain everything yourself.": "Mindent magad akarsz megépíteni és karbantartani.",
@@ -81,7 +81,7 @@ window.HU = {
   "Will it sound robotic or impersonal?": "Nem lesz robotos vagy személytelen?",
   "No. Everything is trained around your tone, your methodology and your workflows, so clients get a faster, more consistent version of you, not a generic bot.": "Nem. Minden a te stílusodra, módszeredre és folyamataidra épül, így az ügyfél egy gyorsabb, kiszámíthatóbb verziódat kapja, nem egy sablonos botot.",
   "Will it work with my current tools?": "Működik azzal, amit most használok?",
-  "Yes. I build around the stack you already use, calendar, email, CRM, payments, instead of asking you to switch everything. Your setup stays familiar.": "Igen. Arra építek, amit már használsz, naptár, e-mail, CRM, fizetés , , nem kell mindent lecserélned. A megszokott rendszered marad.",
+  "Yes. I build around the stack you already use, calendar, email, CRM, payments, instead of asking you to switch everything. Your setup stays familiar.": "Igen. Arra építek, amit már használsz — naptár, e-mail, CRM, fizetés —, nem kell mindent lecserélned. A megszokott rendszered marad.",
   "What does it cost?": "Mibe kerül?",
   "There's no fixed price list. Every system is scoped to your operation, its complexity and your goals. Most engagements combine a one-time build with optional ongoing operation. We agree the exact scope and investment together on the audit call, no obligation.": "Nincs fix árlista. Minden rendszer a te működésedre, annak bonyolultságára és a céljaidra van szabva. Általában egy egyszeri kiépítés és egy opcionális, havi üzemeltetés a felállás. A pontos tartalmat és az árat a felmérő beszélgetésen tisztázzuk, kötöttség nélkül.",
   "What if I'm not technical?": "Mi van, ha nem értek a technikához?",
@@ -95,26 +95,25 @@ window.HU = {
 
   // ---- Brands ----
   "English tuition for Hungarian professionals, structured fluency from beginner through C1. Enquiries, qualification, onboarding and follow-up all run automatically; I only get a ping when a new student joins.": "Angoltanítás magyar szakembereknek, felépített nyelvtudás kezdőtől C1-ig. A megkeresés, a minősítés, a beléptetés és az utánkövetés magától megy; nekem csak akkor jön jelzés, ha új diák lép be.",
-  "Visit Entropy Breakers": "Entropy Breakers megnyitása",
+  "Visit Entropy Breakers": "Tovább az Entropy Breakers oldalára",
   "Business communication and identity shift for DACH entrepreneurs. Same setup: leads captured and qualified automatically, onboarding on autopilot, day-to-day running in the background.": "Üzleti kommunikáció és énmárka DACH-vállalkozóknak. Ugyanaz a felállás: a leadek maguktól begyűlnek és minősülnek, a beléptetés robotpilótán, a napi működés a háttérben.",
-  "Visit Get Client Ready": "Get Client Ready megnyitása",
+  "Visit Get Client Ready": "Tovább a Get Client Ready oldalára",
 
   // ---- UI ----
   "Services": "Szolgáltatások",
   "How it works": "Hogyan működik",
   "Why QuietStack": "Miért QuietStack",
   "FAQ": "GYIK",
-  "Free audit": "Ingyenes felmérés",
-  "Book your free audit": "Kérd az ingyenes felmérést",
-  "Book your free systems audit": "Kérem az ingyenes felmérést",
+  "Book your free audit": "Kérd az ingyenes auditot",
+  "Book your free systems audit": "Kérd az ingyenes rendszer-auditot",
   "See how it works": "Nézd meg, hogyan működik",
   "A personal reply from me within 24 hours": "Személyes válasz tőlem 24 órán belül",
-  "EU-based · DSGVO-aligned": "EU-alapú · GDPR-konform",
+  "EU-based · DSGVO-aligned": "EU-s · GDPR-konform",
   "Built into your own accounts": "A saját fiókjaidba építve",
 
   // ---- Hero ----
   "Replace yourself in your own business — with AI.": "Vedd ki magad a saját vállalkozásodból — AI-val.",
-  "Your business shouldn't depend on you for every single step.": "A vállalkozásod ne függjön tőled minden egyes lépésnél.",
+  "Your business shouldn't depend on you for every single step.": "A vállalkozásod ne minden egyes lépésnél múljon rajtad.",
   "Free audit": "Ingyenes audit",
   "Operational AI systems for coaches & consultants": "Operatív AI-rendszerek coachoknak és tanácsadóknak",
   "Operational AI systems": "Operatív AI-rendszerek",
@@ -158,7 +157,7 @@ window.HU = {
   "Estimated leak": "Becsült veszteség",
   "hrs / week": "óra / hét",
   "Answer all four to see your estimate.": "Válaszolj mind a négyre a becslésért.",
-  "Rare. Your operations are already tighter than most. Let's pressure-test the edges.": "Ritka. A működésed már most feszesebb a legtöbbnél. Nézzük meg a finomításokat.",
+  "Rare. Your operations are already tighter than most. Let's pressure-test the edges.": "Ritka eset. A működésed már most szervezettebb, mint a legtöbbnél. Nézzük meg, hol lehet még finomítani.",
   "Every stage is leaking. This is exactly where a system pays for itself fastest.": "Mindegyik szakasz szivárog. Pont itt térül meg egy rendszer a leggyorsabban.",
   "Map this properly": "Nézzük meg alaposan",
   "By the numbers": "Számokban",
@@ -198,7 +197,7 @@ window.HU = {
   "Custom AI infrastructure for client operations, delivery, onboarding, follow-up.": "Egyedi AI-rendszer az ügyfélfolyamatokra: munka, beléptetés, utánkövetés.",
   "Workflow automation that quietly removes friction.": "Folyamat-automatizálás, ami csendben leveszi a súrlódást.",
   "Systems audits for businesses ready to stop running on willpower.": "Rendszer-felmérés azoknak, akik már nem akarnak akaraterőből pörögni.",
-  "Honest fit": "Őszintén a passzolásról",
+  "Honest fit": "Őszinte illeszkedés",
   "Built for businesses ready to scale, not to start.": "Azoknak, akik már skáláznának, nem most kezdik.",
   "Fit matters more than a signed invoice. If this isn't you yet, I'll tell you straight.": "Fontosabb, hogy passzoljunk, mint egy aláírt számla. Ha ez még nem te vagy, megmondom őszintén.",
   "Perfect fit": "Tökéletes passz",
@@ -207,7 +206,7 @@ window.HU = {
   // ---- Services · Process · Sovereignty · Guarantee · FAQ heads (SC) ----
   "What I build": "Amit építek",
   "Your expertise, running as a system.": "A szaktudásod, rendszerként.",
-  "Concrete AI systems built around how you already work, so delivery scales without you in every step.": "Konkrét AI-rendszerek a meglévő működésedre szabva, hogy a munka skálázódjon, nélküled minden lépésnél.",
+  "Concrete AI systems built around how you already work, so delivery scales without you in every step.": "Konkrét AI-rendszerek a meglévő működésedre szabva, hogy a munka skálázódjon anélkül, hogy minden lépésnél te kellenél.",
   "Simple systems. Clear implementation.": "Egyszerű rendszer. Tiszta megvalósítás.",
   "Three steps from operational bottlenecks to workflows that run themselves.": "Három lépés a megakadt folyamatoktól az önjáró rendszerig.",
   "Safe by design": "Eleve biztonságos",
