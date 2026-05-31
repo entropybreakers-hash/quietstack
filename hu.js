@@ -29,7 +29,7 @@ window.HU = {
   // ---- Stats ----
   "of organisations now use AI in at least one business function.": "— a cégek ekkora hányadánál működik már AI legalább egy üzleti területen.",
   "of knowledge workers already use AI in their daily work.": "— a szellemi munkát végzők ekkora hányada használ AI-t a napi munkájában.",
-  "average productivity gain from AI, measured in real workflows.": "— átlagos hatékonyság-növekedés AI-jal, valós munkafolyamatokban mérve.",
+  "average productivity gain from AI, measured in real workflows.": "— átlagos hatékonyság-növekedés AI-al, valós munkafolyamatokban mérve.",
 
   // ---- Before / After ----
   "Drowning in DMs and email": "Fuldokolsz az üzenetekben és e-mailekben",
@@ -114,7 +114,7 @@ window.HU = {
   "Built into your own accounts": "A saját fiókjaidba építve",
 
   // ---- Hero ----
-  "Replace yourself in your own business — with AI.": "Vedd ki magad a saját vállalkozásodból — AI-val.",
+  "Replace yourself in your own business — with AI.": "Vedd ki magad a saját vállalkozásodból — AI-al.",
   "Your business shouldn't depend on you for every single step.": "A vállalkozásod ne minden egyes lépésnél múljon rajtad.",
   "Free audit": "Ingyenes audit",
   "Operational AI systems for coaches & consultants": "Operatív AI-rendszerek coachoknak és tanácsadóknak",
