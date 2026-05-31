@@ -236,7 +236,7 @@ window.HU = {
   // ---- Final CTA · Brands · Footer (SD) ----
   "Your move": "Te jössz",
   "Free and no obligation. You leave with a clear roadmap, yours to keep, whether we work together or not.": "Ingyenes és kötöttség nélküli. Egy tiszta tervvel távozol, ami a tiéd marad, akár dolgozunk együtt, akár nem.",
-  "AI isn't coming. It's already running your competitors' back office.": "Az AI nem jön. Már most a versenytársaid hátterét pörgeti.",
+  "AI isn't coming. It's already running your competitors' back office.": "Az AI nem a jövő. Már most a versenytársaid hátterét viszi.",
   "The few who systematise will pull away quietly, while everyone else stays busy. I'd love to help you be one of them. Let's have a relaxed chat and see if we're a fit, no pressure either way.": "Aki rendszerez, csendben elhúz, a többiek meg maradnak az örök pörgésben. Szívesen segítek, hogy te az előbbi légy. Beszélgessünk egy nyugodtat, és nézzük meg, passzolunk-e. Nyomás nincs.",
   "Also building": "Ezeket is én viszem",
   "Two other brands I run on the same systems.": "Két másik márkám, ugyanezeken a rendszereken.",

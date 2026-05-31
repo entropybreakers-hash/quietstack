@@ -649,6 +649,7 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; margin:0; letter-
 .final-cta{ position:relative; overflow:hidden; text-align:center; padding-block:clamp(96px,14vw,180px); }
 .final-cta .wrap{ position:relative; z-index:2; max-width:920px; }
 .final-cta .h2{ font-size:clamp(2.4rem,5.4vw,4.4rem); }
+.final-cta .h2 + div{ margin-top:clamp(48px,7vw,96px); }
 .final-cta .lead{ max-width:560px; margin:24px auto 38px; }
 .cta-magnet{ margin:20px auto 0; max-width:440px; font-size:14.5px; color:var(--muted); line-height:1.5; }
 .cta-rings{ position:absolute; inset:0; z-index:0; display:grid; place-items:center; pointer-events:none; }
