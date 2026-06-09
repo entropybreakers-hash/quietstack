@@ -13,7 +13,7 @@
     navCta:      L("Free audit <span class=\"arr\">→</span>", "Gratis-Audit <span class=\"arr\">→</span>"),
 
     // hero
-    heroKicker:   L("Replace yourself in your own business — with AI.", "Ersetzen Sie sich in Ihrem eigenen Business — mit KI."),
+    heroKicker:   L("Replace yourself in your own business.", "Ersetzen Sie sich in Ihrem eigenen Business."),
     heroHeadline: L("Your business shouldn't depend on you for every single step.", "Ihr Business sollte nicht bei jedem einzelnen Schritt von Ihnen abhängen."),
     heroL1:     L("You don't need", "Sie brauchen nicht"),
     heroL1b:    L("more leads first.", "zuerst mehr Leads."),
@@ -102,7 +102,7 @@
     proofEm:   L("less time on admin, not more", "weniger Admin, nicht mehr"),
     proofMidB: L(". More revenue, fewer manual hours. That's the whole point.", ". Mehr Umsatz, weniger Handarbeit. Genau darum geht es."),
     howHelp:   L("How I help", "Wie ich helfe"),
-    help1:     L("Custom AI infrastructure for client operations, delivery, onboarding, follow-up.", "Maßgeschneiderte KI-Infrastruktur für Kundenabläufe, Umsetzung, Onboarding, Follow-up."),
+    help1:     L("Tailored systems for client operations, delivery, onboarding and follow-up.", "Maßgeschneiderte Systeme für Kundenabläufe, Umsetzung, Onboarding und Follow-up."),
     help2:     L("Workflow automation that quietly removes friction.", "Workflow-Automatisierung, die leise Reibung entfernt."),
     help3:     L("Systems audits for businesses ready to stop running on willpower.", "Systems-Audits für Unternehmen, die nicht mehr auf Willenskraft laufen wollen."),
 
@@ -160,8 +160,8 @@
                  "Kostenlos und unverbindlich. Sie gehen mit einer klaren Roadmap, Ihrer, ob wir zusammenarbeiten oder nicht."),
 
     // footer
-    footTagline: L("Quiet systems. Scalable operations. AI-assisted operational infrastructure for coaches and high-ticket consultants.",
-                   "Leise Systeme. Skalierbarer Betrieb. KI-gestützte operative Infrastruktur für Coaches und High-Ticket-Berater."),
+    footTagline: L("Quiet systems. Scalable operations. Built so your business runs without you in every single step.",
+                   "Leise Systeme. Skalierbarer Betrieb. Gebaut, damit Ihr Business ohne Sie in jedem Schritt läuft."),
     colExplore: L("Explore", "Entdecken"),
     colGet:     L("Get started", "Loslegen"),
     colContact: L("Contact", "Kontakt"),
@@ -249,12 +249,12 @@
   ];
 
   var SERVICES = [
-    { t: L("AI Client Onboarding", "KI-Kunden-Onboarding"), d: L("Automate qualification, intake and onboarding so every new client starts smoothly, without your manual work.", "Qualifizierung, Aufnahme und Onboarding automatisiert, damit jeder neue Kunde reibungslos startet, ohne Ihre Handarbeit."), i: ["M4 7h16M4 12h16M4 17h10"] },
-    { t: L("AI Knowledge Assistant", "KI-Wissensassistent"), d: L("Train an AI on your own frameworks and methodology so your expertise answers clients around the clock.", "Eine KI, trainiert auf Ihre Frameworks und Methodik, Ihr Know-how antwortet rund um die Uhr."), i: ["M12 3a4 4 0 014 4v1a4 4 0 01-8 0V7a4 4 0 014-4z","M5 21v-1a7 7 0 0114 0v1"] },
-    { t: L("AI Content Engine", "KI-Content-Engine"), d: L("Turn your calls, notes and ideas into ready-to-post content automatically, so you stay visible without the grind.", "Aus Calls, Notizen und Ideen automatisch fertigen Content, sichtbar bleiben ohne Mühsal."), i: ["M4 4h16v12H4z","M8 20h8M12 16v4"] },
-    { t: L("AI Client Success System", "KI-Kundenerfolg-System"), d: L("Track clients, follow-ups and next actions so nothing slips and delivery stays consistently premium.", "Kunden, Follow-ups und nächste Schritte im Blick, nichts fällt durch, die Umsetzung bleibt konstant hochwertig."), i: ["M4 12l5 5L20 6"] },
-    { t: L("AI Sales Assistant", "KI-Vertriebsassistent"), d: L("Nurture and qualify leads 24/7 so your pipeline keeps moving while you focus on delivery.", "Leads rund um die Uhr pflegen und qualifizieren, Ihre Pipeline läuft, während Sie liefern."), i: ["M3 12l18-7-7 18-3-7-8-4z"] },
-    { t: L("AI Delivery Workflows", "KI-Delivery-Workflows"), d: L("Turn your repeatable processes and SOPs into systems that run themselves behind the scenes.", "Ihre wiederkehrenden Prozesse und SOPs werden zu Systemen, die im Hintergrund von selbst laufen."), i: ["M12 3v4M12 17v4M3 12h4M17 12h4","M12 9a3 3 0 100 6 3 3 0 000-6z"] }
+    { t: L("Hours Back, Every New Client", "Stunden zurück bei jedem neuen Kunden"), d: L("Every new client gets the same premium start — qualification, intake and onboarding run themselves, no scrambling on your side.", "Jeder neue Kunde bekommt denselben hochwertigen Start — Qualifizierung, Aufnahme und Onboarding laufen von selbst, ohne Aufwand auf Ihrer Seite."), i: ["M4 7h16M4 12h16M4 17h10"] },
+    { t: L("24/7 in Your Voice", "24/7 in Ihrer Stimme"), d: L("Your frameworks and methodology become available to clients around the clock — in your voice, without you on call.", "Ihre Frameworks und Methodik werden rund um die Uhr für Kunden verfügbar — in Ihrer Stimme, ohne Bereitschaft."), i: ["M12 3a4 4 0 014 4v1a4 4 0 01-8 0V7a4 4 0 014-4z","M5 21v-1a7 7 0 0114 0v1"] },
+    { t: L("Visible Without Writing", "Sichtbar ohne zu schreiben"), d: L("Your calls, notes and ideas become ready-to-post content. Stay visible without writing every word.", "Aus Ihren Calls, Notizen und Ideen entsteht fertiger Content. Sichtbar bleiben, ohne jedes Wort selbst zu schreiben."), i: ["M4 4h16v12H4z","M8 20h8M12 16v4"] },
+    { t: L("Clients Who Stay", "Kunden, die bleiben"), d: L("Every client feels remembered. Follow-ups, next actions and milestones tracked — nothing falls through, delivery stays premium.", "Jeder Kunde fühlt sich gesehen. Follow-ups, nächste Schritte und Meilensteine im Blick — nichts geht verloren, die Umsetzung bleibt hochwertig."), i: ["M4 12l5 5L20 6"] },
+    { t: L("A Pipeline That Doesn't Sleep", "Eine Pipeline, die nicht schläft"), d: L("Leads stay engaged and qualified around the clock. Your pipeline keeps moving while you focus on delivery.", "Leads bleiben rund um die Uhr engagiert und qualifiziert. Ihre Pipeline läuft, während Sie liefern."), i: ["M3 12l18-7-7 18-3-7-8-4z"] },
+    { t: L("A Business Without You In It", "Ein Business ohne Sie darin"), d: L("Your repeatable processes and SOPs become quiet systems that run themselves in the background.", "Ihre wiederkehrenden Prozesse und SOPs werden zu leisen Systemen, die im Hintergrund von selbst laufen."), i: ["M12 3v4M12 17v4M3 12h4M17 12h4","M12 9a3 3 0 100 6 3 3 0 000-6z"] }
   ];
 
   var PROCESS = [
