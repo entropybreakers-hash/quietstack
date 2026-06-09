@@ -55,17 +55,17 @@ window.HU = {
 
   // ---- Services ----
   "Onboarding on autopilot": "Beléptetés magától",
-  "Every new client gets the same smooth start. The intake form, the welcome email, the contract, the first call — all set up without you doing it each time.": "Minden új ügyfél ugyanazt a gördülékeny kezdést kapja. A kérdőív, az üdvözlő e-mail, a szerződés, az első hívás — mind előkészítve, anélkül, hogy minden alkalommal neked kellene összeraknod.",
+  "Intake form, welcome email, contract, first call — all set up the same way for every new client, without you touching it.": "Kérdőív, üdvözlő e-mail, szerződés, első hívás — minden új ügyfélnél ugyanúgy lefut, anélkül hogy neked kellene foglalkozni vele.",
   "24/7 answers for your clients": "24/7 válaszok az ügyfeleidnek",
-  "Your clients get answers when they need them, even when you're offline. Common questions, your method, your tone — handled for you.": "Az ügyfeleid akkor kapnak választ, amikor szükségük van rá — akkor is, ha te épp offline vagy. A gyakori kérdések, a módszered, a stílusod — helyetted megválaszolva.",
+  "Your clients get answers any time, in your voice. Common questions handled for you, around the clock.": "Az ügyfeleid bármikor kapnak választ, a te hangodon. A gyakori kérdéseket helyetted intézi, éjjel-nappal.",
   "Content from your calls and notes": "Tartalom a hívásaidból és jegyzeteidből",
-  "Your calls, voice notes and ideas become ready-to-post content. Stay visible without writing every day.": "A hívásaidból, hangjegyzeteidből és ötleteidből kész, posztolható tartalom születik. Látható maradsz anélkül, hogy minden nap írnod kellene.",
+  "Your calls and voice notes become ready-to-post content. Stay visible without writing every day.": "A hívásaidból és hangjegyzeteidből kész, posztolható tartalom születik. Látható maradsz írás nélkül.",
   "Follow-ups that don't slip": "Utánkövetés, ami nem csúszik el",
-  "No client gets forgotten. Check-ins, next steps and renewals are remembered for you, so every client feels seen.": "Egy ügyfél sem felejtődik el. A jelentkezések, a következő lépések és a megújítások helyetted számon vannak tartva — minden ügyfél úgy érzi, számít.",
+  "Check-ins, next steps and renewals are remembered for you. No client falls through.": "A jelentkezések, a következő lépések és a megújítások számon vannak tartva helyetted. Egy ügyfél sem csúszik át.",
   "Leads handled for you": "Leadek, amikkel nem neked kell foglalkozni",
-  "New enquiries get a personal reply within minutes, get qualified, and stay warm — without you watching the inbox.": "Az új megkeresések perceken belül kapnak személyes választ, minősülnek, és melegen maradnak — anélkül, hogy neked kellene a postafiókot figyelni.",
+  "Every new enquiry gets a personal reply within minutes, gets qualified, and stays warm — without you watching the inbox.": "Minden új megkeresés perceken belül kap személyes választ, minősül és melegen marad — anélkül, hogy neked kellene a postafiókot figyelni.",
   "Daily admin that runs itself": "Napi admin, ami magától megy",
-  "The repetitive stuff — scheduling, reminders, invoicing follow-ups, status updates — handled in the background, so your day is for the work that matters.": "Az ismétlődő dolgok — időpontfoglalás, emlékeztetők, számla-utánkövetés, státusz-jelzések — a háttérben mennek, hogy a napod arra menjen, ami igazán számít.",
+  "Scheduling, reminders, invoice nudges, status updates — handled in the background, so your day is for the work that matters.": "Időpontfoglalás, emlékeztetők, számla-utánkövetés, státusz-jelzések — a háttérben mennek, hogy a napod arra menjen, ami igazán számít.",
 
   // ---- Process ----
   "Audit": "Felmérés",
@@ -150,7 +150,7 @@ window.HU = {
   "Builds into the stack you already run on": "Arra épül, amit már használsz",
   "Sound familiar?": "Ismerős?",
   "Your business grows. Your operations turn to chaos.": "A vállalkozásod nő. A működésed káoszba csúszik.",
-  "You\u2019re not behind, and you\u2019re not doing it wrong. <strong>You\u2019re just running on willpower instead of systems</strong>, and willpower doesn\u2019t scale. I\u2019ve been exactly there.": "Nem vagy lemaradva, és nem csinálsz semmit rosszul. <strong>Csak akaraterőből nyomod, rendszer helyett</strong>, az akaraterő viszont nem skálázódik. Pontosan onnan jövök, ahol most te vagy.",
+  "You're not behind, and you're not doing it wrong. <strong>You're just running on willpower instead of systems</strong>, and willpower doesn't scale. I've been exactly there.": "Nem vagy lemaradva, és nem csinálsz semmit rosszul. <strong>Csak akaraterőből nyomod, rendszer helyett</strong>, az akaraterő viszont nem skálázódik. Pontosan onnan jövök, ahol most te vagy.",
   "60-second self-audit": "60 másodperces önteszt",
   "Where is your client flow leaking?": "Hol szivárog az ügyfélfolyamatod?",
   "Four questions. One honest answer each. No email required.": "Négy kérdés, mindre egy őszinte válasz. E-mail nem kell.",
@@ -236,7 +236,7 @@ window.HU = {
   // ---- Final CTA · Brands · Footer (SD) ----
   "Your move": "Te jössz",
   "Free and no obligation. You leave with a clear roadmap, yours to keep, whether we work together or not.": "Ingyenes és kötöttség nélküli. Egy tiszta tervvel távozol, ami a tiéd marad, akár dolgozunk együtt, akár nem.",
-  "AI isn't coming. It's already running your competitors' back office.": "Az AI nem a jövő. Már most a versenytársaid hátterét viszi.",
+  "There's a way out of the daily grind.": "Van kiút a mókuskerékből.",
   "The few who systematise will pull away quietly, while everyone else stays busy. I'd love to help you be one of them. Let's have a relaxed chat and see if we're a fit, no pressure either way.": "Aki rendszerez, csendben elhúz, a többiek meg maradnak az örök pörgésben. Szívesen segítek, hogy te az előbbi légy. Beszélgessünk egy nyugodtat, és nézzük meg, passzolunk-e. Nyomás nincs.",
   "Also building": "Ezeket is én viszem",
   "Two other brands I run on the same systems.": "Két másik márkám, ugyanezeken a rendszereken.",
