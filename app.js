@@ -13,8 +13,8 @@
     navCta:      L("Free audit <span class=\"arr\">→</span>", "Gratis-Audit <span class=\"arr\">→</span>"),
 
     // hero
-    heroKicker:   L("Replace yourself in your own business.", "Ersetzen Sie sich in Ihrem eigenen Business."),
-    heroHeadline: L("Your business shouldn't depend on you for every single step.", "Ihr Business sollte nicht bei jedem einzelnen Schritt von Ihnen abhängen."),
+    heroKicker:   L("I'll show you where to take yourself out of admin.", "Ich zeige Ihnen, wo Sie sich aus der Verwaltung herausnehmen können."),
+    heroHeadline: L("AI doesn't take over the wheel. Just the parts you hate doing.", "KI übernimmt nicht das Steuer. Nur das, was Sie nicht mögen."),
     heroL1:     L("You don't need", "Sie brauchen nicht"),
     heroL1b:    L("more leads first.", "zuerst mehr Leads."),
     heroL2:     L("You need a system that can", "Sie brauchen ein System, das"),
